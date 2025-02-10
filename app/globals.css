@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+    --font-dm-sans: "DM Sans", sans-serif;
+  --font-lexend: "Lexend", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-outfit: "Outfit", sans-serif;  
+}
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+.lexend {
+  font-family: var(--font-lexend), sans-serif;
+}
+.open-sans {
+  font-family: var(--font-open-sans);
+}
+
+.font-space-grotesk {
+  font-family: var(--font-space-grotesk);
+}
+.font-outfit {
+  font-family: var(--font-outfit);
+}
+
+.glow-effect {
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* .gradient-corners {
+  position: relative;
+  background: transparent; 
+  z-index: 0; 
+}
+
+.gradient-corners::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+   
+    radial-gradient(circle at top right, #45F175 15%, #000 20%);
+  background-repeat: no-repeat;
+
+  background-position: bottom left, bottom right, top right; 
+  opacity: 0.5; 
+  z-index: -1; 
+} */
+
+
+
+
+
+.gradient-corners {
+  background: black;
+  background-image:
+    radial-gradient(circle at bottom left, hsl(137, 86%, 61%, 0.5) 10%, transparent 25%),
+    radial-gradient(circle at bottom right, hsl(137, 86%, 61%, 0.3) 5%, transparent 20%),
+    radial-gradient(circle at top left, #000 , transparent 100%),
+    radial-gradient(circle at top right, hsl(137, 86%, 61%, 0.5) 5%, transparent 20%);
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+.gradient-corners-main {
+  background: black;
+  background-image:
+    radial-gradient(circle at top left, hsl(137, 86%, 61%, 0.5), transparent 30%),
+    radial-gradient(circle at bottom right,hsl(137, 86%, 61%, 0.5), transparent 20%),
+    radial-gradient(circle at bottom left, #000 , transparent 100%),
+    radial-gradient(circle at top right, hsl(137, 86%, 61%, 0.5), transparent 25%);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+
+
+.gradient-corners-sidebar {
+  background: #1e1e1e;
+  background-image:
+    radial-gradient(circle , hsl(137, 86%, 61%, 0.2), #000 70%);
+  
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+
+.bottom-left{
+  background: linear-gradient(180deg, #04110D 0%, #45F175 50%, #00C3CE 100%);
+}
+
+.btn-shadow {
+  box-shadow: 0px 0px 20px 0px #FF3F3F33;
+
+}
+
+.submit-btn {
+  box-shadow: 0px 0px 20px 0px #45F175 inset;
+
+}
+
+.icon-inner {
+  box-shadow: 0px 0px 20px 0px #FFFFFF33 inset;
+
+}
+
+.discord-border {
+  box-shadow: 0px 0px 50px 0px #45F17566 inset;
+
+}
+
+.discord-btn {
+  box-shadow: 0px 0px 20px 0px #45F17599 inset;
+  backdrop-filter: blur(50px)
+}
+
+.back-btn{
+  box-shadow: 0px 1px 1px 0px #FFFFFF29 inset;
+
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #04110D; /* Background color for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #45F175; /* Scrollbar thumb color */
+  border-radius: 5px; /* Rounded edges for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #419d94; /* Darker color on hover */
+}
