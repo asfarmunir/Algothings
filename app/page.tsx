@@ -17,21 +17,18 @@ export default function Home() {
       <div
         className="relative w-full "
         style={{
-          backgroundImage: 'url(/images/image.svg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',  // Keep the background fixed while scrolling
-          minHeight: '100vh',  // Ensure that the div at least takes the full screen height
+          backgroundImage: "url(/images/image.svg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed", // Keep the background fixed while scrolling
+          minHeight: "100vh", // Ensure that the div at least takes the full screen height
         }}
       >
-
-
         {/* Content Layer */}
         <div className="relative z-10 font-sans scrollbar-custom">
           <Navbar />
           <div className="w-full ">
             <div className="text-center ">
-
               <Welcome />
 
               <Algorithm />
@@ -42,12 +39,10 @@ export default function Home() {
               <FAQ />
               <DiscordCommunity />
               <Footer />
-
             </div>
           </div>
         </div>
       </div>
-
     </>
   );
 }

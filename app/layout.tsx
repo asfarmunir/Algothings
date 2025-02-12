@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { DM_Sans, Lexend, Open_Sans, Space_Grotesk, Outfit } from "next/font/google";
+import {
+  DM_Sans,
+  Lexend,
+  Open_Sans,
+  Space_Grotesk,
+  Outfit,
+} from "next/font/google";
 import "./globals.css"; // For applying the global styles
-
+import NextTopLoader from "nextjs-toploader";
 
 // Initialize DM Sans font
 const dmSans = DM_Sans({
@@ -55,12 +61,21 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Lexend:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" type="image/png" href="/images/logo.svg" />
       </head>
       <body
         className={`${dmSans.variable} ${lexend.variable} ${openSans.variable} ${spaceGrotesk.variable} ${outfit.variable} antialiased`}
       >
-      
+        <NextTopLoader
+          color="green"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={2}
+          crawl={true}
+          showSpinner={false}
+          easing=" ease-in-out"
+          speed={200}
+          shadow="0 0 5px #2299DD,0 0 5px #2299DD"
+        />
         {children}
       </body>
     </html>

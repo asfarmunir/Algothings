@@ -1,22 +1,21 @@
-"use client"
+"use client";
 
-import React from "react"
-import Image from "next/image"
-import Carousel from "../ui/Carousel1"
-import Button from "../ui/Button"
-import { cards } from "@/lib/constants"
-import FadeInSection from "@/lib/FadeInAnimation"
-import { useBlogs } from "@/hooks/useBlog"
+import React from "react";
+import Image from "next/image";
+import Carousel from "../ui/Carousel1";
+import Button from "../ui/Button";
+import { cards } from "@/lib/constants";
+import FadeInSection from "@/lib/FadeInAnimation";
+import { useBlogs } from "@/hooks/useBlog";
 
 export default function Blogs() {
-  const {blog, error} = useBlogs();
-
+  const { blog, error } = useBlogs();
 
   return (
     <>
       <section id="blog">
         <FadeInSection>
-          <div className="my-4  py-8" >
+          <div className="my-4  py-8">
             <div className="mx-6 ">
               {" "}
               {/* Increased padding for navigation buttons */}
@@ -31,21 +30,17 @@ export default function Blogs() {
                   Blogs
                 </p>
               </div>
-
-              <h1 className=" text-[56px]  mt-4 text-center my-6">The Traders&apos; Playbook</h1>
-
+              <h1 className=" text-[56px]  mt-4 text-center my-6">
+                The Traders&apos; Playbook
+              </h1>
               <div className="  md:mx-12 lg:mx-[90px] pt-6 md:pt-0">
-
-              {/* replace card */}
+                {/* replace card */}
                 <Carousel items={cards} />
               </div>
-
-
             </div>
           </div>
         </FadeInSection>
       </section>
     </>
-  )
+  );
 }
-

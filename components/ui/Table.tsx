@@ -35,7 +35,9 @@ export default function Table({ columns, data }: TableProps) {
         <thead>
           <tr className="border-b border-[#FFFFFF33]">
             {columns.map((col, index) => (
-              <th key={index} className="py-4 px-4">{col}</th>
+              <th key={index} className="py-4 px-4">
+                {col}
+              </th>
             ))}
           </tr>
         </thead>
@@ -47,20 +49,31 @@ export default function Table({ columns, data }: TableProps) {
               <td className="py-4 px-4">{row.date}</td>
               <td className="py-4 px-4">{row.invoiceNumber}</td>
               <td className="py-4 px-4">{row.amount}</td>
-              <td className="py-4 px-4 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">{row.productName}</td>
-              <td className="py-4 px-4">
-                <span className={`${row.status === 'Active' ? 'inline-block bg-gradient-to-b from-customgreen to-customblue bg-clip-border px-[1.5px] py-2 rounded-full' : 'text-red-500'}`}>
-                  <span className="bg-[#131F1B] rounded-full py-2 px-4">{row.status}</span>
-                </span>
+              <td className="py-4 px-4 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+                {row.productName}
               </td>
               <td className="py-4 px-4">
+                <span
+                  className={`${
+                    row.status === "Active"
+                      ? "inline-block bg-gradient-to-b from-customgreen to-customblue bg-clip-border px-[1.5px] py-2 rounded-full"
+                      : "text-red-500"
+                  }`}
+                >
+                  <span className="bg-[#131F1B] rounded-full py-2 px-4">
+                    {row.status}
+                  </span>
+                </span>
+              </td>
+              <td className="py-4 px-4  ">
                 <button className="text-red-500 flex items-center justify-center gap-1 cursor-pointer">
                   <RxCross2 /> {row.cancellation}
                 </button>
               </td>
               <td className="py-4 px-4">
                 <button className="text-blue-500 flex items-center justify-center gap-1 cursor-pointer">
-                  <MdOutlineFileDownload className="text-xl" /> {row.downloadInvoice}
+                  <MdOutlineFileDownload className="text-xl" />{" "}
+                  {row.downloadInvoice}
                 </button>
               </td>
             </tr>

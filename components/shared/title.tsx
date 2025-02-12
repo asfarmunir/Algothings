@@ -1,162 +1,279 @@
-import React from 'react';
-import Image from 'next/image';
-import FadeInSection from '@/lib/FadeInAnimation';
+import React from "react";
+import Image from "next/image";
+import FadeInSection from "@/lib/FadeInAnimation";
 
 export const Title = () => {
   return (
     <FadeInSection>
-    <div className="max-w-screen-xl md:mx-[98px] ">
-      <div className="flex md:flex-row justify-between flex-col gap-6">
-        <div className="flex-1 px-6 bg-transparent rounded-none w-full lg:block hidden mt-8">
-          <h3 className="font-bold text-start text-white lg:text-[28px] mb-8 ">Features</h3>
-          <hr className="border-[#1B211F] " />
-          <p className="my-3 text-start text-[#FFFFFFCC] text-[20px]">Time Commitment</p>
-          <hr className="border-[#1B211F]" />
-          <p className="mt-4 mb-4 text-start text-[#FFFFFFCC] text-[20px]">Experience Needed</p>
-          <hr className="border-[#1B211F]" />
-          <p className="mt-4 mb-4  text-start text-[#FFFFFFCC] text-[20px]">Automation</p>
-          <hr className="border-[#1B211F]" />
-          <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">Decision-Making</p>
-          <hr className="border-[#1B211F]" />
-          <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">Proven Strategies</p>
-          <hr className="border-[#1B211F]" />
-          <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">Performance Consistency</p>
-          <hr className="border-[#1B211F]" />
-          <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">Risk Management</p>
-          <hr className="border-[#1B211F]" />
-          
-        </div>
-
-        <div className="flex-1 px-5 w-full mt-3">
-          <h3 className="font-bold bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent lg:text-[28px] leading-[36px] ">Trading With <br />The Algos Field</h3>
-          <div className="bg-gradient-to-b from-customgreen to-customblue p-[5px] rounded-[44px]">
-            <div  className='bg-black p-4 rounded-[44px] text-[20px]'>
-              
-            <div className="flex gap-6 text-start my-3 w-full ">
-              <Image src="/images/gradienttick.svg" alt="Gradient Tick" width={20} height={20} />
-             <div className='w-full'>
-             <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">10 minutes/day to <br /> enable/disable the bot</p>
-             <hr className="mt-2 border-[#1B211F] w-full" />
-             </div>          
-              </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/gradienttick.svg" alt="Gradient Tick" width={20} height={20} />
-             <div className='w-full'>
-             <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">No trading <br />experience required</p>
-             <hr className="mt-2 border-[#1B211F] w-full" />
-             </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/gradienttick.svg" alt="Gradient Tick" width={20} height={20} />
-            <div className='w-full'>
-            <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">100% hands-free <br />execution</p>
-            <hr className="mt-2 border-[#1B211F] w-full" />
-            </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3  w-full">
-              <Image src="/images/gradienttick.svg" alt="Gradient Tick" width={20} height={20} />
-              <div className='w-full'>
-              <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">Data-driven <br /> strategies</p>
-              <hr className="mt-2 border-[#1B211F] " />
-              </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/gradienttick.svg" alt="Gradient Tick" width={20} height={20} />
-              <div className='w-full'>
-              <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">3+ years of proven <br /> success</p>
-              <hr className="mt-2 border-[#1B211F] w-full" />
-              </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/gradienttick.svg" alt="Gradient Tick" width={20} height={20} />
-              <div className='w-full'>
-              <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">80%+ win rate over 3 <br /> years</p>
-              <hr className="mt-2 border-[#1B211F] w-full" />
-              </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/gradienttick.svg" alt="Gradient Tick" width={20} height={20} />
-              <div className='w-full'>
-              <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">Advanced risk <br /> controls included</p>
-              <hr className="mt-2 border-[#1B211F] w-full" />
-              </div>
-            </div>
-            </div>
-            
+      <div className="max-w-screen-xl md:mx-[98px] ">
+        <div className="flex md:flex-row justify-between flex-col gap-6">
+          <div className="flex-1 px-6 bg-transparent rounded-none w-full lg:block hidden mt-8">
+            <h3 className="font-bold text-start text-white lg:text-[28px] mb-8 ">
+              Features
+            </h3>
+            <hr className="border-[#1B211F] " />
+            <p className="my-3 text-start text-[#FFFFFFCC] text-[20px]">
+              Time Commitment
+            </p>
+            <hr className="border-[#1B211F]" />
+            <p className="mt-4 mb-4 text-start text-[#FFFFFFCC] text-[20px]">
+              Experience Needed
+            </p>
+            <hr className="border-[#1B211F]" />
+            <p className="mt-4 mb-4  text-start text-[#FFFFFFCC] text-[20px]">
+              Automation
+            </p>
+            <hr className="border-[#1B211F]" />
+            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">
+              Decision-Making
+            </p>
+            <hr className="border-[#1B211F]" />
+            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">
+              Proven Strategies
+            </p>
+            <hr className="border-[#1B211F]" />
+            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">
+              Performance Consistency
+            </p>
+            <hr className="border-[#1B211F]" />
+            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">
+              Risk Management
+            </p>
+            <hr className="border-[#1B211F]" />
           </div>
-        </div>
 
-        <div className="flex-1 px-5 w-full md:mt-12">
-          <h3 className="text-center font-bold text-xl mb-2 lg:text-[28px]">Trading Yourself</h3>
-          <div className="border px-6 py-5 rounded-3xl lg:rounded-[44px] text-[20px]">
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/redtick.svg" alt="Red Tick" width={14} height={20} />
-              <div className='w-full'>
-              <p className=" leading-5 ">Requires 40+ hours/ <br />week of monitoring</p>
-              <hr className="mt-2 border-[#1B211F] w-full" />
+          <div className="flex-1 px-5 w-full mt-3">
+            <h3 className="font-bold bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent  text-2xl lg:text-[28px] leading-[36px] ">
+              Trading With <br />
+              The Algos Field
+            </h3>
+            <div className="bg-gradient-to-b from-customgreen to-customblue p-[6px] rounded-[44px]">
+              <div className="bg-black p-6 rounded-[44px] text-[20px]">
+                <div className="flex gap-6 text-start my-3 w-full ">
+                  <Image
+                    src="/images/gradienttick.svg"
+                    alt="Gradient Tick"
+                    width={20}
+                    height={20}
+                  />
+                  <div className="w-full">
+                    <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+                      10 minutes/day to <br /> enable/disable the bot
+                    </p>
+                    <hr className="mt-2 border-[#1B211F] w-full" />
+                  </div>
+                </div>
+
+                <div className="flex gap-6 text-start my-3">
+                  <Image
+                    src="/images/gradienttick.svg"
+                    alt="Gradient Tick"
+                    width={20}
+                    height={20}
+                  />
+                  <div className="w-full">
+                    <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+                      No trading <br />
+                      experience required
+                    </p>
+                    <hr className="mt-2 border-[#1B211F] w-full" />
+                  </div>
+                </div>
+
+                <div className="flex gap-6 text-start my-3">
+                  <Image
+                    src="/images/gradienttick.svg"
+                    alt="Gradient Tick"
+                    width={20}
+                    height={20}
+                  />
+                  <div className="w-full">
+                    <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+                      100% hands-free <br />
+                      execution
+                    </p>
+                    <hr className="mt-2 border-[#1B211F] w-full" />
+                  </div>
+                </div>
+
+                <div className="flex gap-6 text-start my-3  w-full">
+                  <Image
+                    src="/images/gradienttick.svg"
+                    alt="Gradient Tick"
+                    width={20}
+                    height={20}
+                  />
+                  <div className="w-full">
+                    <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+                      Data-driven <br /> strategies
+                    </p>
+                    <hr className="mt-2 border-[#1B211F] " />
+                  </div>
+                </div>
+
+                <div className="flex gap-6 text-start my-3">
+                  <Image
+                    src="/images/gradienttick.svg"
+                    alt="Gradient Tick"
+                    width={20}
+                    height={20}
+                  />
+                  <div className="w-full">
+                    <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+                      3+ years of proven <br /> success
+                    </p>
+                    <hr className="mt-2 border-[#1B211F] w-full" />
+                  </div>
+                </div>
+
+                <div className="flex gap-6 text-start my-3">
+                  <Image
+                    src="/images/gradienttick.svg"
+                    alt="Gradient Tick"
+                    width={20}
+                    height={20}
+                  />
+                  <div className="w-full">
+                    <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+                      80%+ win rate over 3 <br /> years
+                    </p>
+                    <hr className="mt-2 border-[#1B211F] w-full" />
+                  </div>
+                </div>
+
+                <div className="flex gap-6 text-start my-3">
+                  <Image
+                    src="/images/gradienttick.svg"
+                    alt="Gradient Tick"
+                    width={20}
+                    height={20}
+                  />
+                  <div className="w-full">
+                    <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+                      Advanced risk <br /> controls included
+                    </p>
+                    <hr className="mt-2 border-[#1B211F] w-full" />
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/redtick.svg" alt="Red Tick" width={14} height={20} />
-              <div className='w-full'>
-              <p className=" leading-5 ">Requires years of <br /> learning</p>
-              <hr className="mt-2 border-[#1B211F] w-full" />
+          </div>
+
+          <div className="flex-1 px-5 w-full mt-5 md:mt-12">
+            <h3 className="text-center font-bold mb-2 text-3xl lg:text-[28px]">
+              Trading Yourself
+            </h3>
+            <div className="border p-7 rounded-[44px] text-[20px]">
+              <div className="flex gap-6 text-start my-3">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+                <div className="w-full">
+                  <p className=" leading-5 ">
+                    Requires 40+ hours/ <br />
+                    week of monitoring
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full" />
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-start my-3">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+                <div className="w-full">
+                  <p className=" leading-5 ">
+                    Requires years of <br /> learning
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full" />
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-start my-3">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+                <div className="w-full">
+                  <p className=" leading-5 ">
+                    Manual execution and <br /> monitoring
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full" />
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-start my-3">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+                <div className="w-full">
+                  <p className=" leading-5 ">
+                    Emotional bias and <br /> guesswork
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full" />
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-start my-3">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+                <div className="w-full">
+                  <p className=" leading-5 ">
+                    Unproven, inconsistent <br /> strategies
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full" />
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-start my-3">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+
+                <div className="w-full">
+                  <p className=" leading-5 ">
+                    Inconsistent and no <br /> guaranteed success
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full" />
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-start my-3 ">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+                <div className="w-full">
+                  <p className=" leading-5 ">
+                    Requires manual risk <br /> management
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full " />
+                </div>
               </div>
             </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/redtick.svg" alt="Red Tick" width={14} height={20} />
-             <div className='w-full'>
-             <p className=" leading-5 ">Manual execution and <br /> monitoring</p>
-             <hr className="mt-2 border-[#1B211F] w-full" />
-             </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/redtick.svg" alt="Red Tick" width={14} height={20} />
-             <div className='w-full'>
-             <p className=" leading-5 ">Emotional bias and <br /> guesswork</p>
-             <hr className="mt-2 border-[#1B211F] w-full" />
-             </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/redtick.svg" alt="Red Tick" width={14} height={20} />
-              <div className='w-full'>
-              <p className=" leading-5 ">Unproven, inconsistent <br /> strategies</p>
-              <hr className="mt-2 border-[#1B211F] w-full" />
-              </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3">
-              <Image src="/images/redtick.svg" alt="Red Tick" width={14} height={20} />
-              
-              <div className='w-full'>
-              <p className=" leading-5 ">Inconsistent and no <br /> guaranteed success</p>
-              <hr className='mt-2 border-[#1B211F] w-full' />
-              </div>
-            </div>
-            
-            <div className="flex gap-6 text-start my-3 ">
-              <Image src="/images/redtick.svg" alt="Red Tick" width={14} height={20} />
-              <div className='w-full'>
-              <p className=" leading-5 ">Requires manual risk <br /> management</p>
-              <hr className="mt-2 border-[#1B211F] w-full " />
-              </div>
-            </div>
-            
           </div>
         </div>
       </div>
-    </div>
     </FadeInSection>
   );
 };
