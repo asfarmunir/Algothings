@@ -9,7 +9,13 @@ import { FaShareAlt, FaStar, FaQuestionCircle } from "react-icons/fa";
 import { CiWallet } from "react-icons/ci";
 import Link from "next/link";
 
-const Sidebar = ({ visible, onClose }) => {
+const Sidebar = ({
+  visible,
+  onClose,
+}: {
+  visible?: boolean;
+  onClose?: () => void;
+}) => {
   const [activeMenu, setActiveMenu] = useState(null);
   const sidebarRef = useRef(null);
 

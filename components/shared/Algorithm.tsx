@@ -202,7 +202,7 @@ export const Algorithm = () => {
                 <Button
                   label="View All"
                   className="w-44 btn-shadow font-thin rounded-full py-2 text-lg border border-[#FFFFFF66]"
-                  onClick={() => router.push("/")}
+                  onClick={() => router.push("/products")}
                 />
               </div>
             </div>

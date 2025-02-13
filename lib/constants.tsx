@@ -69,7 +69,7 @@ export const Navbar_links = [
   },
   {
     label: "Contact Us",
-    href: "#contact-us",
+    href: "/contact-us",
   },
 ];
 

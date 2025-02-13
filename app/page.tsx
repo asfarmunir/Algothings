@@ -28,7 +28,7 @@ export default function Home() {
         <div className="relative z-10 font-sans scrollbar-custom">
           <Navbar />
           <div className="w-full ">
-            <div className="text-center ">
+            <div className="text-center overflow-x-hidden sm:overflow-x-visible  ">
               <Welcome />
 
               <Algorithm />

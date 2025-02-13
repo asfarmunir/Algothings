@@ -58,18 +58,25 @@ export const Welcome = () => {
               />
 
               <div className="inline-flex flex-col sm:flex-row items-center p-[1px] bg-gradient-to-r from-customgreen to-customblue bg-clip-border rounded-lg">
-                <div className="inline-flex flex-row items-center bg-black rounded-lg gap-3 px-4 py-2.5">
-                  <Button
-                    label="Choose Plan"
-                    className="bg-gradient-to-b px-0 from-customgreen to-customblue bg-clip-text text-transparent py-1"
-                  />
+                <button
+                  className="inline-flex flex-row items-center bg-black rounded-lg gap-3 px-6  py-2.5"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log("clicked");
+                    const targetSection = document.querySelector("#price");
+                    targetSection?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  <p className="bg-gradient-to-b px-0 hover:pr-4 transition-all duration-150 from-customgreen to-customblue bg-clip-text text-transparent py-1">
+                    Choose Plan
+                  </p>
                   <Image
                     src="/images/arrow.svg"
                     width={16}
                     height={16}
                     alt="arrow icon"
                   />
-                </div>
+                </button>
               </div>
             </div>
           </motion.div>
