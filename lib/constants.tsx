@@ -19,34 +19,54 @@ export const tickets = [
 export const quick_links = [
   {
     label: "Home",
-    href: "#home",
+    href: "/",
   },
   {
-    label: "Affiliate Portal",
-    href: "#affiliate-portal",
+    label: "Shop",
+    href: "/products",
   },
   {
-    label: "About Us",
-    href: "#about-us",
+    label: "Pricing",
+    href: "/",
+  },
+  {
+    label: "Blog",
+    href: "/blog",
   },
   {
     label: "Contact Us",
-    href: "#contact-us",
+    href: "/contact-us",
   },
 ];
 
 export const About_us = [
-  {
-    label: "Careers",
-    href: "#careers",
-  },
-  {
-    label: "Terms Of Services",
-    href: "#term-of-services",
-  },
+  // {
+  //   label: "Careers",
+  //   href: "#careers",
+  // },
+  // {
+  //   label: "Terms Of Services",
+  //   href: "#term-of-services",
+  // },
   {
     label: "Privacy Policy",
     href: "#privacy-policy",
+  },
+  {
+    label: "Cookies Policy",
+    href: "#",
+  },
+  {
+    label: "Terms and Conditions",
+    href: "#",
+  },
+  {
+    label: "Risk Disclosure",
+    href: "#",
+  },
+  {
+    label: "Refund Policy",
+    href: "#",
   },
 ];
 

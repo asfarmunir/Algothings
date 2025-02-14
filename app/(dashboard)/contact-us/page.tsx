@@ -12,6 +12,8 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import InputField from "@/components/ui/InputField";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
+import { Footer } from "@/components/shared/Footer";
+import { DiscordCommunity } from "@/components/shared/Discord";
 export default function AllProduct() {
   const [activeButton, setActiveButton] = useState("INDIVIDUALS");
 
@@ -129,6 +131,8 @@ export default function AllProduct() {
           </div>
         </div>
       </FadeInSection>
+      <DiscordCommunity />
+      <Footer />
     </div>
   );
 }

@@ -105,7 +105,7 @@ export default function Navbar() {
                   pathname === items.href
                     ? "shadow-green-inner rounded-full py-2 px-6"
                     : ""
-                }  hover:text-customgreen  px-2  `}
+                }  hover:text-customgreen  px-2 cursor-pointer  `}
               >
                 {items.label}
               </Link>
@@ -116,7 +116,7 @@ export default function Navbar() {
         <div className="sm:block hidden w-[230px] md:flex flex-row gap-3">
           <Button
             label="Login"
-            className=" border-0 "
+            className=" border-0 cursor-pointer hover:text-green-500   transition-all  "
             onClick={() => router.push("/login")}
           />
           <Button
@@ -178,7 +178,7 @@ export default function Navbar() {
             <div className="flex flex-col gap-3 pb-4 ">
               <Button
                 label="Login"
-                className=" border-0 bg-customcard rounded-full"
+                className=" border-0 bg-customcard rounded-full hover:cursor-pointer"
                 onClick={() => router.push("/login")}
               />
               <Button
