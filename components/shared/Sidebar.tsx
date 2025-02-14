@@ -8,6 +8,7 @@ import { BsGrid1X2Fill } from "react-icons/bs";
 import { FaShareAlt, FaStar, FaQuestionCircle } from "react-icons/fa";
 import { CiWallet } from "react-icons/ci";
 import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa6";
 
 const Sidebar = ({
   visible,
@@ -126,8 +127,11 @@ const Sidebar = ({
                       <li key={subIndex}>
                         <Link
                           href={subItem.href}
-                          className="text-sm text-white pl-4 hover:text-white"
+                          className="text-sm text-white pl-4 inline-flex items-center 
+                           gap-2 hover:text-white"
                         >
+                          <FaChevronRight className="text-sm text-slate-50" />
+
                           {subItem.label}
                         </Link>
                       </li>
@@ -144,7 +148,7 @@ const Sidebar = ({
         className=" absolute bottom-5 text-sm 2xl:text-base mt-auto bg-gradient-to-r w-[95%] gap-4 from-[#45F175]/50 to-[#00C3CE]/50 inline-flex items-center justify-center  text-white text-center  rounded-lg  py-3 2xl:py-4"
       >
         <Image
-          src="/images/discord2.svg"
+          src="/images/discord3.svg"
           width={28}
           height={28}
           alt="discord"

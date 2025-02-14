@@ -66,7 +66,7 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }} // Start above the viewport
         animate={{ y: 0, opacity: 1 }} // Slide into the viewport
         transition={{ type: "spring", stiffness: 120, damping: 100 }} // Smooth spring animation
-        className="sticky top-0 bg-black z-50 shadow-lg mx-5 py-4 md:px-[60px]  xl:px-[110px] flex flex-row justify-between my-4"
+        className="sticky top-0 bg-black z-50 shadow-lg mx-5 py-4   xl:px-[110px] flex flex-row justify-between my-4"
       >
         <Link href={"/"}>
           <img
@@ -79,7 +79,7 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className=" sm:block hidden animate-slide-down md:flex gap-4 mx-2 max-w-[490px] items-center justify-between bg-customcard  border border-[#FFFFFF33]  px-3 py-2 rounded-full">
+        <div className="  hidden animate-slide-down md:flex gap-4 mx-2 max-w-[490px] items-center justify-between bg-customcard  border border-[#FFFFFF33]  px-3 py-2 rounded-full">
           {Navbar_links.map((items, index) => (
             // <nav key={index + 1} className=" md:flex flex-row gap-3">
             //   <Link
@@ -98,7 +98,7 @@ export default function Navbar() {
             //     {items.label}
             //   </Link>
             // </nav>
-            <nav key={index + 1} className=" md:flex flex-row gap-3">
+            <nav key={index + 1} className="  md:flex flex-row gap-3">
               <Link
                 href={items.href}
                 className={`${
@@ -113,7 +113,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="sm:block hidden w-[230px] md:flex flex-row gap-3">
+        <div className="hidden w-[230px] md:flex flex-row gap-3">
           <Button
             label="Login"
             className=" border-0 cursor-pointer hover:text-green-500   transition-all  "

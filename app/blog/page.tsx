@@ -35,7 +35,7 @@ export default function Blog() {
 
         <div className="mx-4 md:mx-12 lg:mx-[100px]">
           <FadeInSection>
-            <h1 className="text-[60px] py-8 leading-[60px] bg-gradient-to-r from-[#45F175] to-[#00C3CE] bg-clip-text text-transparent text-center">
+            <h1 className="text-[52px] sm:text-[60px] py-8 leading-[60px] bg-gradient-to-r from-[#45F175] to-[#00C3CE] bg-clip-text text-transparent text-center">
               The Traders’ Playbook
             </h1>
           </FadeInSection>
@@ -68,7 +68,7 @@ export default function Blog() {
           </FadeInSection>
 
           {/* Pagination Component */}
-          <div className="mt-8 flex justify-between">
+          <div className="mt-8 flex flex-col sm:flex-row items-center gap-12  justify-between">
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}

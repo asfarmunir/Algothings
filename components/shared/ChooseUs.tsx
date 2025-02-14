@@ -4,9 +4,36 @@ import Image from "next/image";
 import FadeInSection from "@/lib/FadeInAnimation";
 import ScrollingAnimation from "@/lib/ScrollAnimations";
 import { testimonials } from "@/lib/constants";
+import { AnimatePresence, motion } from "framer-motion";
+import AnimationSection from "../ui/AnimationSection";
+
+const points = [
+  {
+    title: "Simplified Trading Process",
+    desc: "No programming, no guesswork, no constant monitoring—our algorithms automate the entire trading journey for you.",
+  },
+  {
+    title: "Fully Diversified Strategies",
+    desc: "Trade stocks, crypto, futures, indices, and commodities with 10 individual algorithms or our powerful portfolio strategy.",
+  },
+  {
+    title: "Dedicated Premium Support",
+    desc: "Enjoy 24/7 support and direct access to a dedicated account manager with our managed services.",
+  },
+  {
+    title: "Continuous Innovation",
+    desc: "Our team delivers regular over-the-air updates to ensure your trading strategies stay ahead of evolving markets.",
+  },
+];
 
 export default function ChooseUs() {
   const [columns, setColumns] = useState(3);
+
+  const [openItem, setOpenItem] = useState(null);
+
+  const handleToggle = (id: any) => {
+    setOpenItem((prevOpenItem) => (prevOpenItem === id ? null : id));
+  };
 
   useEffect(() => {
     const updateColumns = () => {
@@ -33,6 +60,10 @@ export default function ChooseUs() {
   );
 
   const baseDurations = [10, 20, 15];
+  const accordionVariants = {
+    collapsed: { height: 0, opacity: 0, transition: { duration: 0.3 } },
+    expanded: { height: "auto", opacity: 1, transition: { duration: 0.3 } },
+  };
 
   return (
     <section>
@@ -66,25 +97,54 @@ export default function ChooseUs() {
           <div className="md:mx-6 lg:mx-[98px] mt-12 bg-gradient-to-b from-customgreen to-customblue p-[4px] rounded-[40px]">
             <div className="flex h-auto md:h-[494px] flex-col-reverse md:flex-row gap-5 bg-black p-4 md:p-8 rounded-[40px]">
               <div className="w-full flex flex-col justify-between">
-                {[
-                  "Simplified Trading Process",
-                  "Fully Diversified Strategies",
-                  "Dedicated Premium Support",
-                  "Continuous Innovation",
-                ].map((items, index) => (
-                  <div
-                    key={index}
-                    className="mb-4 rounded-[10px] border border-[#FFFFFF33] bg-[#030D0A80] flex flex-row items-center justify-between px-[24px] py-[20px]"
-                  >
-                    <h1 className="text-[15px] md:text-[20px] leading-7">
-                      {items}
-                    </h1>
-                    <Image
-                      src="/images/plus.svg"
-                      width={20}
-                      height={10}
-                      alt="plus"
-                    />
+                {points.map((item: any, index: any) => (
+                  <div key={index} className="group border-none mb-5">
+                    {/* Accordion Header */}
+                    <AnimationSection>
+                      <div
+                        onClick={() => handleToggle(item.title)}
+                        className="mb-1 rounded-[10px] border border-[#FFFFFF33] bg-[#030D0A80] flex flex-row items-center justify-between px-[24px] py-[20px]"
+                      >
+                        <h1 className="text-[17px] 2xl:text-[20px] leading-7">
+                          {item.title}
+                        </h1>{" "}
+                        <span className="flex-shrink-0">
+                          {openItem === item.title ? (
+                            <Image
+                              src="/images/minus.svg"
+                              width={18}
+                              height={18}
+                              alt="Open"
+                            />
+                          ) : (
+                            <Image
+                              src="/images/plus.svg"
+                              width={18}
+                              height={18}
+                              alt="Close"
+                            />
+                          )}
+                        </span>
+                      </div>
+                    </AnimationSection>
+
+                    {/* Accordion Body with Framer Motion animation */}
+                    <AnimatePresence initial={false}>
+                      {openItem === item.title && (
+                        <motion.div
+                          key="content"
+                          initial="collapsed"
+                          animate="expanded"
+                          exit="collapsed"
+                          variants={accordionVariants}
+                          className="overflow-hidden text-start font-light bg-[#04100C] text-sm  px-3 rounded-b-md border border-[#FFFFFF33] border-t-0 leading-7  tracking-wider"
+                        >
+                          <div className="py-2 text-[14px] 2xl:text-[16px] leading-[30px]">
+                            {item.desc}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 ))}
               </div>
