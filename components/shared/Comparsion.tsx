@@ -7,6 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { useState } from "react";
 import { Title } from "./title";
 import FadeInSection from "@/lib/FadeInAnimation";
+import Link from "next/link";
 export default function Comparsion() {
   // State for sliders
   const [accountSize, setAccountSize] = useState(1000); // Default value
@@ -106,10 +107,13 @@ export default function Comparsion() {
                     </p>
 
                     <div className="w-full pt-6 lg:pt-12">
-                      <button className="w-full flex flex-row justify-between items-center lexend bg-gradient-to-r  from-customgreen to-customblue text-black font-semibold py-3 px-6 rounded-lg transition-colors">
+                      <Link
+                        href={"/login"}
+                        className="w-full flex flex-row justify-between items-center lexend bg-gradient-to-r  from-customgreen to-customblue text-black font-semibold py-3 2xl:py-3.5 px-6 rounded-lg transition-colors"
+                      >
                         <p>Get Started</p>
                         <FaArrowRightLong />
-                      </button>
+                      </Link>
                     </div>
                   </div>
 

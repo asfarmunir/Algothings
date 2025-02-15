@@ -111,6 +111,22 @@ export default function Navbar() {
               </Link>
             </nav>
           ))}
+          {pathname === "/" && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                const targetSection = document.querySelector("#price");
+                targetSection?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`${
+                activeSection === "pricing"
+                  ? "shadow-green-inner rounded-full py-2 px-6"
+                  : ""
+              }  hover:text-customgreen  px-2  `}
+            >
+              Pricing
+            </button>
+          )}
         </div>
 
         <div className="hidden w-[230px] md:flex flex-row gap-3">
@@ -121,6 +137,7 @@ export default function Navbar() {
           />
           <Button
             label="Get Started"
+            onClick={() => router.push("/register")}
             className="shadow-green-inner rounded-full border-0 py-0 px-6  text-white hover:bg-green-600/20 active:bg-green-700/10 focus:ring-2 focus:ring-green-500/50 transition-all duration-200 ease-in-out"
           />
         </div>
@@ -183,6 +200,7 @@ export default function Navbar() {
               />
               <Button
                 label="Get Started"
+                onClick={() => router.push("/register")}
                 className="shadow-green-inner rounded-full border-0 py-2 px-6"
               />
             </div>

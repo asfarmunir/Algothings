@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function useRegisterForm() {
     const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +14,8 @@ export default function useRegisterForm() {
         mobile: '',
         password: '',
     });
+
+    const router = useRouter();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -39,6 +42,8 @@ export default function useRegisterForm() {
         }
         // Perform form submission logic (e.g., API call)
         console.log('Form submitted:', formData, selectedCountry);
+        router.push('/dashboard');
+        
     };
 
     return {

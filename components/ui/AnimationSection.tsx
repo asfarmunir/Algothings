@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion, useAnimation } from 'framer-motion';
-import { useEffect, ReactNode } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, ReactNode } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface AnimationSectionProps {
   children: ReactNode; // Type for children elements
@@ -23,8 +23,8 @@ const AnimationSection: React.FC<AnimationSectionProps> = ({ children }) => {
           y: 0,
           scale: 1, // Final scale for the "pop" effect
           transition: {
-            duration: 1.5,
-            ease: 'easeOut',
+            duration: 1,
+            ease: "easeOut",
           },
         });
       } else {
@@ -35,7 +35,7 @@ const AnimationSection: React.FC<AnimationSectionProps> = ({ children }) => {
         });
       }
     } catch (error) {
-      console.error('Error during animation controls:', error);
+      console.error("Error during animation controls:", error);
     }
   }, [controls, inView]);
 
@@ -44,7 +44,7 @@ const AnimationSection: React.FC<AnimationSectionProps> = ({ children }) => {
       ref={ref}
       initial={{ opacity: 0, y: 50, scale: 0.8 }}
       animate={controls}
-      style={{ overflow: 'hidden' }} // Optional: prevents overflow during animation
+      style={{ overflow: "hidden" }} // Optional: prevents overflow during animation
     >
       {children}
     </motion.div>

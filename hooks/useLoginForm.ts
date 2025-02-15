@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import {useRouter} from 'next/navigation';
 
 export default function useLoginForm() {
+
+
     const [showPassword, setShowPassword] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
     const [formData, setFormData] = useState({
         username: '',
         password: '',
     });
+    const router = useRouter();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -25,6 +29,7 @@ export default function useLoginForm() {
         e.preventDefault();
         // Perform login logic (e.g., API call)
         console.log('Login form submitted:', formData, isChecked);
+        router.push('/dashboard');
     };
 
     return {

@@ -137,12 +137,10 @@ export default function AllAnnouncement() {
               <div className="my-5">
                 <h1 className="text-2xl 2xl:text-3xl font-bold">My Algos</h1>
                 {/* <div className="mt-3 flex flex-row gap-3 text-sm">
-
-
-                                    <button >All</button>
-                                    <button >Active</button>
-                                    <button >History</button>
-                                </div> */}
+                  <button>All</button>
+                  <button>Active</button>
+                  <button>History</button>
+                </div> */}
 
                 <div className="grid grid-cols-1  md:grid-cols-2 gap-4 mt-4">
                   {Array.from({ length: 4 }).map((_, index) => (
