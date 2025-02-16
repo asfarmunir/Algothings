@@ -63,7 +63,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${dmSans.variable} ${lexend.variable} ${openSans.variable} ${spaceGrotesk.variable} ${outfit.variable} antialiased`}
+        className={`${dmSans.variable} ${lexend.variable} ${openSans.variable} ${spaceGrotesk.variable} ${outfit.variable}  antialiased`}
       >
         <NextTopLoader
           color="green"
