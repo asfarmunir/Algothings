@@ -77,7 +77,7 @@ export default function Algorithm() {
                       <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-4 relative">
                         <div className="w-full">
                           <img
-                            src="/images/portfolio.svg"
+                            src="/images/portfolio.webp"
                             alt="card image"
                             className="w-full h-auto sm:w-auto"
                           />
@@ -208,10 +208,27 @@ export default function Algorithm() {
                       <p className="font-semibold">$208</p>
                     </div>
                   </div>
+                  <div className="flex justify-center items-center w-full border-b border-customgray pb-5">
+                    <div className="inline-flex bg-gradient-to-r w-full from-customgreen to-customblue p-[1px] rounded-xl">
+                      <input
+                        type="text"
+                        placeholder="Coupon Code"
+                        className="rounded-tl-xl rounded-bl-xl bg-black text-sm lg:text-xs w-full  text-center focus:outline-none"
+                      />
 
+                      <div className="bg-black rounded-tr-xl rounded-br-xl p-1 flex">
+                        <button
+                          className={`bg-gradient-to-r text-xs 2xl:text-sm from-customgreen to-customblue text-black
+                               rounded-md px-6 hover:px-8 transition-all py-2 `}
+                        >
+                          Apply
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                   <Button
                     label="Checkout"
-                    className="bg-gradient-to-r from-customgreen to-customblue py-2 text-black rounded-md w-full"
+                    className="bg-gradient-to-r from-customgreen to-customblue py-2 2xl:py-3 font-semibold text-sm 2xl:text-base text-black rounded-md w-full"
                   />
                 </div>
               </div>

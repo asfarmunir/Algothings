@@ -69,7 +69,7 @@ export const Algorithm = () => {
                       <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-4 relative">
                         <div className="w-full">
                           <img
-                            src="/images/portfolio.svg"
+                            src="/images/portfolio.webp"
                             alt="card image"
                             className="w-full h-[200px] sm:w-auto"
                           />
@@ -120,7 +120,7 @@ export const Algorithm = () => {
                   </div>
                   <div className="flex flex-row gap-4 pt-3 mx-2">
                     <Image
-                      src="/images/book.svg"
+                      src="/images/book.webp"
                       width={120}
                       height={160}
                       alt="card image"
@@ -173,7 +173,7 @@ export const Algorithm = () => {
                     </div>
                     <div className="flex flex-row gap-4 pt-3 mx-2">
                       <Image
-                        src="/images/book.svg"
+                        src="/images/book.webp"
                         width={120}
                         height={160}
                         alt="card image"

@@ -45,7 +45,8 @@ export const DashboardLogin = () => {
           <Image
             width={400}
             height={400}
-            src="/images/dashboard.svg"
+            priority
+            src="/images/dashboard.webp"
             className=" w-full h-full  object-contain object-center"
             alt="Dashboard"
           />

@@ -19,7 +19,7 @@ export default function AllProduct() {
       <FadeInSection>
         <div className="p-4 md:p-8 md:py-12 overflow-y-auto flex-col md:flex-row  flex items-center sm:items-start  justify-center gap-20 2xl:gap-28 scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
           <Image
-            src="/images/book.svg"
+            src="/images/book.webp"
             width={300}
             height={340}
             alt="card image"

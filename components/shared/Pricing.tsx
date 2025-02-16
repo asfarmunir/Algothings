@@ -54,7 +54,7 @@ export default function Pricing() {
                   className={`
                         ${
                           activePlan === "Monthly"
-                            ? "text-white border-2 border-customgreen  "
+                            ? "text-black bg-gradient-to-b from-customgreen to-customblue    "
                             : "bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent bg-customcard border border-[#FFFFFF1A] "
                         }
                        rounded-md text-sm px-6 md:px-12 py-4`}
@@ -63,8 +63,9 @@ export default function Pricing() {
                 <button
                   className={`
                         ${
-                          activePlan === "Annual" &&
-                          " border-2 border-customblue   "
+                          activePlan === "Annual"
+                            ? "  opacity-100 "
+                            : "opacity-70"
                         }   text-black bg-gradient-to-b from-customgreen to-customblue   
                     rounded-md text-sm px-6 md:px-8 py-4`}
                   onClick={() => handlePlanChange("Annual")}

@@ -21,16 +21,28 @@ const Sidebar = ({
   const sidebarRef = useRef(null);
 
   const menuItems = [
-    { href: "/dashboard", icon: <RxDashboard />, label: "Dashboard" },
+    {
+      href: "/dashboard",
+      icon: <RxDashboard />,
+      label: "Dashboard",
+      img: "dashboard",
+    },
     // { href: '/Subscription', icon: <RxDashboard />, label: 'Subscription' },
-    { href: "/all-announcement", icon: <CiWallet />, label: "Announcements" },
+    {
+      href: "/all-announcement",
+      icon: <CiWallet />,
+      label: "Announcements",
+      img: "announcements",
+    },
     {
       label: "Performance Metrics",
       icon: <FaShareAlt />,
+
       subItems: [
         { href: "/individuals-algos", label: "Individual Algos" },
         { href: "/portfolio", label: "Portfolio" },
       ],
+      img: "performance",
     },
     {
       label: "Guide",
@@ -40,6 +52,7 @@ const Sidebar = ({
         { href: "#", label: "Guide : 2" },
         { href: "#", label: "Guide : 3" },
       ],
+      img: "guide",
     },
 
     {
@@ -50,15 +63,21 @@ const Sidebar = ({
         { href: "/profile-update", label: "Personal Info" },
         { href: "/billings", label: "Billing History" },
       ],
+      img: "billings",
     },
 
     {
       href: "/customer-support",
       icon: <MdSupportAgent />,
       label: "Customer Support",
+      img: "support",
     },
-
-    { href: "/faq", icon: <FaQuestionCircle />, label: "FAQs" },
+    {
+      href: "/faq",
+      icon: <FaQuestionCircle />,
+      label: "FAQs",
+      img: "faqs",
+    },
   ];
 
   const handleToggle = (label: any) => {
@@ -103,7 +122,7 @@ const Sidebar = ({
 
       {/* Menu Links */}
       <nav className="flex-grow">
-        <ul className="space-y-2 2xl:space-y-4 font-medium font-gilroy my-4">
+        <ul className="space-y-3 2xl:space-y-5 font-medium font-gilroy my-4">
           {menuItems.map((item, index) => (
             <li key={index}>
               <div>
@@ -117,7 +136,12 @@ const Sidebar = ({
                   }}
                   className="flex text-base items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-customcard group"
                 >
-                  {item.icon}
+                  <Image
+                    src={`/icons/${item.img}.svg`}
+                    width={20}
+                    height={20}
+                    alt={item.label}
+                  />
                   <span className="ms-3">{item.label}</span>
                 </Link>
                 {/* Sub-items */}

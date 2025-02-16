@@ -142,8 +142,8 @@ export default function AllAnnouncement() {
                   <button>History</button>
                 </div> */}
 
-                <div className="grid grid-cols-1  md:grid-cols-2 gap-4 mt-4">
-                  {Array.from({ length: 4 }).map((_, index) => (
+                <div className="grid grid-cols-1  md:grid-cols-2 gap-4 mt-4 p-2 2xl:p-4">
+                  {Array.from({ length: 1 }).map((_, index) => (
                     <div
                       key={index}
                       className="bg-gradient-to-r from-[#45F1751A] to-[#00C3CE1A] p-[20px] rounded-[20px]"

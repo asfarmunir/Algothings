@@ -89,7 +89,7 @@ export default function AllProduct() {
                       <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-4 relative">
                         <div className="w-full">
                           <img
-                            src="/images/portfolio.svg"
+                            src="/images/portfolio.webp"
                             alt="card image"
                             className="w-full h-[200px] sm:w-auto"
                           />
@@ -146,7 +146,7 @@ export default function AllProduct() {
                     </div>
                     <div className="mx-8 md:mx-2 flex flex-row justify-between gap-4 pt-4">
                       <Image
-                        src="/images/book.svg"
+                        src="/images/book.webp"
                         width={100}
                         height={140}
                         alt="card image"

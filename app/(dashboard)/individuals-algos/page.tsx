@@ -66,7 +66,7 @@ export default function Algorithm() {
                       </div>
                       <div className="mx-8 md:mx-0 flex flex-row justify-between gap-4 pt-4">
                         <Image
-                          src="/images/book.svg"
+                          src="/images/book.webp"
                           width={80}
                           height={140}
                           alt="card image"
@@ -228,9 +228,28 @@ export default function Algorithm() {
                       </div>
                     </div>
 
+                    <div className="flex justify-center items-center w-full border-b border-customgray pb-5">
+                      <div className="inline-flex bg-gradient-to-r w-full from-customgreen to-customblue p-[1px] rounded-xl">
+                        <input
+                          type="text"
+                          placeholder="Coupon Code"
+                          className="rounded-tl-xl rounded-bl-xl bg-black text-sm lg:text-xs w-full  text-center focus:outline-none"
+                        />
+
+                        <div className="bg-black rounded-tr-xl rounded-br-xl p-1 flex">
+                          <button
+                            className={`bg-gradient-to-r text-xs 2xl:text-sm from-customgreen to-customblue text-black
+                               rounded-md px-6 hover:px-8 transition-all py-2 `}
+                          >
+                            Apply
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
                     <Button
                       label="Checkout"
-                      className="bg-gradient-to-r  from-customgreen to-customblue py-2 text-sm text-white rounded-md w-full"
+                      className="bg-gradient-to-r  from-customgreen to-customblue py-2 2xl:py-3 text-sm  2xl:text-base text-black font-semibold rounded-md w-full"
                     />
                   </div>
                 </div>

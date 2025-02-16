@@ -238,11 +238,13 @@ export const Welcome = () => {
                   </div>
                 </div>
 
-                <div className="w-full">
-                  <img
-                    src="/images/plan.png"
+                <div className=" bg-[#02090780] w-full p-8 h-[420px] rounded-[50px] border-none">
+                  <Image
+                    src="/images/portfolio.webp"
                     alt="plan image"
-                    className="bg-[#02090780] w-full h-[420px] rounded-[50px] border-none"
+                    width={400}
+                    height={400}
+                    className=" w-full h-full object-contain object-center"
                   />
                 </div>
               </div>
