@@ -9,12 +9,14 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { GoArrowUpRight } from "react-icons/go";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Algorithm() {
   const [activeButton, setActiveButton] = useState("Monthly");
   const handleSelect = (plan: string) => {
     console.log("values is", plan);
   };
+  const router = useRouter();
 
   return (
     <>
@@ -228,6 +230,7 @@ export default function Algorithm() {
                   </div>
                   <Button
                     label="Checkout"
+                    onClick={() => router.push("/billings")}
                     className="bg-gradient-to-r from-customgreen to-customblue py-2 2xl:py-3 font-semibold text-sm 2xl:text-base text-black rounded-md w-full"
                   />
                 </div>

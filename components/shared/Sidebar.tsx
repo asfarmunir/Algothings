@@ -27,6 +27,12 @@ const Sidebar = ({
       label: "Dashboard",
       img: "dashboard",
     },
+    {
+      href: "/subscription",
+      icon: <RxDashboard />,
+      label: "Subscription",
+      img: "dashboard",
+    },
     // { href: '/Subscription', icon: <RxDashboard />, label: 'Subscription' },
     {
       href: "/all-announcement",
@@ -39,8 +45,8 @@ const Sidebar = ({
       icon: <FaShareAlt />,
 
       subItems: [
-        { href: "/individuals-algos", label: "Individual Algos" },
-        { href: "/portfolio", label: "Portfolio" },
+        { href: "/all-products?key=INDIVIDUALS", label: "Individual Algos" },
+        { href: "/all-products?key=PORTFOLIO", label: "Portfolio" },
       ],
       img: "performance",
     },
@@ -73,9 +79,12 @@ const Sidebar = ({
       img: "support",
     },
     {
-      href: "/faq",
       icon: <FaQuestionCircle />,
       label: "FAQs",
+      subItems: [
+        { href: "/faq", label: "FAQ 1" },
+        { href: "/faq", label: "FAQ 2" },
+      ],
       img: "faqs",
     },
   ];
@@ -122,7 +131,7 @@ const Sidebar = ({
 
       {/* Menu Links */}
       <nav className="flex-grow">
-        <ul className="space-y-3 2xl:space-y-5 font-medium font-gilroy my-4">
+        <ul className="space-y-2 2xl:space-y-4 font-medium font-gilroy my-4">
           {menuItems.map((item, index) => (
             <li key={index}>
               <div>

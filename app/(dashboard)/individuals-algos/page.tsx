@@ -9,6 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Algorithm() {
   const [activeButton, setActiveButton] = useState("Monthly");
@@ -16,6 +17,7 @@ export default function Algorithm() {
   const handleSelect = (plan: string) => {
     console.log("values is", plan);
   };
+  const router = useRouter();
 
   const handleplan = (plan: string) => {
     console.log("select filter", plan);
@@ -249,6 +251,7 @@ export default function Algorithm() {
 
                     <Button
                       label="Checkout"
+                      onClick={() => router.push("/billings")}
                       className="bg-gradient-to-r  from-customgreen to-customblue py-2 2xl:py-3 text-sm  2xl:text-base text-black font-semibold rounded-md w-full"
                     />
                   </div>

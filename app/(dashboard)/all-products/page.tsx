@@ -5,14 +5,15 @@ import Sidebar from "@/components/shared/Sidebar";
 import DashboardNavbar from "@/components/shared/DashboardNavbar";
 import Dropdown from "@/components/ui/Dropdown";
 import { GoArrowUpRight } from "react-icons/go";
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-export default function AllProduct() {
-  const [activeButton, setActiveButton] = useState("INDIVIDUALS");
-
-  const handleSelect = (plan: string) => {
-    console.log("select filter", plan);
-  };
+import { useRouter } from "next/navigation";
+export default function AllProduct({ searchParams }: { searchParams: any }) {
+  const unwrappedSearchParams = React.use(searchParams);
+  //@ts-ignore
+  const type = unwrappedSearchParams.key || "INDIVIDUALS";
+  const [activeButton, setActiveButton] = useState(type);
+  const router = useRouter();
   return (
     <>
       <div className="flex flex-row h-screen">
@@ -163,6 +164,7 @@ export default function AllProduct() {
                     </div>
                     <div className="mt-8 md:mt-4 flex flex-row gap-8 md:gap-2 items-center">
                       <Button
+                        onClick={() => router.push("/performance-summary")}
                         label="Performance Metrics"
                         className="bg-gradient-to-r py-2 text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
                       />
