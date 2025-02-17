@@ -52,11 +52,11 @@ export const DashboardLogin = () => {
           />
         </div>
 
-        <div className="  flex items-center gap-6 text-xs 2xl:text-sm text-gray-400">
+        <div className="  flex items-center gap-6 text-xs 2xl:text-sm font-bold text-gray-200">
           <a href="#" className="hover:text-white">
-            Terms
+            Privacy Policy
           </a>
-          <a href="#" className="hover:text-white">
+          {/* <a href="#" className="hover:text-white">
             Privacy
           </a>
           <a href="#" className="hover:text-white">
@@ -74,7 +74,7 @@ export const DashboardLogin = () => {
               className="bg-transparent w-20"
               dropdownClass="w-20"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

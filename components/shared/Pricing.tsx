@@ -105,7 +105,7 @@ export default function Pricing() {
                       </span>
                     </div>
                   ) : (
-                    <div className="mt-6 mb-3 text-center">
+                    <div className="mt-6 mb-3 text-start">
                       <span
                         className={` font-bold  text-[36px] 2xl:text-[40px]`}
                       >
@@ -126,7 +126,7 @@ export default function Pricing() {
                     <>
                       <p
                         className={`text-[#999F9F] 
-                    text-sm w-full text-center -mt-2 pb-5`}
+                    text-sm w-full text-start -mt-2 pb-5`}
                       >
                         billed anually{" "}
                         <span className="text-xl px-1  2xl:text-2xl text-white">
@@ -171,7 +171,7 @@ export default function Pricing() {
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between pt-6 gap-3">
+                  {/* <div className="flex items-center justify-between pt-6 gap-3">
                     <Checkbox
                       label="TradeCloud"
                       labelClassName="text-[18px] space-x-3 2xl:text-[20px] text-white"
@@ -191,7 +191,6 @@ export default function Pricing() {
                         <BsInfoCircle className="bg-[#FFFFFF0F] text-3xl p-1 rounded-full" />
                       </button>
 
-                      {/* Tooltip element */}
                       {isTooltipVisible && (
                         <div
                           id="tooltip-left"
@@ -213,7 +212,7 @@ export default function Pricing() {
                         </div>
                       )}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </CardAnimation>
 
@@ -221,7 +220,7 @@ export default function Pricing() {
                 <div
                   className={` ${
                     true
-                      ? "  bg-gradient-to-r from-customgreen rounded-2xl to-customblue "
+                      ? "  bg-gradient-to-l from-customgreen rounded-2xl to-customblue "
                       : " bg-gradient-to-b from-[#0A0A0AE5] to-[#040404] rounded-2xl "
                   } border p-8  border-[#FFFFFF1A] text-start relative md:w-[400px] lg:w-[490px]`}
                 >
@@ -230,7 +229,7 @@ export default function Pricing() {
                     <p
                       className={`${
                         true ? "bg-[#04110D]" : " text-black bg-white"
-                      } py-[14px] px-[20px] text-[12px] rounded-[10px]`}
+                      } py-[12px] uppercase px-[20px] text-[11px] rounded-[10px]`}
                     >
                       Most Popular
                     </p>
@@ -252,7 +251,7 @@ export default function Pricing() {
                       </p>
                     </div>
                   ) : (
-                    <div className="mt-3 text-black mb-3 text-center">
+                    <div className="mt-3 text-black mb-3 text-start">
                       <span
                         className={` font-bold  text-[36px] 2xl:text-[40px]`}
                       >
@@ -274,7 +273,7 @@ export default function Pricing() {
                     <>
                       <p
                         className={`text-[#04110D99] 
-                    text-sm w-full text-center -mt-2 pb-5`}
+                    text-sm w-full text-start -mt-2 pb-5`}
                       >
                         billed anually{" "}
                         <span className="text-xl px-1  2xl:text-2xl text-black">
@@ -302,7 +301,7 @@ export default function Pricing() {
                     label="Choose Plan"
                     className={` ${
                       true
-                        ? "bg-gradient-to-r from-[#00C88C] to-[#0C7C33] text-white  "
+                        ? "bg-gradient-to-l from-[#00C88C] to-[#0C7C33] text-white  "
                         : "bg-white text-black "
                     } w-full py-[14px] text-[14px] rounded-md`}
                   />

@@ -9,6 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { useBlogs } from "@/hooks/useBlog";
 import FadeInSection from "@/lib/FadeInAnimation";
+import { DiscordCommunity } from "@/components/shared/Discord";
 
 const ITEMS_PER_PAGE = 9; // Number of items per page
 
@@ -96,7 +97,8 @@ export default function Blog() {
         </div>
       </div>
       <div className="text-center">
-        <Footer />
+        <DiscordCommunity />
+        <Footer />{" "}
       </div>
     </>
   );

@@ -152,7 +152,7 @@ export const cards = [
 
 export const stepContent = [
   {
-    title: "Choose Your Plan",
+    title: "Choose Your Strategy",
     description: <>Select the plan that aligns with your trading goals:</>,
     points: [
       <span>
@@ -167,13 +167,13 @@ export const stepContent = [
     btntitle: "Choose Your Plan",
   },
   {
-    title: "Download The TAF ALGOS File",
+    title: "Download",
     description:
       "Download the .zip file for your selected strategy. This file includes configuration files compatible with MultiCharts, TradeStation, and MetaTrader.",
     btntitle: "Get Started",
   },
   {
-    title: "Extract And Import The Files",
+    title: "Extract And Import",
     description: (
       <>
         Extract the .zip file on your computer and locate the configuration
@@ -199,7 +199,7 @@ export const stepContent = [
     btntitle: "View Import Instructions",
   },
   {
-    title: "Activate And Start Trading",
+    title: "Start Trading",
     description:
       "Apply the configuration files to your charts and begin trading with TAF ALGOS. Ensure your platform is connected to live market data for the best results.",
     points: [

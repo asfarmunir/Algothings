@@ -5,12 +5,24 @@ import React from "react";
 import InputField from "../ui/InputField";
 import Button from "../ui/Button";
 import { stepContent, tickets } from "@/lib/constants";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import FadeInSection from "@/lib/FadeInAnimation";
+import { FaAngleRight } from "react-icons/fa6";
+import AnimationSection from "../ui/AnimationSection";
 
 export const Welcome = () => {
   const [activeStep, setActiveStep] = useState(1);
+  const [openItem, setOpenItem] = useState(null);
 
+  const handleToggle = (id: any) => {
+    setOpenItem((prevOpenItem) => (prevOpenItem === id ? null : id));
+  };
+
+  // Animation variants for Framer Motion
+  const accordionVariants = {
+    collapsed: { height: 0, opacity: 0, transition: { duration: 0.6 } },
+    expanded: { height: "auto", opacity: 1, transition: { duration: 0.6 } },
+  };
   return (
     <>
       <section id="home">
@@ -28,7 +40,7 @@ export const Welcome = () => {
                 height={30}
                 alt="welcome star"
               />
-              <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent">
+              <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text uppercase text-transparent">
                 Welcome to ALGOSFIELD
               </p>
             </div>
@@ -52,11 +64,6 @@ export const Welcome = () => {
 
             {/* Email Input and Button */}
             <div className="space-y-4 mb-4 sm:space-y-2 space-x-2 lg:space-x-4">
-              <Button
-                label="Join our Discord"
-                className="bg-gradient-to-r py-3.5 px-5 from-customgreen to-customblue rounded-[6px] text-black  sm:w-auto"
-              />
-
               <div className="inline-flex flex-col sm:flex-row items-center p-[1px] bg-gradient-to-r from-customgreen to-customblue bg-clip-border rounded-lg">
                 <button
                   className="inline-flex flex-row items-center bg-black rounded-lg gap-3 px-6  py-2.5"
@@ -78,6 +85,10 @@ export const Welcome = () => {
                   />
                 </button>
               </div>
+              <Button
+                label="Join our Discord"
+                className="bg-gradient-to-r py-3.5 px-5 font-semibold from-customgreen to-customblue rounded-[6px] text-black  sm:w-auto"
+              />
             </div>
           </motion.div>
 
@@ -97,7 +108,7 @@ export const Welcome = () => {
 
           {/* Who We Are Section */}
 
-          <div className=" py-4">
+          <div className=" py-4" id="about">
             <FadeInSection>
               <div className="inline-flex flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
                 <Image
@@ -106,7 +117,7 @@ export const Welcome = () => {
                   height={30}
                   alt="welcome star"
                 />
-                <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent">
+                <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text uppercase text-transparent">
                   WHO WE ARE
                 </p>
               </div>
@@ -160,7 +171,7 @@ export const Welcome = () => {
                   height={30}
                   alt="welcome star"
                 />
-                <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent">
+                <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text uppercase text-transparent">
                   STEPS
                 </p>
               </div>
@@ -173,24 +184,24 @@ export const Welcome = () => {
               </h1>
 
               {/* Steps plan cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  2xl:gap-7 w-full py-3 px-2">
+              <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  2xl:gap-7 w-full py-3 px-2">
                 {["Step 1", "Step 2", "Step 3", "Step 4"].map((item, index) => (
                   <div
                     key={index}
-                    className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[1px] rounded-md"
+                    className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[2.5px] rounded-md"
                   >
                     <button
                       onClick={() => setActiveStep(index + 1)}
                       className={` py-[10px] w-full rounded-md transition duration-300 uppercase ${
                         activeStep === index + 1
-                          ? "bg-gradient-to-r from-customgreen text-black to-customblue"
+                          ? "bg-gradient-to-r from-customgreen  to-customblue"
                           : "bg-black text-customgreen "
-                      } text-[23px]  tracking-wider`}
+                      } text-[23px] font-semibold hover:bg-gradient-to-r hover:from-customgreen/30  hover:to-customblue/30  tracking-wider`}
                     >
                       <span
                         className={`${
                           activeStep === index + 1
-                            ? "text-black"
+                            ? "text-black "
                             : "bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent"
                         }`}
                       >
@@ -200,16 +211,110 @@ export const Welcome = () => {
                   </div>
                 ))}
               </div>
+              <div className="grid sm:hidden gap-5  2xl:gap-7 w-full py-3 px-2">
+                {["Step 1", "Step 2", "Step 3", "Step 4"].map((item, index) => (
+                  <>
+                    <AnimationSection>
+                      <div
+                        key={index}
+                        onClick={() => handleToggle(item)}
+                        className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[2.5px] rounded-md"
+                      >
+                        <button
+                          onClick={() => setActiveStep(index + 1)}
+                          className={` py-[10px] w-full rounded-md transition duration-300 uppercase ${
+                            activeStep === index + 1
+                              ? "bg-gradient-to-r from-customgreen  to-customblue"
+                              : "bg-black text-customgreen "
+                          } text-[23px] font-semibold hover:bg-gradient-to-r hover:from-customgreen/30  hover:to-customblue/30  tracking-wider`}
+                        >
+                          <span
+                            className={`${
+                              activeStep === index + 1
+                                ? "text-black "
+                                : "bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent"
+                            }`}
+                          >
+                            {item}
+                          </span>
+                        </button>
+                      </div>
+                    </AnimationSection>
+                    <AnimatePresence initial={false}>
+                      {openItem === item && (
+                        <motion.div
+                          key="content"
+                          initial="collapsed"
+                          animate="expanded"
+                          exit="collapsed"
+                          variants={accordionVariants}
+                          className="overflow-hidden text-start font-light bg-[#04100C] text-sm  rounded-b-md border border-[#FFFFFF33] "
+                        >
+                          <div className="md:px-8 lg:px-24 xl:px-[98px]">
+                            <div className="h-auto lg:h-[520px] flex md:flex-row flex-col-reverse justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#45F175B2] px-3 md:px-6 py-3 md:py-10 rounded-[20px] text-black">
+                              <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
+                                <div className="text-start leading-[28px]">
+                                  <h1 className="font-semibold text-center leading-10 text-[32px] pt-4">
+                                    {stepContent[activeStep - 1].title}
+                                  </h1>
+                                  <p className="text-[16px] py-2">
+                                    {stepContent[activeStep - 1].description}
+                                  </p>
+                                  <ul className="space-y-1 list-disc pl-5 text-[16px]">
+                                    {stepContent[activeStep - 1].points?.map(
+                                      (point, index) => (
+                                        <li className="" key={index}>
+                                          {point}
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+
+                                  <p className="text-sm py-2">
+                                    {stepContent[activeStep - 1].endDescription}
+                                  </p>
+
+                                  <div className="my-4 flex items-center gap-3 ">
+                                    <Button
+                                      // label={stepContent[activeStep - 1].btntitle}
+                                      label="Get Started"
+                                      className="bg-gradient-to-r uppercase text-sm from-customgreen to-customblue font-semibold py-[12px] px-[36px] rounded-[8px]"
+                                    />
+                                    <button className=" text-white border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  ">
+                                      Choose Plan
+                                      <FaAngleRight />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className=" bg-[#02090780] w-full p-8 h-[420px] rounded-[20px] border-none">
+                                <Image
+                                  src="/images/portfolio.webp"
+                                  alt="plan image"
+                                  width={400}
+                                  height={400}
+                                  className=" w-full h-full object-contain object-center"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
+                ))}
+              </div>
             </div>
           </FadeInSection>
 
           {/* Step Details */}
           <FadeInSection>
-            <div className="px-2 md:px-8 lg:px-24 xl:px-[98px]">
+            <div className="hidden sm:block px-2 md:px-8 lg:px-24 xl:px-[98px]">
               <div className="h-auto lg:h-[520px] flex md:flex-row flex-col-reverse justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#020907B2] px-3 md:px-6 py-5 md:py-10 rounded-[50px] text-black">
                 <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
                   <div className="text-start leading-[28px]">
-                    <h1 className="font-semibold leading-10 text-[32px] pt-2">
+                    <h1 className="font-semibold leading-10 text-[32px] pt-4">
                       {stepContent[activeStep - 1].title}
                     </h1>
                     <p className="text-[16px] py-2">
@@ -229,11 +334,16 @@ export const Welcome = () => {
                       {stepContent[activeStep - 1].endDescription}
                     </p>
 
-                    <div className="mt-4 ">
+                    <div className="mt-4 flex items-center gap-3 ">
                       <Button
-                        label={stepContent[activeStep - 1].btntitle}
-                        className="bg-gradient-to-r text-sm from-customgreen to-customblue py-[16px] px-[36px] rounded-[8px]"
+                        // label={stepContent[activeStep - 1].btntitle}
+                        label="Get Started"
+                        className="bg-gradient-to-r uppercase text-sm from-customgreen to-customblue font-semibold py-[12px] px-[36px] rounded-[8px]"
                       />
+                      <button className=" text-white border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  ">
+                        Choose Plan
+                        <FaAngleRight />
+                      </button>
                     </div>
                   </div>
                 </div>

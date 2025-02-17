@@ -18,9 +18,9 @@ export default function Comparsion() {
 
   return (
     <>
-      <section id="">
+      <section id=" ">
         <div className="mb-4 mt-16  ">
-          <FadeInSection>
+          <FadeInSection className="">
             <div className="inline-flex flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
               <Image
                 src="/images/welcomestar.svg"
@@ -45,7 +45,7 @@ export default function Comparsion() {
             <Title />
           </FadeInSection>
 
-          <section className="text-center">
+          <section className="text-center mt-16 2xl:mt-20">
             <FadeInSection>
               <h1 className="py-4  px-4 text-[36px] lg:text-[52px] font-semibold leading-[44px] lg:leading-[52px] my-3">
                 How Much You Can Earn Using{" "}
@@ -106,7 +106,7 @@ export default function Comparsion() {
                       Especially with our Axis Trading
                     </p>
 
-                    <div className="w-full pt-6 lg:pt-12">
+                    <div className="hidden sm:block w-full pt-6 lg:pt-12">
                       <Link
                         href={"/login"}
                         className="w-full flex flex-row justify-between items-center lexend bg-gradient-to-r  from-customgreen to-customblue text-black font-semibold py-3 2xl:py-3.5 px-6 rounded-lg transition-colors"
@@ -125,7 +125,7 @@ export default function Comparsion() {
                       backgroundSize: "cover",
                     }}
                   >
-                    <div className="w-[80%] h-auto md:h-[132px] rounded-xl bg-gradient-to-b from-customgreen to-customblue">
+                    <div className=" w-full sm:w-[80%] h-auto md:h-[132px] rounded-xl bg-gradient-to-b from-customgreen to-customblue">
                       <div className="flex flex-col items-center justify-center py-2 md:mt-6">
                         <div className="text-black font-semibold lexend text-[14px] leading-[20px] ">
                           Take <br /> Home
@@ -134,6 +134,15 @@ export default function Comparsion() {
                           ${parseInt(monthlyProfit).toLocaleString()}
                         </div>
                       </div>
+                    </div>
+                    <div className="block sm:hidden w-full pt-6 lg:pt-12">
+                      <Link
+                        href={"/login"}
+                        className="w-full flex flex-row justify-between items-center lexend bg-gradient-to-r  from-customgreen to-customblue text-black font-semibold py-3 2xl:py-3.5 px-6 rounded-lg transition-colors"
+                      >
+                        <p>Get Started</p>
+                        <FaArrowRightLong />
+                      </Link>
                     </div>
                   </div>
                 </div>

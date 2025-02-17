@@ -3,13 +3,16 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Sidebar from "@/components/shared/Sidebar";
 import DashboardNavbar from "@/components/shared/DashboardNavbar";
-import { useState } from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/shared/Navbar";
 import FadeInSection from "@/lib/FadeInAnimation";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
-export default function AllProduct() {
-  const [activeButton, setActiveButton] = useState("INDIVIDUALS");
+export default function AllProduct({ searchParams }: { searchParams: any }) {
+  const unwrappedSearchParams = React.use(searchParams);
+  //@ts-ignore
+  const tab = unwrappedSearchParams.tab || "INDIVIDUALS";
+  const [activeButton, setActiveButton] = useState(tab || "INDIVIDUALS");
 
   return (
     <div className="flex flex-col w-full h-full">

@@ -19,7 +19,7 @@ export const Algorithm = () => {
                 height={30}
                 alt="welcome star"
               />
-              <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent">
+              <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text uppercase text-transparent">
                 Algorithms
               </p>
             </div>
@@ -58,9 +58,9 @@ export const Algorithm = () => {
                             </p>
                           </div>
                         </div>
-                        <div className="w-full sm:w-auto bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[1px] rounded-lg">
+                        <div className="w-full sm:w-auto bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[3px] rounded-lg">
                           <Button
-                            className="rounded-lg text-sm px-6 md:px-12 w-full sm:w-auto py-3 bg-[#04110D]"
+                            className="rounded-lg uppercase text-sm px-6 md:px-12 w-full sm:w-auto py-3 bg-[#04110D]"
                             label="Most Popular"
                           />
                         </div>
@@ -86,9 +86,15 @@ export const Algorithm = () => {
                           <div className="w-full flex flex-row gap-4 items-center">
                             <Button
                               label="Get Started"
+                              onClick={() => router.push("/register")}
                               className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
                             />
-                            <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
+                            <button
+                              onClick={() =>
+                                router.push("/products?tab=PORTFOLIO")
+                              }
+                              className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
+                            >
                               <GoArrowUpRight className="text-lg" />
                               <span>LEARN MORE</span>
                             </button>
@@ -135,9 +141,13 @@ export const Algorithm = () => {
                   <div className="mt-4 flex flex-row gap-4 items-center">
                     <Button
                       label="Get Started"
+                      onClick={() => router.push("/register")}
                       className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
                     />
-                    <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
+                    <button
+                      onClick={() => router.push("/products/1/details")}
+                      className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
+                    >
                       <GoArrowUpRight className="text-lg" />
                       <span>LEARN MORE</span>
                     </button>
@@ -188,9 +198,13 @@ export const Algorithm = () => {
                     <div className="mt-4 flex flex-row gap-4 items-center">
                       <Button
                         label="Get Started"
+                        onClick={() => router.push("/register")}
                         className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
                       />
-                      <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
+                      <button
+                        onClick={() => router.push("/products/1/details")}
+                        className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
+                      >
                         <GoArrowUpRight className="text-lg" />
                         <span>LEARN MORE</span>
                       </button>
@@ -198,12 +212,18 @@ export const Algorithm = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center justify-center mt-10">
-                <Button
+              <div className="flex items-center justify-center mt-12">
+                {/* <Button
                   label="View All"
                   className="w-44 btn-shadow font-thin rounded-full py-2 text-lg border border-[#FFFFFF66]"
                   onClick={() => router.push("/products")}
-                />
+                /> */}
+                <div className="  bg-gradient-to-r text-lg w-44 font-semibold from-customgreen to-customblue bg-clip-border p-[2px] rounded-xl">
+                  <Button
+                    className="rounded-xl text-sm px-6 md:px-12 w-full py-3 bg-[#04110D]"
+                    label="View All"
+                  />
+                </div>
               </div>
             </div>
           </FadeInSection>

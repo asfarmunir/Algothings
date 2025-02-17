@@ -4,51 +4,51 @@ import FadeInSection from "@/lib/FadeInAnimation";
 
 export const Title = () => {
   return (
-    <FadeInSection>
-      <div className="max-w-screen-xl md:mx-[98px] ">
-        <div className="flex md:flex-row justify-between flex-col gap-6">
+    <FadeInSection className="">
+      <div className="max-w-screen-xl  mx-auto  ">
+        <div className="flex md:flex-row justify-between flex-col-reverse gap-6">
           <div className="flex-1 px-6 bg-transparent rounded-none w-full lg:block hidden mt-8">
-            <h3 className="font-bold text-start text-white lg:text-[28px] mb-8 ">
+            <h3 className="font-bold text-start text-white text-[28px] mb-8 ">
               Features
             </h3>
             <hr className="border-[#1B211F] " />
-            <p className="my-3 text-start text-[#FFFFFFCC] text-[20px]">
+            <p className="my-3 text-start text-[#FFFFFFCC] text-base 2xl:text-[20px]">
               Time Commitment
             </p>
             <hr className="border-[#1B211F]" />
-            <p className="mt-4 mb-4 text-start text-[#FFFFFFCC] text-[20px]">
+            <p className="mt-4 mb-4 text-start text-[#FFFFFFCC] text-base 2xl:text-[20px]">
               Experience Needed
             </p>
             <hr className="border-[#1B211F]" />
-            <p className="mt-4 mb-4  text-start text-[#FFFFFFCC] text-[20px]">
+            <p className="mt-4 mb-4  text-start text-[#FFFFFFCC] text-base 2xl:text-[20px]">
               Automation
             </p>
             <hr className="border-[#1B211F]" />
-            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">
+            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-base 2xl:text-[20px]">
               Decision-Making
             </p>
             <hr className="border-[#1B211F]" />
-            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">
+            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-base 2xl:text-[20px]">
               Proven Strategies
             </p>
             <hr className="border-[#1B211F]" />
-            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">
+            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-base 2xl:text-[20px]">
               Performance Consistency
             </p>
             <hr className="border-[#1B211F]" />
-            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-[20px]">
+            <p className="mt-4 mb-5  text-start text-[#FFFFFFCC] text-base 2xl:text-[20px]">
               Risk Management
             </p>
             <hr className="border-[#1B211F]" />
           </div>
 
           <div className="flex-1 px-5 w-full mt-3">
-            <h3 className="font-bold bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent  text-2xl lg:text-[28px] leading-[36px] ">
+            <h3 className="font-bold bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent  text-2xl text-[28px] leading-[36px] ">
               Trading With <br />
               The Algos Field
             </h3>
             <div className="bg-gradient-to-b from-customgreen to-customblue p-[6px] rounded-[44px]">
-              <div className="bg-black p-6 rounded-[44px] text-[20px]">
+              <div className="bg-black p-6 rounded-[44px] text-base 2xl:text-[20px]">
                 <div className="flex gap-6 text-start my-3 w-full ">
                   <Image
                     src="/images/gradienttick.svg"
@@ -160,10 +160,10 @@ export const Title = () => {
           </div>
 
           <div className="flex-1 px-5 w-full mt-5 md:mt-12">
-            <h3 className="text-center font-bold mb-2 text-3xl lg:text-[28px]">
+            <h3 className="text-center font-bold mb-2 text-3xl text-[28px]">
               Trading Yourself
             </h3>
-            <div className="border p-7 rounded-[44px] text-[20px]">
+            <div className="border p-7 rounded-[44px] text-base 2xl:text-[20px]">
               <div className="flex gap-6 text-start my-3">
                 <Image
                   src="/images/redtick.svg"

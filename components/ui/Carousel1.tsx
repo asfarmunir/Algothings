@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Image from "next/image";
@@ -129,12 +129,16 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
       </div>
 
       {/* View All Button */}
-      <div className="flex items-center justify-center mt-4">
-        <Button
-          label="View All"
-          onClick={()=> router.push('/blog')}
-          className="w-44 btn-shadow font-thin rounded-full py-2 text-lg border border-[#FFFFFF66]"
-        />
+      <div className="flex items-center justify-center my-5">
+        <div
+          onClick={() => router.push("/blog")}
+          className="  bg-gradient-to-r text-lg w-44 font-semibold from-customgreen to-customblue bg-clip-border p-[2px] rounded-xl"
+        >
+          <Button
+            className="rounded-xl text-sm px-6 md:px-12 w-full py-3 bg-[#04110D]"
+            label="View All"
+          />
+        </div>
       </div>
     </div>
   );

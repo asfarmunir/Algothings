@@ -29,12 +29,19 @@ const points = [
 export default function ChooseUs() {
   const [columns, setColumns] = useState(3);
 
-  const [openItem, setOpenItem] = useState(null);
+  const [openItem, setOpenItem] = useState(
+    points.length > 0 ? points[0].title : null
+  );
+  console.log("🚀 ~ ChooseUs ~ openItem:", openItem);
 
   const handleToggle = (id: any) => {
-    setOpenItem((prevOpenItem) => (prevOpenItem === id ? null : id));
+    setOpenItem((prevOpenItem) =>
+      prevOpenItem === id ? "Simplified Trading Process" : id
+    );
   };
-
+  // const handleToggle = (id: any) => {
+  //   setOpenItem(id);
+  // };
   useEffect(() => {
     const updateColumns = () => {
       if (window.innerWidth < 640) {
@@ -127,8 +134,6 @@ export default function ChooseUs() {
                         </span>
                       </div>
                     </AnimationSection>
-
-                    {/* Accordion Body with Framer Motion animation */}
                     <AnimatePresence initial={false}>
                       {openItem === item.title && (
                         <motion.div
@@ -137,10 +142,24 @@ export default function ChooseUs() {
                           animate="expanded"
                           exit="collapsed"
                           variants={accordionVariants}
-                          className="overflow-hidden text-start font-light bg-[#04100C] text-sm  px-3 rounded-b-md border border-[#FFFFFF33] border-t-0 leading-7  tracking-wider"
+                          className="overflow-hidden block sm:hidden text-start font-light bg-[#04100C] text-sm  p-3 rounded-b-md border border-[#FFFFFF33] "
                         >
-                          <div className="py-2 text-[14px] 2xl:text-[16px] leading-[30px]">
-                            {item.desc}
+                          <div className="border w-full border-[#636363] rounded-[10px] p-8 bg-[#030D0A80] ">
+                            <Image
+                              src="/images/graph.svg"
+                              width={40}
+                              className=" mx-auto"
+                              height={30}
+                              alt="graph"
+                            />
+                            <p className="mt-5 font-bold text-center bg-gradient-to-r from-customgreen to-customblue inline-block bg-clip-text text-transparent text-[24px] md:text-[32px]">
+                              {points.find((point) => point.title === openItem)
+                                ?.title ?? ""}
+                            </p>
+                            <p className="text-[#FFFFFFCC] text-center pt-6 text-[18px] md:text-[23px]">
+                              {points.find((point) => point.title === openItem)
+                                ?.desc ?? ""}
+                            </p>
                           </div>
                         </motion.div>
                       )}
@@ -149,7 +168,7 @@ export default function ChooseUs() {
                 ))}
               </div>
 
-              <div className="border w-full border-[#636363] rounded-[50px] p-8 bg-[#030D0A80] ">
+              <div className="hidden sm:block border w-full border-[#636363] rounded-[50px] p-8 bg-[#030D0A80] ">
                 <Image
                   src="/images/graph.svg"
                   width={40}
@@ -157,11 +176,11 @@ export default function ChooseUs() {
                   alt="graph"
                 />
                 <p className="mt-4 font-bold bg-gradient-to-r from-customgreen to-customblue inline-block bg-clip-text text-transparent text-[24px] md:text-[32px]">
-                  Trading Yourself
+                  {points.find((point) => point.title === openItem)?.title ??
+                    ""}
                 </p>
                 <p className="text-[#FFFFFFCC] pt-5 text-[18px] md:text-[23px]">
-                  No programming, no guesswork, no constant monitoring—our
-                  algorithms automate the entire trading journey for you.
+                  {points.find((point) => point.title === openItem)?.desc ?? ""}
                 </p>
               </div>
             </div>

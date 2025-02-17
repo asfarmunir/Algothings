@@ -50,23 +50,17 @@ export default function Login() {
 
           <form className="space-y-4 w-full" onSubmit={handleSubmit}>
             <InputField
-              label="Username"
+              label="Username or Email"
               icon={<FaRegUserCircle />}
-              placeholder="Username"
+              placeholder="username or email"
               name="username"
               value={formData.username}
               onChange={handleInputChange}
-              labelClass="text-white"
+              labelClass="text-white 2xl:text-sm"
               inputClass="bg-[#FFFFFF05] w-full py-[12px] px-[16px]"
             />
 
             <div className="relative">
-              <Link
-                href=""
-                className="text-[14px] text-[#01C0F9] absolute right-0 top-1"
-              >
-                Forgot Password?
-              </Link>
               <InputField
                 label="Password"
                 type={showPassword ? "text" : "password"}
@@ -74,7 +68,7 @@ export default function Login() {
                 name="password"
                 value={formData.password}
                 onChange={handleInputChange}
-                labelClass="text-white"
+                labelClass="text-white 2xl:text-sm"
                 inputClass="bg-[#FFFFFF05] w-full py-[12px] px-[16px]"
                 icon={<CiLock />}
               />
@@ -86,18 +80,21 @@ export default function Login() {
                 {showPassword ? <BiHide /> : <BiShow />}
               </button>
             </div>
-
-            <div className="flex items-center gap-1">
-              <Checkbox
-                label=""
-                checked={isChecked}
-                onChange={handleCheckboxChange}
-                checkboxClassName="bg-black"
-                labelClassName="text-lg text-blue-700"
-              />
-              <p className="text-[16px] text-gray-400">Remember Me</p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1">
+                <Checkbox
+                  label=""
+                  checked={isChecked}
+                  onChange={handleCheckboxChange}
+                  checkboxClassName="bg-black"
+                  labelClassName="text-lg text-blue-700"
+                />
+                <p className="text-[16px] text-gray-400">Remember Me</p>
+              </div>
+              <Link href="" className="text-[14px] text-[#01C0F9] ">
+                Forgot Password?
+              </Link>
             </div>
-
             <Button
               type="submit"
               className="w-full bg-gradient-to-r text-lg from-customgreen to-customblue text-black rounded-md py-[12px] px-[40]"
@@ -123,12 +120,12 @@ export default function Login() {
               >
                 <FaFacebook className="text-2xl text-[#45F175]" />
               </button>
-              <button
+              {/* <button
                 type="button"
                 className="bg-[#FFFFFF1A] flex items-center justify-center rounded-md w-[40px] h-[40px]"
               >
                 <FaXTwitter className="text-xl " />
-              </button>
+              </button> */}
             </div>
 
             <p className="text-center text-[14px] text-gray-400 ">
