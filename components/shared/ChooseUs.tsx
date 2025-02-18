@@ -208,7 +208,7 @@ export default function ChooseUs() {
 
           {/* Responsive Testimonials Layout */}
           <div
-            className={`mx-4 md:mx-[80px] h-screen lg:mx-[130px] grid gap-[20px] 
+            className={`mx-4 md:mx-[80px] h-screen lg:mx-[130px] 2xl:mx-[160px] grid gap-[20px] 
                         ${
                           columns === 3
                             ? "lg:grid-cols-3 md:grid-cols-2 grid-cols-1"
@@ -228,15 +228,17 @@ export default function ChooseUs() {
                     (testimonial, index) => (
                       <div
                         key={index}
-                        className="bg-[#04110D80] h-[250px] p-[25px] border border-[#FFFFFF1A] rounded-xl"
+                        className="bg-[#04110D80] h-[200px] p-[25px] border border-[#FFFFFF1A] rounded-xl"
                       >
                         <div className="border border-[#FFFFFF1A] flex flex-row gap-4 px-[21px] items-center rounded-lg py-[17px]">
                           <p className="bg-gradient-to-r from-customgreen to-customblue rounded-full text-xs w-8 h-8 flex items-center justify-center ">
                             {testimonial.initials}
                           </p>
-                          <h1 className="text-[16px]">{testimonial.name}</h1>
+                          <h1 className="text-[12px] 2xl:text-[15px]">
+                            {testimonial.name}
+                          </h1>
                         </div>
-                        <p className="text-[16px] leading-[32px] text-start py-2">
+                        <p className="text-[14px] 2xl:text-[16px] leading-[28px] text-start py-2">
                           {testimonial.testimonial}
                         </p>
                       </div>

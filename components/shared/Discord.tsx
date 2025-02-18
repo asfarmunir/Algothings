@@ -15,7 +15,7 @@ export function DiscordCommunity() {
       <section id="contact-us" className="my-5 2xl:my-10">
         <FadeInSection>
           <div
-            className="px-4 sm:px-8  py-12 mx-4 md:mx-12 lg:mx-[98px]  h-auto lg:h-[420px] rounded-3xl border border-[#FFFFFF33] flex justify-center items-center discord-border relative overflow-hidden"
+            className="px-4 sm:px-8  py-12 mx-4 md:mx-12 lg:mx-[128px] 2xl:mx-[160px]  h-auto lg:h-[420px] rounded-3xl border border-[#FFFFFF33] flex justify-center items-center discord-border relative overflow-hidden"
             // style={{
             //   backgroundImage:
             //     "linear-gradient(rgba(0, 0, 0, 0.9), rgba(1, 10, 10, 0.9)), url(/images/discord-bg.png)",
@@ -49,7 +49,7 @@ export function DiscordCommunity() {
                 spam, just the good stuff.
               </p>
 
-              <div className="inline-flex rounded-full w-full sm:w-3/4 px-1 py-1  md:min-w-80 items-center justify-between mt-6 border border-[#FFFFFF33] bg-[#03100C]">
+              <div className="inline-flex rounded-full w-full sm:w-2/4 px-1 py-2  md:min-w-80 items-center justify-between mt-6 border border-[#FFFFFF33] bg-[#03100C]">
                 <input
                   type="email"
                   className="bg-transparent text-customlightgray px-4 w-full text-xs sm:text-sm focus:outline-none placeholder:text-customlightgray "

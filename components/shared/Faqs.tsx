@@ -115,7 +115,7 @@ export default function FAQ() {
 
             {/* Center the Accordion container */}
             <div className="flex justify-center mt-4 ">
-              <div className="w-full mx-4 md:mx-12 lg:mx-[90px]">
+              <div className="w-full mx-4 md:mx-12 lg:mx-[120px] 2xl:mx-[150px]">
                 <FAQComponent question_ans={question_ans} />
               </div>
             </div>

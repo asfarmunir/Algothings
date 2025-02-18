@@ -8,6 +8,8 @@ import Navbar from "@/components/shared/Navbar";
 import FadeInSection from "@/lib/FadeInAnimation";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
+import { DiscordCommunity } from "@/components/shared/Discord";
+import { Footer } from "@/components/shared/Footer";
 export default function AllProduct({ searchParams }: { searchParams: any }) {
   const unwrappedSearchParams = React.use(searchParams);
   //@ts-ignore
@@ -48,7 +50,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
             </div>
           </div>
           {activeButton === "INDIVIDUALS" ? (
-            <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 pb-12 mt-6 md:px-4 2xl:px-10 2xl:mt-8">
+            <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  md:gap-6 md:gap-y-8 pb-12 mt-6 md:px-4 2xl:px-16 2xl:mt-8">
               {Array.from({ length: 15 }).map((_, index) => (
                 <div
                   key={index}
@@ -64,15 +66,15 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                   2xl:w-20 2xl:h-14"
                     />
                     <div>
-                      <h1 className="text-sm md:text-[10px] 2xl:text-base uppercase font-semibold">
+                      <h1 className="text-sm md:text-[12px] 2xl:text-base uppercase font-semibold">
                         Momentum Snap
                       </h1>
-                      <p className="text-customgray text-xs md:text-[10px] 2xl:text-sm">
+                      <p className="text-customgray text-xs md:text-[12px] 2xl:text-[14px]">
                         For E-mini (NQ) and Micro (MNQ) Nasdaq 100 index
                       </p>
                     </div>
                   </div>
-                  <div className="mx-8 md:mx-2 flex flex-row justify-between gap-4 pt-4">
+                  <div className="mx-8 md:mx-2 flex flex-row justify-between gap-4 pt-5">
                     <Image
                       src="/images/book.webp"
                       width={100}
@@ -89,7 +91,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                       </p>
                     </div>
                   </div>
-                  <div className="mt-8 md:mt-4 flex flex-row gap-8 md:gap-4 items-center">
+                  <div className="mt-8 md:mt-5 flex flex-row gap-8 md:gap-4 items-center">
                     <Link
                       href={"/login"}
                       className="bg-gradient-to-r py-2 px-5 font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
@@ -109,8 +111,8 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
               ))}
             </div>
           ) : (
-            <div className="py-10 grid grid-cols-1 pb-12 md:grid-cols-2 gap-6 2xl:gap-8 md:px-4 2xl:px-10">
-              {Array.from({ length: 4 }).map((_, index) => (
+            <div className="py-10 grid grid-cols-1 pb-12  gap-6 2xl:gap-8 md:px-28 2xl:px-40">
+              {Array.from({ length: 1 }).map((_, index) => (
                 <div
                   key={index}
                   className=" bg-gradient-to-b from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"
@@ -142,7 +144,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-4 relative">
+                    <div className="flex flex-col sm:flex-row justify-between  gap-4 mt-4 md:mt-4 relative">
                       <div className="w-full">
                         <img
                           src="/images/portfolio.webp"
@@ -180,6 +182,10 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
           )}
         </div>
       </FadeInSection>
+      <div className="text-center">
+        <DiscordCommunity />
+        <Footer />{" "}
+      </div>
     </div>
   );
 }

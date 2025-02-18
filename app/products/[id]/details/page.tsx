@@ -8,6 +8,8 @@ import Navbar from "@/components/shared/Navbar";
 import FadeInSection from "@/lib/FadeInAnimation";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
+import { DiscordCommunity } from "@/components/shared/Discord";
+import { Footer } from "@/components/shared/Footer";
 export default function AllProduct() {
   const [activeButton, setActiveButton] = useState("INDIVIDUALS");
 
@@ -78,6 +80,10 @@ export default function AllProduct() {
           </div>
         </div>
       </FadeInSection>
+      <div className="text-center">
+        <DiscordCommunity />
+        <Footer />{" "}
+      </div>
     </div>
   );
 }

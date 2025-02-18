@@ -96,7 +96,7 @@ export default function Pricing() {
                       <span
                         className={` ${
                           false ? " font-semibold text-black" : ""
-                        } text-[36px] 2xl:text-[40px]`}
+                        } text-[32px] 2xl:text-[38px]`}
                       >
                         $97
                       </span>
@@ -107,7 +107,7 @@ export default function Pricing() {
                   ) : (
                     <div className="mt-6 mb-3 text-start">
                       <span
-                        className={` font-bold  text-[36px] 2xl:text-[40px]`}
+                        className={` font-bold  text-[32px] 2xl:text-[38px]`}
                       >
                         $87.3
                       </span>
@@ -116,7 +116,7 @@ export default function Pricing() {
                       </span>
                       <span
                         className={` 
-                         text-[36px] font-bold 2xl:text-[40px] text-[#999F9F] line-through pl-2`}
+                         text-[32px] font-bold 2xl:text-[38px] text-[#999F9F] line-through pl-2`}
                       >
                         $97
                       </span>
@@ -126,16 +126,16 @@ export default function Pricing() {
                     <>
                       <p
                         className={`text-[#999F9F] 
-                    text-sm w-full text-start -mt-2 pb-5`}
+                    text-xs w-full text-start -mt-2 pb-5`}
                       >
                         billed anually{" "}
-                        <span className="text-xl px-1  2xl:text-2xl text-white">
+                        <span className="text-lg px-1  2xl:text-2xl text-white">
                           (Save $116.40/year)
                         </span>
                       </p>
                     </>
                   )}
-                  <p className="text-[14px] my-4 mb-7">
+                  <p className="text-[12px] my-4 mb-7">
                     Ideal for: Traders beginning their automation journey
                   </p>
 
@@ -241,7 +241,7 @@ export default function Pricing() {
                         <span
                           className={`${
                             true ? " text-black" : ""
-                          } text-[36px] 2xl:text-[40px] font-semibold`}
+                          } text-[32px] 2xl:text-[38px] font-semibold`}
                         >
                           $697
                         </span>
@@ -253,7 +253,7 @@ export default function Pricing() {
                   ) : (
                     <div className="mt-3 text-black mb-3 text-start">
                       <span
-                        className={` font-bold  text-[36px] 2xl:text-[40px]`}
+                        className={` font-bold  text-[32px] 2xl:text-[38px]`}
                       >
                         $627.3
                       </span>
@@ -262,7 +262,7 @@ export default function Pricing() {
                       </span>
                       <span
                         className={` 
-                         text-[36px] font-bold 2xl:text-[40px] text-[#04110D99] line-through pl-2`}
+                         text-[32px] font-bold 2xl:text-[38px] text-[#04110D99] line-through pl-2`}
                       >
                         $997
                       </span>
@@ -273,10 +273,10 @@ export default function Pricing() {
                     <>
                       <p
                         className={`text-[#04110D99] 
-                    text-sm w-full text-start -mt-2 pb-5`}
+                    text-xs w-full text-start -mt-2 pb-5`}
                       >
                         billed anually{" "}
-                        <span className="text-xl px-1  2xl:text-2xl text-black">
+                        <span className="text-lg px-1  2xl:text-2xl text-black">
                           (Save $846.40/year)
                         </span>
                       </p>
@@ -293,7 +293,7 @@ export default function Pricing() {
                       </span>
                     </p>
                   )}
-                  <p className="text-[14px] my-4 mb-7">
+                  <p className="text-[12px] my-4 mb-7">
                     Ideal for: Traders seeking a powerful, all-in-one portfolio
                   </p>
 

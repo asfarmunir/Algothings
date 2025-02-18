@@ -61,10 +61,10 @@ export default function Comparsion() {
               </p>
             </FadeInSection>
             <FadeInSection>
-              <div className="border border-[#FFFFFF1A] lexend rounded-xl p-[15px] lg:p-[20px] mx-6 lg:mx-[115px] mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto lg:h-[500px]">
+              <div className="border border-[#FFFFFF1A] lexend rounded-xl p-[15px] lg:p-[20px] mx-6 lg:mx-[115px] 2xl:mx-[130px] mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto ">
                   <div className="bg-gradient-to-b from-[#04110DE5] to-[#04110D] border border-[#FFFFFF1A] p-[30px] lg:p-[50px] rounded-xl space-y-6">
-                    <h3 className="text-xl lg:text-[32px] font-semibold text-left">
+                    <h3 className="text-xl lg:text-[30px] font-semibold text-left">
                       How much can you get?
                     </h3>
 
@@ -86,7 +86,7 @@ export default function Comparsion() {
                       </div>
 
                       {/* Profit Rate Slider */}
-                      <div className="space-y-5 mt-4 lg:pt-8">
+                      <div className="space-y-5 mt-4 lg:pt-5">
                         <div className="flex justify-between">
                           <span>Profit Rate</span>
                           <span>{profitRate}%</span>
@@ -102,11 +102,11 @@ export default function Comparsion() {
                       </div>
                     </div>
 
-                    <p className="text-[12px] pt-3 lg:pt-4 text-start">
+                    <p className="text-[12px] pt-3  text-start">
                       Especially with our Axis Trading
                     </p>
 
-                    <div className="hidden sm:block w-full pt-6 lg:pt-12">
+                    <div className="hidden sm:block w-full pt-6 ">
                       <Link
                         href={"/login"}
                         className="w-full flex flex-row justify-between items-center lexend bg-gradient-to-r  from-customgreen to-customblue text-black font-semibold py-3 2xl:py-3.5 px-6 rounded-lg transition-colors"
