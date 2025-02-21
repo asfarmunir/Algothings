@@ -46,7 +46,7 @@ export const Welcome = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="px-4 text-[30px] md:text-[38px] xl:text-[56px]  tracking-wide  font-sans md:leading-[48px] lg:leading-[50px] xl:leading-[48px] my-4 font-semibold">
+            <h1 className="px-4 text-[28px] sm:text-[30px] md:text-[38px] xl:text-[56px]  tracking-wide  font-sans md:leading-[48px] lg:leading-[50px] xl:leading-[48px] my-4 font-semibold">
               Trade Smarter, Not Harder with <br className="sm:block hidden" />
               <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
                 The Algos Field.
@@ -54,7 +54,7 @@ export const Welcome = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-customlight  sm:px-6  md:px-20 leading-6 md:leading-7 my-7 text-sm  md:text-[16px] xl:text-[20px]">
+            <p className="text-customlight  px-2 sm:px-6  md:px-20 leading-6 md:leading-7 my-7 text-[12px] sm:text-sm  md:text-[16px] xl:text-[20px]">
               Say goodbye to outdated trading methods. With decades of expertise
               packed into our <br className="lg:block hidden" /> powerful
               algorithms, there’s no need for guesswork, programming, or
@@ -63,8 +63,8 @@ export const Welcome = () => {
             </p>
 
             {/* Email Input and Button */}
-            <div className="space-y-4 mb-4 sm:space-y-2 space-x-2 lg:space-x-4">
-              <div className="inline-flex flex-col sm:flex-row items-center p-[1px] bg-gradient-to-r from-customgreen to-customblue bg-clip-border rounded-lg">
+            <div className="space-y-4 mb-4 sm:space-y-2 space-x-3 lg:space-x-4">
+              <div className="inline-flex text-[14px] sm:text-base flex-col sm:flex-row items-center p-[1px] bg-gradient-to-r from-customgreen to-customblue bg-clip-border rounded-lg">
                 <button
                   className="inline-flex flex-row items-center bg-black rounded-lg gap-3 px-6  py-2.5"
                   onClick={(e) => {
@@ -87,7 +87,7 @@ export const Welcome = () => {
               </div>
               <Button
                 label="Join our Discord"
-                className="bg-gradient-to-r py-3.5 px-5 font-semibold from-customgreen to-customblue rounded-[6px] text-black  sm:w-auto"
+                className="bg-gradient-to-r text-[14px] sm:text-base py-3.5 px-5 font-semibold from-customgreen to-customblue rounded-[6px] text-black  sm:w-auto"
               />
             </div>
           </motion.div>

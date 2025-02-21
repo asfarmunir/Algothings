@@ -110,7 +110,9 @@ export default function ChooseUs() {
                     <AnimationSection>
                       <div
                         onClick={() => handleToggle(item.title)}
-                        className="mb-1 rounded-[10px] border border-[#FFFFFF33] bg-[#030D0A80] flex flex-row items-center justify-between px-[24px] py-[20px]"
+                        className={`mb-1 rounded-[10px] border border-[#FFFFFF33] bg-[#030D0A80] flex flex-row items-center justify-between px-[24px] py-[20px]
+                          ${openItem === item.title ? "" : " "}
+                          `}
                       >
                         <h1 className="text-[17px] 2xl:text-[20px] leading-7">
                           {item.title}

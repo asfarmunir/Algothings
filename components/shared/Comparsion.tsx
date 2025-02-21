@@ -10,7 +10,7 @@ import FadeInSection from "@/lib/FadeInAnimation";
 import Link from "next/link";
 export default function Comparsion() {
   // State for sliders
-  const [accountSize, setAccountSize] = useState(1000); // Default value
+  const [accountSize, setAccountSize] = useState(24000); // Default value
   const [profitRate, setProfitRate] = useState(8); // Default value in %
 
   // Calculate monthly profit

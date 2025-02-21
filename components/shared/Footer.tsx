@@ -212,7 +212,7 @@ export const Footer = () => {
       </FadeInSection> */}
       <FadeInSection>
         <div>
-          <div className="flex border-b-2 border-customgreen/60  items-start justify-between  flex-row gap-4 py-8 mb-10 mx-8 sm:mx-16 2xl:mx-28 mt-6">
+          <div className="flex border-b-2 border-customgreen/40  items-start justify-between  flex-row gap-4 py-8 mb-10 mx-8 sm:mx-16 2xl:mx-28 mt-6">
             <div className="w-full  flex-col  flex items-center sm:items-start  justify-start">
               <Image
                 src="/images/logo.svg"
