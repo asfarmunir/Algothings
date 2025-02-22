@@ -6,7 +6,7 @@ export const Title = () => {
   return (
     <FadeInSection className="">
       <div className="max-w-screen-xl  mx-auto  ">
-        <div className="flex sm:px-10 md:flex-row justify-between flex-col-reverse gap-6 2xl:gap-12">
+        <div className="flex sm:px-10 md:px-20 lg:px-28 xl:px md:flex-row justify-center flex-col-reverse gap-6 2xl:gap-12">
           {/* <div className="flex-1 px-6 bg-transparent rounded-none w-full lg:block hidden mt-8">
             <h3 className="font-bold text-start text-white text-[28px] mb-8 ">
               Features
@@ -42,7 +42,7 @@ export const Title = () => {
             <hr className="border-[#1B211F]" />
           </div> */}
 
-          <div className="flex-1 px-5 w-full mt-3">
+          <div className="  px-5 sm:min-w-96  w-fit mt-3">
             <h3 className="font-bold bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent  text-2xl text-[28px] leading-[36px] ">
               Trading With <br />
               The Algos Field
@@ -58,7 +58,7 @@ export const Title = () => {
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                      10 minutes/day to enable/disable the bot
+                      10 minutes/day <br /> to enable/disable the bot
                     </p>
                     <hr className="mt-2 border-[#1B211F] w-full" />
                   </div>
@@ -73,7 +73,7 @@ export const Title = () => {
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                      No trading experience required
+                      No trading <br /> experience required
                     </p>
                     <hr className="mt-2 border-[#1B211F] w-full" />
                   </div>
@@ -88,7 +88,7 @@ export const Title = () => {
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                      100% hands-free execution
+                      100% hands-free <br /> execution
                     </p>
                     <hr className="mt-2 border-[#1B211F] w-full" />
                   </div>
@@ -103,7 +103,8 @@ export const Title = () => {
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                      Data-driven strategies
+                      Data-driven
+                      <br /> strategies
                     </p>
                     <hr className="mt-2 border-[#1B211F] " />
                   </div>
@@ -118,7 +119,8 @@ export const Title = () => {
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                      3+ years of proven success
+                      3+ years of proven
+                      <br /> success
                     </p>
                     <hr className="mt-2 border-[#1B211F] w-full" />
                   </div>
@@ -133,7 +135,7 @@ export const Title = () => {
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                      80%+ win rate over 3 years
+                      80%+ win rate over 3 <br /> years
                     </p>
                     <hr className="mt-2 border-[#1B211F] w-full" />
                   </div>
@@ -148,7 +150,8 @@ export const Title = () => {
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                      Advanced risk controls included
+                      Advanced risk
+                      <br /> controls included
                     </p>
                     <hr className="mt-2 border-[#1B211F] w-full" />
                   </div>
@@ -157,7 +160,7 @@ export const Title = () => {
             </div>
           </div>
 
-          <div className="flex-1 px-5 w-full mt-5 md:mt-12">
+          <div className=" px-5 sm:min-w-96 w-fit mt-5 md:mt-12">
             <h3 className="text-center font-bold mb-2 text-3xl text-[28px]">
               Trading Yourself
             </h3>
@@ -171,7 +174,8 @@ export const Title = () => {
                 />
                 <div className="w-full py-2 2xl:py-3">
                   <p className=" leading-5 ">
-                    Requires 40+ hours/ week of monitoring
+                    Requires 40+ hours/
+                    <br /> week of monitoring
                   </p>
                   <hr className="mt-2 border-[#1B211F] w-full" />
                 </div>
@@ -185,33 +189,10 @@ export const Title = () => {
                   height={20}
                 />
                 <div className="w-full py-2 2xl:py-3">
-                  <p className=" leading-5 ">Requires years of learning</p>
-                  <hr className="mt-2 border-[#1B211F] w-full" />
-                </div>
-              </div>
-
-              <div className="flex gap-6 text-start my-3">
-                <Image
-                  src="/images/redtick.svg"
-                  alt="Red Tick"
-                  width={14}
-                  height={20}
-                />
-                <div className="w-full py-2 2xl:py-3">
-                  <p className=" leading-5 ">Manual execution and monitoring</p>
-                  <hr className="mt-2 border-[#1B211F] w-full" />
-                </div>
-              </div>
-
-              <div className="flex gap-6 text-start my-3">
-                <Image
-                  src="/images/redtick.svg"
-                  alt="Red Tick"
-                  width={14}
-                  height={20}
-                />
-                <div className="w-full py-2 2xl:py-3">
-                  <p className=" leading-5 ">Emotional bias and guesswork</p>
+                  <p className=" leading-5 ">
+                    Requires years of
+                    <br /> learning
+                  </p>
                   <hr className="mt-2 border-[#1B211F] w-full" />
                 </div>
               </div>
@@ -225,7 +206,40 @@ export const Title = () => {
                 />
                 <div className="w-full py-2 2xl:py-3">
                   <p className=" leading-5 ">
-                    Unproven, inconsistent strategies
+                    Manual execution and
+                    <br /> monitoring
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full" />
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-start my-3">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+                <div className="w-full py-2 2xl:py-3">
+                  <p className=" leading-5 ">
+                    Emotional bias and
+                    <br /> guesswork
+                  </p>
+                  <hr className="mt-2 border-[#1B211F] w-full" />
+                </div>
+              </div>
+
+              <div className="flex gap-6 text-start my-3">
+                <Image
+                  src="/images/redtick.svg"
+                  alt="Red Tick"
+                  width={14}
+                  height={20}
+                />
+                <div className="w-full py-2 2xl:py-3">
+                  <p className=" leading-5 ">
+                    Unproven, inconsistent
+                    <br /> strategies
                   </p>
                   <hr className="mt-2 border-[#1B211F] w-full" />
                 </div>
@@ -241,7 +255,8 @@ export const Title = () => {
 
                 <div className="w-full">
                   <p className=" leading-5  py-2 2xl:py-3">
-                    Inconsistent and no guaranteed success
+                    Inconsistent and no
+                    <br /> guaranteed success
                   </p>
                   <hr className="mt-2 border-[#1B211F] w-full" />
                 </div>
@@ -255,7 +270,10 @@ export const Title = () => {
                   height={20}
                 />
                 <div className="w-full py-2 2xl:py-3">
-                  <p className=" leading-5 ">Requires manual risk management</p>
+                  <p className=" leading-5 ">
+                    Requires manual risk
+                    <br /> management
+                  </p>
                   <hr className="mt-2 border-[#1B211F] w-full " />
                 </div>
               </div>

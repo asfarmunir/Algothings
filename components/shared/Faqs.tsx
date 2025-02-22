@@ -82,7 +82,7 @@ export default function FAQ() {
                   Revolutionize your trading game with BTFT.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 mx-auto my-6 lg:grid-cols-3  gap-5  2xl:gap-7 w-full sm:w-fit py-3 px-2">
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 mx-auto my-6 lg:grid-cols-3  gap-5  2xl:gap-7 w-full sm:w-fit py-3 px-2">
                 {["Category 1", "Category 2", "Category 3"].map(
                   (item, index) => (
                     <div
@@ -110,7 +110,7 @@ export default function FAQ() {
                     </div>
                   )
                 )}
-              </div>
+              </div> */}
             </AnimationSection>
 
             {/* Center the Accordion container */}

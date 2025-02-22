@@ -9,7 +9,7 @@ import { FaShareAlt, FaStar, FaQuestionCircle } from "react-icons/fa";
 import { CiWallet } from "react-icons/ci";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa6";
-
+import { usePathname } from "next/navigation";
 const Sidebar = ({
   visible,
   onClose,
@@ -43,11 +43,12 @@ const Sidebar = ({
     {
       label: "Performance Metrics",
       icon: <FaShareAlt />,
+      href: "/all-products",
 
-      subItems: [
-        { href: "/all-products?key=INDIVIDUALS", label: "Individual Algos" },
-        { href: "/all-products?key=PORTFOLIO", label: "Portfolio" },
-      ],
+      // subItems: [
+      //   { href: "/all-products?key=INDIVIDUALS", label: "Individual Algos" },
+      //   { href: "/all-products?key=PORTFOLIO", label: "Portfolio" },
+      // ],
       img: "performance",
     },
     {
@@ -81,10 +82,11 @@ const Sidebar = ({
     {
       icon: <FaQuestionCircle />,
       label: "FAQs",
-      subItems: [
-        { href: "/faq", label: "FAQ 1" },
-        { href: "/faq", label: "FAQ 2" },
-      ],
+      href: "/faq",
+      // subItems: [
+      //   { href: "/faq", label: "FAQ 1" },
+      //   { href: "/faq", label: "FAQ 2" },
+      // ],
       img: "faqs",
     },
   ];
@@ -108,6 +110,8 @@ const Sidebar = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [onClose]);
+
+  const pathname = usePathname();
 
   return (
     <div
@@ -143,12 +147,21 @@ const Sidebar = ({
                       handleToggle(item.label);
                     }
                   }}
-                  className="flex text-base items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-customcard group"
+                  className={`flex text-base items-center p-2 px-3  rounded-lg  hover:bg-customcard group
+                    ${
+                      pathname === item.href
+                        ? "bg-gradient-to-br from-customblue to-customgreen text-black font-semibold"
+                        : "text-white"
+                    }
+                    `}
                 >
                   <Image
                     src={`/icons/${item.img}.svg`}
                     width={20}
                     height={20}
+                    className={`
+                    ${pathname === item.href ? "invert" : ""}
+                      `}
                     alt={item.label}
                   />
                   <span className="ms-3">{item.label}</span>

@@ -74,7 +74,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                       </p>
                     </div>
                   </div>
-                  <div className="mx-8 md:mx-2 flex flex-row justify-between gap-4 pt-5">
+                  <div className="mx-8 md:mx-2 flex flex-row justify-start gap-6 pt-5">
                     <Image
                       src="/images/book.webp"
                       width={100}
@@ -86,7 +86,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                       <p className="text-customgray text-md  font-semibold">
                         Profit last month
                       </p>
-                      <p className="text-customgreen text-2xl 2xl:text-4xl  md:mt:0 md:text-base">
+                      <p className="text-customgreen text-xl md:text-3xl 2xl:text-4xl  md:mt:0 ">
                         +3.89%
                       </p>
                     </div>
@@ -111,11 +111,11 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
               ))}
             </div>
           ) : (
-            <div className="py-10 grid grid-cols-1 pb-12  gap-6 2xl:gap-8 md:px-28 2xl:px-40">
+            <div className="py-10 grid grid-cols-1 pb-12 max-w-[90rem] mx-auto  gap-6 2xl:gap-8 md:px-28 2xl:px-40">
               {Array.from({ length: 1 }).map((_, index) => (
                 <div
                   key={index}
-                  className=" bg-gradient-to-b from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"
+                  className=" bg-gradient-to-b  from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"
                 >
                   <div className="bg-[#04110D] py-8  px-[30px] md:px-[40px] rounded-[20px] h-auto ">
                     <div className="flex flex-col sm:flex-row justify-between gap-4">
@@ -144,16 +144,16 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row justify-between  gap-4 mt-4 md:mt-4 relative">
-                      <div className="w-full">
+                    <div className="flex flex-col  sm:flex-row justify-start items-center  gap-4 mt-4 md:mt-4 relative">
+                      <div className="">
                         <img
                           src="/images/portfolio.webp"
                           alt="card image"
-                          className="w-full h-[200px] sm:w-auto"
+                          className="w-full h-[200px] 2xl:h-[250px] sm:w-auto"
                         />
                       </div>
-                      <div className="ml-0 sm:ml-4 w-full lg:w-2/3 flex flex-col justify-between">
-                        <div className=" md:mt-6 md:text-start w-full md:pl-6">
+                      <div className="ml-0 sm:ml-4  flex flex-col items-start  justify-between">
+                        <div className=" md:mt-6 md:text-start w-full ">
                           <p className="text-customgray text-[12px]  font-semibold">
                             Profit last month
                           </p>

@@ -10,6 +10,8 @@ import { RiInstagramFill } from "react-icons/ri";
 import { useBlogs } from "@/hooks/useBlog";
 import FadeInSection from "@/lib/FadeInAnimation";
 import { DiscordCommunity } from "@/components/shared/Discord";
+import Link from "next/link";
+import { GoArrowRight, GoArrowUpRight } from "react-icons/go";
 
 const ITEMS_PER_PAGE = 9; // Number of items per page
 
@@ -57,12 +59,25 @@ export default function Blog() {
                   />
 
                   <div className="mt-4">
-                    <h1 className="text-[24px]">Lorem ipsum</h1>
-                    <p className="text-[16px] mt-2 leading-[34px]">
+                    <p className="text-[12px] 2xl:text-[14px] text-gray-300 mb-2 ">
+                      12th August 2021
+                    </p>
+                    <h1 className="text-[24px] 2xl:text-[28px] font-bold ">
+                      Blog Title
+                    </h1>
+                    <p className="text-[16px] mt-2 leading-[30px]">
                       Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor
                       sit amet consectetur. Lorem ipsum dolor.
                     </p>
                   </div>
+
+                  <Link
+                    href={"/blog/blogdetails"}
+                    className="flex flex-row font-semibold gap-2 mt-4 items-center  text-nowrap p-0 text-sm 2xl:text-base"
+                  >
+                    <span>Read More</span>
+                    <GoArrowRight className="text-lg 2xl:text-xl" />
+                  </Link>
                 </div>
               ))}
             </div>

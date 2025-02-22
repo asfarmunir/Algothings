@@ -10,7 +10,7 @@ export const Algorithm = () => {
   return (
     <>
       <section id="shop">
-        <div className="my-10 px-2 sm:px-6  md:px-10 lg:px-24 xl:px-[98px]">
+        <div className="my-10 max-w-[90rem] mx-auto px-2 sm:px-6  md:px-10 lg:px-24 xl:px-[98px]">
           <FadeInSection>
             <div className="inline-flex flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
               <Image

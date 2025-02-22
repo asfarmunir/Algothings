@@ -125,10 +125,10 @@ export default function Comparsion() {
                       backgroundSize: "cover",
                     }}
                   >
-                    <div className=" w-full sm:w-[80%] h-auto md:h-[132px] rounded-xl bg-gradient-to-b from-customgreen to-customblue">
+                    <div className=" w-full sm:w-[80%] h-auto md:h-[132px] rounded-xl bg-gradient-to-tr from-customgreen to-customblue">
                       <div className="flex flex-col items-center justify-center py-2 md:mt-6">
-                        <div className="text-black font-semibold lexend text-[14px] leading-[20px] ">
-                          Take <br /> Home
+                        <div className="text-white font-bold lexend text-[14px] leading-[20px] ">
+                          Take Home
                         </div>
                         <div className="text-[24px] md:text-[30px] leading-10 font-semibold text-black">
                           ${parseInt(monthlyProfit).toLocaleString()}

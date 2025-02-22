@@ -211,8 +211,8 @@ export const Footer = () => {
         </div>
       </FadeInSection> */}
       <FadeInSection>
-        <div>
-          <div className="flex border-b-2 border-customgreen/40  items-start justify-between  flex-row gap-4 py-8 mb-10 mx-8 sm:mx-16 2xl:mx-28 mt-6">
+        <div className=" mx-2">
+          <div className="flex   items-start justify-between  flex-row gap-4 pt-8 mb-10 mx-8 sm:mx-16 2xl:mx-28 mt-6">
             <div className="w-full  flex-col  flex items-center sm:items-start  justify-start">
               <Image
                 src="/images/logo.svg"
@@ -227,7 +227,7 @@ export const Footer = () => {
                   Built for Traders, <br /> Powered by The Algos Field
                 </p>
               </div>
-              <div className="flex  flex-row gap-2 items-center justify-start ">
+              <div className="sm:hidden flex  flex-row gap-2 items-center justify-start ">
                 <FaInstagram className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 cursor-pointer rounded-full" />
                 <FaDiscord className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
                 <FaFacebook className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
@@ -284,24 +284,38 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-
-          <div className="pb-7  ">
-            <p className="text-sm 2xl:text-base font-thin sm:mx-16 2xl:mx-28 text-pretty  w-fit mx-auto">
-              Algorithmic trading involves risk, and results can vary based on
-              market conditions and individual strategies. While our tools are
-              designed to optimize trading and reduce complexities, it’s
-              important to trade responsibly and within your own financial
-              limits. We recommend consulting with a licensed financial advisor
-              before making any trading decisions. Past performance does not
-              guarantee future results.
+          <div className="  hidden pb-6 2xl:pb-8 border-b-2 border-customgreen/40 sm:flex items-center mx-8 sm:mx-16 2xl:mx-28 justify-between">
+            <p className="text-sm 2xl:text-base">
+              <span className="font-thin">Copyright</span> © THe ALGOS FIELD
             </p>
+            <div className="flex  flex-row gap-2 items-center justify-start ">
+              <FaInstagram className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 cursor-pointer rounded-full" />
+              <FaDiscord className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
+              <FaFacebook className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
+            </div>
+          </div>
+          <div className="py-8 grid grid-cols-1 sm:grid-cols-2 gap-5 2xl:gap-10 sm:mx-16 2xl:mx-28 mx-auto ">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <p
+                key={index}
+                className="text-sm 2xl:text-base font-thin  text-pretty  w-fit "
+              >
+                Algorithmic trading involves risk, and results can vary based on
+                market conditions and individual strategies. While our tools are
+                designed to optimize trading and reduce complexities, it’s
+                important to trade responsibly and within your own financial
+                limits. We recommend consulting with a licensed financial
+                advisor before making any trading decisions. Past performance
+                does not guarantee future results.
+              </p>
+            ))}
           </div>
 
-          <div className="pb-5  ">
+          {/* <div className="pb-5  ">
             <p className="text-sm 2xl:text-base  w-fit mx-auto">
               <span className="font-thin">Copyright</span> © THe ALGOS FIELD
             </p>
-          </div>
+          </div> */}
         </div>
       </FadeInSection>
     </>

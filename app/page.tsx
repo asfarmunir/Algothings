@@ -27,8 +27,8 @@ export default function Home() {
         {/* Content Layer */}
         <div className="relative z-10 font-sans scrollbar-custom">
           <Navbar />
-          <div className="w-full ">
-            <div className="text-center overflow-x-hidden sm:overflow-x-visible  ">
+          <div className="w-full max-w-[100rem] mx-auto ">
+            <div className="text-center max-w-[100rem] mx-auto overflow-x-hidden sm:overflow-x-visible  ">
               <Welcome />
 
               <Algorithm />
@@ -38,8 +38,8 @@ export default function Home() {
               <Blogs />
               <FAQ />
               <DiscordCommunity />
-              <Footer />
             </div>
+            <Footer />
           </div>
         </div>
       </div>

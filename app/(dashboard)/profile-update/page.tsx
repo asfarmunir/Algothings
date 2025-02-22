@@ -99,7 +99,7 @@ const Profile: React.FC = () => {
                 </p>
               </div>
 
-              <div
+              {/* <div
                 className="relative"
                 onMouseEnter={showTooltip}
                 onMouseLeave={hideTooltip}
@@ -112,7 +112,6 @@ const Profile: React.FC = () => {
                   <BsInfoCircle className="bg-[#FFFFFF0F] text-3xl p-1 rounded-full" />
                 </button>
 
-                {/* Tooltip element */}
                 {isTooltipVisible && (
                   <div
                     id="tooltip-left"
@@ -129,7 +128,7 @@ const Profile: React.FC = () => {
                     <div className="tooltip-arrow" data-popper-arrow></div>
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
 
             <hr className="my-3 border-[#FFFFFF1A]" />
@@ -139,8 +138,8 @@ const Profile: React.FC = () => {
                 <button
                   className={
                     activebtn === "personal"
-                      ? "bg-[#FFFFFF33] rounded-full py-1 px-3"
-                      : "py-1 px-3"
+                      ? "bg-[#FFFFFF33] rounded-full py-1 px-5"
+                      : "py-1 px-4"
                   }
                   onClick={() => setActivebtn("personal")}
                 >
@@ -149,7 +148,7 @@ const Profile: React.FC = () => {
                 <button
                   className={
                     activebtn === "billing"
-                      ? "bg-[#FFFFFF33] rounded-full py-1 px-3"
+                      ? "bg-[#FFFFFF33] rounded-full py-1 px-5"
                       : "py-1 px-3"
                   }
                   onClick={() => setActivebtn("billing")}
@@ -245,7 +244,7 @@ const Profile: React.FC = () => {
                     />
 
                     {/* Account Type Dropdown */}
-                    <div className="w-full pt-1">
+                    {/* <div className="w-full pt-1">
                       <label
                         htmlFor="accountType"
                         className="font-gilroy font-light block mb-1 text-sm text-white"
@@ -260,7 +259,7 @@ const Profile: React.FC = () => {
                         dropdownClass="w-full"
                         value={profile.accountType}
                       />
-                    </div>
+                    </div> */}
                   </div>
 
                   <hr className="border border-[#FFFFFF1A] my-3" />

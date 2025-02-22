@@ -255,7 +255,7 @@ export default function Pricing() {
                       <span
                         className={` font-bold  text-[32px] 2xl:text-[38px]`}
                       >
-                        $627.3
+                        $629
                       </span>
                       <span className="text-sm px-0.5 text-[#04110D99]">
                         /per month
@@ -264,7 +264,7 @@ export default function Pricing() {
                         className={` 
                          text-[32px] font-bold 2xl:text-[38px] text-[#04110D99] line-through pl-2`}
                       >
-                        $997
+                        $698
                       </span>
                     </div>
                   )}
@@ -277,7 +277,7 @@ export default function Pricing() {
                       >
                         billed anually{" "}
                         <span className="text-lg px-1  2xl:text-2xl text-black">
-                          (Save $846.40/year)
+                          (Save $837.60/year)
                         </span>
                       </p>
                     </>

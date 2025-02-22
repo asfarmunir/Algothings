@@ -55,7 +55,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
 
             {activeButton === "PORTFOLIO" ? (
               <div className="py-10 grid grid-cols-1 pb-12 md:grid-cols-2 gap-6 2xl:gap-8 md:px-4 2xl:px-10">
-                {Array.from({ length: 4 }).map((_, index) => (
+                {Array.from({ length: 1 }).map((_, index) => (
                   <div
                     key={index}
                     className=" bg-gradient-to-b from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"

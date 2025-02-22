@@ -94,7 +94,7 @@ export const Welcome = () => {
 
           {/* Welcome Image */}
           <FadeInSection>
-            <div className=" py-10 sm:px-6 md:px-20 xl:px-[98px] w-full flex flex-row justify-center items-center">
+            <div className=" py-10 max-w-7xl mx-auto sm:px-6 md:px-20 xl:px-[98px] w-full flex flex-row justify-center items-center">
               <Image
                 src="/images/wel.png"
                 width={0}
@@ -163,7 +163,7 @@ export const Welcome = () => {
 
           {/* Steps Section */}
           <FadeInSection>
-            <div className="px-2 my-16 md:px-8 lg:px-24 xl:px-[128px]">
+            <div className="px-2 max-w-[90rem] mx-auto my-16 md:px-8 lg:px-24 xl:px-[128px]">
               <div className="inline-flex flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
                 <Image
                   src="/images/welcomestar.svg"
@@ -184,15 +184,15 @@ export const Welcome = () => {
               </h1>
 
               {/* Steps plan cards */}
-              <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  2xl:gap-10 w-full py-3 px-2">
+              <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  2xl:gap-6 w-full pt-3 ">
                 {["Step 1", "Step 2", "Step 3", "Step 4"].map((item, index) => (
                   <div
                     key={index}
-                    className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[2.5px] rounded-md"
+                    className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[2.5px] rounded-xl"
                   >
                     <button
                       onClick={() => setActiveStep(index + 1)}
-                      className={` py-[10px] w-full rounded-md transition duration-300 uppercase ${
+                      className={` py-[10px] w-full rounded-xl transition duration-300 uppercase ${
                         activeStep === index + 1
                           ? "bg-gradient-to-r from-customgreen  to-customblue"
                           : "bg-black text-customgreen "
@@ -251,7 +251,7 @@ export const Welcome = () => {
                           className="overflow-hidden text-start font-light bg-[#04100C] text-sm  rounded-b-md border border-[#FFFFFF33] "
                         >
                           <div className="md:px-8 lg:px-24 xl:px-[98px]">
-                            <div className="h-auto lg:h-[520px] flex md:flex-row flex-col-reverse justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#45F175B2] px-3 md:px-6 py-3 md:py-10 rounded-[20px] text-black">
+                            <div className="h-auto lg:h-[520px] flex md:flex-row flex-col-reverse  justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#45F175B2] px-3 md:px-6 py-3 md:py-10 rounded-[20px] text-black">
                               <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
                                 <div className="text-start leading-[28px]">
                                   <h1 className="font-semibold text-center leading-10 text-[32px] pt-4">
@@ -310,8 +310,8 @@ export const Welcome = () => {
 
           {/* Step Details */}
           <FadeInSection>
-            <div className="hidden sm:block px-2 md:px-8 lg:px-24 xl:px-[128px]">
-              <div className="h-auto lg:h-[430px] flex md:flex-row flex-col-reverse justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#020907B2] px-3 md:px-6 py-5 md:py-10 rounded-[50px] text-black">
+            <div className="hidden max-w-[90rem] mx-auto sm:block px-2 md:px-8 lg:px-24 xl:px-[128px]">
+              <div className="h-auto lg:h-[430px] xl:h-[500px] 2xl:h-[600px] flex md:flex-row flex-col-reverse justify-between bg-gradient-to-b   from-[#45F175B2] via-[#00C3CEB2] to-[#020907B2] px-5 md:px-6 py-5 md:py-5 rounded-2xl text-black">
                 <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
                   <div className="text-start leading-[28px]">
                     <h1 className="font-bold leading-10 text-[32px] py-4">
@@ -348,7 +348,7 @@ export const Welcome = () => {
                   </div>
                 </div>
 
-                <div className=" bg-[#02090780] w-full p-8  rounded-[50px] border-none">
+                <div className=" bg-[#02090780] w-full p-8  rounded-2xl border-none">
                   <Image
                     src="/images/portfolio.webp"
                     alt="plan image"
