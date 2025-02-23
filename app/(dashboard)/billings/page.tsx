@@ -180,7 +180,7 @@ export default function BillingDetails() {
                       their terms.
                     </p>
 
-                    <div className="flex flex-row gap-3">
+                    {/* <div className="flex flex-row gap-3">
                       <Button
                         label="BACK"
                         className="bg-[#03100C] rounded-lg back-btn py-[10px] text-sm"
@@ -192,7 +192,7 @@ export default function BillingDetails() {
                         disabled={isSubmitting}
                         className="bg-[#45F1753D] w-full border border-[#45F175] py-[10px] rounded-md text-sm text-[#45F175]"
                       />
-                    </div>
+                    </div> */}
                   </form>
                 </div>
               </div>

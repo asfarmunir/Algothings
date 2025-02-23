@@ -143,7 +143,7 @@ export default function Algorithm() {
                             </p>
                             <div>
                               <Dropdown
-                                options={["1", "2", "3"]}
+                                options={["0", "1", "2", "3"]}
                                 onSelect={handleSelect}
                                 placeholder="1"
                                 className="bg-[#D9D9D91A] text-sm lg:text-xs w-[50px] border border-black text-center"

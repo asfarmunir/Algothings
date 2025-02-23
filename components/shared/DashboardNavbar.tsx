@@ -53,7 +53,7 @@ const DashboardNavbar = () => {
             />
             <div>
               <Dropdown
-                options={["Settings", "Logout"]}
+                options={["Billing and Accounts", "Logout"]}
                 placeholder="Ali Hassan"
                 className="w-28 text-xs 2xl:text-sm bg-transparent "
                 onSelect={handleSelect}

@@ -42,7 +42,7 @@ export const Title = () => {
             <hr className="border-[#1B211F]" />
           </div> */}
 
-          <div className="  px-5 sm:min-w-96  w-fit mt-3">
+          <div className="  px-5 sm:min-w-96  w-full sm:w-fit mt-3">
             <h3 className="font-bold bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent  text-2xl text-[28px] leading-[36px] ">
               Trading With <br />
               The Algos Field
@@ -160,7 +160,7 @@ export const Title = () => {
             </div>
           </div>
 
-          <div className=" px-5 sm:min-w-96 w-fit mt-5 md:mt-12">
+          <div className=" px-5 sm:min-w-96 w-full sm:w-fit  mt-5 md:mt-12">
             <h3 className="text-center font-bold mb-2 text-3xl text-[28px]">
               Trading Yourself
             </h3>

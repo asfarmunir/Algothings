@@ -93,7 +93,7 @@ export default function Algorithm() {
                               +3.89%
                             </p>
                           </div>
-                          <div className="w-full flex flex-row gap-4 items-center">
+                          {/* <div className="w-full flex flex-row gap-4 items-center">
                             <Button
                               label="Get Started"
                               className="bg-gradient-to-r text-nowrap font-semibold py-[10px] px-[20px] uppercase text-sm from-customgreen to-customblue text-black rounded-md"
@@ -102,7 +102,7 @@ export default function Algorithm() {
                               <GoArrowUpRight />
                               <span>LEARN MORE</span>
                             </button>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>

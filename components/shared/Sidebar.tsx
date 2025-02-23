@@ -65,11 +65,12 @@ const Sidebar = ({
     {
       label: "Billings and Accounts",
       icon: <PiCertificate />,
+      href: "/profile-update",
 
-      subItems: [
-        { href: "/profile-update", label: "Personal Info" },
-        { href: "/billings", label: "Billing History" },
-      ],
+      // subItems: [
+      //   { href: "/profile-update", label: "Personal Info" },
+      //   { href: "/billings", label: "Billing History" },
+      // ],
       img: "billings",
     },
 

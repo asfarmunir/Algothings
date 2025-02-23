@@ -6,6 +6,7 @@ import ScrollingAnimation from "@/lib/ScrollAnimations";
 import { testimonials } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import AnimationSection from "../ui/AnimationSection";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const points = [
   {
@@ -110,8 +111,12 @@ export default function ChooseUs() {
                     <AnimationSection>
                       <div
                         onClick={() => handleToggle(item.title)}
-                        className={`mb-1 rounded-[10px] border border-[#FFFFFF33] bg-[#030D0A80] flex flex-row items-center justify-between px-[24px] py-[20px]
-                          ${openItem === item.title ? "" : " "}
+                        className={`mb-1 rounded-[10px]  flex flex-row items-center justify-between px-[24px] py-[20px]
+                          ${
+                            openItem === item.title
+                              ? " bg-gradient-to-r from-customgreen font-semibold to-[#030D0A80]"
+                              : " bg-[#030D0A80] border border-[#FFFFFF33] "
+                          }
                           `}
                       >
                         <h1 className="text-[17px] 2xl:text-[20px] leading-7">
@@ -119,17 +124,21 @@ export default function ChooseUs() {
                         </h1>{" "}
                         <span className="flex-shrink-0">
                           {openItem === item.title ? (
-                            <Image
-                              src="/images/minus.svg"
-                              width={18}
-                              height={18}
-                              alt="Open"
-                            />
+                            <>
+                              <Image
+                                src="/images/minus.svg"
+                                width={18}
+                                height={18}
+                                alt="Open"
+                                className=" sm:hidden "
+                              />
+                              <FaArrowRightLong className="hidden sm:block text-2xl text-customgreen " />
+                            </>
                           ) : (
                             <Image
                               src="/images/plus.svg"
-                              width={18}
-                              height={18}
+                              width={20}
+                              height={20}
                               alt="Close"
                             />
                           )}
