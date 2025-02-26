@@ -13,6 +13,7 @@ export default function useRegisterForm() {
         email: '',
         mobile: '',
         password: '',
+        confirmPassword: '',
     });
 
     const router = useRouter();

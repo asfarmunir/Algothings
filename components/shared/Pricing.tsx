@@ -95,8 +95,8 @@ export default function Pricing() {
                       <p className="text-sm text-[#999F9F]">Start From ...</p>
                       <span
                         className={` ${
-                          false ? " font-semibold text-black" : ""
-                        } text-[32px] 2xl:text-[38px]`}
+                          false ? "  text-black" : ""
+                        } text-[32px] font-bold 2xl:text-[38px]`}
                       >
                         $97
                       </span>
@@ -107,18 +107,18 @@ export default function Pricing() {
                   ) : (
                     <div className="mt-6 mb-3 text-start">
                       <span
-                        className={` font-bold  text-[32px] 2xl:text-[38px]`}
-                      >
-                        $87.3
-                      </span>
-                      <span className="text-sm px-0.5 text-customlightgray">
-                        /per month
-                      </span>
-                      <span
                         className={` 
                          text-[32px] font-bold 2xl:text-[38px] text-[#999F9F] line-through pl-2`}
                       >
                         $97
+                      </span>
+                      <span
+                        className={` font-bold pl-2 pr-1  text-[32px] 2xl:text-[38px]`}
+                      >
+                        $87.3
+                      </span>
+                      <span className="text-sm  text-customlightgray">
+                        /per month
                       </span>
                     </div>
                   )}
@@ -238,20 +238,26 @@ export default function Pricing() {
                   {activePlan === "Monthly" ? (
                     <div className="mt-3 text-start">
                       <p className="mt-3">
+                        <span className="text-[32px] font-semibold 2xl:text-[38px]  text-slate-700 pr-2 line-through">
+                          $997
+                        </span>
                         <span
                           className={`${
                             true ? " text-black" : ""
-                          } text-[32px] 2xl:text-[38px] font-semibold`}
+                          } text-[32px] 2xl:text-[38px] font-bold`}
                         >
                           $697
-                        </span>
-                        <span className="text-3xl text-slate-700 px-1 line-through">
-                          $997
                         </span>
                       </p>
                     </div>
                   ) : (
                     <div className="mt-3 text-black mb-3 text-start">
+                      <span
+                        className={` 
+                         text-[32px] font-bold 2xl:text-[38px] text-[#04110D99] line-through pr-2`}
+                      >
+                        $698
+                      </span>
                       <span
                         className={` font-bold  text-[32px] 2xl:text-[38px]`}
                       >
@@ -259,12 +265,6 @@ export default function Pricing() {
                       </span>
                       <span className="text-sm px-0.5 text-[#04110D99]">
                         /per month
-                      </span>
-                      <span
-                        className={` 
-                         text-[32px] font-bold 2xl:text-[38px] text-[#04110D99] line-through pl-2`}
-                      >
-                        $698
                       </span>
                     </div>
                   )}

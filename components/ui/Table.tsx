@@ -52,7 +52,7 @@ export default function Table({ columns, data }: TableProps) {
               <td className="py-4 px-4 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
                 {row.productName}
               </td>
-              <td className="py-4 px-4">
+              {/* <td className="py-4 px-4">
                 <span
                   className={`${
                     row.status === "Active"
@@ -69,9 +69,9 @@ export default function Table({ columns, data }: TableProps) {
                 <button className="text-red-500 flex items-center justify-center gap-1 cursor-pointer">
                   <RxCross2 /> {row.cancellation}
                 </button>
-              </td>
+              </td> */}
               <td className="py-4 px-4">
-                <button className="text-blue-500 flex items-center justify-center gap-1 cursor-pointer">
+                <button className="text-blue-500 flex items-center  mx-auto  justify-center gap-1 cursor-pointer">
                   <MdOutlineFileDownload className="text-xl" />{" "}
                   {row.downloadInvoice}
                 </button>

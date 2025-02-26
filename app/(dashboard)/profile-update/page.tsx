@@ -27,8 +27,8 @@ const tableTitle = [
   "Invoice Number",
   "Amount",
   "Product Name",
-  "Status",
-  "Cancellation",
+  // "Status",
+  // "Cancellation",
   "Download Invoice",
 ];
 

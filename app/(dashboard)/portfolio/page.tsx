@@ -93,16 +93,16 @@ export default function Algorithm() {
                               +3.89%
                             </p>
                           </div>
-                          {/* <div className="w-full flex flex-row gap-4 items-center">
+                          <div className="w-full flex flex-row gap-4 items-center">
                             <Button
-                              label="Get Started"
-                              className="bg-gradient-to-r text-nowrap font-semibold py-[10px] px-[20px] uppercase text-sm from-customgreen to-customblue text-black rounded-md"
+                              label="Add to Cart"
+                              className="bg-gradient-to-r w-full text-nowrap font-semibold py-[12px] px-[20px] uppercase text-sm from-customgreen to-customblue text-black rounded-md"
                             />
-                            <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
+                            {/* <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
                               <GoArrowUpRight />
                               <span>LEARN MORE</span>
-                            </button>
-                          </div> */}
+                            </button> */}
+                          </div>
                         </div>
                       </div>
                     </div>

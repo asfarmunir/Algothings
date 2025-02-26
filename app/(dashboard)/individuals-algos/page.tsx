@@ -35,7 +35,7 @@ export default function Algorithm() {
           <DashboardNavbar />
 
           {/* Details Section: Scrollable */}
-          <div className="flex-grow overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
+          <div className="flex-grow  overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
             <div className="p-5 mt-4 flex flex-col-reverse lg:flex-row gap-12 lg:gap-4 mb-2 ">
               <div className="w-full lg:w-[70%] ">
                 <h1 className="text-[24px] font-semibold">
@@ -74,27 +74,29 @@ export default function Algorithm() {
                           alt="card image"
                         />
 
-                        <div className="flex flex-col justify-center">
-                          <p className="text-customgray text-md md:text-xs font-semibold">
-                            Profit last month
-                          </p>
-                          <p className="text-customgreen text-2xl mt-2 md:mt:0 md:text-base">
-                            +3.89%
-                          </p>
+                        <div className="flex flex-col justify-end gap-4">
+                          <div>
+                            <p className="text-customgray text-md md:text-xs font-semibold">
+                              Profit last month
+                            </p>
+                            <p className="text-customgreen text-xl mt-2 md:mt:0 md:text-2xl">
+                              +3.89%
+                            </p>
+                          </div>
+                          <div className=" ">
+                            <Button
+                              label="Add To Cart"
+                              className="bg-gradient-to-r py-1 font-bold px-4 text-nowrap uppercase text-[10px] from-customgreen to-customblue text-black rounded-md "
+                            />
+                          </div>
                         </div>
-                      </div>
-                      <div className="mt-8 md:mt-4">
-                        <Button
-                          label="Add To Cart"
-                          className="bg-gradient-to-r py-1 font-bold px-4 text-nowrap uppercase text-[10px] from-customgreen to-customblue text-black rounded-md "
-                        />
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className=" w-full lg:w-[30%]">
+              <div className=" w-full lg:w-[30%] max-w-xl">
                 <h1 className="text-3xl lg:text-2xl font-semibold">Cart</h1>
                 <div className="py-1">
                   <p className="text-sm py-2">Choose Trading Platform</p>

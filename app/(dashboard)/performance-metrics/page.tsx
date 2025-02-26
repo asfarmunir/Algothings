@@ -54,11 +54,11 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
             </div>
 
             {activeButton === "PORTFOLIO" ? (
-              <div className="py-10 grid grid-cols-1 pb-12 md:grid-cols-2 gap-6 2xl:gap-8 md:px-4 2xl:px-10">
+              <div className="py-10 pb-12  gap-6 2xl:gap-8 md:px-4 2xl:px-10">
                 {Array.from({ length: 1 }).map((_, index) => (
                   <div
                     key={index}
-                    className=" bg-gradient-to-b from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"
+                    className=" bg-gradient-to-b max-w-4xl mx-auto from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"
                   >
                     <div className="bg-[#04110D] py-8  px-[30px] md:px-[40px] rounded-[20px] h-auto ">
                       <div className="flex flex-col sm:flex-row justify-between gap-4">
@@ -105,7 +105,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                             </p>
                           </div>
                           <div className="w-full flex flex-row gap-4 items-center">
-                            <Link
+                            {/* <Link
                               href={"/login"}
                               className="bg-gradient-to-r py-2 px-5 font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
                             >
@@ -114,7 +114,16 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                             <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
                               <GoArrowUpRight className="text-lg" />
                               <span>LEARN MORE</span>
-                            </button>
+                            </button> */}
+                            <div className="sm:mt-4 w-full  flex flex-row gap-8 md:gap-2 items-center">
+                              <Button
+                                onClick={() =>
+                                  router.push("/performance-summary")
+                                }
+                                label="Performance Metrics"
+                                className="bg-gradient-to-r py-2 md:py-4 text-nowrap uppercase text-[0.7rem] sm:text-xs md:text-sm 2xl:text-base w-full from-customgreen to-customblue text-black rounded-md "
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -145,7 +154,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                         </p>
                       </div>
                     </div>
-                    <div className="mx-8 md:mx-2 flex flex-row justify-between gap-4 pt-4">
+                    <div className="mx-8 md:mx-2 flex flex-row justify-start gap-4 pt-4">
                       <Image
                         src="/images/book.webp"
                         width={100}
@@ -153,21 +162,23 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                         alt="card image"
                       />
 
-                      <div className="flex flex-col justify-center">
-                        <p className="text-customgray text-md md:text-xs font-semibold">
-                          Profit last month
-                        </p>
-                        <p className="text-customgreen text-2xl  md:mt:0 md:text-base">
-                          +3.89%
-                        </p>
+                      <div className="flex flex-col gap-4 justify-end">
+                        <div>
+                          <p className="text-customgray text-xs 2xl:text-sm  font-semibold">
+                            Profit last month
+                          </p>
+                          <p className="text-customgreen 2xl:text-2xl font-semibold text-lg md:mt:0 md:text-xl">
+                            +3.89%
+                          </p>
+                        </div>
+                        <div className="sm:mt-4 flex flex-row gap-8 md:gap-2 items-center">
+                          <Button
+                            onClick={() => router.push("/performance-summary")}
+                            label="Performance Metrics"
+                            className="bg-gradient-to-r py-2 text-nowrap uppercase text-[0.7rem] sm:text-xs from-customgreen to-customblue text-black rounded-md "
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div className="mt-8 md:mt-4 flex flex-row gap-8 md:gap-2 items-center">
-                      <Button
-                        onClick={() => router.push("/performance-summary")}
-                        label="Performance Metrics"
-                        className="bg-gradient-to-r py-2 text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
-                      />
                     </div>
                   </div>
                 ))}

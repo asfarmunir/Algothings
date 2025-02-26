@@ -6,7 +6,7 @@ export const Title = () => {
   return (
     <FadeInSection className="">
       <div className="max-w-screen-xl  mx-auto  ">
-        <div className="flex sm:px-10 md:px-20 lg:px-28 xl:px md:flex-row justify-center flex-col-reverse gap-6 2xl:gap-12">
+        <div className="flex sm:px-10 md:px-20 lg:px-28 xl:px md:flex-row justify-center flex-col-reverse  ">
           {/* <div className="flex-1 px-6 bg-transparent rounded-none w-full lg:block hidden mt-8">
             <h3 className="font-bold text-start text-white text-[28px] mb-8 ">
               Features
@@ -42,19 +42,19 @@ export const Title = () => {
             <hr className="border-[#1B211F]" />
           </div> */}
 
-          <div className="  px-5 sm:min-w-96  w-full sm:w-fit mt-3">
+          <div className="  px-5 sm:min-w-[26rem]  w-full sm:w-fit mt-3">
             <h3 className="font-bold bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent  text-2xl text-[28px] leading-[36px] ">
               Trading With <br />
               The Algos Field
             </h3>
             <div className="bg-gradient-to-b from-customgreen to-customblue p-[6px] rounded-[44px]">
-              <div className="bg-black p-6 rounded-[44px] text-base 2xl:text-[20px]">
-                <div className="flex gap-6 text-start my-3 w-full ">
+              <div className="bg-black px-8 py-6 rounded-[44px] text-base 2xl:text-[20px]">
+                <div className="flex gap-8 2xl:gap-10 text-start my-3 w-full ">
                   <Image
                     src="/images/gradienttick.svg"
                     alt="Gradient Tick"
-                    width={20}
-                    height={20}
+                    width={25}
+                    height={25}
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
@@ -64,12 +64,12 @@ export const Title = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-6 text-start my-3">
+                <div className="flex gap-8 2xl:gap-10 text-start my-3">
                   <Image
                     src="/images/gradienttick.svg"
                     alt="Gradient Tick"
-                    width={20}
-                    height={20}
+                    width={25}
+                    height={25}
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
@@ -79,12 +79,12 @@ export const Title = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-6 text-start my-3">
+                <div className="flex gap-8 2xl:gap-10 text-start my-3">
                   <Image
                     src="/images/gradienttick.svg"
                     alt="Gradient Tick"
-                    width={20}
-                    height={20}
+                    width={25}
+                    height={25}
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
@@ -94,12 +94,12 @@ export const Title = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-6 text-start my-3  w-full">
+                <div className="flex gap-8 2xl:gap-10 text-start my-3  w-full">
                   <Image
                     src="/images/gradienttick.svg"
                     alt="Gradient Tick"
-                    width={20}
-                    height={20}
+                    width={25}
+                    height={25}
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
@@ -110,12 +110,12 @@ export const Title = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-6 text-start my-3">
+                <div className="flex gap-8 2xl:gap-10 text-start my-3">
                   <Image
                     src="/images/gradienttick.svg"
                     alt="Gradient Tick"
-                    width={20}
-                    height={20}
+                    width={25}
+                    height={25}
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
@@ -126,12 +126,12 @@ export const Title = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-6 text-start my-3">
+                <div className="flex gap-8 2xl:gap-10 text-start my-3">
                   <Image
                     src="/images/gradienttick.svg"
                     alt="Gradient Tick"
-                    width={20}
-                    height={20}
+                    width={25}
+                    height={25}
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
@@ -141,12 +141,12 @@ export const Title = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-6 text-start my-3">
+                <div className="flex gap-8 2xl:gap-10 text-start my-3">
                   <Image
                     src="/images/gradienttick.svg"
                     alt="Gradient Tick"
-                    width={20}
-                    height={20}
+                    width={25}
+                    height={25}
                   />
                   <div className="w-full py-2 2xl:py-3">
                     <p className="leading-5 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
@@ -160,16 +160,16 @@ export const Title = () => {
             </div>
           </div>
 
-          <div className=" px-5 sm:min-w-96 w-full sm:w-fit  mt-5 md:mt-12">
+          <div className=" px-5 sm:min-w-[26rem] w-full sm:w-fit  mt-5 md:mt-12">
             <h3 className="text-center font-bold mb-2 text-3xl text-[28px]">
               Trading Yourself
             </h3>
-            <div className="border p-7 rounded-[44px] text-base 2xl:text-[20px]">
-              <div className="flex gap-6 text-start my-3">
+            <div className="border px-8 py-6 rounded-[44px] text-base 2xl:text-[20px]">
+              <div className="flex gap-8 2xl:gap-12 text-start my-3">
                 <Image
                   src="/images/redtick.svg"
                   alt="Red Tick"
-                  width={14}
+                  width={20}
                   height={20}
                 />
                 <div className="w-full py-2 2xl:py-3">
@@ -181,11 +181,11 @@ export const Title = () => {
                 </div>
               </div>
 
-              <div className="flex gap-6 text-start my-3">
+              <div className="flex gap-8 2xl:gap-12 text-start my-3">
                 <Image
                   src="/images/redtick.svg"
                   alt="Red Tick"
-                  width={14}
+                  width={20}
                   height={20}
                 />
                 <div className="w-full py-2 2xl:py-3">
@@ -197,11 +197,11 @@ export const Title = () => {
                 </div>
               </div>
 
-              <div className="flex gap-6 text-start my-3">
+              <div className="flex gap-8 2xl:gap-12 text-start my-3">
                 <Image
                   src="/images/redtick.svg"
                   alt="Red Tick"
-                  width={14}
+                  width={20}
                   height={20}
                 />
                 <div className="w-full py-2 2xl:py-3">
@@ -213,11 +213,11 @@ export const Title = () => {
                 </div>
               </div>
 
-              <div className="flex gap-6 text-start my-3">
+              <div className="flex gap-8 2xl:gap-12 text-start my-3">
                 <Image
                   src="/images/redtick.svg"
                   alt="Red Tick"
-                  width={14}
+                  width={20}
                   height={20}
                 />
                 <div className="w-full py-2 2xl:py-3">
@@ -229,11 +229,11 @@ export const Title = () => {
                 </div>
               </div>
 
-              <div className="flex gap-6 text-start my-3">
+              <div className="flex gap-8 2xl:gap-12 text-start my-3">
                 <Image
                   src="/images/redtick.svg"
                   alt="Red Tick"
-                  width={14}
+                  width={20}
                   height={20}
                 />
                 <div className="w-full py-2 2xl:py-3">
@@ -245,11 +245,11 @@ export const Title = () => {
                 </div>
               </div>
 
-              <div className="flex gap-6 text-start my-3">
+              <div className="flex gap-8 2xl:gap-12 text-start my-3">
                 <Image
                   src="/images/redtick.svg"
                   alt="Red Tick"
-                  width={14}
+                  width={20}
                   height={20}
                 />
 
@@ -262,11 +262,11 @@ export const Title = () => {
                 </div>
               </div>
 
-              <div className="flex gap-6 text-start my-3 ">
+              <div className="flex gap-8 2xl:gap-12 text-start my-3 ">
                 <Image
                   src="/images/redtick.svg"
                   alt="Red Tick"
-                  width={14}
+                  width={20}
                   height={20}
                 />
                 <div className="w-full py-2 2xl:py-3">

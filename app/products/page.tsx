@@ -22,7 +22,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
       <Navbar />
       {/* Details Section: Scrollable */}
       <FadeInSection>
-        <div className="p-4 overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
+        <div className="p-4 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
           <div className="flex justify-center items-center">
             <div className="inline-flex bg-gradient-to-r from-customgreen to-customblue p-[1px] rounded-xl">
               <div className="bg-black rounded-xl p-1 flex">
@@ -82,30 +82,32 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                       alt="card image"
                     />
 
-                    <div className="flex flex-col justify-center">
-                      <p className="text-customgray text-md  font-semibold">
-                        Profit last month
-                      </p>
-                      <p className="text-customgreen text-xl md:text-3xl 2xl:text-4xl  md:mt:0 ">
-                        +3.89%
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-8 md:mt-5 flex flex-row gap-8 md:gap-4 items-center">
-                    <Link
-                      href={"/login"}
-                      className="bg-gradient-to-r py-2 px-5 font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
-                    >
-                      Get Started
-                    </Link>
+                    <div className="flex flex-col  justify-end">
+                      <div>
+                        <p className="text-customgray text-sm sm:text-md  font-semibold">
+                          Profit last month
+                        </p>
+                        <p className="text-customgreen text-xl md:text-3xl 2xl:text-4xl  md:mt:0 ">
+                          +3.89%
+                        </p>
+                      </div>
+                      <div className="mt-5 flex flex-col-reverse sm:flex-row gap-2 md:gap-4 sm:items-center">
+                        <Link
+                          href={"/login"}
+                          className="bg-gradient-to-r py-2 px-5 font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
+                        >
+                          Get Started
+                        </Link>
 
-                    <Link
-                      href={"/products/1/details"}
-                      className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
-                    >
-                      <GoArrowUpRight className="text-lg" />
-                      <span>LEARN MORE</span>
-                    </Link>
+                        <Link
+                          href={"/products/1/details"}
+                          className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-xs 2xl:text-sm"
+                        >
+                          <GoArrowUpRight className="text-lg" />
+                          <span>LEARN MORE</span>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -118,8 +120,8 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                   className=" bg-gradient-to-b  from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"
                 >
                   <div className="bg-[#04110D] py-8  px-[30px] md:px-[40px] rounded-[20px] h-auto ">
-                    <div className="flex flex-col sm:flex-row justify-between gap-4">
-                      <div className="flex flex-row gap-2">
+                    {/* <div className="flex flex-col sm:flex-row justify-start bg-red-50 gap-4">
+                      <div className="flex flex-row gap-2 w-[500px] items-center bg-cyan-50">
                         <Image
                           src="/images/logo1.svg"
                           width={40}
@@ -136,42 +138,69 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                           </p>
                         </div>
                       </div>
-                      <div className="w-full sm:w-auto bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[1px] rounded-lg">
+                      <div className="w-fit sm:w-auto bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[1px] rounded-lg">
                         <Button
                           className="rounded-lg text-sm px-6 md:px-12 w-full sm:w-auto py-3 bg-[#04110D]"
                           label="Most Popular"
                         />
                       </div>
-                    </div>
+                    </div> */}
 
-                    <div className="flex flex-col  sm:flex-row justify-start items-center  gap-4 mt-4 md:mt-4 relative">
-                      <div className="">
-                        <img
+                    <div className="flex flex-col  sm:flex-row justify-start items-start  gap-4 mt-4 md:mt-4 relative">
+                      <div className=" flex flex-col gap-2">
+                        <div className="flex flex-row gap-2  items-center ">
+                          <Image
+                            src="/images/logo1.svg"
+                            width={40}
+                            height={20}
+                            alt="Logo"
+                          />
+                          <div className="text-start">
+                            <h1 className="text-[16px] text-start  tracking-wide capitalize font-semibold">
+                              Portfolio Strategy
+                            </h1>
+                            <p className="text-customgray text-wrap  text-[12px]">
+                              This portfolio integrates all 10 strategies,
+                              delivering a range
+                            </p>
+                          </div>
+                        </div>
+                        <Image
                           src="/images/portfolio.webp"
                           alt="card image"
-                          className="w-full h-[200px] 2xl:h-[250px] sm:w-auto"
+                          width={200}
+                          height={200}
+                          className="w-full h-[200px] 2xl:h-[250px] sm:w-auto "
                         />
                       </div>
-                      <div className="ml-0 sm:ml-4  flex flex-col items-start  justify-between">
-                        <div className=" md:mt-6 md:text-start w-full ">
-                          <p className="text-customgray text-[12px]  font-semibold">
-                            Profit last month
-                          </p>
-                          <p className="text-customgreen tracking-wider  text-3xl sm:text-4xl md:text-[45px] 2xl:text-[55px] font-semibold py-6 ">
-                            +3.89%
-                          </p>
+                      <div className="flex flex-col">
+                        <div className="w-fit hidden md:block ml-0 sm:ml-4 bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[1px] rounded-lg">
+                          <Button
+                            className="rounded-lg text-sm px-6 md:px-12 w-full sm:w-auto py-3 bg-[#04110D]"
+                            label="Most Popular"
+                          />
                         </div>
-                        <div className="w-full flex flex-row gap-4 items-center">
-                          <Link
-                            href={"/login"}
-                            className="bg-gradient-to-r py-2 px-5 font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
-                          >
-                            Get Started
-                          </Link>
-                          <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
-                            <GoArrowUpRight className="text-lg" />
-                            <span>LEARN MORE</span>
-                          </button>
+                        <div className="ml-0 sm:ml-4  flex flex-col items-start  justify-end gap-2 ">
+                          <div className=" mt-3 md:mt-8 md:text-start mx-auto sm:mx-0   ">
+                            <p className="text-customgray text-[12px]  font-semibold">
+                              Profit last month
+                            </p>
+                            <p className="text-customgreen tracking-wider  text-3xl sm:text-4xl md:text-[45px] 2xl:text-[55px] font-semibold pt-1 pb-3  ">
+                              +3.89%
+                            </p>
+                          </div>
+                          <div className="w-full flex flex-row gap-4 items-center">
+                            <Link
+                              href={"/login"}
+                              className="bg-gradient-to-r py-2 px-5 font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
+                            >
+                              Get Started
+                            </Link>
+                            <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
+                              <GoArrowUpRight className="text-lg" />
+                              <span>LEARN MORE</span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>

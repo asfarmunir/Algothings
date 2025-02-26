@@ -132,6 +132,26 @@ export default function Register() {
                   {showPassword ? <BiHide /> : <BiShow />}
                 </button>
               </div>
+              <div className="relative w-full">
+                <Input
+                  label="Confirm Password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleInputChange}
+                  labelClass="text-white"
+                  inputClass="bg-[#FFFFFF05] w-full py-3 px-4"
+                  icon={<GoLock />}
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute right-2 top-2/3 transform -translate-y-1/2"
+                >
+                  {showPassword ? <BiHide /> : <BiShow />}
+                </button>
+              </div>
 
               <div className="flex items-center gap-2">
                 <Checkbox
@@ -174,12 +194,12 @@ export default function Register() {
                 >
                   <FaFacebook className="text-2xl text-customgreen" />
                 </button>
-                <button
+                {/* <button
                   type="button"
                   className="bg-[#FFFFFF1A] flex items-center justify-center rounded-md w-[50px] h-[50px]"
                 >
                   <FaXTwitter className="text-2xl " />
-                </button>
+                </button> */}
               </div>
               <p className="text-center text-[14px] text-white">
                 Have an account?{" "}

@@ -43,11 +43,11 @@ const Sidebar = ({
     {
       label: "Performance Metrics",
       icon: <FaShareAlt />,
-      href: "/all-products",
+      href: "/performance-metrics ",
 
       // subItems: [
-      //   { href: "/all-products?key=INDIVIDUALS", label: "Individual Algos" },
-      //   { href: "/all-products?key=PORTFOLIO", label: "Portfolio" },
+      //   { href: "/performance-metrics ?key=INDIVIDUALS", label: "Individual Algos" },
+      //   { href: "/performance-metrics ?key=PORTFOLIO", label: "Portfolio" },
       // ],
       img: "performance",
     },
@@ -165,7 +165,9 @@ const Sidebar = ({
                       `}
                     alt={item.label}
                   />
-                  <span className="ms-3">{item.label}</span>
+                  <span className="ms-3 text-xs 2xl:text-base">
+                    {item.label}
+                  </span>
                 </Link>
                 {/* Sub-items */}
                 {item.subItems && activeMenu === item.label && (
@@ -177,7 +179,7 @@ const Sidebar = ({
                           className="text-sm text-white pl-4 inline-flex items-center 
                            gap-2 hover:text-white"
                         >
-                          <FaChevronRight className="text-sm text-slate-50" />
+                          <FaChevronRight className="text-xs 2xl:text-sm  text-slate-50" />
 
                           {subItem.label}
                         </Link>
