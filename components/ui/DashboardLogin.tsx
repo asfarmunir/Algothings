@@ -41,12 +41,12 @@ export const DashboardLogin = () => {
           Everything you need to become a ALGOS Field Trader
         </p>
 
-        <div className="flex flex-row  mx-auto  justify-center items-center w-[75%]">
+        <div className="flex flex-row    mx-auto  justify-center items-center w-[60%]">
           <Image
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             priority
-            src="/images/dashboard.webp"
+            src="/assets/animations/login.gif"
             className=" w-full h-full  object-contain object-center"
             alt="Dashboard"
           />

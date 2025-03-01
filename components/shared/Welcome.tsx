@@ -94,21 +94,20 @@ export const Welcome = () => {
 
           {/* Welcome Image */}
           <FadeInSection>
-            <div className=" py-10 max-w-7xl mx-auto sm:px-6 md:px-20 xl:px-[98px] w-full flex flex-row justify-center items-center">
+            <div className="  max-w-7xl -mt-20 mx-auto  w-full flex flex-row justify-center items-center">
               <Image
-                src="/images/wel.png"
-                width={0}
-                height={0}
-                layout="responsive"
+                src="/assets/hero.webp"
+                width={1200}
+                height={1200}
                 alt="image"
-                className="w-full sm:w-auto"
+                className=" w-full "
               />
             </div>
           </FadeInSection>
 
           {/* Who We Are Section */}
 
-          <div className=" py-4" id="about">
+          <div className=" py-4 -mt-20" id="about">
             <FadeInSection>
               <div className="inline-flex flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
                 <Image
@@ -151,10 +150,11 @@ export const Welcome = () => {
             </FadeInSection>
 
             <FadeInSection>
-              <div className="  mt-6 2xl:mt-10 mb-2 mx-4 md:mx-8 lg:mx-10 md:h-[300px] lg:h-[630px] md:px-10">
+              <div className="   mb-2 mx-4 md:mx-8 lg:mx-10 md:h-[300px] lg:h-[630px] md:px-10">
                 <img
-                  src="/images/visual.svg"
+                  src="/assets/animations/Website.gif"
                   alt="image"
+                  loading="lazy"
                   className="w-full h-full object-contain object-center"
                 />
               </div>
@@ -350,10 +350,10 @@ export const Welcome = () => {
 
                 <div className=" bg-[#02090780] w-full p-8  rounded-2xl border-none">
                   <Image
-                    src="/images/portfolio.webp"
+                    src={`/assets/steps/${activeStep}.png`}
                     alt="plan image"
-                    width={400}
-                    height={400}
+                    width={800}
+                    height={800}
                     className=" w-full h-full object-contain object-center"
                   />
                 </div>
