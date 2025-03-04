@@ -223,7 +223,7 @@ export const Footer = () => {
                   2xl:w-[180px]"
               />
               <div className="text-start">
-                <p className="2xl:text-lg py-8 2xl:py-10 font-semibold ">
+                <p className="2xl:text-lg py-8 2xl:py-10 font-semibold text-center sm:text-start ">
                   Built for Traders, <br /> Powered by The Algos Field
                 </p>
               </div>
@@ -294,7 +294,7 @@ export const Footer = () => {
               <FaFacebook className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
             </div>
           </div>
-          <div className="py-8 grid grid-cols-1 sm:grid-cols-2 gap-5 2xl:gap-10 sm:mx-16 2xl:mx-28 mx-auto ">
+          <div className="py-8 px-2 grid grid-cols-1 sm:grid-cols-2 gap-5 2xl:gap-10 sm:mx-16 2xl:mx-28 mx-auto ">
             {Array.from({ length: 4 }).map((_, index) => (
               <p
                 key={index}

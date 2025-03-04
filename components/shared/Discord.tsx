@@ -44,7 +44,7 @@ export function DiscordCommunity() {
               <h1 className="text-3xl 2xl:text-5xl  font-spaceGrotesk font-semibold  tracking-wide bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent h-16 ">
                 Smarter Trading, Right in Your Inbox
               </h1>
-              <p className="text-sm 2xl:text-base pt-2 font-light ">
+              <p className="text-sm 2xl:text-base pt-2 mt-3 sm:mt-0 font-light ">
                 Stay in the loop with algo insights, updates, and strategies. No
                 spam, just the good stuff.
               </p>

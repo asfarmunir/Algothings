@@ -94,7 +94,7 @@ export const Welcome = () => {
 
           {/* Welcome Image */}
           <FadeInSection>
-            <div className="  max-w-7xl -mt-20 mx-auto  w-full flex flex-row justify-center items-center">
+            <div className="  max-w-7xl -mt-8 mb-10 sm:-mt-20 mx-auto  w-full flex flex-row justify-center items-center">
               <Image
                 src="/assets/hero.webp"
                 width={1200}
@@ -313,7 +313,7 @@ export const Welcome = () => {
 
                     <div className=" bg-[#02090780] w-full p-8 h-[320px] rounded-[20px] border-none">
                       <Image
-                        src="/images/portfolio.webp"
+                        src={`/assets/steps/${index + 1}.png`}
                         alt="plan image"
                         width={400}
                         height={400}
