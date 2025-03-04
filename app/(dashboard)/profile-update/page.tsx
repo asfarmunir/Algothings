@@ -83,7 +83,7 @@ const Profile: React.FC = () => {
         <DashboardNavbar />
 
         {/* Page Content */}
-        <div className="flex-grow p-6 overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
+        <div className="flex-grow max-w-[100rem]  p-6 overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
           <div className="bg-customcard p-5 2xl:p-8 rounded-lg border border-[#FFFFFF33]">
             <Image
               src="/images/profile.png"

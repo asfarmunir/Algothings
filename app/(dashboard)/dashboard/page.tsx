@@ -45,7 +45,7 @@ export default function AllAnnouncement() {
           {/* Dashboard Navbar: Static and non-scrollable */}
           <DashboardNavbar />
           {/* Details Section: Scrollable */}
-          <div className="p-6 overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
+          <div className="p-6 overflow-y-auto max-w-[100rem] scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
             <div className="flex-grow ">
               <div className=" bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[1px] rounded-md">
                 <div className="bg-[#04110D] rounded-md p-3 flex flex-row gap-5 items-center justify-between">
