@@ -3,6 +3,14 @@ import React, { useState } from "react";
 import Dropdown from "../ui/Dropdown";
 import Image from "next/image";
 import Sidebar from "./Sidebar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const DashboardNavbar = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -52,12 +60,18 @@ const DashboardNavbar = () => {
               alt="profile"
             />
             <div>
-              <Dropdown
-                options={["Billing and Accounts", "Logout"]}
-                placeholder="Ali Hassan"
-                className="w-28 text-xs 2xl:text-sm bg-transparent "
-                onSelect={handleSelect}
-              />
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center gap-2 px-4">
+                  Ali Hassan
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className=" border-none bg-customgreen/20 mt-4 mr-4">
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuItem>Billing and Accounts</DropdownMenuItem>
+                  <DropdownMenuItem>Join Community</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Logout</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>

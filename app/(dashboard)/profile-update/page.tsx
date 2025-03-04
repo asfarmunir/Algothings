@@ -16,7 +16,7 @@ import { LuUserPlus } from "react-icons/lu";
 import { FaRegUserCircle } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { LuUserRound } from "react-icons/lu";
-
+import { TbCancel } from "react-icons/tb";
 import Image from "next/image";
 import useProfileUpdate from "@/hooks/useProfileUpdate";
 import Table from "@/components/ui/Table";
@@ -47,6 +47,7 @@ const Profile: React.FC = () => {
   };
 
   const handleCountryChange = (code: string) => {
+    console.log("🚀 ~ handleCountryChange ~ code:", code);
     setProfile((prev) => ({ ...prev, country: code }));
   };
 
@@ -155,6 +156,16 @@ const Profile: React.FC = () => {
                 >
                   Billing History
                 </button>
+                <button
+                  className={
+                    activebtn === "subscriptions"
+                      ? "bg-[#FFFFFF33] rounded-full py-1 px-5"
+                      : "py-1 px-3"
+                  }
+                  onClick={() => setActivebtn("subscriptions")}
+                >
+                  Active Subscriptions
+                </button>
               </div>
 
               {activebtn === "personal" && (
@@ -210,8 +221,8 @@ const Profile: React.FC = () => {
                         <ReactFlagsSelect
                           selected={profile.country}
                           onSelect={handleCountryChange}
-                          countries={["GB", "US", "CA", "IN"]}
-                          customLabels={{ GB: "", US: "", CA: "", IN: "" }}
+                          countries={["GB", "US", "CA", "IN", "PK"]}
+                          customLabels={{ GB: "", US: "", CA: "", IN: "91" }}
                           showSelectedLabel={false}
                           showOptionLabel={false}
                           className="bg-[#FFFFFF05]"
@@ -328,6 +339,52 @@ const Profile: React.FC = () => {
               {activebtn === "billing" && (
                 <div className="overflow-x-auto">
                   <Table columns={tableTitle} data={invoicedata} />
+                </div>
+              )}
+
+              {activebtn === "subscriptions" && (
+                <div className="grid grid-cols-1  md:grid-cols-2 gap-4 mt-4 p-2 2xl:p-4">
+                  {Array.from({ length: 1 }).map((_, index) => (
+                    <div
+                      key={index}
+                      className="bg-gradient-to-r from-[#45F1751A] to-[#00C3CE1A] p-[20px] rounded-[20px]"
+                    >
+                      <div className="flex flex-row items-center justify-between gap-1">
+                        <div className="flex flex-row items-center gap-3">
+                          <Image
+                            src="/images/logo1.svg"
+                            width={30}
+                            height={20}
+                            className="
+                                               2xl:w-[40px] 2xl:h-[40px]
+                                              "
+                            alt="Logo"
+                          />
+
+                          <h1 className="text-sm md:text-sm uppercase font-semibold">
+                            Trend Hunter
+                          </h1>
+                          <h3 className="bg-gradient-to-r from-[#45F175] to-[#00C3CE]  text-black px-6 py-1 rounded-full">
+                            Active
+                          </h3>
+                        </div>
+                        <button className="bg-red-700/40  bg-clip-border p-[1px] text-red-500 px-6 py-1 rounded-full inline-flex items-center gap-2 ">
+                          <TbCancel />
+                          Unsubscribe
+                        </button>
+                      </div>
+                      <div className="flex flex-row gap-3 mt-8">
+                        <p className="w-full bg-[#FFFFFF1A] py-3 text-center rounded-full text-sm">
+                          <span className="text-[#FFFFFF80]">Start Date:</span>{" "}
+                          00/00/0000
+                        </p>
+                        <p className="w-full bg-[#FFFFFF1A] py-3 rounded-full text-center text-sm">
+                          <span className="text-[#FFFFFF80]">End Date:</span>{" "}
+                          00/00/0000
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>

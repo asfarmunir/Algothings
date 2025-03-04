@@ -136,21 +136,21 @@ export const Algorithm = () => {
                         Profit last month
                       </p>
                       <p className="text-customgreen text-[24px]">+3.89%</p>
+                      <div className="mt-4 flex flex-col-reverse gap-4 items-center">
+                        <Button
+                          label="Get Started"
+                          onClick={() => router.push("/register")}
+                          className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
+                        />
+                        <button
+                          onClick={() => router.push("/products/1/details")}
+                          className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
+                        >
+                          <GoArrowUpRight className="text-lg" />
+                          <span>LEARN MORE</span>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div className="mt-4 flex flex-row gap-4 items-center">
-                    <Button
-                      label="Get Started"
-                      onClick={() => router.push("/register")}
-                      className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
-                    />
-                    <button
-                      onClick={() => router.push("/products/1/details")}
-                      className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
-                    >
-                      <GoArrowUpRight className="text-lg" />
-                      <span>LEARN MORE</span>
-                    </button>
                   </div>
                 </div>
               </div>
@@ -193,21 +193,21 @@ export const Algorithm = () => {
                           Profit last month
                         </p>
                         <p className="text-customgreen text-[24px]">+3.89%</p>
+                        <div className="mt-4 flex flex-col-reverse gap-4 items-center">
+                          <Button
+                            label="Get Started"
+                            onClick={() => router.push("/register")}
+                            className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] text-xs   uppercase 2xl:text-sm from-customgreen to-customblue text-black rounded-lg"
+                          />
+                          <button
+                            onClick={() => router.push("/products/1/details")}
+                            className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-xs 2xl:text-sm"
+                          >
+                            <GoArrowUpRight className="text-lg" />
+                            <span>LEARN MORE</span>
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                    <div className="mt-4 flex flex-row gap-4 items-center">
-                      <Button
-                        label="Get Started"
-                        onClick={() => router.push("/register")}
-                        className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
-                      />
-                      <button
-                        onClick={() => router.push("/products/1/details")}
-                        className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
-                      >
-                        <GoArrowUpRight className="text-lg" />
-                        <span>LEARN MORE</span>
-                      </button>
                     </div>
                   </div>
                 ))}
