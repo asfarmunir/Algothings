@@ -163,7 +163,7 @@ export const Welcome = () => {
 
           {/* Steps Section */}
           <FadeInSection>
-            <div className="px-2 max-w-[90rem] mx-auto my-16 md:px-8 lg:px-24 xl:px-[128px]">
+            <div className="px-2 max-w-[90rem] mx-auto my-6 md:px-8 lg:px-24 xl:px-[128px]">
               <div className="inline-flex flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
                 <Image
                   src="/images/welcomestar.svg"
@@ -186,123 +186,31 @@ export const Welcome = () => {
               {/* Steps plan cards */}
               <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  2xl:gap-6 w-full pt-3 ">
                 {["Step 1", "Step 2", "Step 3", "Step 4"].map((item, index) => (
-                  <div
-                    key={index}
-                    className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[2.5px] rounded-xl"
-                  >
-                    <button
-                      onClick={() => setActiveStep(index + 1)}
-                      className={` py-[10px] w-full rounded-xl transition duration-300 uppercase ${
-                        activeStep === index + 1
-                          ? "bg-gradient-to-r from-customgreen  to-customblue"
-                          : "bg-black text-customgreen "
-                      } text-[23px] font-semibold hover:bg-gradient-to-r hover:from-customgreen/30  hover:to-customblue/30  tracking-wider`}
+                  <div className=" p-1.5 rounded-2xl border border-gray-700">
+                    <div
+                      key={index}
+                      className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[2.5px] rounded-xl"
                     >
-                      <span
-                        className={`${
+                      <button
+                        onClick={() => setActiveStep(index + 1)}
+                        className={` py-[10px] w-full rounded-xl transition duration-300 uppercase ${
                           activeStep === index + 1
-                            ? "text-black "
-                            : "bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent"
-                        }`}
+                            ? "bg-gradient-to-r from-customgreen  to-customblue"
+                            : "bg-black text-customgreen "
+                        } text-[18px] font-semibold hover:bg-gradient-to-r hover:from-customgreen/30  hover:to-customblue/30  tracking-wider`}
                       >
-                        {item}
-                      </span>
-                    </button>
-                  </div>
-                ))}
-              </div>
-              <div className="grid sm:hidden gap-5  2xl:gap-7 w-full py-3 px-2">
-                {["Step 1", "Step 2", "Step 3", "Step 4"].map((item, index) => (
-                  <>
-                    <AnimationSection>
-                      <div
-                        key={index}
-                        onClick={() => handleToggle(item)}
-                        className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[2.5px] rounded-md"
-                      >
-                        <button
-                          onClick={() => setActiveStep(index + 1)}
-                          className={` py-[10px] w-full rounded-md transition duration-300 uppercase ${
+                        <span
+                          className={`${
                             activeStep === index + 1
-                              ? "bg-gradient-to-r from-customgreen  to-customblue"
-                              : "bg-black text-customgreen "
-                          } text-[23px] font-semibold hover:bg-gradient-to-r hover:from-customgreen/30  hover:to-customblue/30  tracking-wider`}
+                              ? "text-black "
+                              : "bg-gradient-to-b  from-customgreen to-customblue bg-clip-text text-transparent"
+                          }`}
                         >
-                          <span
-                            className={`${
-                              activeStep === index + 1
-                                ? "text-black "
-                                : "bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent"
-                            }`}
-                          >
-                            {item}
-                          </span>
-                        </button>
-                      </div>
-                    </AnimationSection>
-                    <AnimatePresence initial={false}>
-                      {openItem === item && (
-                        <motion.div
-                          key="content"
-                          initial="collapsed"
-                          animate="expanded"
-                          exit="collapsed"
-                          variants={accordionVariants}
-                          className="overflow-hidden text-start font-light bg-[#04100C] text-sm  rounded-b-md border border-[#FFFFFF33] "
-                        >
-                          <div className="md:px-8 lg:px-24 xl:px-[98px]">
-                            <div className="h-auto lg:h-[520px] flex md:flex-row flex-col-reverse  justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#45F175B2] px-3 md:px-6 py-3 md:py-10 rounded-[20px] text-black">
-                              <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
-                                <div className="text-start leading-[28px]">
-                                  <h1 className="font-semibold text-center leading-10 text-[32px] pt-4">
-                                    {stepContent[activeStep - 1].title}
-                                  </h1>
-                                  <p className="text-[16px] py-2">
-                                    {stepContent[activeStep - 1].description}
-                                  </p>
-                                  <ul className="space-y-1 list-disc pl-5 text-[16px]">
-                                    {stepContent[activeStep - 1].points?.map(
-                                      (point, index) => (
-                                        <li className="" key={index}>
-                                          {point}
-                                        </li>
-                                      )
-                                    )}
-                                  </ul>
-
-                                  <p className="text-sm py-2">
-                                    {stepContent[activeStep - 1].endDescription}
-                                  </p>
-
-                                  <div className="my-4 flex items-center gap-3 ">
-                                    <Button
-                                      // label={stepContent[activeStep - 1].btntitle}
-                                      label="Get Started"
-                                      className="bg-gradient-to-r uppercase text-sm from-customgreen to-customblue font-semibold py-[12px] px-[36px] rounded-[8px]"
-                                    />
-                                    <button className=" text-white border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  ">
-                                      Choose Plan
-                                      <FaAngleRight />
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div className=" bg-[#02090780] w-full p-8 h-[420px] rounded-[20px] border-none">
-                                <Image
-                                  src="/images/portfolio.webp"
-                                  alt="plan image"
-                                  width={400}
-                                  height={400}
-                                  className=" w-full h-full object-contain object-center"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </>
+                          {item}
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -312,8 +220,11 @@ export const Welcome = () => {
           <FadeInSection>
             <div className="hidden max-w-[90rem] mx-auto sm:block px-2 md:px-8 lg:px-24 xl:px-[128px]">
               <div className="h-auto lg:h-[430px] xl:h-[500px] 2xl:h-[600px] flex md:flex-row flex-col-reverse justify-between bg-gradient-to-b   from-[#45F175B2] via-[#00C3CEB2] to-[#020907B2] px-5 md:px-6 py-5 md:py-5 rounded-2xl text-black">
-                <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
+                <div className="w-full  flex flex-col justify-center px-2 md:px-6 lexend">
                   <div className="text-start leading-[28px]">
+                    <p className="bg-gradient-to-r uppercase  from-customgreen to-customblue font-semibold px-4 py-1.5 w-fit rounded-full text-xs 2xl:text-sm">
+                      Step {activeStep}
+                    </p>
                     <h1 className="font-bold leading-10 text-[32px] py-4">
                       {stepContent[activeStep - 1].title}
                     </h1>
@@ -360,6 +271,60 @@ export const Welcome = () => {
               </div>
             </div>
           </FadeInSection>
+
+          {/* Mobile version Details */}
+          <div className="flex flex-col sm:hidden  gap-4">
+            {stepContent.map((step, index) => (
+              <FadeInSection key={index}>
+                <div className="px-4 md:px-8 lg:px-24 xl:px-[98px]">
+                  <div className="h-auto lg:h-[520px] flex md:flex-row flex-col-reverse  justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#45F175B2] px-3 md:px-6 py-3 md:py-10 rounded-[20px] text-black">
+                    <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
+                      <div className="text-start leading-[28px]">
+                        <p className="bg-gradient-to-r mt-6 uppercase  from-customgreen to-customblue font-semibold px-4 py-1.5 w-fit rounded-full text-xs ">
+                          Step {activeStep}
+                        </p>
+                        <h1 className="font-semibold text-start leading-10 text-[28px] pt-2">
+                          {step.title}
+                        </h1>
+                        <p className="text-[14px] py-1">{step.description}</p>
+                        <ul className="space-y-1 list-disc pl-5 text-[16px]">
+                          {step.points?.map((point, index) => (
+                            <li className="" key={index}>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+
+                        <p className="text-sm py-2">{step.endDescription}</p>
+
+                        <div className="my-4 flex items-center gap-3 ">
+                          <Button
+                            // label={step.btntitle}
+                            label="Get Started"
+                            className="bg-gradient-to-r uppercase text-sm from-customgreen to-customblue font-semibold py-[12px] px-[36px] rounded-[8px]"
+                          />
+                          <button className=" text-white border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  ">
+                            Choose Plan
+                            <FaAngleRight />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className=" bg-[#02090780] w-full p-8 h-[320px] rounded-[20px] border-none">
+                      <Image
+                        src="/images/portfolio.webp"
+                        alt="plan image"
+                        width={400}
+                        height={400}
+                        className=" w-full h-full object-contain object-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
         </div>
       </section>
     </>

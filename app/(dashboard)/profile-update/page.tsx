@@ -240,7 +240,7 @@ const Profile: React.FC = () => {
                       onChange={handleInputChange}
                       labelClass="text-white"
                       customClass="w-full"
-                      inputClass="bg-[#FFFFFF05] w-full text-white placeholder:text-customgray text-[14px] py-3 border border-[#FFFFFF0F]"
+                      inputClass="bg-[#FFFFFF05] w-full sm:w-1/2 text-white placeholder:text-customgray text-[14px] py-3 border border-[#FFFFFF0F]"
                     />
 
                     {/* Account Type Dropdown */}

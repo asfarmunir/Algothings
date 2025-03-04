@@ -1,10 +1,13 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
+import toast from 'react-hot-toast';
+import axios from 'axios';
 export default function useRegisterForm() {
     const [showPassword, setShowPassword] = useState(false);
     const [selectedCountry, setSelectedCountry] = useState('GB');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
     const [formData, setFormData] = useState({
         firstName: '',
@@ -35,15 +38,48 @@ export default function useRegisterForm() {
         setSelectedCountry(selectedOption.code);
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!isChecked) {
-            alert('You must agree to the terms of service.');
+            toast.error('Please agree to the terms os service');
             return;
         }
-        // Perform form submission logic (e.g., API call)
-        console.log('Form submitted:', formData, selectedCountry);
-        router.push('/dashboard');
+        if(
+            formData.password !== formData.confirmPassword
+        ){
+            toast.error('Passwords do not match');
+            return;
+        }
+       
+    try {
+        setLoading(true);
+        setError(false);
+      const response = await axios.post("/api/auth/signup", formData);
+      if (response.status !== 200) {
+
+        throw new Error("Something went wrong");
+      }
+      if (response.data.status !== 200) {
+        toast.error(response.data.message);
+        setError(true);
+        return;
+      }
+
+    //   const { email, password } = values;
+    //   await signIn("credentials", {
+    //     email,
+    //     password,
+    //     redirect: false,
+    //   });
+
+      toast.success("User created successfully");
+    } catch (error) {
+      console.log(error);
+      setError(true);
+      toast.error("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
         
     };
 
@@ -51,11 +87,14 @@ export default function useRegisterForm() {
         showPassword,
         togglePasswordVisibility,
         selectedCountry,
+        setSelectedCountry,
         handleSelectCountry,
         isChecked,
         handleCheckboxChange,
         formData,
         handleInputChange,
         handleSubmit,
+        loading,
+        error
     };
 }

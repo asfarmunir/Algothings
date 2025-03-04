@@ -1,10 +1,10 @@
 // components/Button.tsx
-import React from 'react';
+import React from "react";
 
 interface ButtonProps {
-  label: string; // Button text
+  label: any; // Button text
   onClick?: () => void; // Click handler (optional)
-  type?: 'button' | 'submit' | 'reset'; // Button type (optional, default: 'button')
+  type?: "button" | "submit" | "reset"; // Button type (optional, default: 'button')
   className?: string; // Additional Tailwind classes for customization
   disabled?: boolean; // Disable button state
 }
@@ -12,8 +12,8 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
   label,
   onClick,
-  type = 'button',
-  className = '',
+  type = "button",
+  className = "",
   disabled = false,
 }) => {
   return (

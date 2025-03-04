@@ -20,6 +20,7 @@ import Checkbox from "@/components/ui/Checkbox";
 import Link from "next/link";
 import { DashboardLogin } from "@/components/ui/DashboardLogin";
 import useLoginForm from "@/hooks/useLoginForm";
+import { BeatLoader } from "react-spinners";
 
 export default function Login() {
   const {
@@ -30,6 +31,8 @@ export default function Login() {
     formData,
     handleInputChange,
     handleSubmit,
+    loading,
+    error,
   } = useLoginForm();
 
   return (
@@ -50,11 +53,11 @@ export default function Login() {
 
           <form className="space-y-4 w-full" onSubmit={handleSubmit}>
             <InputField
-              label="Username or Email"
+              label=" Email"
               icon={<FaRegUserCircle />}
-              placeholder="username or email"
-              name="username"
-              value={formData.username}
+              placeholder="xyz@gmail.com"
+              name="email"
+              value={formData.email}
               onChange={handleInputChange}
               labelClass="text-white 2xl:text-sm"
               inputClass="bg-[#FFFFFF05] w-full py-[12px] px-[16px]"
@@ -97,8 +100,8 @@ export default function Login() {
             </div>
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r text-lg from-customgreen to-customblue text-black rounded-md py-[12px] px-[40]"
-              label="Log in"
+              className="w-full bg-gradient-to-r text-sm 2xl:text-base font-semibold  from-customgreen to-customblue text-black rounded-md py-[12px] px-[40]"
+              label={loading ? <BeatLoader color="#000" size={6} /> : "Log In"}
             />
 
             <div className="flex items-center justify-between gap-2">

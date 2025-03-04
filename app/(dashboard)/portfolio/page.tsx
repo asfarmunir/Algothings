@@ -10,6 +10,7 @@ import Button from "@/components/ui/Button";
 import { GoArrowUpRight } from "react-icons/go";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { IoMdRemoveCircleOutline } from "react-icons/io";
 
 export default function Algorithm() {
   const [activeButton, setActiveButton] = useState("Monthly");
@@ -157,12 +158,15 @@ export default function Algorithm() {
                             Profit Target
                           </p>
                           <div>
-                            <Dropdown
+                            {/* <Dropdown
                               options={["1", "2", "3"]}
                               onSelect={handleSelect}
                               placeholder="1"
                               className="bg-[#D9D9D91A] text-xs w-[50px] border border-black text-center"
-                            />
+                            /> */}
+                            <button>
+                              <IoMdRemoveCircleOutline className="text-xl text-customgreen" />
+                            </button>
                           </div>
                         </div>
                       </div>

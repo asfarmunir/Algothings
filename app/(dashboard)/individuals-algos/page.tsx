@@ -4,7 +4,7 @@ import { Plans } from "@/components/shared/plans";
 import Sidebar from "@/components/shared/Sidebar";
 import Dropdown from "@/components/ui/Dropdown";
 import { GoArrowUpRight } from "react-icons/go";
-
+import { IoMdRemoveCircle, IoMdRemoveCircleOutline } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
@@ -144,12 +144,15 @@ export default function Algorithm() {
                               Profit Target
                             </p>
                             <div>
-                              <Dropdown
+                              {/* <Dropdown
                                 options={["0", "1", "2", "3"]}
                                 onSelect={handleSelect}
                                 placeholder="1"
                                 className="bg-[#D9D9D91A] text-sm lg:text-xs w-[50px] border border-black text-center"
-                              />
+                              /> */}
+                              <button>
+                                <IoMdRemoveCircleOutline className="text-xl text-customgreen" />
+                              </button>
                             </div>
                           </div>
                         </div>

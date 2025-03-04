@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import {useRouter} from 'next/navigation';
+import { signIn } from 'next-auth/react';
+import toast from 'react-hot-toast';
 
 export default function useLoginForm() {
 
 
     const [showPassword, setShowPassword] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
     const [formData, setFormData] = useState({
-        username: '',
+        email: '',
         password: '',
     });
     const router = useRouter();
@@ -25,11 +29,24 @@ export default function useLoginForm() {
         setIsChecked(checked);
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Perform login logic (e.g., API call)
         console.log('Login form submitted:', formData, isChecked);
-        router.push('/dashboard');
+         const { email, password } = formData;
+        const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+        });
+        if (!res!.ok) {
+        toast.error(res!.error);
+        setLoading(false);
+        return;
+        }
+        toast.success("Logged in successfully");
+        router.replace("/account");
+        setLoading(false);
+        // router.push('/dashboard');
     };
 
     return {
@@ -40,5 +57,7 @@ export default function useLoginForm() {
         formData,
         handleInputChange,
         handleSubmit,
+        loading,
+        error
     };
 }

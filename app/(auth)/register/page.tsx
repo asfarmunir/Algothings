@@ -19,6 +19,7 @@ import Dropdown from "@/components/ui/Dropdown";
 import Checkbox from "@/components/ui/Checkbox";
 import { DashboardLogin } from "@/components/ui/DashboardLogin";
 import useRegisterForm from "@/hooks/useRegisterForm";
+import { BeatLoader } from "react-spinners";
 
 export default function Register() {
   const {
@@ -31,6 +32,8 @@ export default function Register() {
     formData,
     handleInputChange,
     handleSubmit,
+    loading,
+    error,
   } = useRegisterForm();
 
   return (
@@ -172,7 +175,9 @@ export default function Register() {
               <Button
                 type="submit"
                 className="w-full py-[12px] text-[16px] bg-gradient-to-r from-customgreen to-customblue text-black rounded-md"
-                label="Sign Up"
+                label={
+                  loading ? <BeatLoader color="#000" size={6} /> : "Sign Up"
+                }
               />
 
               <div className="flex items-center justify-between gap-2">
