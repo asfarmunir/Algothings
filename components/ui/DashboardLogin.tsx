@@ -2,8 +2,17 @@ import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import Dropdown from "./Dropdown";
 import Link from "next/link";
+import loginAnimation from "@/public/assets/animations/Login.gif";
+import errorAnimation from "@/public/assets/animations/Error.gif";
+import afterLoginAnimation from "@/public/assets/animations/after_login.gif";
 
-export const DashboardLogin = () => {
+export const DashboardLogin = ({
+  error,
+  success,
+}: {
+  error: boolean;
+  success: boolean;
+}) => {
   const handleSelect = () => {
     console.log("");
   };
@@ -46,7 +55,13 @@ export const DashboardLogin = () => {
             width={500}
             height={500}
             priority
-            src="/assets/animations/login.gif"
+            src={
+              error
+                ? errorAnimation
+                : success
+                ? afterLoginAnimation
+                : loginAnimation
+            }
             className=" w-full h-full  object-contain object-center"
             alt="Dashboard"
           />

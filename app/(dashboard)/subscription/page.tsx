@@ -160,6 +160,9 @@ export default function Algorithm() {
 
                       <Button
                         label="Choose Plan"
+                        onClick={() => {
+                          router.push("/individuals-algos");
+                        }}
                         className={` ${
                           false
                             ? "bg-gradient-to-r from-[#00C88C] to-[#0C7C33] text-white  "
@@ -319,6 +322,9 @@ export default function Algorithm() {
 
                       <Button
                         label="Choose Plan"
+                        onClick={() => {
+                          router.push("/portfolio");
+                        }}
                         className={` ${
                           true
                             ? "bg-gradient-to-l from-[#00C88C] to-[#0C7C33] text-white  "

@@ -20,6 +20,8 @@ import Checkbox from "@/components/ui/Checkbox";
 import { DashboardLogin } from "@/components/ui/DashboardLogin";
 import useRegisterForm from "@/hooks/useRegisterForm";
 import { BeatLoader } from "react-spinners";
+import codes from "country-calling-code";
+import InputField from "@/components/ui/InputField";
 
 export default function Register() {
   const {
@@ -34,6 +36,9 @@ export default function Register() {
     handleSubmit,
     loading,
     error,
+    success,
+    countryCode,
+    setCountryCode,
   } = useRegisterForm();
 
   return (
@@ -42,7 +47,7 @@ export default function Register() {
         {/* Left Section */}
 
         <div className="w-full lg:block hidden">
-          <DashboardLogin />
+          <DashboardLogin error={error} success={success} />
         </div>
 
         {/* Right Section */}
@@ -101,8 +106,8 @@ export default function Register() {
 
               <div className="w-full">
                 <label className="block text-sm mb-2">Mobile</label>
-                <div className="w-full">
-                  <Input
+                <div className="w-full flex items-center gap-2">
+                  {/* <Input
                     icon={<FaSquarePhone />}
                     placeholder="International Phone no."
                     type="number"
@@ -111,7 +116,36 @@ export default function Register() {
                     onChange={handleInputChange}
                     inputClass="bg-[#FFFFFF05] w-full py-3 px-4"
                     labelClass="text-white"
-                  />
+                  /> */}
+                  <div className="flex px-3 items-center  gap-3 bg-[#FFFFFF05] w-full text-white placeholder:text-customgray text-[14px] py-1 rounded-md border border-[#FFFFFF0F] ">
+                    <FaSquarePhone className="text-[1.1rem]" />
+                    <select
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                      className="border-none  bg-transparent focus:ring-0 outline-offset-1
+                         shadow  focus:border mr-0  rounded-lg focus:outline-none
+                          px-2 leading-tight truncate w-16 md:w-24 
+                          "
+                    >
+                      {codes.map((code, index) => (
+                        <option
+                          key={index}
+                          className="text-black"
+                          value={code.countryCodes[0]}
+                        >
+                          {code.isoCode2} +{code.countryCodes[0]}
+                        </option>
+                      ))}
+                    </select>
+                    <InputField
+                      placeholder=" 456-9878"
+                      name="mobile"
+                      value={formData.mobile}
+                      onChange={handleInputChange}
+                      customClass="flex-1 "
+                      inputClass="bg-[#FFFFFF05] w-full text-white placeholder:text-customgray text-[14px]  border-none bg-transparent"
+                    />
+                  </div>
                 </div>
               </div>
 

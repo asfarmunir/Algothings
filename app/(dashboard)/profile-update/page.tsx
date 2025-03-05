@@ -21,6 +21,7 @@ import Image from "next/image";
 import useProfileUpdate from "@/hooks/useProfileUpdate";
 import Table from "@/components/ui/Table";
 import { invoicedata } from "@/lib/constants";
+import codes from "country-calling-code";
 
 const tableTitle = [
   "Date",
@@ -217,7 +218,7 @@ const Profile: React.FC = () => {
                       <label className="font-gilroy font-light block mb-1 text-sm text-white">
                         Phone Number
                       </label>
-                      <div className="flex flex-row">
+                      {/* <div className="flex flex-row">
                         <ReactFlagsSelect
                           selected={profile.country}
                           onSelect={handleCountryChange}
@@ -235,11 +236,39 @@ const Profile: React.FC = () => {
                           customClass="flex-1 px-2"
                           inputClass="bg-[#FFFFFF05] w-full text-white placeholder:text-customgray text-[14px] py-3 border border-[#FFFFFF0F]"
                         />
+                      </div> */}
+                      <div className="flex items-center  gap-3 bg-[#FFFFFF05] w-full text-white placeholder:text-customgray text-[14px] py-1 rounded-md border border-[#FFFFFF0F] ">
+                        <select
+                          // value={countryCode}
+                          // onChange={(e) => setCountryCode(e.target.value)}
+                          className="border-none  bg-transparent focus:ring-1 outline-offset-1
+                         shadow  focus:border mr-0  rounded-lg
+                          px-2 leading-tight truncate w-16 md:w-24 
+                          "
+                        >
+                          {codes.map((code, index) => (
+                            <option
+                              key={index}
+                              className="text-black"
+                              value={code.countryCodes[0]}
+                            >
+                              {code.isoCode2} +{code.countryCodes[0]}
+                            </option>
+                          ))}
+                        </select>
+                        <InputField
+                          placeholder=" 456-9878"
+                          name="phoneNumber"
+                          value={profile.phoneNumber}
+                          onChange={handleInputChange}
+                          customClass="flex-1 px-2"
+                          inputClass="bg-[#FFFFFF05] w-full text-white placeholder:text-customgray text-[14px]  border-none bg-transparent"
+                        />
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                  <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:pr-4">
                     {/* Email Field */}
                     <InputField
                       label="Email"

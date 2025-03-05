@@ -3,12 +3,15 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { signIn } from 'next-auth/react';
 export default function useRegisterForm() {
     const [showPassword, setShowPassword] = useState(false);
     const [selectedCountry, setSelectedCountry] = useState('GB');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
+    const [countryCode, setCountryCode] = useState('');
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -54,7 +57,20 @@ export default function useRegisterForm() {
     try {
         setLoading(true);
         setError(false);
-      const response = await axios.post("/api/auth/signup", formData);
+        setSuccess(false);
+
+        const data = {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            password: formData.password,
+            username: formData.username,
+            mobile: countryCode + formData.mobile,
+            
+
+
+        }
+      const response = await axios.post("/api/auth/signup",data );
       if (response.status !== 200) {
 
         throw new Error("Something went wrong");
@@ -65,13 +81,21 @@ export default function useRegisterForm() {
         return;
       }
 
-    //   const { email, password } = values;
-    //   await signIn("credentials", {
-    //     email,
-    //     password,
-    //     redirect: false,
-    //   });
+      
+          await axios.post("/api/create-contact",{
+                  email: formData.email,
+                  firstName: formData.firstName,
+                  lastName: formData.lastName
+             } );
 
+      const { email, password } = formData;
+      await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      setSuccess(true);
       toast.success("User created successfully");
     } catch (error) {
       console.log(error);
@@ -95,6 +119,9 @@ export default function useRegisterForm() {
         handleInputChange,
         handleSubmit,
         loading,
-        error
+        error,
+        success,
+        countryCode,
+        setCountryCode
     };
 }

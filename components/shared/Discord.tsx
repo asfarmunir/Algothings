@@ -40,7 +40,10 @@ export function DiscordCommunity() {
                 />
               </div>
             </div> */}
-            <div style={{ zIndex: 1, position: "relative" }} className="">
+            <div
+              style={{ zIndex: 1, position: "relative" }}
+              className="flex flex-col items-center "
+            >
               <h1 className="text-3xl 2xl:text-5xl  font-spaceGrotesk font-semibold  tracking-wide bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent h-16 ">
                 Smarter Trading, Right in Your Inbox
               </h1>
@@ -49,7 +52,7 @@ export function DiscordCommunity() {
                 spam, just the good stuff.
               </p>
 
-              <div className="inline-flex rounded-full w-full sm:w-2/4 px-1 py-2  md:min-w-80 items-center justify-between mt-6 border border-[#FFFFFF33] bg-[#03100C]">
+              <div className="inline-flex rounded-full w-full sm:w-2/4 px-1 py-2  md:min-w-80  items-center justify-between mt-6 border border-[#FFFFFF33] bg-[#03100C]">
                 <input
                   type="email"
                   className="bg-transparent text-customlightgray px-4 w-full text-xs sm:text-sm focus:outline-none placeholder:text-customlightgray "

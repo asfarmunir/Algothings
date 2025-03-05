@@ -113,11 +113,11 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
               ))}
             </div>
           ) : (
-            <div className="py-10 grid grid-cols-1 pb-12 max-w-[90rem] mx-auto  gap-6 2xl:gap-8 md:px-28 2xl:px-40">
+            <div className="py-10 xl:py-16  pb-12 max-w-[90rem] mx-auto  gap-6 2xl:gap-8 md:px-28 2xl:px-40">
               {Array.from({ length: 1 }).map((_, index) => (
                 <div
                   key={index}
-                  className=" bg-gradient-to-b  from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"
+                  className=" bg-gradient-to-b w-fit mx-auto   from-customgreen to-customblue bg-clip-border p-[4px] rounded-[20px]"
                 >
                   <div className="bg-[#04110D] py-8  px-[30px] md:px-[40px] rounded-[20px] h-auto ">
                     {/* <div className="flex flex-col sm:flex-row justify-start bg-red-50 gap-4">

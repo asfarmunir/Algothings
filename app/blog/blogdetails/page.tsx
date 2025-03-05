@@ -10,6 +10,7 @@ import { cards } from "@/lib/constants";
 import { Footer } from "@/components/shared/Footer";
 import { useBlogDetails } from "@/hooks/useBlog";
 import Link from "next/link";
+import { DiscordCommunity } from "@/components/shared/Discord";
 
 // Dynamically import the Carousel component for client-side rendering
 const Carousel = dynamic(() => import("@/components/ui/Carousel1"), {
@@ -103,6 +104,7 @@ export default function BlogDetails() {
 
         {/* Footer */}
         <div>
+          <DiscordCommunity />
           <Footer />
         </div>
       </div>

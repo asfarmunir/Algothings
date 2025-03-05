@@ -33,6 +33,7 @@ export default function Login() {
     handleSubmit,
     loading,
     error,
+    success,
   } = useLoginForm();
 
   return (
@@ -40,7 +41,7 @@ export default function Login() {
       {/* Left Section */}
 
       <div className="w-full lg:block hidden   ">
-        <DashboardLogin />
+        <DashboardLogin error={error} success={success} />
       </div>
 
       {/* Right Section */}
@@ -57,6 +58,7 @@ export default function Login() {
               icon={<FaRegUserCircle />}
               placeholder="xyz@gmail.com"
               name="email"
+              required
               value={formData.email}
               onChange={handleInputChange}
               labelClass="text-white 2xl:text-sm"
@@ -69,6 +71,7 @@ export default function Login() {
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 name="password"
+                required
                 value={formData.password}
                 onChange={handleInputChange}
                 labelClass="text-white 2xl:text-sm"
