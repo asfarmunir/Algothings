@@ -44,7 +44,7 @@ export default function Algorithm() {
                   </span>{" "}
                   : Select Your Preferred Strategies
                 </h1>
-                <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 lg:gap-3 mt-5">
+                <div className="grid  grid-cols-1 md:grid-cols-2  gap-3 md:gap-6 lg:gap-3 mt-5">
                   {Array.from({ length: 15 }).map((_, index) => (
                     <div
                       key={index}
@@ -54,7 +54,7 @@ export default function Algorithm() {
                         <Image
                           src="/images/logo1.svg"
                           width={30}
-                          height={20}
+                          height={30}
                           alt="Logo"
                         />
                         <div>
@@ -66,28 +66,38 @@ export default function Algorithm() {
                           </p>
                         </div>
                       </div>
-                      <div className="mx-8 md:mx-0 flex flex-row justify-between gap-4 pt-4">
+                      <div className="mx-8 md:mx-0 flex flex-row justify-evenly gap-4 pt-4">
                         <Image
                           src="/images/book.webp"
-                          width={80}
+                          width={100}
                           height={140}
                           alt="card image"
                         />
 
-                        <div className="flex flex-col justify-end gap-4">
+                        <div className="flex flex-col  justify-end">
                           <div>
-                            <p className="text-customgray text-md md:text-xs font-semibold">
+                            <p className="text-customgray text-sm sm:text-md  font-semibold">
                               Profit last month
                             </p>
-                            <p className="text-customgreen text-xl mt-2 md:mt:0 md:text-2xl">
+                            <p className="text-customgreen text-xl md:text-2xl   md:mt:0 ">
                               +3.89%
                             </p>
                           </div>
-                          <div className=" ">
-                            <Button
-                              label="Add To Cart"
-                              className="bg-gradient-to-r py-1 font-bold px-4 text-nowrap uppercase text-[10px] from-customgreen to-customblue text-black rounded-md "
-                            />
+                          <div className="mt-5 flex flex-col-reverse sm:flex-row gap-2 md:gap-4 sm:items-center">
+                            <Link
+                              href={"/login"}
+                              className="bg-gradient-to-r py-2 px-3 font-semibold text-nowrap uppercase text-[10px] 2xl:text-xs from-customgreen to-customblue text-black rounded-md "
+                            >
+                              Add to cart
+                            </Link>
+
+                            <Link
+                              href={"/products/1/details"}
+                              className="flex flex-row gap-1 2xl:gap-2 items-center uppercase text-nowrap p-0 text-[10px]  2xl:text-sm"
+                            >
+                              <GoArrowUpRight className="text-lg" />
+                              <span>LEARN MORE</span>
+                            </Link>
                           </div>
                         </div>
                       </div>

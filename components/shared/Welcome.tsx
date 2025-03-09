@@ -9,10 +9,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import FadeInSection from "@/lib/FadeInAnimation";
 import { FaAngleRight } from "react-icons/fa6";
 import AnimationSection from "../ui/AnimationSection";
+import { useRouter } from "next/navigation";
 
 export const Welcome = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [openItem, setOpenItem] = useState(null);
+  const router = useRouter();
 
   const handleToggle = (id: any) => {
     setOpenItem((prevOpenItem) => (prevOpenItem === id ? null : id));
@@ -32,6 +34,7 @@ export const Welcome = () => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 120, damping: 50 }}
+            className=""
           >
             <div className="inline-flex flex-row gap-3 mt-4 mb-6 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
               <Image
@@ -63,10 +66,10 @@ export const Welcome = () => {
             </p>
 
             {/* Email Input and Button */}
-            <div className="space-y-4 mb-4 sm:space-y-2 space-x-3 lg:space-x-4">
-              <div className="inline-flex text-[14px] sm:text-base flex-col sm:flex-row items-center p-[1px] bg-gradient-to-r from-customgreen to-customblue bg-clip-border rounded-lg">
+            <div className="space-y-4 mb-4  sm:space-y-2 space-x-3 lg:space-x-4">
+              <div className="inline-flex text-[14px]  sm:text-base flex-col sm:flex-row items-center p-[1px] bg-gradient-to-r from-customgreen to-customblue bg-clip-border rounded-lg">
                 <button
-                  className="inline-flex flex-row items-center bg-black rounded-lg gap-3 px-6  py-2.5"
+                  className="inline-flex z-50 flex-row items-center bg-black rounded-lg gap-3 px-6  py-2.5"
                   onClick={(e) => {
                     e.preventDefault();
                     console.log("clicked");
@@ -87,14 +90,14 @@ export const Welcome = () => {
               </div>
               <Button
                 label="Join our Discord"
-                className="bg-gradient-to-r text-[14px] sm:text-base py-3.5 px-5 font-semibold from-customgreen to-customblue rounded-[6px] text-black  sm:w-auto"
+                className="bg-gradient-to-r  text-[14px] sm:text-base py-3.5 px-5 font-semibold from-customgreen to-customblue rounded-[6px] text-black  sm:w-auto"
               />
             </div>
           </motion.div>
 
           {/* Welcome Image */}
           <FadeInSection>
-            <div className="  max-w-7xl -mt-8 mb-10 sm:-mt-20 mx-auto  w-full flex flex-row justify-center items-center">
+            <div className="  max-w-7xl   -mt-8 mb-10 sm:-mt-20 mx-auto  w-full flex flex-row justify-center items-center">
               <Image
                 src="/assets/hero.webp"
                 width={1200}
@@ -247,14 +250,17 @@ export const Welcome = () => {
 
                     <div className="mt-4 flex items-center gap-3 ">
                       <Button
+                        onClick={() => {
+                          router.push("/register");
+                        }}
                         // label={stepContent[activeStep - 1].btntitle}
                         label="Get Started"
                         className="bg-gradient-to-r uppercase text-sm from-customgreen to-customblue font-semibold py-[12px] px-[36px] rounded-[8px]"
                       />
-                      <button className=" text-white border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  ">
+                      {/* <button className=" text-white border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  ">
                         Choose Plan
                         <FaAngleRight />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
@@ -277,7 +283,7 @@ export const Welcome = () => {
             {stepContent.map((step, index) => (
               <FadeInSection key={index}>
                 <div className="px-4 md:px-8 lg:px-24 xl:px-[98px]">
-                  <div className="h-auto lg:h-[520px] flex md:flex-row flex-col-reverse  justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#45F175B2] px-3 md:px-6 py-3 md:py-10 rounded-[20px] text-black">
+                  <div className="h-auto lg:h-[520px] flex md:flex-row flex-col-reverse  justify-between bg-gradient-to-b from-[#45F175B2] via-[#00C3CEB2] to-[#45F175B2] px-3 md:px-6 py-3 md:py-10 rounded-[10px] text-black">
                     <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
                       <div className="text-start leading-[28px]">
                         <p className="bg-gradient-to-r mt-6 uppercase  from-customgreen to-customblue font-semibold px-4 py-1.5 w-fit rounded-full text-xs ">
@@ -297,21 +303,24 @@ export const Welcome = () => {
 
                         <p className="text-sm py-2">{step.endDescription}</p>
 
-                        <div className="my-4 flex items-center gap-3 ">
+                        <div className="my-4 flex items-center justify-center gap-3 ">
                           <Button
                             // label={step.btntitle}
+                            onClick={() => {
+                              router.push("/register");
+                            }}
                             label="Get Started"
-                            className="bg-gradient-to-r uppercase text-sm from-customgreen to-customblue font-semibold py-[12px] px-[36px] rounded-[8px]"
+                            className="bg-gradient-to-r w-full uppercase text-sm from-customgreen to-customblue font-semibold py-[12px] px-[36px] rounded-[8px]"
                           />
-                          <button className=" text-white border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  ">
+                          {/* <button className=" text-white border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  ">
                             Choose Plan
                             <FaAngleRight />
-                          </button>
+                          </button> */}
                         </div>
                       </div>
                     </div>
 
-                    <div className=" bg-[#02090780] w-full p-8 h-[320px] rounded-[20px] border-none">
+                    <div className=" bg-[#02090780] w-full p-8 h-[320px] rounded-[10px] border-none">
                       <Image
                         src={`/assets/steps/${index + 1}.png`}
                         alt="plan image"

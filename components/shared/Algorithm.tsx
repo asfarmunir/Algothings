@@ -32,7 +32,7 @@ export const Algorithm = () => {
             </h1>
           </FadeInSection>
           <FadeInSection>
-            <div className="px-2 sm:px-4 grid grid-cols-1 lg:grid-cols-3 open-sans gap-6">
+            <div className="px-2 sm:px-4 grid grid-cols-1 max-w-4xl mx-auto  open-sans gap-6">
               <div className="lg:col-span-2">
                 {Array.from({ length: 1 }).map((_, index) => (
                   <div
@@ -105,62 +105,13 @@ export const Algorithm = () => {
                   </div>
                 ))}
               </div>
-
-              <div className="lg:col-span-1 lg:block hidden">
-                <div className="bg-[#04110D80] px-4 py-4 rounded-[20px]">
-                  <div className="flex flex-row gap-2">
-                    <Image
-                      src="/images/logo1.svg"
-                      width={40}
-                      height={20}
-                      alt="Logo"
-                    />
-                    <div>
-                      <h1 className="text-[16px] text-start capitalize font-semibold">
-                        Trend Hunter
-                      </h1>
-                      <p className="text-customgray text-[12px]">
-                        For E-mini (NQ) and Micro (MNQ) Nasdaq 100 index
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex flex-row gap-4 pt-3 mx-2">
-                    <Image
-                      src="/images/book.webp"
-                      width={120}
-                      height={160}
-                      alt="card image"
-                    />
-                    <div className="flex flex-col justify-center items-center w-full">
-                      <p className="text-customgray text-[12px] font-semibold">
-                        Profit last month
-                      </p>
-                      <p className="text-customgreen text-[24px]">+3.89%</p>
-                      <div className="mt-4 flex flex-col-reverse gap-4 items-center">
-                        <Button
-                          label="Get Started"
-                          onClick={() => router.push("/register")}
-                          className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
-                        />
-                        <button
-                          onClick={() => router.push("/products/1/details")}
-                          className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
-                        >
-                          <GoArrowUpRight className="text-lg" />
-                          <span>LEARN MORE</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </FadeInSection>
 
           <FadeInSection>
-            <div className="px-2 sm:px-4 mt-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Array.from({ length: 3 }).map((_, index) => (
+            <div className="px-2 sm:px-4 mt-5 max-w-4xl mx-auto ">
+              <div className="grid grid-cols-1 sm:grid-cols-2  gap-6">
+                {Array.from({ length: 2 }).map((_, index) => (
                   <div
                     key={index}
                     className="bg-[#04110D80] px-4 py-4 rounded-[20px]"
@@ -188,12 +139,14 @@ export const Algorithm = () => {
                         height={160}
                         alt="card image"
                       />
-                      <div className="flex flex-col justify-center items-center w-full">
-                        <p className="text-customgray text-[12px] font-semibold">
-                          Profit last month
-                        </p>
-                        <p className="text-customgreen text-[24px]">+3.89%</p>
-                        <div className="mt-4 flex flex-col-reverse gap-4 items-center">
+                      <div className="flex flex-col justify-end items-start w-full">
+                        <div>
+                          <p className="text-customgray text-[14px] font-semibold">
+                            Profit last month
+                          </p>
+                          <p className="text-customgreen text-[34px]">+3.89%</p>
+                        </div>
+                        <div className="mt-4 flex gap-4 items-center">
                           <Button
                             label="Get Started"
                             onClick={() => router.push("/register")}
@@ -220,6 +173,7 @@ export const Algorithm = () => {
                 /> */}
                 <div className="  bg-gradient-to-r text-lg w-44 font-semibold from-customgreen to-customblue bg-clip-border p-[2px] rounded-xl">
                   <Button
+                    onClick={() => router.push("/products")}
                     className="rounded-xl text-sm px-6 md:px-12 w-full py-3 bg-[#04110D]"
                     label="View All"
                   />

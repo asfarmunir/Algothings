@@ -44,35 +44,8 @@ export default function FAQ() {
               Frequently Asked Questions?
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 mx-auto my-6 lg:grid-cols-3  gap-5  2xl:gap-7 w-full sm:w-fit py-3 px-2">
-              {["Category 1", "Category 2", "Category 3"].map((item, index) => (
-                <div
-                  key={index}
-                  className="w-full bg-gradient-to-r from-customgreen to-customblue bg-clip-border p-[1px] rounded-md"
-                >
-                  <button
-                    onClick={() => setActiveStep(index + 1)}
-                    className={` py-[10px] w-full rounded-md px-12 transition duration-300 uppercase ${
-                      activeStep === index + 1
-                        ? "bg-gradient-to-r from-customgreen text-black to-customblue"
-                        : "bg-black text-customgreen "
-                    } text-sm sm:text-[23px]  tracking-wider`}
-                  >
-                    <span
-                      className={`${
-                        activeStep === index + 1
-                          ? "text-black"
-                          : "bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent"
-                      }`}
-                    >
-                      {item}
-                    </span>
-                  </button>
-                </div>
-              ))}
-            </div>
             <div>
-              <div className="px-6">
+              <div className="p-6">
                 <Accordion
                   items={faqItems}
                   containerStyles=""

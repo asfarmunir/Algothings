@@ -64,7 +64,7 @@ const DashboardNavbar = () => {
                 <DropdownMenuTrigger className="flex items-center gap-2 px-4">
                   Ali Hassan
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className=" border-none bg-customgreen/20 mt-4 mr-4">
+                <DropdownMenuContent className=" border-none bg-green-800 mt-4 mr-4">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuItem>Billing and Accounts</DropdownMenuItem>
                   <DropdownMenuItem>Join Community</DropdownMenuItem>

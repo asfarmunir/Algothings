@@ -24,27 +24,24 @@ export default function Pricing() {
   return (
     <>
       <section id="price">
-        <div className="mb-4 mt-12">
-          <FadeInSection>
-            <div className="inline-flex flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
-              <Image
-                src="/images/welcomestar.svg"
-                width={20}
-                height={30}
-                alt="welcome star"
-              />
-              <p className="text-sm 2xl:text-[16px] uppercase gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent">
-                Pricing
-              </p>
-            </div>
-
-            <h1 className="py-1 px-2 text-6 text-[44px] lexend  leading-[44px] my-3">
-              Choose{" "}
-              <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                Your Plan
-              </span>
-            </h1>
-          </FadeInSection>
+        <div className="mb-4 mt-12 flex flex-col items-center">
+          <div className="inline-flex   flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
+            <Image
+              src="/images/welcomestar.svg"
+              width={20}
+              height={30}
+              alt="welcome star"
+            />
+            <p className="text-sm 2xl:text-[16px] uppercase gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent">
+              Pricing
+            </p>
+          </div>
+          <h1 className="py-1 px-2 text-6 text-[44px] lexend  leading-[44px] my-3">
+            Choose{" "}
+            <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
+              Your Plan
+            </span>
+          </h1>
 
           <div className="px-6 md:px-20">
             <FadeInSection>
@@ -64,9 +61,9 @@ export default function Pricing() {
                   className={`
                         ${
                           activePlan === "Annual"
-                            ? "  opacity-100 "
-                            : "opacity-70"
-                        }   text-black bg-gradient-to-b from-customgreen to-customblue   
+                            ? "  opacity-100 bg-gradient-to-b text-black  from-customgreen to-customblue  "
+                            : "opacity-70 bg-customgray/40 text-white"
+                        }   
                     rounded-md text-sm px-6 md:px-8 py-4`}
                   onClick={() => handlePlanChange("Annual")}
                 >
@@ -88,7 +85,7 @@ export default function Pricing() {
                   } 
                     border p-8  border-[#FFFFFF1A] rounded-2xl text-start md:w-[400px] lg:w-[490px]`}
                 >
-                  <h1 className="text-[24px]">Intermediate</h1>
+                  <h1 className="text-[24px]">Starter</h1>
 
                   {activePlan === "Monthly" ? (
                     <div className="mt-6 text-start">
@@ -96,9 +93,9 @@ export default function Pricing() {
                       <span
                         className={` ${
                           false ? "  text-black" : ""
-                        } text-[32px] font-bold 2xl:text-[38px]`}
+                        } text-[32px] font-bold 2xl:text-[32px]`}
                       >
-                        $97
+                        €97
                       </span>
                       <span className="text-sm text-customlightgray">
                         /per month
@@ -108,14 +105,14 @@ export default function Pricing() {
                     <div className="mt-6 mb-3 text-start">
                       <span
                         className={` 
-                         text-[32px] font-bold 2xl:text-[38px] text-[#999F9F] line-through pl-2`}
+                         text-[32px] font-bold 2xl:text-[32px] text-[#999F9F] line-through pl-2`}
                       >
-                        $97
+                        €97
                       </span>
                       <span
-                        className={` font-bold pl-2 pr-1  text-[32px] 2xl:text-[38px]`}
+                        className={` font-bold pl-2 pr-1  text-[32px] 2xl:text-[32px]`}
                       >
-                        $87.3
+                        €87.3
                       </span>
                       <span className="text-sm  text-customlightgray">
                         /per month
@@ -125,17 +122,17 @@ export default function Pricing() {
                   {activePlan === "Annual" && (
                     <>
                       <p
-                        className={`text-[#999F9F] 
-                    text-xs w-full text-start -mt-2 pb-5`}
+                        className={`text-customlight
+                    text-lg  2xl:text-xl w-full text-start -mt-2 pb-5`}
                       >
-                        billed anually{" "}
-                        <span className="text-lg px-1  2xl:text-2xl text-white">
+                        Billed anually{" "}
+                        <span className=" px-1  text-white">
                           (Save $116.40/year)
                         </span>
                       </p>
                     </>
                   )}
-                  <p className="text-[12px] my-4 mb-7">
+                  <p className="text-[16px] my-4 mb-7">
                     Ideal for: Traders beginning their automation journey
                   </p>
 
@@ -219,8 +216,8 @@ export default function Pricing() {
               <CardAnimation direction="right" delay={0.5}>
                 <div
                   className={` ${
-                    true
-                      ? "  bg-gradient-to-l from-customgreen rounded-2xl to-customblue "
+                    false
+                      ? "  bg-gradient-to-b from-[#0A0A0AE5] to-[#040404] "
                       : " bg-gradient-to-b from-[#0A0A0AE5] to-[#040404] rounded-2xl "
                   } border p-8  border-[#FFFFFF1A] text-start relative md:w-[400px] lg:w-[490px]`}
                 >
@@ -228,7 +225,9 @@ export default function Pricing() {
                     <h1 className="text-[24px]">Master</h1>
                     <p
                       className={`${
-                        true ? "bg-[#04110D]" : " text-black bg-white"
+                        false
+                          ? "bg-[#04110D]"
+                          : " bg-gradient-to-l from-[#00C88C] to-[#0C7C33] text-white"
                       } py-[12px] uppercase px-[20px] text-[11px] rounded-[10px]`}
                     >
                       Most Popular
@@ -238,15 +237,15 @@ export default function Pricing() {
                   {activePlan === "Monthly" ? (
                     <div className="mt-3 text-start">
                       <p className="mt-3">
-                        <span className="text-[32px] font-semibold 2xl:text-[38px]  text-slate-700 pr-2 line-through">
-                          $997
+                        <span className="text-[32px] font-semibold 2xl:text-[32px]  text-slate-200 pr-2 line-through">
+                          €997
                         </span>
                         <span
                           className={`${
-                            true ? " text-black" : ""
-                          } text-[32px] 2xl:text-[38px] font-bold`}
+                            false ? " text-black" : "text-white"
+                          } text-[32px] 2xl:text-[32px] font-bold`}
                         >
-                          $697
+                          €697
                         </span>
                       </p>
                     </div>
@@ -254,16 +253,16 @@ export default function Pricing() {
                     <div className="mt-3 text-black mb-3 text-start">
                       <span
                         className={` 
-                         text-[32px] font-bold 2xl:text-[38px] text-[#04110D99] line-through pr-2`}
+                         text-[32px] font-bold 2xl:text-[32px] text-customlightgray line-through pr-2`}
                       >
-                        $698
+                        €698
                       </span>
                       <span
-                        className={` font-bold  text-[32px] 2xl:text-[38px]`}
+                        className={` font-bold text-white text-[32px] 2xl:text-[32px]`}
                       >
-                        $629
+                        €629
                       </span>
-                      <span className="text-sm px-0.5 text-[#04110D99]">
+                      <span className="text-sm px-0.5 text-white">
                         /per month
                       </span>
                     </div>
@@ -272,11 +271,11 @@ export default function Pricing() {
                   {activePlan === "Annual" ? (
                     <>
                       <p
-                        className={`text-[#04110D99] 
-                    text-xs w-full text-start -mt-2 pb-5`}
+                        className={`text-customlight 
+                    text-lg  2xl:text-xl w-full text-start -mt-2 pb-5`}
                       >
-                        billed anually{" "}
-                        <span className="text-lg px-1  2xl:text-2xl text-black">
+                        Billed anually{" "}
+                        <span className=" px-1  text-white">
                           (Save $837.60/year)
                         </span>
                       </p>
@@ -286,14 +285,14 @@ export default function Pricing() {
                       {" "}
                       <span
                         className={`${
-                          true ? " text-black " : "text-white "
+                          false ? " text-black " : "text-white "
                         } text-sm -mt-2`}
                       >
-                        billed monthly
+                        Billed monthly
                       </span>
                     </p>
                   )}
-                  <p className="text-[12px] my-4 mb-7">
+                  <p className="text-[15px] my-4 mb-7">
                     Ideal for: Traders seeking a powerful, all-in-one portfolio
                   </p>
 
@@ -308,7 +307,7 @@ export default function Pricing() {
                   <div className="mt-10">
                     {master.map((items, index) => (
                       <div
-                        className="flex flex-row gap-2 items-center py-2"
+                        className="flex flex-row text-white gap-2 items-center py-2"
                         key={index + 1}
                       >
                         {/* <RiCheckboxCircleFill className=' bg-customlightgray text-black rounded-full' /> */}
@@ -320,7 +319,7 @@ export default function Pricing() {
                         />
                         <p
                           className={` ${
-                            true ? " text-black" : ""
+                            false ? " text-black" : ""
                           } text-[14px]`}
                         >
                           {items}

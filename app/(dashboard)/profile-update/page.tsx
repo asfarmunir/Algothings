@@ -4,9 +4,17 @@ import React, { useState } from "react";
 import Sidebar from "@/components/shared/Sidebar";
 import DashboardNavbar from "@/components/shared/DashboardNavbar";
 import { BsInfoCircle } from "react-icons/bs";
-import { RiUserReceivedLine, RiUserSharedLine } from "react-icons/ri";
+import {
+  RiLockPasswordLine,
+  RiUserReceivedLine,
+  RiUserSharedLine,
+} from "react-icons/ri";
 import { FaRegCircleUser } from "react-icons/fa6";
-import { MdOutlineMailOutline, MdOutlineUploadFile } from "react-icons/md";
+import {
+  MdOutlineMailOutline,
+  MdOutlineUploadFile,
+  MdPassword,
+} from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { TiTick } from "react-icons/ti";
 import InputField from "@/components/ui/InputField";
@@ -86,13 +94,18 @@ const Profile: React.FC = () => {
         {/* Page Content */}
         <div className="flex-grow max-w-[100rem]  p-6 overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
           <div className="bg-customcard p-5 2xl:p-8 rounded-lg border border-[#FFFFFF33]">
-            <Image
-              src="/images/profile.png"
-              width={80}
-              height={80}
-              className="rounded-full bg-[#FFFFFF0A] 2xl:w-[100px] 2xl:h-[100px]"
-              alt="Avatar"
-            />
+            <div className="relative w-fit">
+              <Image
+                src="/images/profile.png"
+                width={100}
+                height={100}
+                className="rounded-full bg-[#FFFFFF0A] 2xl:w-[120px] 2xl:h-[120px]"
+                alt="Avatar"
+              />
+              <button className=" absolute -right-2 -bottom-2">
+                <MdOutlineUploadFile className="text-4xl bg-[#ffffff75] rounded-full p-2" />
+              </button>
+            </div>
             <div className="flex flex-row justify-between">
               <div className="space-y-1 mt-4">
                 <h3 className="text-md font-gilroy">Ali Riaz</h3>
@@ -302,15 +315,60 @@ const Profile: React.FC = () => {
                     </div> */}
                   </div>
 
-                  <hr className="border border-[#FFFFFF1A] my-3" />
+                  <div className="flex flex-row mt-5 pb-4 md:mt-0 justify-center md:justify-end gap-2">
+                    <button
+                      type="button"
+                      className="flex flex-row w-full md:w-fit font-semibold items-center justify-center gap-2 md:px-5 py-2.5 text-[14px] bg-transparent border border-white rounded-md"
+                    >
+                      Cancel <RxCross2 className="text-lg" />
+                    </button>
+                    <button
+                      disabled={loading}
+                      type="submit"
+                      className="flex bg-gradient-to-r  w-full md:w-fit font-semibold from-customgreen to-customblue text-black flex-row items-center justify-center gap-2 md:px-8 py-2.5 text-[14px] bg-gradient-custom rounded-md"
+                    >
+                      Save Changes <TiTick className="font-light text-lg" />
+                    </button>
+                  </div>
+
+                  <hr className="border border-[#FFFFFF1A]  my-4 " />
 
                   <div>
-                    <h3 className="font-gilroy font-medium text-xl">
-                      Change Avatar
+                    <h3 className="font-gilroy font-medium text-xl 2xl:text-2xl pt-4">
+                      Update Password
                     </h3>
+                    <p className="text-customlight text-sm 2xl:text-base py-2">
+                      Here you can update your password if you have lost or
+                      forgotten your current one.
+                    </p>
 
-                    <div className="flex flex-col sm:flex-row py-4 gap-4 ">
-                      <div>
+                    <div className="flex flex-col  py-4 gap-4 ">
+                      <InputField
+                        label="Current Password"
+                        type="text"
+                        placeholder="Current Password"
+                        name="currentPassword"
+                        icon={<RiLockPasswordLine />}
+                        // value={profile.email}
+                        // onChange={handleInputChange}
+                        labelClass="text-white"
+                        customClass="w-full"
+                        inputClass="bg-[#FFFFFF05] w-full sm:w-1/2 text-white placeholder:text-customgray text-[14px] py-3 border border-[#FFFFFF0F]"
+                      />
+
+                      <InputField
+                        label="New Password"
+                        type="text"
+                        placeholder="New Password"
+                        name="newPassword"
+                        icon={<RiLockPasswordLine />}
+                        // value={profile.email}
+                        // onChange={handleInputChange}
+                        labelClass="text-white"
+                        inputClass="bg-[#FFFFFF05] w-full sm:w-1/2 text-white placeholder:text-customgray text-[14px] py-3 border border-[#FFFFFF0F]"
+                      />
+
+                      {/* <div>
                         <Image
                           src="/images/profile.png"
                           className=" bg-[#FFFFFF0A] rounded-full"
@@ -343,22 +401,17 @@ const Profile: React.FC = () => {
                             className="hidden"
                           />
                         </label>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="flex flex-row mt-5 md:mt-0 justify-center md:justify-end gap-2">
-                      <button
-                        type="button"
-                        className="flex flex-row w-full md:w-fit font-semibold items-center justify-center gap-2 md:px-5 py-2.5 text-[14px] bg-transparent border border-white rounded-md"
-                      >
-                        Cancel <RxCross2 className="text-lg" />
-                      </button>
                       <button
                         disabled={loading}
                         type="submit"
                         className="flex bg-gradient-to-r  w-full md:w-fit font-semibold from-customgreen to-customblue text-black flex-row items-center justify-center gap-2 md:px-8 py-2.5 text-[14px] bg-gradient-custom rounded-md"
                       >
-                        Save Changes <TiTick className="font-light text-lg" />
+                        Update Password{" "}
+                        <TiTick className="font-light text-lg" />
                       </button>
                     </div>
                   </div>
