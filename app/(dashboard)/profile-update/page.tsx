@@ -33,6 +33,8 @@ import codes from "country-calling-code";
 import { useSession } from "next-auth/react";
 import { updatePassword } from "@/lib/database/actions/user.actions";
 import toast from "react-hot-toast";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 const tableTitle = [
   "Date",
   "Invoice Number",
@@ -626,20 +628,16 @@ const Profile: React.FC = () => {
                       <label className="font-gilroy font-light block mb-1 text-sm text-white">
                         Country
                       </label>
-                      <ReactFlagsSelect
-                        selected={profile.country}
-                        onSelect={handleCountryChange}
-                        countries={["US", "GB", "CA", "IN", "PK"]}
-                        customLabels={{
-                          US: "USA",
-                          GB: "UK",
-                          CA: "Canada",
-                          IN: "India",
-                          PK: "Pakistan",
-                        }}
-                        showSelectedLabel={true}
-                        showOptionLabel={true}
+                     
+                      <PhoneInput
+                        placeholder="Enter phone number"
+                        // value={phoneNumber}
+                        onChange={(value) => console.log(value)}
+                        defaultCountry="US"
                         className="bg-[#FFFFFF05] w-full text-white placeholder:text-customgray text-[14px] py-3 border border-[#FFFFFF0F]"
+                        inputClassName="bg-transparent text-white placeholder:text-customgray outline-none"
+                        countrySelectClassName="bg-transparent text-white"
+                        dropdownClassName="bg-[#FFFFFF05] text-white"
                       />
                     </div> */}
 

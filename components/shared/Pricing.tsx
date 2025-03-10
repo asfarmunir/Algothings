@@ -36,12 +36,57 @@ export default function Pricing() {
               Pricing
             </p>
           </div>
-          <h1 className="py-1 px-2 text-6 text-[44px] lexend  leading-[44px] my-3">
-            Choose{" "}
-            <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-              Your Plan
+
+          <div className="hidden xl:flex items-start justify-center w-full py-12 gap-1 ">
+            <div className="flex flex-col items-center ">
+              <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full bg-gradient-to-l flex items-center justify-center from-[#00C88C] to-[#0C7C33]">
+                <div className="w-6 2xl:w-8 h-6 2xl:h-8 bg-black rounded-full"></div>
+              </div>
+              <h2 className="text-lg font-bold text-white">Account Size</h2>
+              <p className="text-[14px] text-customlightgray">$10,000</p>
+            </div>
+            <div className="w-40 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
+            <div className="flex flex-col items-center ">
+              <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full flex items-center justify-center">
+                <div className="w-6 2xl:w-8 h-6 2xl:h-8  bg-gradient-to-l from-[#00C88C] to-[#0C7C33] rounded-full"></div>
+              </div>
+              <h2 className="text-lg font-bold text-white">Trading Platform</h2>
+              <p className="text-[14px] text-customlightgray">Volumetrica</p>
+            </div>
+            <div className="w-40 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
+            <div className="flex flex-col items-center ">
+              <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full flex items-center justify-center">
+                <div className="w-6 2xl:w-8 h-6 2xl:h-8  bg-gradient-to-l from-[#00C88C] to-[#0C7C33] rounded-full"></div>
+              </div>
+              <h2 className="text-lg font-bold text-white">
+                Terms and Conditions
+              </h2>
+              <p className="text-[14px] text-customlightgray">Not Signed</p>
+            </div>
+            <div className="w-40 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
+            <div className="flex flex-col items-center ">
+              <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full flex items-center justify-center">
+                <div className="w-6 2xl:w-8 h-6 2xl:h-8  bg-gradient-to-l from-[#00C88C] to-[#0C7C33] rounded-full"></div>
+              </div>
+              <h2 className="text-lg font-bold text-white">Payment</h2>
+              <p className="text-[14px] text-customlightgray">
+                Payment Details
+              </p>
+            </div>
+          </div>
+
+          <h1 className="py-1 px-2 text-6 text-[40px] md:text-[44px] lexend  leading-[64px] mb-3.5 mt-6">
+            Choose the
+            <span className="bg-gradient-to-r px-1.5 from-customgreen to-customblue bg-clip-text text-transparent">
+              Perfect Plan
             </span>
+            for Your Need
           </h1>
+          <p className="text-customlight max-w-4xl px-4 text-sm md:text-base 2xl:text-lg text-center mb-12">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magnam
+            quaerat rerum error ratione! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit.
+          </p>
 
           <div className="px-6 md:px-20">
             <FadeInSection>
@@ -331,6 +376,13 @@ export default function Pricing() {
                 </div>
               </CardAnimation>
             </div>
+          </div>
+
+          <div className="hidden md:flex items-center justify-center w-full gap-7 pt-8 pb-4">
+            <h1 className="text-lg font-bold text-white">We accept</h1>
+            <Image src="/visa.svg" width={40} height={40} alt="line" />
+            <Image src="/master.svg" width={40} height={40} alt="line" />
+            <Image src="/american.svg" width={40} height={40} alt="line" />
           </div>
         </div>
       </section>
