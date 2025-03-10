@@ -28,7 +28,7 @@ export const DashboardLogin = ({
         />
       </Link>
       <div className="w-full  p-16  ">
-        <div className="flex items-center gap-2 ">
+        {/* <div className="flex items-center gap-2 ">
           <div
             className="w-6 h-6 bg-[#45F1753D] rounded-full flex items-center justify-center font-semibold "
             style={{
@@ -44,13 +44,13 @@ export const DashboardLogin = ({
           <span className="text-sm 2xl:text-base font-semibold">
             REGISTRATION
           </span>
-        </div>
+        </div> */}
 
-        <p className="text-xs 2xl:text-sm  pl-8">
+        <p className="text-xs 2xl:text-sm  text-center  pl-8 font-bold pt-4 pb-4  ">
           Everything you need to become a ALGOS Field Trader
         </p>
 
-        <div className="flex flex-row    mx-auto  justify-center items-center w-[60%]">
+        <div className="flex flex-row     mx-auto  justify-center items-center w-[60%]">
           <Image
             width={500}
             height={500}
@@ -67,11 +67,11 @@ export const DashboardLogin = ({
           />
         </div>
 
-        <div className="  flex items-center gap-6 text-xs 2xl:text-sm font-bold text-gray-200">
+        {/* <div className="  flex items-center gap-6 text-xs 2xl:text-sm font-bold text-gray-200">
           <a href="#" className="hover:text-white">
             Privacy Policy
           </a>
-          {/* <a href="#" className="hover:text-white">
+          <a href="#" className="hover:text-white">
             Privacy
           </a>
           <a href="#" className="hover:text-white">
@@ -89,8 +89,8 @@ export const DashboardLogin = ({
               className="bg-transparent w-20"
               dropdownClass="w-20"
             />
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );

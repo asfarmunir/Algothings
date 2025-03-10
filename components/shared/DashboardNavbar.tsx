@@ -11,10 +11,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
+import { signOut } from "next-auth/react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 const DashboardNavbar = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
-
+  const router = useRouter();
   const handleSidebarToggle = () => {
     setSidebarVisible(!sidebarVisible);
   };
@@ -24,6 +26,15 @@ const DashboardNavbar = () => {
   };
   const handleSelect = () => {
     console.log("heelo");
+  };
+  const signOutUser = async () => {
+    await signOut({
+      redirect: false,
+      callbackUrl: "/login",
+    });
+    toast.success("Signed out successfully");
+    router.refresh();
+    router.replace("/login");
   };
 
   return (
@@ -69,7 +80,9 @@ const DashboardNavbar = () => {
                   <DropdownMenuItem>Billing and Accounts</DropdownMenuItem>
                   <DropdownMenuItem>Join Community</DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>Logout</DropdownMenuItem>
+                  <DropdownMenuItem onClick={signOutUser}>
+                    Logout
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

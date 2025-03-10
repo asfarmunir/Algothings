@@ -1,21 +1,28 @@
 // hooks/useProfileUpdate.ts
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useSession } from "next-auth/react";
+import { updateUser } from "@/lib/database/actions/user.actions";
+import toast from "react-hot-toast";
 
 const useProfileUpdate = () => {
+  const session = useSession();
   const [profile, setProfile] = useState({
-    firstName: "",
-    lastName: "",
-    username: "",
-    email: "",
-    phoneNumber: "",
+    firstName: session?.data?.user?.firstName || "",
+    lastName:   session?.data?.user?.lastName || "",
+    username:  session?.data?.user?.username || "",
+    email: session?.data?.user?.email || "",
+    phoneNumber:  session?.data?.user?.mobile || "",
     accountType: "",
-    country: "GB",
+    country:  session?.data?.user?.country || "",
     avatar: null,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+    const [passwordData, setPasswordData] = useState({
+    currentPassword: "",
+    newPassword: "",
+    });
   const fetchProfile = async () => {
     setLoading(true);
     try {
@@ -29,24 +36,19 @@ const useProfileUpdate = () => {
   };
 
   const updateProfile = async (updatedData: typeof profile) => {
-    setLoading(true);
+    console.log("🚀 ~ updateProfile ~ updatedData:", updatedData)
     try {
-      const formData = new FormData();
-      for (const key in updatedData) {
-        formData.append(key, updatedData[key as keyof typeof profile] as any);
-      }
-       
-       console.log(formData);
+      toast.loading("Updating profile...");
+      await updateUser(updatedData);
+      toast.dismiss();
+      toast.success("Profile updated successfully.");
 
-      await axios.put("/api/profile", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-    } catch (err) {
-      setError("Failed to update profile.");
-    } finally {
-      setLoading(false);
+    } catch (error) {
+      toast.dismiss();
+      toast.error("Failed to update profile.");
+      console.log("🚀 ~ error updating user profile", error)
+      return { error: "Failed to update user profile." };
+      
     }
   };
 
@@ -54,7 +56,7 @@ const useProfileUpdate = () => {
     fetchProfile();
   }, []);
 
-  return { profile, setProfile, updateProfile, loading, error };
+  return { profile, setProfile, updateProfile, loading, error, passwordData, setPasswordData };
 };
 
 export default useProfileUpdate;

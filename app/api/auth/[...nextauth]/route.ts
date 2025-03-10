@@ -58,6 +58,10 @@ export const authOptions = {
       const user = await User.findOne({email: token.email});
       session.user.email = user.email;
       session.user.username = user.username
+      session.user.firstName = user.firstName;
+      session.user.lastName = user.lastName;
+      session.user.mobile = user.mobile;
+      session.user.country = user.country;
       // session.user.image = user.profileImage;
       session.user.id = user._id.toString();
       

@@ -54,7 +54,7 @@ export default function useLoginForm() {
         setSuccess(true);
         // router.replace("/account");
         setLoading(false);
-        // router.push('/dashboard');
+        router.push('/dashboard');
     };
 
     return {

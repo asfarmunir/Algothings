@@ -85,21 +85,21 @@ export default function Pricing() {
                   } 
                     border p-8  border-[#FFFFFF1A] rounded-2xl text-start md:w-[400px] lg:w-[490px]`}
                 >
-                  <h1 className="text-[24px]">Starter</h1>
+                  <h1 className="text-[24px] font-bold">Starter</h1>
 
                   {activePlan === "Monthly" ? (
                     <div className="mt-6 text-start">
-                      <p className="text-sm text-[#999F9F]">Start From ...</p>
+                      {/* <p className="text-sm text-[#999F9F]">Start From ...</p> */}
                       <span
                         className={` ${
                           false ? "  text-black" : ""
                         } text-[32px] font-bold 2xl:text-[32px]`}
                       >
-                        €97
+                        €98/mo
                       </span>
-                      <span className="text-sm text-customlightgray">
+                      {/* <span className="text-sm text-customlightgray">
                         /per month
-                      </span>
+                      </span> */}
                     </div>
                   ) : (
                     <div className="mt-6 mb-3 text-start">
@@ -107,32 +107,32 @@ export default function Pricing() {
                         className={` 
                          text-[32px] font-bold 2xl:text-[32px] text-[#999F9F] line-through pl-2`}
                       >
-                        €97
+                        €98
                       </span>
                       <span
                         className={` font-bold pl-2 pr-1  text-[32px] 2xl:text-[32px]`}
                       >
-                        €87.3
+                        €89/mo
                       </span>
-                      <span className="text-sm  text-customlightgray">
+                      {/* <span className="text-sm  text-customlightgray">
                         /per month
-                      </span>
+                      </span> */}
                     </div>
                   )}
                   {activePlan === "Annual" && (
                     <>
                       <p
-                        className={`text-customlight
+                        className={`text-white
                     text-lg  2xl:text-xl w-full text-start -mt-2 pb-5`}
                       >
                         Billed anually{" "}
                         <span className=" px-1  text-white">
-                          (Save $116.40/year)
+                          (Save $117.60/year)
                         </span>
                       </p>
                     </>
                   )}
-                  <p className="text-[16px] my-4 mb-7">
+                  <p className="text-[15px] my-4 mb-7">
                     Ideal for: Traders beginning their automation journey
                   </p>
 
@@ -222,7 +222,7 @@ export default function Pricing() {
                   } border p-8  border-[#FFFFFF1A] text-start relative md:w-[400px] lg:w-[490px]`}
                 >
                   <div className="flex flex-row items-center justify-between">
-                    <h1 className="text-[24px]">Master</h1>
+                    <h1 className="text-[24px] font-bold">Master</h1>
                     <p
                       className={`${
                         false
@@ -235,22 +235,22 @@ export default function Pricing() {
                   </div>
 
                   {activePlan === "Monthly" ? (
-                    <div className="mt-3 text-start">
+                    <div className="mt-5 text-start">
                       <p className="mt-3">
                         <span className="text-[32px] font-semibold 2xl:text-[32px]  text-slate-200 pr-2 line-through">
-                          €997
+                          €998
                         </span>
                         <span
                           className={`${
                             false ? " text-black" : "text-white"
                           } text-[32px] 2xl:text-[32px] font-bold`}
                         >
-                          €697
+                          €698/mo
                         </span>
                       </p>
                     </div>
                   ) : (
-                    <div className="mt-3 text-black mb-3 text-start">
+                    <div className="mt-5 text-black mb-3 text-start">
                       <span
                         className={` 
                          text-[32px] font-bold 2xl:text-[32px] text-customlightgray line-through pr-2`}
@@ -260,38 +260,39 @@ export default function Pricing() {
                       <span
                         className={` font-bold text-white text-[32px] 2xl:text-[32px]`}
                       >
-                        €629
+                        €629/mo
                       </span>
-                      <span className="text-sm px-0.5 text-white">
+                      {/* <span className="text-sm px-0.5 text-white">
                         /per month
-                      </span>
+                      </span> */}
                     </div>
                   )}
 
-                  {activePlan === "Annual" ? (
-                    <>
-                      <p
-                        className={`text-customlight 
+                  {
+                    activePlan === "Annual" ? (
+                      <>
+                        <p
+                          className={`text-white 
                     text-lg  2xl:text-xl w-full text-start -mt-2 pb-5`}
-                      >
-                        Billed anually{" "}
-                        <span className=" px-1  text-white">
-                          (Save $837.60/year)
-                        </span>
-                      </p>
-                    </>
-                  ) : (
-                    <p>
-                      {" "}
-                      <span
-                        className={`${
-                          false ? " text-black " : "text-white "
-                        } text-sm -mt-2`}
-                      >
-                        Billed monthly
-                      </span>
-                    </p>
-                  )}
+                        >
+                          Billed anually{" "}
+                          <span className=" px-1  text-white">
+                            (Save $837.60/year)
+                          </span>
+                        </p>
+                      </>
+                    ) : null
+                    // <p>
+                    //   {" "}
+                    //   <span
+                    //     className={`${
+                    //       false ? " text-black " : "text-white "
+                    //     } text-sm -mt-2`}
+                    //   >
+                    //     Billed monthly
+                    //   </span>
+                    // </p>
+                  }
                   <p className="text-[15px] my-4 mb-7">
                     Ideal for: Traders seeking a powerful, all-in-one portfolio
                   </p>

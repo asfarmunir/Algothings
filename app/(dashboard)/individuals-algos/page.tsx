@@ -86,18 +86,18 @@ export default function Algorithm() {
                           <div className="mt-5 flex flex-col-reverse sm:flex-row gap-2 md:gap-4 sm:items-center">
                             <Link
                               href={"/login"}
-                              className="bg-gradient-to-r py-2 px-3 font-semibold text-nowrap uppercase text-[10px] 2xl:text-xs from-customgreen to-customblue text-black rounded-md "
+                              className="bg-gradient-to-r py-2 px-3 w-full text-center font-semibold text-nowrap uppercase text-[10px] 2xl:text-xs from-customgreen to-customblue text-black rounded-md "
                             >
                               Add to cart
                             </Link>
 
-                            <Link
+                            {/* <Link
                               href={"/products/1/details"}
                               className="flex flex-row gap-1 2xl:gap-2 items-center uppercase text-nowrap p-0 text-[10px]  2xl:text-sm"
                             >
                               <GoArrowUpRight className="text-lg" />
                               <span>LEARN MORE</span>
-                            </Link>
+                            </Link> */}
                           </div>
                         </div>
                       </div>
@@ -197,7 +197,7 @@ export default function Algorithm() {
                     </div>
 
                     {/* details */}
-                    <p className="uppercase  text-sm md:text-[10px] leading-tight bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent text-center">
+                    <p className="uppercase  text-sm md:text-[10px]  2xl:text-xs font-bold leading-tight bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent text-center">
                       Want access to all 10 algorithms in a <br />
                       single, powerful strategy?
                     </p>
@@ -209,11 +209,11 @@ export default function Algorithm() {
                       <div className="bg-[#04110D] rounded-lg p-2 flex flex-row items-center justify-between">
                         <div>
                           <p className=" line-through text-customgreen text-sm">
-                            $997
+                            $998
                           </p>
                           <p>
                             <span className=" bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent text-base font-bold ">
-                              $697
+                              $698
                             </span>{" "}
                             <span className=" bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent text-xs">
                               /month
