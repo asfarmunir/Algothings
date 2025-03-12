@@ -9,8 +9,9 @@ import {
   RiUserReceivedLine,
   RiUserSharedLine,
 } from "react-icons/ri";
-import { FaRegCircleUser } from "react-icons/fa6";
+import { FaRegCircleUser, FaUser } from "react-icons/fa6";
 import {
+  MdEmail,
   MdOutlineMailOutline,
   MdOutlineUploadFile,
   MdPassword,
@@ -137,7 +138,7 @@ const Profile: React.FC = () => {
         {/* Page Content */}
         <div className="flex-grow max-w-[100rem]  p-6 overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
           <div className="bg-customcard p-5 2xl:p-8 rounded-lg border border-[#FFFFFF33]">
-            <div className="relative w-fit">
+            {/* <div className="relative w-fit">
               <Image
                 src="/images/profile.png"
                 width={100}
@@ -148,13 +149,20 @@ const Profile: React.FC = () => {
               <button className=" absolute -right-2 -bottom-2">
                 <MdOutlineUploadFile className="text-4xl bg-[#ffffff75] rounded-full p-2" />
               </button>
-            </div>
-            <div className="flex flex-row justify-between">
+            </div> */}
+            <h1 className="text-2xl font-bold border-b pb-6 border-customgreen/20 tracking-wide text-white">
+              Billings and Accounts
+            </h1>
+            <div className="flex flex-row justify-between pb-4">
               <div className="space-y-1 mt-4">
-                <h3 className="text-md font-gilroy">Ali Riaz</h3>
-                <p className="text-xs 2xl:text-sm tracking-wider">
-                  aliriaz@gmail.com
-                </p>
+                <h3 className=" 2xl:text-lg font-gilroy flex items-center gap-4">
+                  <FaUser className="text-lg text-customgreen" />
+                  Ali Riaz
+                </h3>
+                <h3 className=" 2xl:text-lg font-gilroy flex items-center gap-4">
+                  <MdEmail className="text-lg text-customgreen" />
+                  xzy@gmail.com
+                </h3>
               </div>
 
               {/* <div
@@ -601,6 +609,7 @@ const Profile: React.FC = () => {
                       label="Card Expiry Date"
                       placeholder="Enter your card expiry date"
                       name="state"
+                      type="date"
                       icon={<RiUserSharedLine />}
                       // value={profile.state || ""}
                       // onChange={handleInputChange}

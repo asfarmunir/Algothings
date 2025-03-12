@@ -10,12 +10,14 @@ import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
 import { DiscordCommunity } from "@/components/shared/Discord";
 import { Footer } from "@/components/shared/Footer";
+import { useRouter } from "next/navigation";
 export default function AllProduct({ searchParams }: { searchParams: any }) {
   const unwrappedSearchParams = React.use(searchParams);
   //@ts-ignore
   const tab = unwrappedSearchParams.tab || "INDIVIDUALS";
   const [activeButton, setActiveButton] = useState(tab || "INDIVIDUALS");
 
+  const router = useRouter();
   return (
     <div className="flex flex-col w-full h-full">
       {/* Dashboard Navbar: Static and non-scrollable */}
@@ -74,7 +76,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                       </p>
                     </div>
                   </div>
-                  <div className="mx-8 md:mx-2 flex flex-row justify-start gap-6 pt-5">
+                  <div className=" md:mx-2 flex flex-row justify-start gap-6 pt-5">
                     <Image
                       src="/images/book.webp"
                       width={100}
@@ -87,14 +89,14 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                         <p className="text-customgray text-sm sm:text-md  font-semibold">
                           Profit last month
                         </p>
-                        <p className="text-customgreen text-xl md:text-3xl 2xl:text-4xl  md:mt:0 ">
+                        <p className="text-customgreen text-2xl md:text-3xl 2xl:text-4xl  md:mt:0 ">
                           +3.89%
                         </p>
                       </div>
-                      <div className="mt-5 flex flex-col-reverse sm:flex-row gap-2 md:gap-4 sm:items-center">
+                      <div className="mt-5 flex flex-row gap-2.5 md:gap-4 sm:items-center">
                         <Link
                           href={"/login"}
-                          className="bg-gradient-to-r py-2 px-5 font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
+                          className="bg-gradient-to-r py-2 px-3 sm:px-5 font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
                         >
                           Get Started
                         </Link>

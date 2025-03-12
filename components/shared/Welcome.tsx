@@ -287,7 +287,7 @@ export const Welcome = () => {
                     <div className="w-full flex flex-col justify-center px-2 md:px-6 lexend">
                       <div className="text-start leading-[28px]">
                         <p className="bg-gradient-to-r mt-6 uppercase  from-customgreen to-customblue font-semibold px-4 py-1.5 w-fit rounded-full text-xs ">
-                          Step {activeStep}
+                          Step {index + 1}
                         </p>
                         <h1 className="font-semibold text-start leading-10 text-[28px] pt-2">
                           {step.title}
