@@ -34,7 +34,7 @@ export default function Algorithm() {
           <DashboardNavbar />
 
           {/* Content Section */}
-          <div className="py-4  px-6 md:px-10 mt-4 flex flex-col-reverse lg:flex-row gap-8 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
+          <div className="py-4  px-6 md:px-10 mt-4 flex flex-col lg:flex-row gap-8 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
             {/* Left Section: Algorithms */}
             <div className="w-full lg:w-2/3 ">
               <h1 className="text-xl font-semibold">
@@ -151,7 +151,7 @@ export default function Algorithm() {
                           <p className="truncate text-xs">
                             Asuras Dragonair Bot #169
                           </p>
-                          <p className="text-xs">$148</p>
+                          <p className="text-xs">€148</p>
                         </div>
                         <div className="w-full flex flex-row justify-between gap-16 items-center">
                           <p className="text-customgray text-nowrap text-xs sm:text-sm">
@@ -203,15 +203,15 @@ export default function Algorithm() {
                   <div className="flex flex-col gap-2 text-sm">
                     <div className="flex flex-row justify-between gap-5">
                       <p className="text-customlightgray">Subtotal</p>
-                      <p>$200</p>
+                      <p>€200</p>
                     </div>
                     <div className="flex flex-row justify-between gap-5">
                       <p className="text-customlightgray">Tax</p>
-                      <p>$0.00</p>
+                      <p>€0.00</p>
                     </div>
                     <div className="flex flex-row justify-between gap-5">
                       <p className="text-customlightgray">Total</p>
-                      <p className="font-semibold">$208</p>
+                      <p className="font-semibold">€208</p>
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-full border-b border-customgray pb-5">

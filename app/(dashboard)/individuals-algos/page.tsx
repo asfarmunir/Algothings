@@ -36,7 +36,7 @@ export default function Algorithm() {
 
           {/* Details Section: Scrollable */}
           <div className="flex-grow  overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
-            <div className="p-5 mt-4 flex flex-col-reverse lg:flex-row gap-12 lg:gap-4 mb-2 ">
+            <div className="p-5 mt-4 flex flex-col lg:flex-row gap-12 lg:gap-4 mb-2 ">
               <div className="w-full lg:w-[70%] ">
                 <h1 className="text-[24px] font-semibold">
                   <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
@@ -147,7 +147,7 @@ export default function Algorithm() {
                             <p className="truncate text-sm lg:text-xs">
                               Asuras Dragonair Bot
                             </p>
-                            <p className="text-sm lg:text-xs">$148</p>
+                            <p className="text-sm lg:text-xs">€148</p>
                           </div>
                           <div className="w-full flex flex-row justify-between gap-16 items-center">
                             <p className="text-customgray text-nowrap text-sm lg:text-[10px]">
@@ -209,11 +209,11 @@ export default function Algorithm() {
                       <div className="bg-[#04110D] rounded-lg p-2 flex flex-row items-center justify-between">
                         <div>
                           <p className=" line-through text-customgreen text-sm">
-                            $998
+                            €998
                           </p>
                           <p>
                             <span className=" bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent text-base font-bold ">
-                              $698
+                              €698
                             </span>{" "}
                             <span className=" bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent text-xs">
                               /month
@@ -233,15 +233,15 @@ export default function Algorithm() {
                     <div className="flex flex-col gap-2 text-sm">
                       <div className="flex flex-row justify-between gap-5">
                         <p className="text-customlightgray">Subtotal</p>
-                        <p>$200</p>
+                        <p>€200</p>
                       </div>
                       <div className="flex flex-row justify-between gap-5">
                         <p className="text-customlightgray">Tax</p>
-                        <p>$0.00</p>
+                        <p>€0.00</p>
                       </div>
                       <div className="flex flex-row justify-between gap-5">
                         <p className="text-customlightgray">Total</p>
-                        <p className="font-semibold">$208</p>
+                        <p className="font-semibold">€208</p>
                       </div>
                     </div>
 

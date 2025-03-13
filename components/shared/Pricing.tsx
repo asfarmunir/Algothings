@@ -175,7 +175,7 @@ export default function Pricing() {
                     >
                       Billed anually{" "}
                       <span className=" px-1  text-white">
-                        (Save $117.60/year)
+                        (Save €117.60/year)
                       </span>
                     </p>
                   </>
@@ -323,7 +323,7 @@ export default function Pricing() {
                       >
                         Billed anually{" "}
                         <span className=" px-1  text-white">
-                          (Save $837.60/year)
+                          (Save €837.60/year)
                         </span>
                       </p>
                     </>
