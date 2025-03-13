@@ -11,6 +11,8 @@ import Link from "next/link";
 import { DiscordCommunity } from "@/components/shared/Discord";
 import { Footer } from "@/components/shared/Footer";
 import { useRouter } from "next/navigation";
+import { products } from "@/lib/products";
+
 export default function AllProduct({ searchParams }: { searchParams: any }) {
   const unwrappedSearchParams = React.use(searchParams);
   //@ts-ignore
@@ -18,6 +20,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
   const [activeButton, setActiveButton] = useState(tab || "INDIVIDUALS");
 
   const router = useRouter();
+
   return (
     <div className="flex flex-col w-full h-full">
       {/* Dashboard Navbar: Static and non-scrollable */}
@@ -53,7 +56,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
           </div>
           {activeButton === "INDIVIDUALS" ? (
             <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  md:gap-6 md:gap-y-8 pb-12 mt-6 md:px-4 2xl:px-16 2xl:mt-8">
-              {Array.from({ length: 15 }).map((_, index) => (
+              {products.map((prod: any, index: number) => (
                 <div
                   key={index}
                   className="bg-[#04110D80] py-3 px-5 rounded-lg  "
@@ -69,10 +72,10 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                     />
                     <div>
                       <h1 className="text-sm md:text-[12px] 2xl:text-base uppercase font-semibold">
-                        Momentum Snap
+                        {prod.title}
                       </h1>
                       <p className="text-customgray text-xs md:text-[12px] 2xl:text-[14px]">
-                        For E-mini (NQ) and Micro (MNQ) Nasdaq 100 index
+                        {prod.subtitle}
                       </p>
                     </div>
                   </div>
@@ -102,7 +105,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                         </Link>
 
                         <Link
-                          href={"/products/1/details"}
+                          href={`/products/${prod.id}/details`}
                           className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-xs 2xl:text-sm"
                         >
                           <GoArrowUpRight className="text-lg" />
