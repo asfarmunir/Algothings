@@ -34,12 +34,10 @@ export default function Comparsion() {
             </div>
 
             <h1 className="px-4 pt-4 text-[36px] lg:text-[52px] font-semibold leading-[60px] my-6">
-              Trading With{" "}
               <span className="bg-gradient-to-r from-customgreen to-customblue  bg-clip-text text-transparent">
                 The Algos Field
               </span>{" "}
-              Vs. <br className="md:block hidden" />
-              Trading Yourself
+              Vs Manual Trading
             </h1>
 
             <Title />

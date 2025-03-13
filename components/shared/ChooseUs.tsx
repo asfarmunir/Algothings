@@ -8,22 +8,40 @@ import { AnimatePresence, motion } from "framer-motion";
 import AnimationSection from "../ui/AnimationSection";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+// const points = [
+//   {
+//     title: "Simplified Trading Process",
+//     desc: "No programming, no guesswork, no constant monitoring—our algorithms automate the entire trading journey for you.",
+//   },
+//   {
+//     title: "Fully Diversified Strategies",
+//     desc: "Trade stocks, crypto, futures, indices, and commodities with 10 individual algorithms or our powerful portfolio strategy.",
+//   },
+//   {
+//     title: "Dedicated Premium Support",
+//     desc: "Enjoy 24/7 support and direct access to a dedicated account manager with our managed services.",
+//   },
+//   {
+//     title: "Continuous Innovation",
+//     desc: "Our team delivers regular over-the-air updates to ensure your trading strategies stay ahead of evolving markets.",
+//   },
+// ];
 const points = [
   {
-    title: "Simplified Trading Process",
-    desc: "No programming, no guesswork, no constant monitoring—our algorithms automate the entire trading journey for you.",
+    title: "10+ Years of Expertise ",
+    desc: "Decades of trading mastery refined while you binged Netflix.",
   },
   {
-    title: "Fully Diversified Strategies",
-    desc: "Trade stocks, crypto, futures, indices, and commodities with 10 individual algorithms or our powerful portfolio strategy.",
+    title: "3+ Years of Rigorous Testing  ",
+    desc: "No guesswork, just precision-backed strategies.",
   },
   {
-    title: "Dedicated Premium Support",
-    desc: "Enjoy 24/7 support and direct access to a dedicated account manager with our managed services.",
+    title: "8%+ Monthly Returns  ",
+    desc: "Like a market cheat code for consistent growth",
   },
   {
-    title: "Continuous Innovation",
-    desc: "Our team delivers regular over-the-air updates to ensure your trading strategies stay ahead of evolving markets.",
+    title: "75%+ Win Rate ",
+    desc: "Because your portfolio deserves a winning edge.",
   },
 ];
 
@@ -97,8 +115,7 @@ export default function ChooseUs() {
           </h1>
 
           <p className="text-[#FFFFFFCC] text-[18px] lg:text-[23px] mb-6">
-            Discover the unmatched advantages of choosing our advanced
-            algorithmic trading solutions.
+            Let Algos do the heavy lifting while you focus on your goals.
           </p>
         </FadeInSection>
         <FadeInSection>
@@ -186,7 +203,7 @@ export default function ChooseUs() {
                   height={30}
                   alt="graph"
                 />
-                <p className="mt-4 font-bold bg-gradient-to-r from-customgreen to-customblue inline-block bg-clip-text text-transparent text-[24px] md:text-[32px]">
+                <p className="mt-8 font-bold bg-gradient-to-r from-customgreen to-customblue inline-block bg-clip-text text-transparent text-[24px] md:text-[32px]">
                   {points.find((point) => point.title === openItem)?.title ??
                     ""}
                 </p>

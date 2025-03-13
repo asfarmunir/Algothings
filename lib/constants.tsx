@@ -160,24 +160,25 @@ export const stepContent = [
         individual strategies.
       </span>,
       <span>
-        <span className="text-[20px] font-bold">Master Plan:</span> Offers a
-        powerful combined portfolio strategy.
+        <span className="text-[20px] font-bold">Master Plan:</span> A fully
+        integrated, diversified portfolio that seamlessly combines all 10
+        individual trading strategies.
       </span>,
     ],
     btntitle: "Choose Your Plan",
   },
   {
-    title: "Download",
+    title: "Download & Setup",
     description:
-      "Download the .zip file for your selected strategy. This file includes configuration files compatible with MultiCharts, TradeStation, and MetaTrader.",
+      "Grab your strategy files, unzip them, and import them into your trading platform.",
     btntitle: "Get Started",
   },
   {
-    title: "Extract And Import",
+    title: "Activate & Go Live",
     description: (
       <>
-        Extract the .zip file on your computer and locate the configuration
-        files for your trading platform:
+        Apply the configurations, link your account, and connect to real-time
+        market data.
       </>
     ),
     points: [
@@ -199,9 +200,9 @@ export const stepContent = [
     btntitle: "View Import Instructions",
   },
   {
-    title: "Start Trading",
+    title: "Trade on Robopilot",
     description:
-      "Apply the configuration files to your charts and begin trading with TAF ALGOS. Ensure your platform is connected to live market data for the best results.",
+      "Sit back while Algos takes over. You focus on your goals—we handle the trades.",
     points: [
       <span>
         <span className="text-[20px] font-bold">Important Note:</span> An active
@@ -215,130 +216,122 @@ export const stepContent = [
 
 export const testimonials = [
   {
-    initials: "BT",
-    name: "khan",
+    initials: "KP",
+    name: "Khan Patel",
     testimonial:
-      "“From the expert support to the live trading sessions, FutureFunded has helped me elevate my trading game. I’m so grateful!”",
+      "“Algos Field transformed my trading. 100% hands-free, no stress, just profits!”",
   },
   {
     initials: "AL",
     name: "Anna Lee",
     testimonial:
-      "“I never thought I'd be able to trade with confidence. FutureFunded has made it possible.”",
+      "“My best decision. No emotions, just data-driven precision and steady returns.”",
   },
   {
     initials: "JS",
     name: "John Smith",
-    testimonial:
-      "“Amazing team and resources! I’ve seen a huge improvement in my trading results.”",
+    testimonial: "“Set it, forget it, and watch the profits roll in!”",
   },
   {
-    initials: "SP",
-    name: "Sarah Parker",
+    initials: "JO",
+    name: "James O’Connor",
     testimonial:
-      "“FutureFunded’s strategies are top-notch. Their sessions have been a game-changer for me!”",
+      "“Trading smarter, not harder. Finally, a stress-free approach that works!”",
   },
   {
-    initials: "DG",
-    name: "David Green",
+    initials: "MT",
+    name: "Maria Thompson",
     testimonial:
-      "“The guidance I’ve received from FutureFunded is unmatched. Highly recommend!”",
+      "“Algos Field eliminated my biggest weakness. Emotional trading is gone, now I just win.”",
   },
   {
-    initials: "MR",
-    name: "Maria Rodriguez",
+    initials: "DW",
+    name: "Daniel Wright",
     testimonial:
-      "“FutureFunded’s community is supportive and inspiring. I’ve learned so much!”",
+      "“Consistent gains, automated execution, and zero effort. This is the future of trading!”",
   },
   {
-    initials: "CW",
-    name: "Chris Williams",
+    initials: "OG",
+    name: "Olivia Green",
     testimonial:
-      "“I’ve gained confidence in my trading decisions thanks to FutureFunded's clear strategies.”",
+      "“More time, less stress, and a portfolio that grows while I sleep.”",
   },
   {
-    initials: "KS",
-    name: "Kelly Stewart",
+    initials: "KR",
+    name: "Kevin Roberts",
     testimonial:
-      "“The live trading sessions and expert advice have been invaluable. FutureFunded rocks!”",
+      "“From skeptical to hooked. TAF Genesis truly delivers on its promise!”",
   },
   {
-    initials: "RB",
-    name: "Robert Brown",
+    initials: "EC",
+    name: "Emily Carter",
     testimonial:
-      "“FutureFunded’s approach is straightforward yet powerful. I’m seeing great results!”",
+      "“Finally, an algo trading system I can trust. No fluff, just results!”",
   },
   {
-    initials: "LM",
-    name: "Laura Martinez",
+    initials: "MW",
+    name: "Mark Williams",
     testimonial:
-      "“The tools and training provided by FutureFunded are amazing. I couldn’t ask for more.”",
+      "“Algos Field feels like having a top-tier hedge fund at my fingertips.”",
   },
   {
-    initials: "JP",
-    name: "James Patel",
+    initials: "RA",
+    name: "Rachel Adams",
     testimonial:
-      "“FutureFunded has helped me refine my strategies and achieve consistent profits.”",
+      "“The TAF Genesis portfolio is a game-changer. Consistent, diversified, and profitable.”",
   },
   {
-    initials: "NC",
-    name: "Natalie Carter",
+    initials: "LF",
+    name: "Leo Fernandez",
     testimonial:
-      "“Thanks to FutureFunded, trading feels less intimidating and more rewarding!”",
+      "“Tried manual trading for years. This is simply more efficient and profitable.”",
   },
   {
-    initials: "AE",
-    name: "Andrew Edwards",
+    initials: "JT",
+    name: "Jessica Tran",
     testimonial:
-      "“I love how comprehensive and easy-to-follow FutureFunded’s sessions are.”",
+      "“I love precision. Perfect entries, perfect exits, all automated.”",
   },
   {
-    initials: "TB",
-    name: "Tina Black",
-    testimonial:
-      "“The expert support and guidance at FutureFunded have been truly transformative!”",
+    initials: "CB",
+    name: "Chris Bennett",
+    testimonial: "“TAF strategies do the hard work so I don’t have to.”",
   },
   {
-    initials: "MH",
-    name: "Michael Harris",
+    initials: "RH",
+    name: "Robert Harris",
     testimonial:
-      "“FutureFunded’s training has helped me achieve my financial goals. Thank you!”",
+      "“Trading used to be stressful. Now it’s a seamless, automated process.”",
   },
   {
-    initials: "CL",
-    name: "Catherine Lopez",
+    initials: "SY",
+    name: "Samantha Young",
     testimonial:
-      "“The resources and expertise at FutureFunded are second to none. Highly recommended!”",
+      "“Steady gains, smart risk management, and no sleepless nights. Perfect!”",
   },
   {
-    initials: "BB",
-    name: "Benjamin Blake",
+    initials: "JC",
+    name: "Jason Cooper",
     testimonial:
-      "“FutureFunded offers the best trading education I’ve ever received.”",
+      "“TAF Gold Rush nailed gold trading. Best decision I’ve made.”",
   },
   {
-    initials: "ST",
-    name: "Sophia Taylor",
+    initials: "NE",
+    name: "Natalie Evans",
     testimonial:
-      "“I’ve grown so much as a trader thanks to FutureFunded’s structured approach.”",
+      "“With Trend Hunter, I finally trade with confidence and consistency.”",
   },
   {
-    initials: "DH",
-    name: "Daniel Howard",
+    initials: "GM",
+    name: "George Mitchell",
     testimonial:
-      "“The live sessions and expert guidance have helped me turn my trading around.”",
+      "“Profitable, reliable, and completely hands-off. Just what I needed!”",
   },
   {
-    initials: "JA",
-    name: "Jessica Adams",
+    initials: "LS",
+    name: "Laura Simmons",
     testimonial:
-      "“FutureFunded makes trading accessible and enjoyable. I’ve learned so much!”",
-  },
-  {
-    initials: "EL",
-    name: "Ethan Long",
-    testimonial:
-      "“The strategies I’ve learned at FutureFunded have made a world of difference.”",
+      "“No more hours staring at charts. Just effortless, profitable trading!”",
   },
 ];
 
@@ -651,28 +644,46 @@ export const flags = [
   { label: "South Africa", value: "za", flag: "🇿🇦" },
 ];
 
+// export const Intermediate = [
+//   "Exclusive access to our Discord community",
+//   "Live webinars with Q&A sessions",
+//   "24/7 dedicated account manager",
+//   "Fully hands-free automation",
+//   "Premium pre-configured settings",
+//   "Seamless over-the-air updates",
+//   "Compatible with MultiCharts, TradeStation, and MetaTrader",
+//   "1-month license for your selected strategies",
+//   "Free Step-by-step guides to install and set up your algos",
+// ];
 export const Intermediate = [
-  "Exclusive access to our Discord community",
-  "Live webinars with Q&A sessions",
-  "24/7 dedicated account manager",
-  "Fully hands-free automation",
-  "Premium pre-configured settings",
-  "Seamless over-the-air updates",
-  "Compatible with MultiCharts, TradeStation, and MetaTrader",
-  "1-month license for your selected strategies",
-  "Free Step-by-step guides to install and set up your algos",
+  "Exclusive Discord trading hub",
+  "24/7 support",
+  "Fully hands-free automation ",
+  "Premium pre-configured settings ",
+  "Seamless over-the-air updates ",
+  "Compatible with top trading platforms.",
+  "Step-by-step setup guides ",
 ];
 
+// export const master = [
+//   "Exclusive access to our Discord community",
+//   "Live webinars with Q&A sessions",
+//   "24/7 dedicated account manager",
+//   "Fully hands-free automation",
+//   "Premium pre-configured settings",
+//   "Seamless over-the-air updates",
+//   "Compatible with MultiCharts, TradeStation, and MetaTrader",
+//   "Combines 10 strategies into a single diversified portfolio",
+//   "1-month license for your selected strategies",
+//   "Free Step-by-step guides to install and set up your algos",
+//   "Early access to new releases and updates",
+// ];
 export const master = [
-  "Exclusive access to our Discord community",
-  "Live webinars with Q&A sessions",
-  "24/7 dedicated account manager",
-  "Fully hands-free automation",
-  "Premium pre-configured settings",
-  "Seamless over-the-air updates",
-  "Compatible with MultiCharts, TradeStation, and MetaTrader",
-  "Combines 10 strategies into a single diversified portfolio",
-  "1-month license for your selected strategies",
-  "Free Step-by-step guides to install and set up your algos",
-  "Early access to new releases and updates",
+  "Everything in the Starter Plan, PLUS:",
+  "Access to ALL 10 trading strategies",
+  "A fully diversified portfolio strategy ",
+  "VIP early access to new releases & updates",
+  "Advanced risk management tools",
+  "Higher optimization settings & enhanced performance tuning ",
+  "Priority customer support ",
 ];

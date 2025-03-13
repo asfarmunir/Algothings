@@ -47,10 +47,10 @@ export default function Navbar() {
       label: "Products",
       href: "/products",
     },
-    {
-      label: "About",
-      href: "/",
-    },
+    // {
+    //   label: "About",
+    //   href: "/",
+    // },
     {
       label: "Blog",
       href: "/blog",
@@ -98,23 +98,23 @@ export default function Navbar() {
           )}
 
           {Navbar_links.map((items, index) => {
-            if (index === 1 && pathname === "/") {
-              return (
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const targetSection = document.querySelector("#about");
-                    targetSection?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className={`${
-                    // activeSection === "about"
-                    false ? "shadow-green-inner rounded-full py-2 px-6" : ""
-                  }  hover:text-customgreen uppercase text-xs 2xl:text-sm  px-2  `}
-                >
-                  About
-                </button>
-              );
-            }
+            // if (index === 1 && pathname === "/") {
+            //   return (
+            //     <button
+            //       onClick={(e) => {
+            //         e.preventDefault();
+            //         const targetSection = document.querySelector("#about");
+            //         targetSection?.scrollIntoView({ behavior: "smooth" });
+            //       }}
+            //       className={`${
+            //         // activeSection === "about"
+            //         false ? "shadow-green-inner rounded-full py-2 px-6" : ""
+            //       }  hover:text-customgreen uppercase text-xs 2xl:text-sm  px-2  `}
+            //     >
+            //       About
+            //     </button>
+            //   );
+            // }
             return (
               // <nav key={index + 1} className=" md:flex flex-row gap-3">
               //   <Link

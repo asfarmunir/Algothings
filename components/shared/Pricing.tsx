@@ -92,7 +92,7 @@ export default function Pricing() {
             adipisicing elit.
           </p>
 
-          <div className="px-6 md:px-12">
+          <div className="px-6 md:px-8">
             <FadeInSection>
               <div className="flex flex-row gap-3 lexend items-center justify-center my-3">
                 <Button
@@ -340,7 +340,7 @@ export default function Pricing() {
                   // </p>
                 }
                 <p className="text-[15px] my-4 mb-7">
-                  Ideal for: Traders seeking a powerful, all-in-one portfolio
+                  Ideal for: Traders seeking a proven, high-growth portfolio.
                 </p>
 
                 <Button

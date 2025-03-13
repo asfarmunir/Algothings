@@ -42,9 +42,8 @@ export const Title = () => {
             <hr className="border-[#1B211F]" />
           </div> */}
 
-          <div className="  px-5 sm:min-w-[26rem]  w-full sm:w-fit mt-3">
-            <h3 className="font-bold bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent  text-2xl text-[28px] leading-[36px] ">
-              Trading With <br />
+          <div className="  px-5 sm:min-w-[26rem]  w-full sm:w-fit mt-5 md:mt-12">
+            <h3 className="font-bold bg-gradient-to-r pb-2 from-customgreen to-customblue bg-clip-text text-transparent  text-2xl text-[28px] leading-[36px] ">
               The Algos Field
             </h3>
             <div className="bg-gradient-to-b from-customgreen to-customblue p-[6px] rounded-[44px]">

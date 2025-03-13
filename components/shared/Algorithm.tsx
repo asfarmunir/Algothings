@@ -50,11 +50,10 @@ export const Algorithm = () => {
                           />
                           <div className="text-start">
                             <h1 className="text-[16px] text-start  tracking-wide capitalize font-semibold">
-                              Portfolio Strategy
+                              TAF Genesis
                             </h1>
                             <p className="text-customgray text-[12px]">
-                              This portfolio integrates all 10 strategies,
-                              delivering a range
+                              The Ultimate Strategy Trading Portfolio
                             </p>
                           </div>
                         </div>
@@ -111,59 +110,102 @@ export const Algorithm = () => {
           <FadeInSection>
             <div className="px-2 sm:px-4 mt-5 max-w-4xl mx-auto ">
               <div className="grid grid-cols-1 sm:grid-cols-2  gap-6">
-                {Array.from({ length: 2 }).map((_, index) => (
-                  <div
-                    key={index}
-                    className="bg-[#04110D80] px-4 py-4 rounded-[20px]"
-                  >
-                    <div className="flex flex-row gap-2">
-                      <Image
-                        src="/images/logo1.svg"
-                        width={40}
-                        height={20}
-                        alt="Logo"
-                      />
-                      <div>
-                        <h1 className="text-[16px] text-start capitalize font-semibold">
-                          Trend Hunter
-                        </h1>
-                        <p className="text-customgray text-[12px]">
-                          For E-mini (NQ) and Micro (MNQ) Nasdaq 100 index
-                        </p>
-                      </div>
+                <div className="bg-[#04110D80] px-4 py-4 rounded-[20px]">
+                  <div className="flex flex-row gap-2">
+                    <Image
+                      src="/images/logo1.svg"
+                      width={40}
+                      height={20}
+                      alt="Logo"
+                    />
+                    <div>
+                      <h1 className="text-[16px] text-start capitalize font-semibold">
+                        Flash Break
+                      </h1>
+                      <p className="text-customgray text-[12px]">
+                        High-Speed Scalping for Precision Breakouts {" "}
+                      </p>
                     </div>
-                    <div className="flex flex-row gap-4 pt-3 mx-2">
-                      <Image
-                        src="/images/book.webp"
-                        width={120}
-                        height={160}
-                        alt="card image"
-                      />
-                      <div className="flex flex-col justify-end items-start w-full">
-                        <div>
-                          <p className="text-customgray text-[14px] font-semibold">
-                            Profit last month
-                          </p>
-                          <p className="text-customgreen text-[34px]">+3.89%</p>
-                        </div>
-                        <div className="mt-4 flex gap-4 items-center">
-                          <Button
-                            label="Get Started"
-                            onClick={() => router.push("/register")}
-                            className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] text-xs   uppercase 2xl:text-sm from-customgreen to-customblue text-black rounded-lg"
-                          />
-                          <button
-                            onClick={() => router.push("/products/1/details")}
-                            className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-xs 2xl:text-sm"
-                          >
-                            <GoArrowUpRight className="text-lg" />
-                            <span>LEARN MORE</span>
-                          </button>
-                        </div>
+                  </div>
+                  <div className="flex flex-row gap-4 pt-3 mx-2">
+                    <Image
+                      src="/images/book.webp"
+                      width={120}
+                      height={160}
+                      alt="card image"
+                    />
+                    <div className="flex flex-col justify-end items-start w-full">
+                      <div>
+                        <p className="text-customgray text-[14px] font-semibold">
+                          Profit last month
+                        </p>
+                        <p className="text-customgreen text-[34px]">+3.89%</p>
+                      </div>
+                      <div className="mt-4 flex gap-4 items-center">
+                        <Button
+                          label="Get Started"
+                          onClick={() => router.push("/register")}
+                          className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] text-xs   uppercase 2xl:text-sm from-customgreen to-customblue text-black rounded-lg"
+                        />
+                        <button
+                          onClick={() => router.push("/products/1/details")}
+                          className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-xs 2xl:text-sm"
+                        >
+                          <GoArrowUpRight className="text-lg" />
+                          <span>LEARN MORE</span>
+                        </button>
                       </div>
                     </div>
                   </div>
-                ))}
+                </div>
+                <div className="bg-[#04110D80] px-4 py-4 rounded-[20px]">
+                  <div className="flex flex-row gap-2">
+                    <Image
+                      src="/images/logo1.svg"
+                      width={40}
+                      height={20}
+                      alt="Logo"
+                    />
+                    <div>
+                      <h1 className="text-[16px] text-start capitalize font-semibold">
+                        Momentum Snap
+                      </h1>
+                      <p className="text-customgray text-[12px]">
+                        Ride Explosive Market Moves with Precision
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-row gap-4 pt-3 mx-2">
+                    <Image
+                      src="/images/book.webp"
+                      width={120}
+                      height={160}
+                      alt="card image"
+                    />
+                    <div className="flex flex-col justify-end items-start w-full">
+                      <div>
+                        <p className="text-customgray text-[14px] font-semibold">
+                          Profit last month
+                        </p>
+                        <p className="text-customgreen text-[34px]">+3.89%</p>
+                      </div>
+                      <div className="mt-4 flex gap-4 items-center">
+                        <Button
+                          label="Get Started"
+                          onClick={() => router.push("/register")}
+                          className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] text-xs   uppercase 2xl:text-sm from-customgreen to-customblue text-black rounded-lg"
+                        />
+                        <button
+                          onClick={() => router.push("/products/1/details")}
+                          className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-xs 2xl:text-sm"
+                        >
+                          <GoArrowUpRight className="text-lg" />
+                          <span>LEARN MORE</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="flex items-center justify-center mt-12">
                 {/* <Button

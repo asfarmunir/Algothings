@@ -25,12 +25,12 @@ export default function FAQComponent({ question_ans }) {
           {/* Accordion Header */}
           <AnimationSection>
             <div
-              onClick={() => handleToggle(item.title)}
+              onClick={() => handleToggle(item.question)}
               className="bg-[#04100C] tracking-wider px-[20px] py-[12px] text-[15px] 2xl:text-[18px]  rounded-md border border-[#FFFFFF33] flex justify-between items-center cursor-pointer"
             >
-              <span className="text-left">{item.title}</span>
+              <span className="text-left">{item.question}</span>
               <span className="flex-shrink-0">
-                {openItem === item.title ? (
+                {openItem === item.question ? (
                   <Image
                     src="/images/minus.svg"
                     width={12}
@@ -51,18 +51,16 @@ export default function FAQComponent({ question_ans }) {
 
           {/* Accordion Body with Framer Motion animation */}
           <AnimatePresence initial={false}>
-            {openItem === item.title && (
+            {openItem === item.question && (
               <motion.div
                 key="content"
                 initial="collapsed"
                 animate="expanded"
                 exit="collapsed"
                 variants={accordionVariants}
-                className="overflow-hidden text-start sm:text-center font-light bg-[#04100C] text-sm  p-3 sm:px-8 rounded-b-md border border-[#FFFFFF33] border-t-0 leading-7  tracking-wider"
+                className="overflow-hidden text-start  font-light bg-[#04100C] text-sm  p-3 sm:px-8 rounded-b-md border border-[#FFFFFF33] border-t-0 leading-7  tracking-wider"
               >
-                <div className="py-2 text-[16px] leading-[30px]">
-                  {item.answer}
-                </div>
+                <p dangerouslySetInnerHTML={{ __html: item.answer }} />
               </motion.div>
             )}
           </AnimatePresence>

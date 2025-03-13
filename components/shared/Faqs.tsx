@@ -3,55 +3,80 @@ import AnimationSection from "../ui/AnimationSection";
 import FAQComponent from "../ui/FaqComponent";
 import Image from "next/image";
 import { useState } from "react";
-
-const question_ans = [
+export const faqs = [
   {
-    title: "How can I get started with Trade Tech Solutions?",
+    question: "What makes The Algos Field better than manual trading?",
     answer:
-      "Getting started with us is easy. Simply fill out the form on our website. Once submitted, you'll be redirected to a booking page where you can select a convenient time for a consultation. During the consultation, we'll discuss your specific needs and how our solutions can help you achieve your business goals.",
+      "The Algos Field eliminates emotional bias, stress, and the time commitment of manual trading.<br />Our fully automated system executes trades faster and more precisely than a human can, ensuring optimal entries and exits.<br />Unlike manual trades, our algorithm follows a data-driven approach to maximize efficiency and maintain consistent strategy execution, risk management, and market monitoring without requiring supervision.",
   },
   {
-    title: "How long does it typically take to launch a prop firm with us?",
+    question:
+      "Is The Algos Field suitable for beginners, and how much experience do I need?",
     answer:
-      "We offer a variety of services including technical consultations, custom software development, and ongoing tech support tailored to your business needs.",
+      "Yes! The Algos Field is designed for all experience levels, from beginners to advanced traders.<br /><br />✔ No coding or advanced trading knowledge required<br />✔ Fully automated system, just set up and let it trade<br />✔ Guides & support available to help you understand how it works",
   },
   {
-    title: "Can I retain all the profits I generate with my prop firm?",
+    question: "How do I set up The Algos Field to start trading?",
     answer:
-      "Getting started with us is easy. Simply fill out the form on our website. Once submitted, you'll be redirected to a booking page where you can select a convenient time for a consultation. During the consultation, we'll discuss your specific needs and how our solutions can help you achieve your business goals.",
+      "Setting up The Algos Field takes just a few steps:<br /><br />1️. Choose Your Strategy – Select Starter (single-strategy) or Master (diversified portfolio).<br />2️. Download & Set Up – Grab your strategy files, unzip them, and import them into your trading platform.<br />3️. Activate & Go Live – Apply the configurations, link your account, and connect to real-time market data.<br />4️. Trade on Robopilot – Sit back while Algos takes over. You focus on your goals—we handle the trades.<br /><br />Need help? Our support team is available to guide you through the setup process.",
   },
   {
-    title: "What types of payment methods does Trade Tech Solutions support?",
+    question: "What strategies does The Algos Field use, and are they proven?",
     answer:
-      "We offer a variety of services including technical consultations, custom software development, and ongoing tech support tailored to your business needs.",
+      "The Algos Field offers 10 individual trading algorithms, each optimized for different market conditions.<br /><br />Traders can:<br />✔ Use specific algorithms tailored to their strategy<br />✔ Combine all 10 algos into a diversified portfolio strategy<br /><br />These strategies have been back-tested for over three years with a 75%+ win rate. Visit the Products Page to explore each strategy in detail.",
   },
   {
-    title: "Can Trade Tech Solutions assist with marketing my prop firm?",
+    question:
+      "Is The Algos Field 100% automated, and can I stop or cancel anytime?",
     answer:
-      "Getting started with us is easy. Simply fill out the form on our website. Once submitted, you'll be redirected to a booking page where you can select a convenient time for a consultation. During the consultation, we'll discuss your specific needs and how our solutions can help you achieve your business goals.",
+      "Yes! The Algos Field is fully automated and requires no manual intervention.<br />The only action you need to take is to enable or disable the bot directly from your trading platform.<br />If you wish to stop using the service, you can cancel your subscription anytime through your member dashboard.",
   },
   {
-    title: "Which trading platforms do you support?",
+    question: "What trading platforms are supported?",
     answer:
-      "We offer a variety of services including technical consultations, custom software development, and ongoing tech support tailored to your business needs.",
+      "The Algos Field currently supports:<br /><br />✔ MultiCharts<br />✔ TradeStation<br />✔ MetaTrader (MT5) coming soon<br /><br />Make sure your selected platform is compatible with your broker for seamless execution.",
   },
   {
-    title: "Which Prop Firms are using Trade Tech Solutions services?",
+    question: "How is risk managed with automated strategies?",
     answer:
-      "We offer a variety of services including technical consultations, custom software development, and ongoing tech support tailored to your business needs.",
+      "The Algos Field integrates built-in risk management to protect your capital:<br /><br />✔ Stop-Losses – Limits potential losses per trade<br />✔ Max Drawdown Protection – Prevents excessive account losses<br />✔ Position Sizing – Adjusts trade sizes dynamically based on risk settings<br />✔ Diversified Strategies – Spreads risk across multiple market conditions<br /><br />These safeguards help maintain consistent, controlled trading while minimizing exposure to volatility.",
   },
   {
-    title: "Do you only provide tech, or do you offer other services as well?",
+    question: "What’s the average monthly profit I can expect?",
     answer:
-      "We offer a variety of services including technical consultations, custom software development, and ongoing tech support tailored to your business needs.",
+      "The Algos Field's portfolio strategy has been back-tested for over three years, achieving an average monthly return of 8%+. However, actual results depend on market conditions, and past performance does not guarantee future profits.",
   },
   {
-    title: "Why choose Trade Tech Solutions? What makes you stand out?",
+    question: "Is my money safe while using The Algos Field?",
     answer:
-      "We offer a variety of services including technical consultations, custom software development, and ongoing tech support tailored to your business needs.",
+      "Yes! The Algos Field does not have access to your account funds. Your money remains in your broker account, and the bot only executes trades based on market conditions. You have full control over your funds and can enable or disable the bot at any time directly from your trading platform.",
   },
-
-  // Additional FAQ items
+  {
+    question:
+      "What payment methods do you accept, and is my information secure?",
+    answer:
+      "We accept credit and debit card payments, which are securely processed through Stripe, our trusted payment provider. All transactions are encrypted and protected to ensure your payment details remain safe.",
+  },
+  {
+    question: "Will I be charged automatically on renewal?",
+    answer:
+      "Yes, all subscriptions are set to auto-renew unless canceled before the renewal date.Your payment method will be automatically charged through Stripe to ensure uninterrupted access.",
+  },
+  {
+    question: "What happens if I miss a payment?",
+    answer:
+      "If a payment fails:<br />✔ Your account will be revoked, losing access to the bot until the payment is completed.<br />✔ Stripe will automatically retry the charge. If unsuccessful, you’ll need to update your payment details in your member dashboard to restore access.",
+  },
+  {
+    question: "Do you offer refunds?",
+    answer:
+      "No, all purchases are final, and refunds are unavailable once a subscription is activated.Since The Algos Field provides immediate access to automated trading strategies, we recommend reviewing all plan details before subscribing. If you experience an issue, please contact our support team for assistance.",
+  },
+  {
+    question: "How do I contact customer support if I need help?",
+    answer:
+      "Our support team is available 24/7 to assist you! You can reach us through:<br /><br />✔ Email: support@thealgosfield.com<br />✔ Discord Community: Join our community for real-time support and discussions<br />✔ FAQ Section: Check our FAQ for quick answers<br /><br />For any further assistance, feel free to reach out!",
+  },
 ];
 
 export default function FAQ() {
@@ -116,7 +141,7 @@ export default function FAQ() {
             {/* Center the Accordion container */}
             <div className="flex justify-center mt-4 ">
               <div className="w-full mx-4 md:mx-12 lg:mx-[120px] 2xl:mx-[150px]">
-                <FAQComponent question_ans={question_ans} />
+                <FAQComponent question_ans={faqs} />
               </div>
             </div>
           </div>

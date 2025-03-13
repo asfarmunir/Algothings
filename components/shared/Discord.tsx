@@ -48,8 +48,8 @@ export function DiscordCommunity() {
                 Smarter Trading, Right in Your Inbox
               </h1>
               <p className="text-sm 2xl:text-base pt-2 mt-3 sm:mt-0 font-light ">
-                Stay in the loop with algo insights, updates, and strategies. No
-                spam, just the good stuff.
+                Get exclusive algo insights, updates, and strategies. No spam,
+                just the good stuff.
               </p>
 
               <div className="inline-flex rounded-full w-full sm:w-2/4 px-1 py-2  md:min-w-80  items-center justify-between mt-6 border border-[#FFFFFF33] bg-[#03100C]">

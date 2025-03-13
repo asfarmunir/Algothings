@@ -295,20 +295,46 @@ export const Footer = () => {
             </div>
           </div>
           <div className="py-8 px-2 grid grid-cols-1 sm:grid-cols-2 gap-5 2xl:gap-10 sm:mx-16 2xl:mx-28 mx-auto ">
-            {Array.from({ length: 4 }).map((_, index) => (
-              <p
-                key={index}
-                className="text-sm 2xl:text-base font-thin  text-pretty  w-fit "
-              >
-                Algorithmic trading involves risk, and results can vary based on
-                market conditions and individual strategies. While our tools are
-                designed to optimize trading and reduce complexities, it’s
-                important to trade responsibly and within your own financial
-                limits. We recommend consulting with a licensed financial
-                advisor before making any trading decisions. Past performance
-                does not guarantee future results.
-              </p>
-            ))}
+            <p className="text-sm 2xl:text-base font-thin  text-pretty  w-fit ">
+              Trading financial instruments, including but not limited to
+              stocks, futures, forex, and cryptocurrencies carries a high level
+              of risk and is not suitable for all investors. No trading
+              strategy, algorithm, or system can guarantee profits or eliminate
+              the risk of loss. Nothing on this website or our materials should
+              be considered financial, investment, or trading advice.
+            </p>
+            <p className="text-sm 2xl:text-base font-thin  text-pretty  w-fit ">
+              Algorithmic trading relies on market conditions, broker execution,
+              and third-party platforms. Factors such as latency, slippage,
+              illiquidity, system outages, and sudden market movements can
+              result in unexpected losses. No trading system can predict or
+              control market conditions, and execution quality may vary
+              depending on liquidity and broker policies. Any reported
+              backtests, simulated performance or past results do not guarantee
+              future outcomes.
+            </p>
+            <p className="text-sm 2xl:text-base font-thin  text-pretty  w-fit ">
+              Users of The Algos Field services are responsible for selecting
+              their own brokers and trading platforms. We do not operate as a
+              broker nor execute trades on behalf of users. The Algos Field
+              assumes no liability for any technical failures, order execution
+              issues, pricing errors, or policies of third-party brokers.
+              Algorithmic trading may be subject to regulatory oversight
+              depending on the jurisdiction. It is the sole responsibility of
+              each user to ensure their trading activities comply with the laws,
+              regulations, and licensing requirements in their respective
+              country. The Algos Field does not provide legal, tax, or
+              compliance advice regarding trading regulations.
+            </p>
+            <p className="text-sm 2xl:text-base font-thin  text-pretty  w-fit ">
+              Algos Field and its affiliates assume no responsibility for
+              trading losses incurred by users. By using our services, you
+              acknowledge and accept that trading is inherently risky and assume
+              full responsibility for your trading outcomes. Testimonials on
+              this website reflect individual experiences and may not represent
+              all users. No testimonial guarantees future success, and results
+              will vary from trader to trader.
+            </p>
           </div>
 
           {/* <div className="pb-5  ">

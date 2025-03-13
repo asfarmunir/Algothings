@@ -49,20 +49,19 @@ export const Welcome = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="px-4 text-[28px] sm:text-[30px] md:text-[38px] xl:text-[56px]  tracking-wide  font-sans md:leading-[48px] lg:leading-[50px] xl:leading-[48px] my-4 font-semibold">
-              Trade Smarter, Not Harder with <br className="sm:block hidden" />
+            <h1 className="px-4 text-[28px] sm:text-[30px] md:text-[38px] xl:text-[56px]  tracking-wide  font-sans md:leading-[48px] lg:leading-[50px] xl:leading-[68px] my-4 font-semibold">
+              Smarter Than Your Broker. <br />
               <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                The Algos Field.
+                Faster Than Your Wi-Fi
               </span>
             </h1>
 
             {/* Description */}
-            <p className="text-customlight  px-2 sm:px-6  md:px-20 leading-6 md:leading-7 my-7 text-[12px] sm:text-sm  md:text-[16px] xl:text-[20px]">
-              Say goodbye to outdated trading methods. With decades of expertise
-              packed into our <br className="lg:block hidden" /> powerful
-              algorithms, there’s no need for guesswork, programming, or
-              constant <br className="lg:block hidden" /> monitoring. Just plug,
-              play, and let our strategies work for you 100% hands-free.
+            <p className="text-customlight  px-2 sm:px-6  md:px-20 leading-6 max-w-5xl mx-auto md:leading-7 my-7 text-[12px] sm:text-sm  md:text-[16px] xl:text-[20px]">
+              Outsmart the markets with The Algos Field, your fully automated,
+              hands-free trading genius—no guesswork, programming, or stress.
+              Just plug and play, and let our strategies work for you 100%
+              hands-free. It's that simple.
             </p>
 
             {/* Email Input and Button */}
@@ -125,30 +124,23 @@ export const Welcome = () => {
               </div>
             </FadeInSection>
             <FadeInSection>
-              <h1 className="py-8 2xl:py-12 text-[28px] sm:text-[28px] md:text-[44px] xl:text-[52px] font-semibold md:leading-[36px] sm:leading-[44px] xl:leading-[54px]">
+              <h1 className="py-8 2xl:py-12 text-[28px] sm:text-[28px] md:text-[44px] xl:text-[52px] font-semibold md:leading-[36px] sm:leading-[44px] xl:leading-[64px]">
+                Meet{" "}
                 <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                  Meet our Company
+                  The Algos Field
                 </span>{" "}
-                Unless Miss the <br className="hidden lg:block" /> Opportunity
+                – Your Gateway <br className="hidden md:block" /> to Smarter
+                Trading
               </h1>
 
-              <p className="px-4 sm:px-6 md:px-20 xl:px-[103px] pb-8 text-center text-sm md:text-base xl:text-[18px] leading-7">
-                The Algos Field (TAF) is an innovative algorithmic trading
-                solutions company built on 15+ years of combined team experience
-                in developing and optimizing trading strategies. Over the past
-                3+ years, our proven algorithms have consistently delivered an
-                impressive 80%+ monthly win rate, helping traders achieve
-                reliable, hands-free success. Whether you trade futures, stocks,
-                crypto, indices, or commodities, our advanced algorithms are
-                designed to deliver consistent performance, risk minimization,
-                and wealth maximization. Our tailored solutions include 10
-                individual trading algorithms for focused strategies, an
-                all-in-one diversified portfolio for balanced growth, and a
-                premium fully managed service for seamless account optimization.
-                Backed by transparency, innovation, and continuous updates, The
-                Algos Field empowers you to trade smarter, minimize risk, and
-                stay ahead of the market, without guesswork, programming, or
-                constant monitoring.
+              <p className="px-4 sm:px-6 md:px-20 xl:px-[103px] max-w-7xl mx-auto  pb-8 text-center text-sm md:text-base xl:text-[18px] leading-7 xl:leading-7">
+                At The Algos Field, we go beyond crafting algorithmic trading
+                bots, we engineer high-performance trading systems to transform
+                your trading journey. Drawing on over 15 years of expertise, our
+                skilled team has mastered hands-free trading, achieving a 75%+
+                win rate through over 3 years of meticulous back-testing. Our
+                passion is to equip you with innovative, stress-free trading
+                solutions that deliver freedom and put success within reach.
               </p>
             </FadeInSection>
 
