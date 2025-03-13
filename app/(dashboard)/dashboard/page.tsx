@@ -1,3 +1,4 @@
+"use client";
 import { Algorithm } from "@/components/shared/Algorithm";
 import DashboardNavbar from "@/components/shared/DashboardNavbar";
 import { Plans } from "@/components/shared/plans";
@@ -8,6 +9,7 @@ import { RxCross2 } from "react-icons/rx";
 import { GrAnnounce } from "react-icons/gr";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import { useRouter } from "next/navigation";
 
 const Announcement = [
   {
@@ -34,6 +36,7 @@ const Announcement = [
 ];
 
 export default function AllAnnouncement() {
+  const router = useRouter();
   return (
     <>
       <div className="flex flex-row h-screen">
@@ -51,7 +54,8 @@ export default function AllAnnouncement() {
                 <div className="bg-[#04110D] rounded-md p-3 flex flex-row gap-5 items-center justify-between">
                   <p className="flex flex-row gap-3 text-sm lg:text-base items-center bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
                     <GrAnnounce className="text-customgreen" />
-                    New feature alert! Try our advanced analytics dashboard{" "}
+                    Limited-Time Offer: 1 Month Free! Register by April 30th and
+                    get 1 month of free access.
                     <span className=" underline border-b border-customblue font-bold ">
                       Learn more
                     </span>
@@ -83,7 +87,8 @@ export default function AllAnnouncement() {
                     <p className="py-3 font-light">
                       Unleash your trading potential with cutting-edge
                       automation, risk control, and performance-driven
-                      strategies designed to grow your wealth.
+                      strategies designed to grow your wealth.{" "}
+                      <strong>—100% hands-free.</strong>
                     </p>
                     <div className="flex flex-row gap-4">
                       <Button
@@ -122,12 +127,17 @@ export default function AllAnnouncement() {
                       300$ Discount!!!
                     </h3>
                     <p className="text-center uppercase bg-gradient-to-r from-customgreen to-customblue bg-clip-text font-semibold text-transparent text-xs">
-                      Want access to all 10 algorithms in a single, powerful
-                      strategy?
+                      Get access to all{" "}
+                      <strong>
+                        {" "}
+                        10 algorithms in a single, powerful strategy{" "}
+                      </strong>{" "}
+                      and start trading like a pro.
                     </p>
 
                     <Button
-                      label="GET Started!!!"
+                      onClick={() => router.push("/subscription")}
+                      label="Get Started!!!"
                       className="lexend bg-gradient-to-r from-customgreen to-customblue text-black rounded-md my-4"
                     />
                   </div>

@@ -12,18 +12,18 @@ import FadeInSection from "@/lib/FadeInAnimation";
 import { DiscordCommunity } from "@/components/shared/Discord";
 import Link from "next/link";
 import { GoArrowRight, GoArrowUpRight } from "react-icons/go";
+import { cards } from "@/lib/constants";
 
 const ITEMS_PER_PAGE = 9; // Number of items per page
 
 export default function Blog() {
   const { blog, error } = useBlogs();
   const [currentPage, setCurrentPage] = useState(1);
-  const products = Array.from({ length: 18 }); // Example product data
-  const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
 
   // Calculate items for the current page
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentItems = products.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const currentItems = cards.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -45,7 +45,7 @@ export default function Blog() {
           {/* Product Grid */}
           <FadeInSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 2xl:gap-6 mt-8">
-              {currentItems.map((_, index) => (
+              {currentItems.map((card, index) => (
                 <div
                   key={startIndex + index}
                   className="border border-[#FFFFFF33] p-6 rounded-[14px]"
@@ -62,12 +62,11 @@ export default function Blog() {
                     <p className="text-[12px] 2xl:text-[14px] text-gray-300 mb-2 ">
                       12th August 2021
                     </p>
-                    <h1 className="text-[24px] 2xl:text-[28px] font-bold ">
-                      Blog Title
+                    <h1 className="text-[19px] 2xl:text-[22px] font-bold ">
+                      {card.title}
                     </h1>
                     <p className="text-[16px] mt-2 leading-[30px]">
-                      Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor
-                      sit amet consectetur. Lorem ipsum dolor.
+                      {card.description}
                     </p>
                   </div>
 
@@ -84,12 +83,12 @@ export default function Blog() {
           </FadeInSection>
 
           {/* Pagination Component */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center gap-12  justify-between">
-            <Pagination
+          <div className="mt-8 flex flex-col sm:flex-row items-center gap-12  justify-end">
+            {/* <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
               onPageChange={handlePageChange}
-            />
+            /> */}
             <div className="flex flex-row gap-4">
               <FaFacebookF
                 className="text-xl cursor-pointer"

@@ -22,7 +22,7 @@ export default function AllProduct() {
       {/* Dashboard Navbar: Static and non-scrollable */}
       <Navbar />
       {/* Details Section: Scrollable */}
-      <h2 className="text-4xl sm:text-6xl mx-auto pt-8 mb-7 2xl:mb-10 2xl:text-7xl font-bold uppercase bg-gradient-to-r text-transparent  from-[#45F175] to-[#00C3CE] bg-clip-text">
+      <h2 className="text-4xl sm:text-6xl mx-auto pt-8 mb-4 2xl:text-7xl font-bold uppercase bg-gradient-to-r text-transparent  from-[#45F175] to-[#00C3CE] bg-clip-text">
         Contact Us
       </h2>
       <FadeInSection>
@@ -33,10 +33,10 @@ export default function AllProduct() {
             </h2>
             <p className=" md:leading-loose 2xl:text-xl mt-4 mb-4 2xl:leading-loose font-light max-w-lg">
               Have questions about our services, plans, or need technical
-              support? Our team is ready to assist you. Feel free to reach out
-              to us through any of the methods below.
+              support? Our team is here to assist you. Feel free to reach out
+              via email, and we’ll get back to you as soon as possible.
             </p>
-            <h2 className="text-3xl 2xl:text-4xl font-bold font-spaceGrotesk">
+            <h2 className="text-3xl mt-4 2xl:text-4xl font-bold font-spaceGrotesk">
               Email Support:
             </h2>
             <p className="  inline-flex items-center gap-3 2xl:text-lg mt-4 mb-2  font-light max-w-lg">

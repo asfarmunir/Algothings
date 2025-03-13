@@ -39,9 +39,9 @@ export default function Algorithm() {
             <div className="w-full lg:w-2/3 ">
               <h1 className="text-xl font-semibold">
                 <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                  Individual Algorithms
+                  Unlock the Full Power of All 10 Algorithms
                 </span>{" "}
-                : Select Your Preferred Strategies
+                in a Single Powerful Strategy
               </h1>
 
               <div className="grid grid-cols-1 gap-3 my-5">

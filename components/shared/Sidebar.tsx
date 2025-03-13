@@ -25,20 +25,20 @@ const Sidebar = ({
       href: "/dashboard",
       icon: <RxDashboard />,
       label: "Dashboard",
-      img: "dashboard",
+      img: "home",
     },
     {
       href: "/subscription",
       icon: <RxDashboard />,
       label: "Subscription",
-      img: "dashboard",
+      img: "card",
     },
     // { href: '/Subscription', icon: <RxDashboard />, label: 'Subscription' },
     {
       href: "/all-announcement",
       icon: <CiWallet />,
       label: "Announcements",
-      img: "announcements",
+      img: "speaker",
     },
     {
       label: "Performance Metrics",
@@ -49,7 +49,7 @@ const Sidebar = ({
       //   { href: "/performance-metrics ?key=INDIVIDUALS", label: "Individual Algos" },
       //   { href: "/performance-metrics ?key=PORTFOLIO", label: "Portfolio" },
       // ],
-      img: "performance",
+      img: "chart",
     },
     {
       label: "Guide",
@@ -59,7 +59,7 @@ const Sidebar = ({
         { href: "#", label: "Guide : 2" },
         { href: "#", label: "Guide : 3" },
       ],
-      img: "guide",
+      img: "book",
     },
 
     {
@@ -71,7 +71,7 @@ const Sidebar = ({
       //   { href: "/profile-update", label: "Personal Info" },
       //   { href: "/billings", label: "Billing History" },
       // ],
-      img: "billings",
+      img: "reciept",
     },
 
     {
@@ -157,7 +157,7 @@ const Sidebar = ({
                     `}
                 >
                   <Image
-                    src={`/icons/${item.img}.svg`}
+                    src={`/assets/${item.img}.svg`}
                     width={20}
                     height={20}
                     className={`

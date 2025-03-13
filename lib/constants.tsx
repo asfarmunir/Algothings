@@ -96,57 +96,10 @@ export const Navbar_links = [
 export const cards = [
   {
     image: "/images/blog.png",
-    title: "Trading Fundamentals",
+    title:
+      "Trading Introducing The Algos Field: The Future of Automated Trading",
     description:
       "Master the basics of trading with our comprehensive guide to market analysis and risk management.",
-  },
-  {
-    image: "/images/blog.png",
-    title: "Technical Analysis",
-    description:
-      "Learn how to read charts and identify patterns that can help predict market movements.",
-  },
-  {
-    image: "/images/blog.png",
-    title: "Risk Management",
-    description:
-      "Discover strategies to protect your capital and maximize your trading potential.",
-  },
-  {
-    image: "/images/blog.png",
-    title: "Trading Psychology",
-    description:
-      "Understand the mental aspects of trading and develop a winning mindset.",
-  },
-  {
-    image: "/images/blog.png",
-    title: "Advanced Strategies1",
-    description:
-      "Take your trading to the next level with sophisticated trading techniques.",
-  },
-  {
-    image: "/images/blog.png",
-    title: "Market Analysis1",
-    description:
-      "Learn to analyze market trends and make informed trading decisions.",
-  },
-  {
-    image: "/images/blog.png",
-    title: "Trading Psychology2",
-    description:
-      "Understand the mental aspects of trading and develop a winning mindset.",
-  },
-  {
-    image: "/images/blog.png",
-    title: "Advanced Strategies",
-    description:
-      "Take your trading to the next level with sophisticated trading techniques.",
-  },
-  {
-    image: "/images/blog.png",
-    title: "Market Analysis2",
-    description:
-      "Learn to analyze market trends and make informed trading decisions.",
   },
 ];
 

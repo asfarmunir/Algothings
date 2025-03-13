@@ -39,10 +39,7 @@ export default function Algorithm() {
             <div className="p-5 mt-4 flex flex-col lg:flex-row gap-12 lg:gap-4 mb-2 ">
               <div className="w-full lg:w-[70%] ">
                 <h1 className="text-[24px] font-semibold">
-                  <span className="bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
-                    Individual Algorithms
-                  </span>{" "}
-                  : Select Your Preferred Strategies
+                  Select Your Preferred Strategies
                 </h1>
                 <div className="grid  grid-cols-1 md:grid-cols-2  gap-3 md:gap-6 lg:gap-3 mt-5">
                   {Array.from({ length: 15 }).map((_, index) => (
@@ -112,7 +109,7 @@ export default function Algorithm() {
                   <p className="text-sm py-2">Choose Trading Platform</p>
                   <div className=" w-80">
                     <Dropdown
-                      options={["Select 1", "Select 2", "Select 3"]}
+                      options={["MultiCharts", "TradeStation ", "MetaTrader "]}
                       onSelect={handleSelect}
                       placeholder="Select Platform"
                       className="bg-[#03100C] py-2  text-sm w-full"

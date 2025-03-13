@@ -10,12 +10,14 @@ import FadeInSection from "@/lib/FadeInAnimation";
 import Checkbox from "../ui/Checkbox";
 import { BsInfoCircle } from "react-icons/bs";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 export default function Pricing() {
   const [activePlan, setActivePlan] = useState("Annual");
   const pathname = usePathname();
   const handlePlanChange = (plan: string) => {
     setActivePlan(plan);
   };
+  const router = useRouter();
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   const showTooltip = () => setIsTooltipVisible(true);
@@ -43,38 +45,40 @@ export default function Pricing() {
                 <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full bg-gradient-to-l flex items-center justify-center from-[#00C88C] to-[#0C7C33]">
                   <div className="w-6 2xl:w-8 h-6 2xl:h-8 bg-black rounded-full"></div>
                 </div>
-                <h2 className="text-lg font-bold text-white">Account Size</h2>
-                <p className="text-[14px] text-customlightgray">$10,000</p>
+                <h2 className="text-lg font-bold text-white">
+                  Choose Your Plan{" "}
+                </h2>
+                {/* <p className="text-[14px] text-customlightgray">$10,000</p> */}
               </div>
-              <div className="w-32 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
+              <div className="w-28 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
+              <div className="flex flex-col items-center ">
+                <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full flex items-center justify-center">
+                  <div className="w-6 2xl:w-8 h-6 2xl:h-8  bg-gradient-to-l from-[#00C88C] to-[#0C7C33] rounded-full"></div>
+                </div>
+                <h2 className="text-lg text-center font-bold text-white">
+                  Choose Your Strategy
+                </h2>
+                {/* <p className="text-[14px] text-customlightgray">Volumetrica</p> */}
+              </div>
+              <div className="w-28 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
               <div className="flex flex-col items-center ">
                 <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full flex items-center justify-center">
                   <div className="w-6 2xl:w-8 h-6 2xl:h-8  bg-gradient-to-l from-[#00C88C] to-[#0C7C33] rounded-full"></div>
                 </div>
                 <h2 className="text-lg font-bold text-white">
-                  Trading Platform
+                  Billing Details
                 </h2>
-                <p className="text-[14px] text-customlightgray">Volumetrica</p>
+                {/* <p className="text-[14px] text-customlightgray">Not Signed</p> */}
               </div>
-              <div className="w-32 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
-              <div className="flex flex-col items-center ">
-                <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full flex items-center justify-center">
-                  <div className="w-6 2xl:w-8 h-6 2xl:h-8  bg-gradient-to-l from-[#00C88C] to-[#0C7C33] rounded-full"></div>
-                </div>
-                <h2 className="text-lg font-bold text-white">
-                  Terms and Conditions
-                </h2>
-                <p className="text-[14px] text-customlightgray">Not Signed</p>
-              </div>
-              <div className="w-32 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
+              <div className="w-28 2xl:w-48 h-1 mt-5 2xl:mt-8 rounded-full bg-gradient-to-l from-[#00C88C] to-[#0C7C33]"></div>
               <div className="flex flex-col items-center ">
                 <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full flex items-center justify-center">
                   <div className="w-6 2xl:w-8 h-6 2xl:h-8  bg-gradient-to-l from-[#00C88C] to-[#0C7C33] rounded-full"></div>
                 </div>
                 <h2 className="text-lg font-bold text-white">Payment</h2>
-                <p className="text-[14px] text-customlightgray">
+                {/* <p className="text-[14px] text-customlightgray">
                   Payment Details
-                </p>
+                </p> */}
               </div>
             </div>
           )}
@@ -87,9 +91,9 @@ export default function Pricing() {
             for Your Need
           </h1>
           <p className="text-customlight max-w-4xl px-4 text-sm md:text-base 2xl:text-lg text-center mb-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magnam
-            quaerat rerum error ratione! Lorem ipsum dolor sit amet consectetur
-            adipisicing elit.
+            ⦁ Explore our flexible pricing options designed to cater to every
+            requirement. Whether you're just getting started or looking to
+            expand, we've got a plan that fits your needs.
           </p>
 
           <div className="px-6 md:px-8">
@@ -131,7 +135,7 @@ export default function Pricing() {
                     ? " bg-gradient-to-r from-customgreen to-customblue "
                     : "bg-gradient-to-b from-[#0A0A0AE5] to-[#040404]  "
                 } 
-                    border p-8  border-[#FFFFFF1A] rounded-2xl text-start md:w-[400px] lg:w-[490px]`}
+                    border p-8  border-[#FFFFFF1A] rounded-2xl text-start md:w-[420px] 2xl:w-[490px]`}
               >
                 <h1 className="text-[24px] font-bold">Starter</h1>
 
@@ -180,11 +184,16 @@ export default function Pricing() {
                     </p>
                   </>
                 )}
-                <p className="text-[15px] my-4 mb-7">
+                <p className="text-xs 2xl:text-[15px] my-4 mb-7">
                   Ideal for: Traders beginning their automation journey
                 </p>
 
                 <Button
+                  onClick={
+                    pathname === "/subscription"
+                      ? () => router.push("/individuals-algos")
+                      : () => router.push("/signup")
+                  }
                   label="Choose Plan"
                   className={` ${
                     false
@@ -265,7 +274,7 @@ export default function Pricing() {
                   false
                     ? "  bg-gradient-to-b from-[#0A0A0AE5] to-[#040404] "
                     : " bg-gradient-to-b from-[#0A0A0AE5] to-[#040404] rounded-2xl "
-                } border p-8  border-[#FFFFFF1A] text-start relative md:w-[400px] lg:w-[490px]`}
+                } border p-8  border-[#FFFFFF1A] text-start relative md:w-[420px] 2xl:w-[490px]`}
               >
                 <div className="flex flex-row items-center justify-between">
                   <h1 className="text-[24px] font-bold">Master</h1>
@@ -339,12 +348,17 @@ export default function Pricing() {
                   //   </span>
                   // </p>
                 }
-                <p className="text-[15px] my-4 mb-7">
+                <p className="text-xs 2xl:text-[15px] my-4 mb-7">
                   Ideal for: Traders seeking a proven, high-growth portfolio.
                 </p>
 
                 <Button
                   label="Choose Plan"
+                  onClick={
+                    pathname === "/subscription"
+                      ? () => router.push("/portfolio")
+                      : () => router.push("/signup")
+                  }
                   className={` ${
                     true
                       ? "bg-gradient-to-l from-[#00C88C] to-[#0C7C33] text-white  "
