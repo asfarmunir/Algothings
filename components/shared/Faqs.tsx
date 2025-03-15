@@ -103,9 +103,9 @@ export default function FAQ() {
                 <h1 className="text-[34px] font-spaceGrotesk font-semibold">
                   Frequently Asked Questions?
                 </h1>
-                <p className="text-[20px] font-thin mt-1">
+                {/* <p className="text-[20px] font-thin mt-1">
                   Revolutionize your trading game with BTFT.
-                </p>
+                </p> */}
               </div>
               {/* <div className="grid grid-cols-1 md:grid-cols-2 mx-auto my-6 lg:grid-cols-3  gap-5  2xl:gap-7 w-full sm:w-fit py-3 px-2">
                 {["Category 1", "Category 2", "Category 3"].map(

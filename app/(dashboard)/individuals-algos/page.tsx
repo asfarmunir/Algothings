@@ -106,7 +106,7 @@ export default function Algorithm() {
               <div className=" w-full lg:w-[30%] max-w-xl">
                 <h1 className="text-3xl lg:text-2xl font-semibold">Cart</h1>
                 <div className="py-1">
-                  <p className="text-sm py-2">Choose Trading Platform</p>
+                  {/* <p className="text-sm py-2">Choose Trading Platform</p>
                   <div className=" w-80">
                     <Dropdown
                       options={["MultiCharts", "TradeStation ", "MetaTrader "]}
@@ -116,7 +116,7 @@ export default function Algorithm() {
                       textclassName=""
                       dropdownClass=" w-60 lg:w-44"
                     />
-                  </div>
+                  </div> */}
                   <div className="text-end my-2">
                     <Link
                       href={""}

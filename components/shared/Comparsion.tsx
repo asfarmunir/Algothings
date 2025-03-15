@@ -29,7 +29,7 @@ export default function Comparsion() {
                 alt="welcome star"
               />
               <p className="text-start 2xl:text-[16px] uppercase gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text text-transparent">
-                Comparisons
+                Comparison
               </p>
             </div>
 

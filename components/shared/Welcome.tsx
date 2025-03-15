@@ -44,7 +44,7 @@ export const Welcome = () => {
                 alt="welcome star"
               />
               <p className="text-sm 2xl:text-[16px] gap-4 bg-gradient-to-b from-customgreen to-customblue bg-clip-text uppercase text-transparent">
-                Welcome to ALGOSFIELD
+                Welcome to The Algos Field
               </p>
             </div>
 
