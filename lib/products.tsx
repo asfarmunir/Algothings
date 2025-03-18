@@ -71,15 +71,15 @@ export const products = [
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. <a href='[LINK TO FULL DISCLAIMER]'>Risk Disclaimer</a>.",
   },
-  {
-    id: "dual-flow-nasdaq",
-    title: "Dual Flow",
-    subtitle: "A Dynamic Strategy for Bullish & Bearish Markets",
-    description:
-      "Asset Class: E-Mini Nasdaq 100 Futures (NQ) or E-Micro Nasdaq 100 Futures (MNQ)<br>Trading Style: Adaptive Long & Short Trading<br>Analysis Method: Momentum-Based Market Reversals<br>Chart Bar Time: 5 min.<br>Commission & Slippage Included: $2 per contract for MNQ and $7.50 per contract for NQ.<br>Dual Flow is perfect for traders who want the flexibility to trade in both market directions.<br>✔ Trades both long and short setups with precision.<br>✔ Designed for traders who want flexibility in volatile markets.<br>✔ Eliminates directional bias and adapts to market shifts in real time.<br>Minimum Budget: $3,500 (MNQ) or $28,500 (NQ).<br>Platforms: MetaTrader 5 (coming soon), MultiCharts & TradeStation.",
-    disclaimer:
-      "Trading involves significant risk. Past performance does not guarantee future results. <a href='[LINK TO FULL DISCLAIMER]'>Risk Disclaimer</a>.",
-  },
+  // {
+  //   id: "dual-flow-nasdaq",
+  //   title: "Dual Flow",
+  //   subtitle: "A Dynamic Strategy for Bullish & Bearish Markets",
+  //   description:
+  //     "Asset Class: E-Mini Nasdaq 100 Futures (NQ) or E-Micro Nasdaq 100 Futures (MNQ)<br>Trading Style: Adaptive Long & Short Trading<br>Analysis Method: Momentum-Based Market Reversals<br>Chart Bar Time: 5 min.<br>Commission & Slippage Included: $2 per contract for MNQ and $7.50 per contract for NQ.<br>Dual Flow is perfect for traders who want the flexibility to trade in both market directions.<br>✔ Trades both long and short setups with precision.<br>✔ Designed for traders who want flexibility in volatile markets.<br>✔ Eliminates directional bias and adapts to market shifts in real time.<br>Minimum Budget: $3,500 (MNQ) or $28,500 (NQ).<br>Platforms: MetaTrader 5 (coming soon), MultiCharts & TradeStation.",
+  //   disclaimer:
+  //     "Trading involves significant risk. Past performance does not guarantee future results. <a href='[LINK TO FULL DISCLAIMER]'>Risk Disclaimer</a>.",
+  // },
   {
     id: "dual-flow-sp500",
     title: "Dual Flow",

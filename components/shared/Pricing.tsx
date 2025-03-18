@@ -91,7 +91,7 @@ export default function Pricing() {
             for Your Need
           </h1>
           <p className="text-customlight max-w-4xl px-4 text-sm md:text-base 2xl:text-lg text-center mb-12">
-            ⦁ Explore our flexible pricing options designed to cater to every
+            Explore our flexible pricing options designed to cater to every
             requirement. Whether you're just getting started or looking to
             expand, we've got a plan that fits your needs.
           </p>
@@ -191,7 +191,7 @@ export default function Pricing() {
                 <Button
                   onClick={
                     pathname === "/subscription"
-                      ? () => router.push("/individuals-algos")
+                      ? () => router.push("/algo-strategies")
                       : () => router.push("/signup")
                   }
                   label="Choose Plan"
@@ -280,7 +280,7 @@ export default function Pricing() {
                   <h1 className="text-[24px] font-bold">Master</h1>
                   <p
                     className={`${
-                      false
+                      activePlan === "Monthly"
                         ? "bg-[#04110D]"
                         : " bg-gradient-to-l from-[#00C88C] to-[#0C7C33] text-white"
                     } py-[12px] uppercase px-[20px] text-[11px] rounded-[10px]`}
@@ -360,9 +360,9 @@ export default function Pricing() {
                       : () => router.push("/signup")
                   }
                   className={` ${
-                    true
+                    activePlan === "Annual"
                       ? "bg-gradient-to-l from-[#00C88C] to-[#0C7C33] text-white  "
-                      : "bg-white text-black "
+                      : "bg-customgray/40 text-black "
                   } w-full py-[14px] text-[14px] rounded-md`}
                 />
                 <div className="mt-10">

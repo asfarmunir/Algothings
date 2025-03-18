@@ -134,35 +134,35 @@ export const stepContent = [
         market data.
       </>
     ),
-    points: [
-      <span>
-        <span className="text-[20px] font-bold">MultiCharts:</span> Use the .mcw
-        file.
-      </span>,
-      <span>
-        <span className="text-[20px] font-bold">TradeStation:</span> Use the
-        .els file.
-      </span>,
-      <span>
-        <span className="text-[20px] font-bold">MetaTrader:</span> Use the .set
-        file.
-      </span>,
-    ],
-    endDescription:
-      "Follow the platform-specific guides available in your Backoffice to import the files.",
-    btntitle: "View Import Instructions",
+    // points: [
+    //   <span>
+    //     <span className="text-[20px] font-bold">MultiCharts:</span> Use the .mcw
+    //     file.
+    //   </span>,
+    //   <span>
+    //     <span className="text-[20px] font-bold">TradeStation:</span> Use the
+    //     .els file.
+    //   </span>,
+    //   <span>
+    //     <span className="text-[20px] font-bold">MetaTrader:</span> Use the .set
+    //     file.
+    //   </span>,
+    // ],
+    // endDescription:
+    //   "Follow the platform-specific guides available in your Backoffice to import the files.",
+    // btntitle: "View Import Instructions",
   },
   {
     title: "Trade on Robopilot",
     description:
       "Sit back while Algos takes over. You focus on your goals—we handle the trades.",
-    points: [
-      <span>
-        <span className="text-[20px] font-bold">Important Note:</span> An active
-        TAF ALGOS license is required. These strategies are for educational
-        purposes and do not guarantee future performance.
-      </span>,
-    ],
+    // points: [
+    //   <span>
+    //     <span className="text-[20px] font-bold">Important Note:</span> An active
+    //     TAF ALGOS license is required. These strategies are for educational
+    //     purposes and do not guarantee future performance.
+    //   </span>,
+    // ],
     btntitle: "Activate TAF ALGOS",
   },
 ];

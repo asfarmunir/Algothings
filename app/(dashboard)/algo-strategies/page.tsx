@@ -35,7 +35,10 @@ export default function Algorithm() {
           <DashboardNavbar />
 
           {/* Details Section: Scrollable */}
-          <div className="flex-grow  overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
+          <div
+            className="flex-grow  overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
             <div className="p-5 mt-4 flex flex-col lg:flex-row gap-12 lg:gap-4 mb-2 ">
               <div className="w-full lg:w-[70%] ">
                 <h1 className="text-[24px] font-semibold">
