@@ -10,6 +10,7 @@ import "./globals.css"; // For applying the global styles
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "react-hot-toast";
 import AuthSessionProvider from "@/lib/AuthProvider";
+import { CartProvider } from "@/lib/CartContext";
 // Initialize DM Sans font
 const dmSans = DM_Sans({
   variable: "--font-dm-sans", // Global CSS variable for DM Sans
@@ -68,19 +69,21 @@ export default function RootLayout({
         className={`${dmSans.variable} ${lexend.variable} ${openSans.variable} ${spaceGrotesk.variable} ${outfit.variable}  antialiased`}
       >
         <AuthSessionProvider>
-          <NextTopLoader
-            color="green"
-            initialPosition={0.08}
-            crawlSpeed={200}
-            height={2}
-            crawl={true}
-            showSpinner={false}
-            easing=" ease-in-out"
-            speed={200}
-            shadow="0 0 5px #2299DD,0 0 5px #2299DD"
-          />
-          {children}
-          <Toaster position="bottom-center" />
+          <CartProvider>
+            <NextTopLoader
+              color="green"
+              initialPosition={0.08}
+              crawlSpeed={200}
+              height={2}
+              crawl={true}
+              showSpinner={false}
+              easing=" ease-in-out"
+              speed={200}
+              shadow="0 0 5px #2299DD,0 0 5px #2299DD"
+            />
+            {children}
+            <Toaster position="bottom-center" />
+          </CartProvider>
         </AuthSessionProvider>
       </body>
     </html>

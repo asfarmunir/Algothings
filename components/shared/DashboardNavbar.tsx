@@ -14,7 +14,10 @@ import {
 import { signOut } from "next-auth/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 const DashboardNavbar = () => {
+  const { data: session } = useSession();
+  console.log("🚀 ~ DashboardNavbar ~ session:", session);
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const router = useRouter();
   const handleSidebarToggle = () => {
@@ -63,15 +66,15 @@ const DashboardNavbar = () => {
         </div>
         <div className="flex flex-row justify-between items-center">
           <div className="flex flex-row items-center">
-            <Image
+            {/* <Image
               src="/images/profile.png"
               width={35}
               height={35}
               className="rounded-full"
               alt="profile"
-            />
+            /> */}
             <div>
-              <DropdownMenu>
+              {/* <DropdownMenu>
                 <DropdownMenuTrigger className="flex items-center gap-2 px-4">
                   Ali Hassan
                 </DropdownMenuTrigger>
@@ -84,7 +87,11 @@ const DashboardNavbar = () => {
                     Logout
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */}
+              <p className=" capitalize font-semibold pr-3">
+                {/* @ts-ignore */}
+                {session?.user?.firstName} {session?.user?.lastName}
+              </p>
             </div>
           </div>
         </div>

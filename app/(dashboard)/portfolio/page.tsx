@@ -8,16 +8,33 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { GoArrowUpRight } from "react-icons/go";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
+import { useCart } from "@/lib/CartContext";
+import { TiShoppingCart } from "react-icons/ti";
 
 export default function Algorithm() {
   const [activeButton, setActiveButton] = useState("Monthly");
   const handleSelect = (plan: string) => {
     console.log("values is", plan);
   };
+
+  const {
+    cart,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    subscription,
+    setSubscription,
+  } = useCart();
   const router = useRouter();
+
+  useEffect(() => {
+    if (!subscription) {
+      router.push("/subscription");
+    }
+  }, [subscription]);
 
   return (
     <>
@@ -96,8 +113,17 @@ export default function Algorithm() {
                           </div>
                           <div className="w-full flex flex-row gap-4 items-center">
                             <Button
+                              disabled={cart.some(
+                                (item) => item.id === "portfolio"
+                              )}
+                              onClick={() =>
+                                addToCart({
+                                  id: "portfolio",
+                                  name: "portfolio strategy",
+                                })
+                              }
                               label="Add to Cart"
-                              className="bg-gradient-to-r w-full text-nowrap font-semibold py-[12px] px-[20px] uppercase text-sm from-customgreen to-customblue text-black rounded-md"
+                              className="bg-gradient-to-r disabled:opacity-35 w-full text-nowrap font-semibold py-[12px] px-[20px] uppercase text-sm from-customgreen to-customblue text-black rounded-md"
                             />
                             {/* <button className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm">
                               <GoArrowUpRight />
@@ -113,7 +139,7 @@ export default function Algorithm() {
             </div>
 
             {/* Right Section: Cart */}
-            <div className="w-full lg:w-1/3  ">
+            {/* <div className="w-full lg:w-1/3  ">
               <h1 className="text-3xl lg:text-2xl  font-semibold">Cart</h1>
               <div className="pt-2 pb-12">
                 <p className="text-sm py-2">Choose Trading Platform</p>
@@ -158,12 +184,6 @@ export default function Algorithm() {
                             Profit Target
                           </p>
                           <div>
-                            {/* <Dropdown
-                              options={["1", "2", "3"]}
-                              onSelect={handleSelect}
-                              placeholder="1"
-                              className="bg-[#D9D9D91A] text-xs w-[50px] border border-black text-center"
-                            /> */}
                             <button>
                               <IoMdRemoveCircleOutline className="text-xl text-customgreen" />
                             </button>
@@ -238,6 +258,191 @@ export default function Algorithm() {
                     className="bg-gradient-to-r from-customgreen to-customblue py-2 2xl:py-3 font-semibold text-sm 2xl:text-base text-black rounded-md w-full"
                   />
                 </div>
+              </div>
+            </div> */}
+            <div className=" w-full lg:w-[30%] max-w-xl">
+              <h1 className="text-3xl lg:text-2xl font-semibold">Cart</h1>
+              <div className="py-1">
+                {/* <p className="text-sm py-2">Choose Trading Platform</p>
+                              <div className=" w-80">
+                                <Dropdown
+                                  options={["MultiCharts", "TradeStation ", "MetaTrader "]}
+                                  onSelect={handleSelect}
+                                  placeholder="Select Platform"
+                                  className="bg-[#03100C] py-2  text-sm w-full"
+                                  textclassName=""
+                                  dropdownClass=" w-60 lg:w-44"
+                                />
+                              </div> */}
+                {cart.length ? (
+                  <div className="text-end my-2">
+                    <button
+                      onClick={clearCart}
+                      className="text-xs 2xl:text-sm hover:underline"
+                    >
+                      Remove All
+                    </button>
+                  </div>
+                ) : null}
+                {cart.length ? (
+                  <div className="flex flex-col gap-4">
+                    {/* Item 1 */}
+                    {cart.map((item, index) => (
+                      <div
+                        key={index}
+                        className="bg-[#03100C] py-2 px-4 lg:px-2 rounded-lg flex flex-row gap-3"
+                      >
+                        <Image
+                          src="/images/logo1.svg"
+                          width={35}
+                          height={20}
+                          alt="Logo"
+                        />
+                        <div className="w-full flex flex-col gap-2">
+                          <div className="flex flex-row justify-between  ">
+                            <p className="truncate capitalize text-sm 2xl:text-base">
+                              {item.name}
+                            </p>
+                            <p className="text-sm 2xl:text-base font-semibold">
+                              €{subscription?.price}
+                            </p>
+                          </div>
+                          <div className="w-full flex flex-row justify-between gap-16 items-center">
+                            <p className="text-customgray text-nowrap text-xs 2xl:text-[14px]">
+                              Profit Target
+                            </p>
+                            <div>
+                              {/* <Dropdown
+                                            options={["0", "1", "2", "3"]}
+                                            onSelect={handleSelect}
+                                            placeholder="1"
+                                            className="bg-[#D9D9D91A] text-sm lg:text-xs w-[50px] border border-black text-center"
+                                          /> */}
+                              <button onClick={() => removeFromCart(item.id)}>
+                                <IoMdRemoveCircleOutline className="text-xl text-customgreen" />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+
+                    <div className="flex justify-center items-center w-full">
+                      <div className="inline-flex bg-gradient-to-r w-full from-customgreen to-customblue p-[1px] rounded-xl">
+                        <div className="bg-black rounded-xl p-1 flex w-full">
+                          <button
+                            disabled={subscription?.type === "monthly"}
+                            onClick={() =>
+                              setSubscription(
+                                //@ts-ignore
+                                (subscription: Subscription) => ({
+                                  ...subscription,
+                                  type: "monthly",
+                                  price: Math.ceil(
+                                    subscription.price +
+                                      subscription.price * 0.1
+                                  ),
+                                })
+                              )
+                            }
+                            className={`${
+                              subscription?.type === "monthly"
+                                ? "bg-gradient-to-r from-customgreen to-customblue text-black"
+                                : "bg-black text-white"
+                            } rounded-md px-4 py-1 w-full  `}
+                          >
+                            Monthly
+                          </button>
+                          <button
+                            disabled={subscription?.type === "annual"}
+                            onClick={() =>
+                              setSubscription(
+                                //@ts-ignore
+                                (subscription: Subscription) => ({
+                                  ...subscription,
+                                  type: "annual",
+                                  price: Math.ceil(subscription.price * 0.9),
+                                })
+                              )
+                            }
+                            className={`${
+                              subscription?.type === "annual"
+                                ? "bg-gradient-to-r from-customgreen to-customblue text-black"
+                                : "bg-black text-white"
+                            } rounded-md px-4 py-1 text-[14px] w-full`}
+                          >
+                            Annually(-10%)
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* details */}
+                    <div className="flex flex-col gap-2 text-sm">
+                      <div className="flex flex-row justify-between gap-5">
+                        <p className="text-customlightgray">Subtotal</p>
+                        <p>
+                          €
+                          {cart.reduce(
+                            (acc, item) => acc + subscription!.price,
+                            0
+                          )}
+                        </p>
+                      </div>
+                      <div className="flex flex-row justify-between gap-5">
+                        <p className="text-customlightgray">Tax</p>
+                        <p>€0.00</p>
+                      </div>
+                      <div className="flex flex-row justify-between gap-5">
+                        <p className="text-customlightgray">Total</p>
+                        <p className="font-semibold">
+                          €
+                          {cart.reduce(
+                            (acc, item) => acc + subscription!.price,
+                            0
+                          )}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-center items-center w-full border-b border-customgray pb-5">
+                      <div className="inline-flex bg-gradient-to-r w-full from-customgreen to-customblue p-[1px] rounded-xl">
+                        <input
+                          type="text"
+                          placeholder="Coupon Code"
+                          className="rounded-tl-xl rounded-bl-xl bg-black text-sm lg:text-xs w-full  text-center focus:outline-none"
+                        />
+
+                        <div className="bg-black rounded-tr-xl rounded-br-xl p-1 flex">
+                          <button
+                            className={`bg-gradient-to-r text-xs 2xl:text-sm from-customgreen to-customblue text-black
+                                           rounded-md px-6 hover:px-8 transition-all py-2 `}
+                          >
+                            Apply
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Button
+                      label="Checkout"
+                      onClick={() => router.push("/billings")}
+                      className="bg-gradient-to-r  from-customgreen to-customblue py-2 2xl:py-3 text-sm  2xl:text-base text-black font-semibold rounded-md w-full"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center gap-4 flex-col bg-customgreen/10 rounded-lg p-7 my-4">
+                    <p className="pt-4">
+                      <TiShoppingCart className="text-5xl  text-customgreen" />
+                    </p>
+                    <p className="text-sm 2xl:text-base font-semibold text-customgreen">
+                      Your cart is empty
+                    </p>
+                    <p className="text-xs 2xl:text-sm text-customlight pb-6">
+                      Add your favourite strategies to the cart
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>

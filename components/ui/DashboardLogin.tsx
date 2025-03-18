@@ -10,8 +10,8 @@ export const DashboardLogin = ({
   error,
   success,
 }: {
-  error: boolean;
-  success: boolean;
+  error?: boolean;
+  success?: boolean;
 }) => {
   const handleSelect = () => {
     console.log("");

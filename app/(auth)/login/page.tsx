@@ -97,7 +97,10 @@ export default function Login() {
                 />
                 <p className="text-[16px] text-gray-400">Remember Me</p>
               </div>
-              <Link href="" className="text-[14px] text-[#01C0F9] ">
+              <Link
+                href="/forget-password"
+                className="text-[14px] text-[#01C0F9] "
+              >
                 Forgot Password?
               </Link>
             </div>

@@ -11,6 +11,7 @@ import Checkbox from "../ui/Checkbox";
 import { BsInfoCircle } from "react-icons/bs";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import { useCart } from "@/lib/CartContext";
 export default function Pricing() {
   const [activePlan, setActivePlan] = useState("Annual");
   const pathname = usePathname();
@@ -18,10 +19,8 @@ export default function Pricing() {
     setActivePlan(plan);
   };
   const router = useRouter();
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
-  const showTooltip = () => setIsTooltipVisible(true);
-  const hideTooltip = () => setIsTooltipVisible(false);
+  const { setSubscription } = useCart();
 
   return (
     <>
@@ -191,8 +190,16 @@ export default function Pricing() {
                 <Button
                   onClick={
                     pathname === "/subscription"
-                      ? () => router.push("/algo-strategies")
-                      : () => router.push("/signup")
+                      ? () => {
+                          setSubscription({
+                            category: "individual",
+                            type:
+                              activePlan === "Monthly" ? "monthly" : "annual",
+                            price: activePlan === "Monthly" ? 98 : 89,
+                          });
+                          router.push("/algo-strategies");
+                        }
+                      : () => router.push("/register")
                   }
                   label="Choose Plan"
                   className={` ${
@@ -356,13 +363,21 @@ export default function Pricing() {
                   label="Choose Plan"
                   onClick={
                     pathname === "/subscription"
-                      ? () => router.push("/portfolio")
-                      : () => router.push("/signup")
+                      ? () => {
+                          setSubscription({
+                            category: "portfolio",
+                            type:
+                              activePlan === "Monthly" ? "monthly" : "annual",
+                            price: activePlan === "Monthly" ? 698 : 629,
+                          });
+                          router.push("/portfolio");
+                        }
+                      : () => router.push("/register")
                   }
                   className={` ${
                     activePlan === "Annual"
                       ? "bg-gradient-to-l from-[#00C88C] to-[#0C7C33] text-white  "
-                      : "bg-customgray/40 text-black "
+                      : "bg-customgray/40 text-white "
                   } w-full py-[14px] text-[14px] rounded-md`}
                 />
                 <div className="mt-10">
