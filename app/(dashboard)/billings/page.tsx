@@ -201,14 +201,14 @@ export default function BillingDetails() {
                 <div className="py-1">
                   <p className="text-sm py-2">Choose Trading Platform</p>
                   <div className=" w-80">
-                    <Dropdown
+                    {/* <Dropdown
                       options={["Select 1", "Select 2", "Select 3"]}
                       onSelect={handleSelectCountry}
                       placeholder="Select Platform"
                       className="bg-[#03100C] py-2  text-sm w-full"
                       textclassName=""
                       dropdownClass=" w-60 lg:w-44"
-                    />
+                    /> */}
                   </div>
                   <div className="text-end mt-1">
                     <Link href={""} className="text-sm hover:underline">

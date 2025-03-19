@@ -48,7 +48,7 @@ export default function AllProduct() {
               />
               info@algosfield.com
             </p>
-            <p className="  inline-flex items-center gap-3 2xl:text-lg  mb-2  font-light max-w-lg">
+            {/* <p className="  inline-flex items-center gap-3 2xl:text-lg  mb-2  font-light max-w-lg">
               <Image
                 src="/images/phone.svg"
                 width={20}
@@ -60,7 +60,7 @@ export default function AllProduct() {
             <p className="  inline-flex items-center gap-3 2xl:text-lg  mb-2  font-light max-w-lg">
               <Image src="/images/map.svg" width={20} height={20} alt="email" />
               7 Gower Street, London WC1E 6HA​
-            </p>
+            </p> */}
           </div>
 
           <div className="bg-customcard border border-[#FFFFFF33]  inner-glow  w-full md:w-1/2 rounded-xl p-6 2xl:p-8">
@@ -69,7 +69,7 @@ export default function AllProduct() {
                 {/* Username or Email Field */}
                 <div className="mb-5 w-full">
                   <InputField
-                    label="Firstname"
+                    label="First Name"
                     placeholder="name"
                     type="text"
                     icon={""}
@@ -81,7 +81,7 @@ export default function AllProduct() {
                 {/* Subject Dropdown */}
                 <div className="mb-5 w-full">
                   <InputField
-                    label="Lastname"
+                    label="Last Name"
                     placeholder="name"
                     type="text"
                     icon={""}
@@ -105,7 +105,7 @@ export default function AllProduct() {
               <div className="mb-5">
                 <label
                   htmlFor="message"
-                  className="block mb-2 text-sm font-normal tracking-wider text-white font-gilroy"
+                  className="block mb-2 text-sm 2xl:text-base font-normal tracking-wider text-white font-gilroy"
                 >
                   Message
                 </label>

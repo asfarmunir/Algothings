@@ -18,7 +18,6 @@ const Carousel = dynamic(() => import("@/components/ui/Carousel1"), {
 });
 
 export default function BlogDetails() {
-  const { blogDetails, error } = useBlogDetails();
   return (
     <>
       <div className="">
@@ -79,7 +78,7 @@ export default function BlogDetails() {
               </p>
 
               <p className="text-sm font-semibold pt-4 pb-2">Why it Works:</p>
-              <ul className="list-disc ml-4">
+              <ul className="list-none ml-4">
                 <li>
                   Once your customers have made their purchases during Black
                   Friday and Cyber Monday, a simple yet effective way to start
@@ -103,9 +102,16 @@ export default function BlogDetails() {
               rate, The Algos Field is built to maximize efficiency, minimize
               risk, and remove emotional bias from trading.
             </p>
-            <button className="bg-gradient-to-r from-customgreen to-customblue text-black px-6 py-2 rounded-lg hover:px-8 transition-all my-3 ">
+            <Link href={"/register"}>
+              <p className="text-customgreen font-semibold mb-4">
+                If you’re looking for a way to trade smarter without the stress
+                of manual execution, explore how The Algos Field can help you
+                automate your success.
+              </p>
+            </Link>
+            {/* <button className="bg-gradient-to-r from-customgreen to-customblue text-black px-6 py-2 rounded-lg hover:px-8 transition-all my-3 ">
               Automate Your Trading Now
-            </button>
+            </button> */}
 
             <h2 className="text-2xl font-semibold text-customgreen mt-6 mb-3">
               The Rise of Algorithmic Trading
@@ -116,7 +122,10 @@ export default function BlogDetails() {
               algorithms, allowing traders to capitalize on market movements at
               speeds impossible for humans.
             </p>
-            <ul className="list-disc list-inside text-white mb-4">
+            <h2 className="text-xl font-semibold text-customlight mt-6 mb-2">
+              Why is automation dominating the markets?
+            </h2>
+            <ul className="list-none list-inside text-white mb-4">
               <li>✔ Algos don’t make emotional decisions.</li>
               <li>✔ They don’t suffer from fatigue or hesitation.</li>
               <li>
@@ -124,10 +133,20 @@ export default function BlogDetails() {
                 and exit points.
               </li>
             </ul>
-            <button className="bg-gradient-to-r from-customgreen to-customblue text-black px-6 py-2 rounded-lg hover:px-8 transition-all my-3 ">
-              Trade Smarter with Automation
-            </button>
-
+            <p className="text-white mb-4">
+              Yet, despite its advantages, most retail traders struggle to
+              access truly effective algorithmic trading solutions. Some require
+              coding knowledge, others demand constant manual adjustments, and
+              many fail to deliver consistent results.
+            </p>
+            <Link href={"/register"}>
+              <p className="text-customgreen font-semibold mb-4">
+                By using a fully automated, data-driven approach, traders can
+                eliminate guesswork and trade with precision in any market
+                condition.
+              </p>
+            </Link>
+            {/* 
             <h2 className="text-2xl font-semibold text-customgreen mt-6 mb-3">
               What Makes The Algos Field Unique?
             </h2>
@@ -174,12 +193,569 @@ export default function BlogDetails() {
             </p>
             <button className="bg-gradient-to-r from-customgreen to-customblue text-black px-6 py-2 rounded-lg hover:px-8 transition-all my-3 ">
               Get Started in Minutes
-            </button>
-
-            <h2 className="text-2xl font-semibold text-customgreen mt-6 mb-3">
-              How The Algos Field Stacks Up Against Competitors
+            </button> */}
+            <h2 className="text-3xl font-bold mb-6">
+              What Makes The Algos Field Unique?
             </h2>
-            <table className="w-full text-left border-collapse border border-gray-300">
+
+            <p className="mb-4">
+              Unlike generic trading bots or DIY platforms, The Algos Field is
+              built with precision, performance, and ease of use in mind.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-2">
+              1. Fully Automated, Hands-Free Trading
+            </h3>
+            <p className="mb-4">
+              With The Algos Field, you don’t need to spend hours analyzing
+              charts or second-guessing trade decisions. Every trade is executed
+              automatically, following a proven algorithmic system optimized for
+              market efficiency.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>No manual execution—just set it up and let it run.</li>
+              <li>
+                No emotional trading—strategies follow strict, data-driven
+                rules.
+              </li>
+              <li>
+                Time-saving—monitor your portfolio in minutes per day instead of
+                hours.
+              </li>
+            </ul>
+
+            <a href="/register" className="text-customgreen font-semibold">
+              Experience the power of hands-free trading today.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              2. Proven Performance Backed by 3+ Years of Testing
+            </h3>
+            <p className="mb-4">
+              Many trading platforms promise profitability, but few provide
+              real, transparent performance data. Every strategy in The Algos
+              Field has undergone:
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                ✅ 3+ years of back-testing across various market conditions.
+              </li>
+              <li>
+                ✅ Live trading validation to ensure real-world consistency.
+              </li>
+              <li>✅ Continuous optimization using data-driven refinements.</li>
+            </ul>
+
+            <p className="mb-4">
+              With an average 8% monthly return and a 75%+ historical win rate,
+              The Algos Field has demonstrated consistent profitability, even in
+              volatile markets.
+            </p>
+
+            <a href="/performance" className="text-customgreen font-semibold">
+              See how data-driven automation is transforming trading
+              performance.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              3. Multiple Strategies for Diversification
+            </h3>
+            <p className="mb-4">
+              Instead of relying on a single trading approach, The Algos Field
+              offers 10 different strategies tailored for various market
+              conditions.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                ✔ Trend-following and breakout strategies capture large market
+                movements.
+              </li>
+              <li>
+                ✔ Momentum and volume-based algorithms optimize short-term
+                trading opportunities.
+              </li>
+            </ul>
+
+            <p className="mb-4">
+              For those looking for maximum diversification, the TAF Genesis
+              Portfolio combines all 10 strategies into one, delivering:
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>✔ Reduced volatility—balances multiple market behaviors.</li>
+              <li>
+                ✔ Optimized risk-adjusted returns—designed for consistent
+                growth.
+              </li>
+              <li>
+                ✔ A hedge fund-style portfolio—without the complexity or high
+                costs.
+              </li>
+            </ul>
+
+            <a href="/strategies" className="text-customgreen font-semibold">
+              Diversify your trading with a professionally designed strategy
+              portfolio.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              4. Advanced Risk Management Controls
+            </h3>
+            <p className="mb-4">
+              Risk management is built directly into The Algos Field’s trading
+              algorithms.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                🔹 Automatic stop-loss mechanisms to limit potential losses.
+              </li>
+              <li>
+                🔹 Position sizing and drawdown protection to prevent
+                overexposure.
+              </li>
+              <li>
+                🔹 No overnight holding—reducing exposure to market gaps and
+                news volatility.
+              </li>
+            </ul>
+
+            <a
+              href="/risk-management"
+              className="text-customgreen font-semibold"
+            >
+              Trade with confidence knowing that every strategy is designed with
+              built-in risk management.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              5. Simple Setup, No Coding Required
+            </h3>
+            <p className="mb-4">
+              Unlike traditional algo-trading platforms that demand coding
+              knowledge or strategy development, The Algos Field is truly
+              plug-and-play:
+            </p>
+
+            <ol className="list-decimal pl-5 mb-4">
+              <li>
+                Choose your strategy—pick from individual strategies or the TAF
+                Genesis portfolio.
+              </li>
+              <li>
+                Download & install—seamlessly integrate with MetaTrader,
+                MultiCharts, or TradeStation.
+              </li>
+              <li>
+                Activate & trade—watch the algorithms execute trades in
+                real-time.
+              </li>
+            </ol>
+
+            <a href="/setup" className="text-customgreen font-semibold">
+              Get started in minutes with a strategy designed for simplicity and
+              efficiency.
+            </a>
+
+            <h2 className="text-3xl font-bold mb-6">
+              What Makes The Algos Field Unique?
+            </h2>
+
+            <p className="mb-4">
+              Unlike generic trading bots or DIY platforms, The Algos Field is
+              built with precision, performance, and ease of use in mind.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-2">
+              1. Fully Automated, Hands-Free Trading
+            </h3>
+            <p className="mb-4">
+              With The Algos Field, you don’t need to spend hours analyzing
+              charts or second-guessing trade decisions. Every trade is executed
+              automatically, following a proven algorithmic system optimized for
+              market efficiency.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>No manual execution—just set it up and let it run.</li>
+              <li>
+                No emotional trading—strategies follow strict, data-driven
+                rules.
+              </li>
+              <li>
+                Time-saving—monitor your portfolio in minutes per day instead of
+                hours.
+              </li>
+            </ul>
+
+            <a href="/register" className="text-customgreen font-semibold">
+              Experience the power of hands-free trading today.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              2. Proven Performance Backed by 3+ Years of Testing
+            </h3>
+            <p className="mb-4">
+              Many trading platforms promise profitability, but few provide
+              real, transparent performance data. Every strategy in The Algos
+              Field has undergone:
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                ✅ 3+ years of back-testing across various market conditions.
+              </li>
+              <li>
+                ✅ Live trading validation to ensure real-world consistency.
+              </li>
+              <li>✅ Continuous optimization using data-driven refinements.</li>
+            </ul>
+
+            <p className="mb-4">
+              With an average 8% monthly return and a 75%+ historical win rate,
+              The Algos Field has demonstrated consistent profitability, even in
+              volatile markets.
+            </p>
+
+            <a href="/performance" className="text-customgreen font-semibold">
+              See how data-driven automation is transforming trading
+              performance.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              3. Multiple Strategies for Diversification
+            </h3>
+            <p className="mb-4">
+              Instead of relying on a single trading approach, The Algos Field
+              offers 10 different strategies tailored for various market
+              conditions.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                ✔ Trend-following and breakout strategies capture large market
+                movements.
+              </li>
+              <li>
+                ✔ Momentum and volume-based algorithms optimize short-term
+                trading opportunities.
+              </li>
+            </ul>
+
+            <p className="mb-4">
+              For those looking for maximum diversification, the TAF Genesis
+              Portfolio combines all 10 strategies into one, delivering:
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>✔ Reduced volatility—balances multiple market behaviors.</li>
+              <li>
+                ✔ Optimized risk-adjusted returns—designed for consistent
+                growth.
+              </li>
+              <li>
+                ✔ A hedge fund-style portfolio—without the complexity or high
+                costs.
+              </li>
+            </ul>
+
+            <a href="/strategies" className="text-customgreen font-semibold">
+              Diversify your trading with a professionally designed strategy
+              portfolio.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              4. Advanced Risk Management Controls
+            </h3>
+            <p className="mb-4">
+              Risk management is built directly into The Algos Field’s trading
+              algorithms.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                🔹 Automatic stop-loss mechanisms to limit potential losses.
+              </li>
+              <li>
+                🔹 Position sizing and drawdown protection to prevent
+                overexposure.
+              </li>
+              <li>
+                🔹 No overnight holding—reducing exposure to market gaps and
+                news volatility.
+              </li>
+            </ul>
+
+            <a
+              href="/risk-management"
+              className="text-customgreen font-semibold"
+            >
+              Trade with confidence knowing that every strategy is designed with
+              built-in risk management.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              5. Simple Setup, No Coding Required
+            </h3>
+            <p className="mb-4">
+              Unlike traditional algo-trading platforms that demand coding
+              knowledge or strategy development, The Algos Field is truly
+              plug-and-play:
+            </p>
+
+            <ol className="list-decimal pl-5 mb-4">
+              <li>
+                Choose your strategy—pick from individual strategies or the TAF
+                Genesis portfolio.
+              </li>
+              <li>
+                Download & install—seamlessly integrate with MetaTrader,
+                MultiCharts, or TradeStation.
+              </li>
+              <li>
+                Activate & trade—watch the algorithms execute trades in
+                real-time.
+              </li>
+            </ol>
+
+            <a href="/setup" className="text-customgreen font-semibold">
+              Get started in minutes with a strategy designed for simplicity and
+              efficiency.
+            </a>
+
+            <h3 className="text-3xl font-bold mt-8 mb-6">
+              How The Algos Field Stacks Up Against Competitors
+            </h3>
+            <p className="mb-4">
+              Many trading platforms offer algorithmic solutions, but few
+              provide the combination of performance, ease-of-use, and
+              transparency that The Algos Field does.
+            </p>
+
+            <a href="/compare" className="text-customgreen font-semibold">
+              Upgrade your trading experience with an algorithmic system built
+              for reliability and precision.
+            </a>
+
+            <h3 className="text-3xl font-bold mt-8 mb-6">
+              Why Now Is the Time to Automate Your Trading
+            </h3>
+            <p className="mb-4">
+              Markets are becoming more competitive. Traders who rely solely on
+              manual trading are at a disadvantage—competing against
+              institutions with data-driven systems.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                ✔ Eliminate human error—no more emotional trading decisions.
+              </li>
+              <li>
+                ✔ Trade 24/5 effortlessly—let the system work while you sleep.
+              </li>
+              <li>
+                ✔ Save time—focus on your lifestyle while your money works for
+                you.
+              </li>
+            </ul>
+
+            <a href="/automation" className="text-customgreen font-semibold">
+              Take control of your trading and start leveraging automation for
+              better results.
+            </a>
+
+            <h3 className="text-3xl font-bold mt-8 mb-6">
+              Join the Trading Revolution
+            </h3>
+            <p className="mb-4">
+              Algorithmic trading is the future—and The Algos Field is leading
+              the charge. Whether you’re looking to maximize trading efficiency,
+              generate passive income, or gain an edge in volatile markets, The
+              Algos Field offers an elite trading experience without the
+              complexity.
+            </p>
+
+            <a href="/join" className="text-customgreen font-semibold">
+              Start your journey toward smarter, more efficient trading today.
+            </a>
+            <h2 className="text-3xl font-bold mb-6">
+              What Makes The Algos Field Unique?
+            </h2>
+
+            <p className="mb-4">
+              Unlike generic trading bots or DIY platforms, The Algos Field is
+              built with precision, performance, and ease of use in mind.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-2">
+              1. Fully Automated, Hands-Free Trading
+            </h3>
+            <p className="mb-4">
+              With The Algos Field, you don’t need to spend hours analyzing
+              charts or second-guessing trade decisions. Every trade is executed
+              automatically, following a proven algorithmic system optimized for
+              market efficiency.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>No manual execution—just set it up and let it run.</li>
+              <li>
+                No emotional trading—strategies follow strict, data-driven
+                rules.
+              </li>
+              <li>
+                Time-saving—monitor your portfolio in minutes per day instead of
+                hours.
+              </li>
+            </ul>
+
+            <a href="/register" className="text-customgreen font-semibold">
+              Experience the power of hands-free trading today.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              2. Proven Performance Backed by 3+ Years of Testing
+            </h3>
+            <p className="mb-4">
+              Many trading platforms promise profitability, but few provide
+              real, transparent performance data. Every strategy in The Algos
+              Field has undergone:
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                ✅ 3+ years of back-testing across various market conditions.
+              </li>
+              <li>
+                ✅ Live trading validation to ensure real-world consistency.
+              </li>
+              <li>✅ Continuous optimization using data-driven refinements.</li>
+            </ul>
+
+            <p className="mb-4">
+              With an average 8% monthly return and a 75%+ historical win rate,
+              The Algos Field has demonstrated consistent profitability, even in
+              volatile markets.
+            </p>
+
+            <a href="/performance" className="text-customgreen font-semibold">
+              See how data-driven automation is transforming trading
+              performance.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              3. Multiple Strategies for Diversification
+            </h3>
+            <p className="mb-4">
+              Instead of relying on a single trading approach, The Algos Field
+              offers 10 different strategies tailored for various market
+              conditions.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                ✔ Trend-following and breakout strategies capture large market
+                movements.
+              </li>
+              <li>
+                ✔ Momentum and volume-based algorithms optimize short-term
+                trading opportunities.
+              </li>
+            </ul>
+
+            <p className="mb-4">
+              For those looking for maximum diversification, the TAF Genesis
+              Portfolio combines all 10 strategies into one, delivering:
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>✔ Reduced volatility—balances multiple market behaviors.</li>
+              <li>
+                ✔ Optimized risk-adjusted returns—designed for consistent
+                growth.
+              </li>
+              <li>
+                ✔ A hedge fund-style portfolio—without the complexity or high
+                costs.
+              </li>
+            </ul>
+
+            <a href="/strategies" className="text-customgreen font-semibold">
+              Diversify your trading with a professionally designed strategy
+              portfolio.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              4. Advanced Risk Management Controls
+            </h3>
+            <p className="mb-4">
+              Risk management is built directly into The Algos Field’s trading
+              algorithms.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                🔹 Automatic stop-loss mechanisms to limit potential losses.
+              </li>
+              <li>
+                🔹 Position sizing and drawdown protection to prevent
+                overexposure.
+              </li>
+              <li>
+                🔹 No overnight holding—reducing exposure to market gaps and
+                news volatility.
+              </li>
+            </ul>
+
+            <a
+              href="/risk-management"
+              className="text-customgreen font-semibold"
+            >
+              Trade with confidence knowing that every strategy is designed with
+              built-in risk management.
+            </a>
+
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              5. Simple Setup, No Coding Required
+            </h3>
+            <p className="mb-4">
+              Unlike traditional algo-trading platforms that demand coding
+              knowledge or strategy development, The Algos Field is truly
+              plug-and-play:
+            </p>
+
+            <ol className="list-decimal pl-5 mb-4">
+              <li>
+                Choose your strategy—pick from individual strategies or the TAF
+                Genesis portfolio.
+              </li>
+              <li>
+                Download & install—seamlessly integrate with MetaTrader,
+                MultiCharts, or TradeStation.
+              </li>
+              <li>
+                Activate & trade—watch the algorithms execute trades in
+                real-time.
+              </li>
+            </ol>
+
+            <a href="/setup" className="text-customgreen font-semibold">
+              Get started in minutes with a strategy designed for simplicity and
+              efficiency.
+            </a>
+
+            <h3 className="text-3xl font-bold mt-8 mb-6">
+              How The Algos Field Stacks Up Against Competitors
+            </h3>
+            <p className="mb-4">
+              Many trading platforms offer algorithmic solutions, but few
+              provide the combination of performance, ease-of-use, and
+              transparency that The Algos Field does.
+            </p>
+            <table className="w-full text-left border-collapse border mb-4 border-gray-300">
               <thead>
                 <tr className="">
                   <th className="p-2 border border-gray-300">Feature</th>
@@ -210,22 +786,85 @@ export default function BlogDetails() {
                     ❌ Limited Transparency
                   </td>
                 </tr>
+                <tr>
+                  <td className="p-2 border border-gray-300">
+                    Risk Management
+                  </td>
+                  <td className="p-2 border border-gray-300">
+                    ✅ Built-in Controls
+                  </td>
+                  <td className="p-2 border border-gray-300">
+                    ❌ Often left to users
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-2 border border-gray-300">
+                    Diverse Strategies
+                  </td>
+                  <td className="p-2 border border-gray-300">
+                    ✅ 10+ Algorithms
+                  </td>
+                  <td className="p-2 border border-gray-300">
+                    ❌ One or Two Generic Strategies
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-2 border border-gray-300">Ease of Use</td>
+                  <td className="p-2 border border-gray-300">
+                    ✅ No Coding Required
+                  </td>
+                  <td className="p-2 border border-gray-300">
+                    ❌ Complex or Requires Programming
+                  </td>
+                </tr>
               </tbody>
             </table>
+            <a href="/compare" className="text-customgreen  font-semibold">
+              Upgrade your trading experience with an algorithmic system built
+              for reliability and precision.
+            </a>
 
-            <h2 className="text-2xl font-semibold text-customgreen mt-6 mb-3">
+            <h3 className="text-3xl font-bold mt-8 mb-6">
+              Why Now Is the Time to Automate Your Trading
+            </h3>
+            <p className="mb-4">
+              Markets are becoming more competitive. Traders who rely solely on
+              manual trading are at a disadvantage—competing against
+              institutions with data-driven systems.
+            </p>
+
+            <ul className="list-none pl-5 mb-4">
+              <li>
+                ✔ Eliminate human error—no more emotional trading decisions.
+              </li>
+              <li>
+                ✔ Trade 24/5 effortlessly—let the system work while you sleep.
+              </li>
+              <li>
+                ✔ Save time—focus on your lifestyle while your money works for
+                you.
+              </li>
+            </ul>
+
+            <a href="/automation" className="text-customgreen font-semibold">
+              Take control of your trading and start leveraging automation for
+              better results.
+            </a>
+
+            <h3 className="text-3xl font-bold mt-8 mb-6">
               Join the Trading Revolution
-            </h2>
-            <p className="text-white mb-4">
+            </h3>
+            <p className="mb-4">
               Algorithmic trading is the future—and The Algos Field is leading
               the charge. Whether you’re looking to maximize trading efficiency,
               generate passive income, or gain an edge in volatile markets, The
               Algos Field offers an elite trading experience without the
               complexity.
             </p>
-            <button className="bg-gradient-to-r from-customgreen to-customblue text-black px-6 py-2 rounded-lg hover:px-8 transition-all my-3 ">
-              Start Your Journey Today
-            </button>
+
+            <a href="/join" className="text-customgreen font-semibold">
+              Start your journey toward smarter, more efficient trading today.
+            </a>
           </div>
         </div>
 

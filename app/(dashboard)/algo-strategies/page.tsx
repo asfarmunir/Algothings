@@ -67,17 +67,17 @@ export default function Algorithm() {
                           alt="Logo"
                         />
                         <div>
-                          <h1 className="text-sm md:text-[10px] uppercase font-semibold">
+                          <h1 className="text-sm md:text-[14px] 2xl:text-base uppercase font-semibold">
                             {product.title}
                           </h1>
-                          <p className="text-customgray text-xs md:text-[9px]">
+                          <p className="text-customgray text-xs md:text-[10px] 2xl:text-xs">
                             {product.subtitle}
                           </p>
                         </div>
                       </div>
                       <div className="mx-8 md:mx-0 flex flex-row justify-evenly gap-4 pt-4">
                         <Image
-                          src="/images/book.webp"
+                          src={`/products/${product.id}.webp`}
                           width={100}
                           height={140}
                           alt="card image"
@@ -126,17 +126,20 @@ export default function Algorithm() {
               <div className=" w-full lg:w-[30%] max-w-xl">
                 <h1 className="text-3xl lg:text-2xl font-semibold">Cart</h1>
                 <div className="py-1">
-                  {/* <p className="text-sm py-2">Choose Trading Platform</p>
+                  <p className="text-sm py-2">Choose Trading Platform</p>
                   <div className=" w-80">
                     <Dropdown
                       options={["MultiCharts", "TradeStation ", "MetaTrader "]}
-                      onSelect={handleSelect}
+                      onSelect={
+                        //@ts-ignore
+                        (platform: string) => console.log(platform)
+                      }
                       placeholder="Select Platform"
                       className="bg-[#03100C] py-2  text-sm w-full"
                       textclassName=""
                       dropdownClass=" w-60 lg:w-44"
                     />
-                  </div> */}
+                  </div>
                   {cart.length ? (
                     <div className="text-end my-2">
                       <button

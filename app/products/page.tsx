@@ -81,7 +81,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                   </div>
                   <div className=" md:mx-2 flex flex-row justify-start gap-6 pt-5">
                     <Image
-                      src="/images/book.webp"
+                      src={`/products/${prod.id}.webp`}
                       width={100}
                       height={140}
                       alt="card image"

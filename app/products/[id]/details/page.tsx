@@ -1,23 +1,18 @@
 "use client";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
-import Sidebar from "@/components/shared/Sidebar";
-import DashboardNavbar from "@/components/shared/DashboardNavbar";
-import { useState } from "react";
 import Navbar from "@/components/shared/Navbar";
 import FadeInSection from "@/lib/FadeInAnimation";
-import { GoArrowUpRight } from "react-icons/go";
-import Link from "next/link";
 import { DiscordCommunity } from "@/components/shared/Discord";
 import { Footer } from "@/components/shared/Footer";
 import { products } from "@/lib/products";
+import Link from "next/link";
 export default function AllProduct({
   params: { id },
 }: {
   params: { id: string };
 }) {
   console.log("🚀 ~ id:", id);
-  const [activeButton, setActiveButton] = useState("INDIVIDUALS");
 
   const product = products.find((product) => product.id === id);
 
@@ -46,10 +41,14 @@ export default function AllProduct({
               dangerouslySetInnerHTML={{ __html: product!.description }}
               className="2xl:text-lg"
             />
-            <p
-              dangerouslySetInnerHTML={{ __html: product!.disclaimer }}
-              className=" 2xl:text-lg mt-4"
-            />
+            <div className=" mt-6">
+              <h2 className="text-xl 2xl:text-2xl font-bold">Disclaimer!</h2>
+
+              <p
+                dangerouslySetInnerHTML={{ __html: product!.disclaimer }}
+                className=" 2xl:text-lg mt-2"
+              />
+            </div>
             {/* <ul className="mb-5 2xl:mb-7">
               <li className="text-lg font-thin  2xl:text-xl ">
                 <ul className="list-disc list-inside">
@@ -85,10 +84,12 @@ export default function AllProduct({
               </span>
             </p> */}
             <div className="mt-6 flex flex-col sm:flex-row gap-2  md:gap-4 items-center">
-              <Button
-                label="Get started"
-                className="bg-gradient-to-r py-2 2xl:py-3 px-12 md:px-16  w-full sm:w-fit font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
-              />
+              <Link className="text-white underline" href="/register" passHref>
+                <Button
+                  label="Get started"
+                  className="bg-gradient-to-r py-2 2xl:py-3 px-12 md:px-16  w-full sm:w-fit font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
+                />
+              </Link>
               <div className="bg-gradient-to-r p-[1px] w-full sm:w-fit font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md ">
                 <button className=" w-full h-full bg-black p-2 2xl:py-3 px-7 uppercase text-white rounded-md flex flex-row items-center justify-center gap-2">
                   Performance Report

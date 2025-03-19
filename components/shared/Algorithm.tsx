@@ -148,7 +148,9 @@ export const Algorithm = () => {
                           className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] text-xs   uppercase 2xl:text-sm from-customgreen to-customblue text-black rounded-lg"
                         />
                         <button
-                          onClick={() => router.push("/products/1/details")}
+                          onClick={() =>
+                            router.push("/products/flash-break/details")
+                          }
                           className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-xs 2xl:text-sm"
                         >
                           <GoArrowUpRight className="text-lg" />
@@ -196,7 +198,9 @@ export const Algorithm = () => {
                           className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] text-xs   uppercase 2xl:text-sm from-customgreen to-customblue text-black rounded-lg"
                         />
                         <button
-                          onClick={() => router.push("/products/1/details")}
+                          onClick={() =>
+                            router.push("/products/momentum-snap/details")
+                          }
                           className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-xs 2xl:text-sm"
                         >
                           <GoArrowUpRight className="text-lg" />

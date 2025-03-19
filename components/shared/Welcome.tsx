@@ -59,7 +59,7 @@ export const Welcome = () => {
             {/* Description */}
             <p className="text-customlight  px-2 sm:px-6  md:px-20 leading-6 max-w-5xl mx-auto md:leading-7 my-7 text-[12px] sm:text-sm  md:text-[16px] xl:text-[20px]">
               Outsmart the markets with The Algos Field, your fully automated,
-              hands-free trading genius—no guesswork, programming, or stress.
+              hands-free trading genius no guesswork, programming, or stress.
               Just plug and play, and let our strategies work for you 100%
               hands-free. It's that simple.
             </p>

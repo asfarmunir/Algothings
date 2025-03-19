@@ -50,6 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
   const openBlogDetails = (blog: Slide) => {
     setSelectedBlog(blog);
     setOpenBlog(true);
+    router.push("/blog/blogdetails");
   };
 
   const closeBlogDetails = () => {
@@ -96,7 +97,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
             {items.map((item, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 p-4 border border-[#FFFFFF33] rounded-xl"
+                className="flex-shrink-0 p-4 border cursor-pointer border-[#FFFFFF33] rounded-xl"
                 style={{
                   width: `calc(100% / ${visibleCount} - 16px)`, // Subtract gap
                 }}

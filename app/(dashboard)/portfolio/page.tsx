@@ -263,17 +263,17 @@ export default function Algorithm() {
             <div className=" w-full lg:w-[30%] max-w-xl">
               <h1 className="text-3xl lg:text-2xl font-semibold">Cart</h1>
               <div className="py-1">
-                {/* <p className="text-sm py-2">Choose Trading Platform</p>
-                              <div className=" w-80">
-                                <Dropdown
-                                  options={["MultiCharts", "TradeStation ", "MetaTrader "]}
-                                  onSelect={handleSelect}
-                                  placeholder="Select Platform"
-                                  className="bg-[#03100C] py-2  text-sm w-full"
-                                  textclassName=""
-                                  dropdownClass=" w-60 lg:w-44"
-                                />
-                              </div> */}
+                <Dropdown
+                  options={["MultiCharts", "TradeStation ", "MetaTrader "]}
+                  onSelect={
+                    //@ts-ignore
+                    (platform: string) => console.log(platform)
+                  }
+                  placeholder="Select Platform"
+                  className="bg-[#03100C] py-2  text-sm w-full"
+                  textclassName=""
+                  dropdownClass=" w-60 lg:w-44"
+                />
                 {cart.length ? (
                   <div className="text-end my-2">
                     <button
