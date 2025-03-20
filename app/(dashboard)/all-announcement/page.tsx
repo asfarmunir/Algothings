@@ -39,7 +39,7 @@ export default function AllAnnouncement() {
           {/* Dashboard Navbar: Static and non-scrollable */}
           <DashboardNavbar />
           {/* Details Section: Scrollable */}
-          <div className="flex-grow px-8 py-4 gradient-corners-main overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
+          <div className="flex-grow px-4 md:px-8 py-4 gradient-corners-main overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
             <div className="my-5">
               <h1 className="text-2xl font-bold">Announcement</h1>
               <div className="my-5">

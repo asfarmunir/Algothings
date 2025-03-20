@@ -59,15 +59,15 @@ export default function Blog() {
                   />
 
                   <div className="mt-4">
-                    <p className="text-[12px] 2xl:text-[14px] text-gray-300 mb-2 ">
+                    <p className="text-[12px] 2xl:text-[15px] text-gray-300 mb-2 ">
                       12th August 2021
                     </p>
-                    <h1 className="text-[19px] 2xl:text-[22px] font-bold ">
+                    <h1 className="text-[19px] 2xl:text-[24px] font-bold ">
                       {card.title}
                     </h1>
-                    <p className="text-[16px] mt-2 leading-[30px]">
+                    {/* <p className="text-[16px] mt-2 leading-[30px]">
                       {card.description}
-                    </p>
+                    </p> */}
                   </div>
 
                   <Link

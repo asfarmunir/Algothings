@@ -56,7 +56,7 @@ export function DiscordCommunity() {
                 <input
                   type="email"
                   className="bg-transparent text-customlightgray px-4 w-full text-xs sm:text-sm focus:outline-none placeholder:text-customlightgray "
-                  placeholder="Enter Your Email To Stay Ahead"
+                  placeholder="Enter Your Email"
                 />
                 <button className="submit-btn flex gap-2 items-center text-xs sm:text-sm py-3  px-5 sm:px-8 rounded-full">
                   Submit <ArrowRight className="w-4 h-4" />{" "}

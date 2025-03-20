@@ -43,6 +43,10 @@ const points = [
     title: "75%+ Win Rate ",
     desc: "Because your portfolio deserves a winning edge.",
   },
+  {
+    title: "0 Emotional Trades ",
+    desc: "Fully automated execution for a disciplined trading approach.",
+  },
 ];
 
 export default function ChooseUs() {
@@ -123,7 +127,7 @@ export default function ChooseUs() {
             <div className="flex h-auto md:h-[494px] flex-col-reverse md:flex-row gap-5 bg-black p-4 md:p-8 rounded-[40px]">
               <div className="w-full flex flex-col justify-between">
                 {points.map((item: any, index: any) => (
-                  <div key={index} className="group border-none mb-5">
+                  <div key={index} className="group border-none mb-2.5">
                     {/* Accordion Header */}
                     <AnimationSection>
                       <div

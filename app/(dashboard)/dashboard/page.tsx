@@ -56,7 +56,7 @@ export default function AllAnnouncement() {
                     <GrAnnounce className="text-customgreen" />
                     Limited-Time Offer: 1 Month Free! Register by April 30th and
                     get 1 month of free access.
-                    <span className=" underline border-b border-customblue font-bold ">
+                    <span className=" hidden sm:block underline border-b border-customblue font-bold ">
                       Learn more
                     </span>
                   </p>
@@ -82,7 +82,7 @@ export default function AllAnnouncement() {
 
                   <div className="relative z-10 p-6 2xl:p-9">
                     <h1 className="bg-gradient-to-r text-4xl tracking-wide font-semibold from-[#45F175CC] to-[#00C3CECC] bg-clip-text text-transparent">
-                      Trade Smarter ,Not Harder{" "}
+                      Trade Smarter, Not Harder{" "}
                     </h1>
                     <p className="py-3 font-light">
                       Unleash your trading potential with cutting-edge
@@ -124,7 +124,7 @@ export default function AllAnnouncement() {
                     />
 
                     <h3 className="text-xl py-3 font-semibold">
-                      300$ Discount!!!
+                      €300 Discount!!!
                     </h3>
                     <p className="text-center uppercase bg-gradient-to-r from-customgreen to-customblue bg-clip-text font-semibold text-transparent text-xs">
                       Get access to all{" "}
@@ -181,14 +181,14 @@ export default function AllAnnouncement() {
                         </div>
                       </div>
                       <div className="flex flex-row gap-3 mt-8">
-                        <p className="w-full bg-[#FFFFFF1A] py-3 text-center rounded-full text-sm">
-                          <span className="text-[#FFFFFF80]">Start Date:</span>{" "}
-                          00/00/0000
-                        </p>
-                        <p className="w-full bg-[#FFFFFF1A] py-3 rounded-full text-center text-sm">
-                          <span className="text-[#FFFFFF80]">End Date:</span>{" "}
-                          00/00/0000
-                        </p>
+                        <div className="w-full bg-[#FFFFFF1A] py-3 rounded-full flex gap-1 justify-center flex-col xl:flex-row text-center text-sm">
+                          <p className="text-[#FFFFFF80] pr-1">Start Date:</p>{" "}
+                          <p className="text-[#FFFFFF] pr-1">00/00/0000</p>
+                        </div>
+                        <div className="w-full bg-[#FFFFFF1A] py-3 rounded-full flex gap-1 justify-center flex-col xl:flex-row text-center text-sm">
+                          <p className="text-[#FFFFFF80] pr-1">End Date:</p>{" "}
+                          <p className="text-[#FFFFFF] pr-1">00/00/0000</p>
+                        </div>
                       </div>
                     </div>
                   ))}

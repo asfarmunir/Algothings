@@ -233,7 +233,7 @@ export default function BillingDetails() {
                             <p className="truncate text-sm lg:text-xs">
                               Asuras Dragonair Bot #169
                             </p>
-                            <p className="text-sm lg:text-xs">$148</p>
+                            <p className="text-sm lg:text-xs"> €148</p>
                           </div>
                           <div className="w-full flex flex-row  gap-36 items-center justify-between">
                             <p className="text-customgray text-nowrap text-sm lg:text-[10px]">
@@ -255,15 +255,15 @@ export default function BillingDetails() {
                     <div className="flex flex-col gap-2 text-sm">
                       <div className="flex flex-row justify-between gap-5">
                         <p className="text-customlightgray">Subtotal</p>
-                        <p>$200</p>
+                        <p> €200</p>
                       </div>
                       <div className="flex flex-row justify-between gap-5">
                         <p className="text-customlightgray">Tax</p>
-                        <p>$0.00</p>
+                        <p> €0.00</p>
                       </div>
                       <div className="flex flex-row justify-between gap-5">
                         <p className="text-customlightgray">Total</p>
-                        <p className="font-semibold">$208</p>
+                        <p className="font-semibold"> €208</p>
                       </div>
                     </div>
 

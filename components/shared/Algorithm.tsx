@@ -129,7 +129,7 @@ export const Algorithm = () => {
                   </div>
                   <div className="flex flex-row gap-4 pt-3 mx-2">
                     <Image
-                      src="/images/book.webp"
+                      src="/products/flash-break.webp"
                       width={120}
                       height={160}
                       alt="card image"
@@ -179,7 +179,7 @@ export const Algorithm = () => {
                   </div>
                   <div className="flex flex-row gap-4 pt-3 mx-2">
                     <Image
-                      src="/images/book.webp"
+                      src="/products/momentum-snap.webp"
                       width={120}
                       height={160}
                       alt="card image"

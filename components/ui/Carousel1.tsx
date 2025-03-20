@@ -4,6 +4,8 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Image from "next/image";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
+import { GoArrowRight } from "react-icons/go";
+import Link from "next/link";
 
 interface Slide {
   image: string;
@@ -89,29 +91,65 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         {/* Carousel */}
         <div className="relative overflow-hidden">
           <div
-            className="flex transition-transform duration-500 gap-4"
+            className="flex transition-transform duration-500 gap-1"
             style={{
               transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`,
             }}
           >
             {items.map((item, index) => (
+              // <div
+              //   key={index}
+              //   className="flex-shrink-0 p-4 border cursor-pointer border-[#FFFFFF33] rounded-xl"
+              //   style={{
+              //     width: `calc(100% / ${visibleCount} - 16px)`, // Subtract gap
+              //   }}
+              //   onClick={() => openBlogDetails(item)}
+              // >
+              //   <Image
+              //     src={item.image}
+              //     alt={item.title}
+              //     width={500}
+              //     height={300}
+              //     className="w-full h-50 object-cover rounded-lg"
+              //   />
+              //   <h3 className="text-[20px] my-3 text-start">{item.title}</h3>
+              //   <p className="text-[14px] text-start">{item.description}</p>
+              // </div>
               <div
                 key={index}
-                className="flex-shrink-0 p-4 border cursor-pointer border-[#FFFFFF33] rounded-xl"
+                className="border border-[#FFFFFF33] py-6 px-4 cursor-pointer rounded-[14px]"
                 style={{
                   width: `calc(100% / ${visibleCount} - 16px)`, // Subtract gap
                 }}
                 onClick={() => openBlogDetails(item)}
               >
                 <Image
-                  src={item.image}
-                  alt={item.title}
+                  src="/images/blog.png"
+                  alt="blog image"
                   width={500}
                   height={300}
                   className="w-full h-50 object-cover rounded-lg"
                 />
-                <h3 className="text-[20px] my-3 text-start">{item.title}</h3>
-                <p className="text-[14px] text-start">{item.description}</p>
+
+                <div className="mt-4 text-start">
+                  <p className="text-[12px] 2xl:text-[15px] text-gray-300 mb-2 ">
+                    12th August 2021
+                  </p>
+                  <h1 className="text-[19px] 2xl:text-[24px] font-bold ">
+                    {item.title}
+                  </h1>
+                  {/* <p className="text-[16px] mt-2 leading-[30px]">
+                                    {card.description}
+                                  </p> */}
+                </div>
+
+                <Link
+                  href={"/blog/blogdetails"}
+                  className="flex flex-row font-semibold gap-2 mt-4 items-center  text-nowrap p-0 text-sm 2xl:text-base"
+                >
+                  <span>Read More</span>
+                  <GoArrowRight className="text-lg 2xl:text-xl" />
+                </Link>
               </div>
             ))}
           </div>

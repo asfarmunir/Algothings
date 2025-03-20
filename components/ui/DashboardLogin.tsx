@@ -5,7 +5,7 @@ import Link from "next/link";
 import loginAnimation from "@/public/assets/animations/Login.gif";
 import errorAnimation from "@/public/assets/animations/Error.gif";
 import afterLoginAnimation from "@/public/assets/animations/after_login.gif";
-
+import { usePathname } from "next/navigation";
 export const DashboardLogin = ({
   error,
   success,
@@ -16,6 +16,7 @@ export const DashboardLogin = ({
   const handleSelect = () => {
     console.log("");
   };
+  const pathname = usePathname();
   return (
     <div className="">
       <Link href="/">
@@ -46,9 +47,18 @@ export const DashboardLogin = ({
           </span>
         </div> */}
 
-        <p className="text-xs 2xl:text-sm  text-center  pl-8 font-bold pt-4 pb-4  ">
-          Everything you need to become a ALGOS Field Trader
-        </p>
+        {pathname === "/register" ? (
+          <p className="text-xs 2xl:text-sm  text-center  pl-8 font-bold pt-4 pb-4  ">
+            {" "}
+            Start your automated trading journey with The Algos Field today.
+          </p>
+        ) : (
+          <p className="text-xs 2xl:text-sm  text-center  pl-8 font-bold pt-4 pb-4  ">
+            {" "}
+            Unlock the power of automated trading and take control of your
+            financial future.
+          </p>
+        )}
 
         <div className="flex flex-row     mx-auto  justify-center items-center w-[60%]">
           <Image

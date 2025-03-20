@@ -221,7 +221,7 @@ const Profile: React.FC = () => {
                 >
                   Billing History
                 </button>
-                <button
+                {/* <button
                   className={
                     activebtn === "billingDetails"
                       ? "bg-[#FFFFFF33] rounded-full py-1 px-5"
@@ -230,7 +230,7 @@ const Profile: React.FC = () => {
                   onClick={() => setActivebtn("billingDetails")}
                 >
                   Billing Details
-                </button>
+                </button> */}
                 <button
                   className={
                     activebtn === "subscriptions"

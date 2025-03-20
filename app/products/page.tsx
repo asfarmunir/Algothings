@@ -135,11 +135,10 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                         />
                         <div className="text-start">
                           <h1 className="text-[16px] text-start  tracking-wide capitalize font-semibold">
-                            Portfolio Strategy
+                            TAF Genesis
                           </h1>
                           <p className="text-customgray text-[12px]">
-                            This portfolio integrates all 10 strategies,
-                            delivering a range
+                            The Ultimate Strategy Trading Portfolio
                           </p>
                         </div>
                       </div>

@@ -25,7 +25,7 @@ export default function Pricing() {
   return (
     <>
       <section id="price">
-        <div className="mb-4 mt-12 flex flex-col items-center">
+        <div className="mb-4 mt-4 sm:mt-12 flex flex-col items-center">
           <div className="inline-flex   flex-row gap-3 py-2.5 px-4 rounded-full bg-gradient-to-r from-[#45F17533] to-[#00C3CE33]">
             <Image
               src="/images/welcomestar.svg"
@@ -82,7 +82,7 @@ export default function Pricing() {
             </div>
           )}
 
-          <h1 className="py-1 px-2 text-6 text-[40px] md:text-[44px] lexend  leading-[64px] mb-3.5 mt-6">
+          <h1 className="py-1 px-2 text-6 text-center  text-[40px] md:text-[44px] lexend  leading-[64px] mb-3.5 mt-6">
             Choose the
             <span className="bg-gradient-to-r px-1.5 from-customgreen to-customblue bg-clip-text text-transparent">
               Perfect Plan

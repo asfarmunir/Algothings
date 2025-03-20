@@ -8,6 +8,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import products from "@/lib/products";
 export default function AllProduct({ searchParams }: { searchParams: any }) {
   const unwrappedSearchParams = React.use(searchParams);
   //@ts-ignore
@@ -71,11 +72,10 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                           />
                           <div className="text-start">
                             <h1 className="text-[16px] text-start  tracking-wide capitalize font-semibold">
-                              Portfolio Strategy
+                              TAF Genesis
                             </h1>
                             <p className="text-customgray text-[12px]">
-                              This portfolio integrates all 10 strategies,
-                              delivering a range
+                              The Ultimate Strategy Trading Portfolio
                             </p>
                           </div>
                         </div>
@@ -133,7 +133,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
               </div>
             ) : (
               <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-3 mt-5">
-                {Array.from({ length: 15 }).map((_, index) => (
+                {products.map((prod, index) => (
                   <div
                     key={index}
                     className="bg-[#04110D80] py-3 px-3 rounded-lg  "
@@ -147,16 +147,16 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                       />
                       <div>
                         <h1 className="text-sm md:text-[10px] uppercase font-semibold">
-                          Momentum Snap
+                          {prod.title}
                         </h1>
                         <p className="text-customgray text-xs md:text-[10px]">
-                          For E-mini (NQ) and Micro (MNQ) Nasdaq 100 index
+                          {prod.subtitle}
                         </p>
                       </div>
                     </div>
                     <div className="mx-8 md:mx-2 flex flex-row justify-start gap-4 pt-4">
                       <Image
-                        src="/images/book.webp"
+                        src={`/products/${prod.id}.webp`}
                         width={100}
                         height={140}
                         alt="card image"
@@ -173,7 +173,9 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                         </div>
                         <div className="sm:mt-4 flex flex-row gap-8 md:gap-2 items-center">
                           <Button
-                            onClick={() => router.push("/performance-summary")}
+                            onClick={() =>
+                              router.push(`/performance-summary/${prod.id}`)
+                            }
                             label="Performance Metrics"
                             className="bg-gradient-to-r py-2 text-nowrap uppercase text-[0.7rem] sm:text-xs from-customgreen to-customblue text-black rounded-md "
                           />

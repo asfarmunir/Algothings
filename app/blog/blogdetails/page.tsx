@@ -11,6 +11,10 @@ import { Footer } from "@/components/shared/Footer";
 import { useBlogDetails } from "@/hooks/useBlog";
 import Link from "next/link";
 import { DiscordCommunity } from "@/components/shared/Discord";
+import { FaDiscord, FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { RiInstagramFill } from "react-icons/ri";
+import { IoShareSocialSharp } from "react-icons/io5";
+import toast from "react-hot-toast";
 
 // Dynamically import the Carousel component for client-side rendering
 const Carousel = dynamic(() => import("@/components/ui/Carousel1"), {
@@ -868,6 +872,35 @@ export default function BlogDetails() {
           </div>
         </div>
 
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-12 px-4 md:px-12  justify-end">
+          {/* <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            /> */}
+          <div className="flex flex-row gap-4 sm:gap-6">
+            <IoShareSocialSharp
+              className="text-xl cursor-pointer"
+              onClick={() => toast.success("Link copied!")}
+            />
+            <FaFacebookF
+              className="text-xl cursor-pointer"
+              onClick={() => alert("hello")}
+            />
+            <FaDiscord
+              className="text-xl cursor-pointer"
+              onClick={() => alert("hello")}
+            />
+            <FaXTwitter
+              className="text-xl cursor-pointer"
+              onClick={() => alert("hello")}
+            />
+            <RiInstagramFill
+              className="text-xl cursor-pointer"
+              onClick={() => alert("hello")}
+            />
+          </div>
+        </div>
         {/* Frequent asked Questions */}
         <div className="text-center py-12">
           <FAQ />

@@ -83,18 +83,27 @@ export default function AllProduct({
                 $6,000 
               </span>
             </p> */}
-            <div className="mt-6 flex flex-col sm:flex-row gap-2  md:gap-4 items-center">
-              <Link className="text-white underline" href="/register" passHref>
+            <div className="mt-6 flex flex-row gap-2  md:gap-4 items-center">
+              <Link
+                href="/register"
+                passHref
+                className=" flex-grow sm:flex-grow-0 text-white underline"
+              >
                 <Button
                   label="Get started"
                   className="bg-gradient-to-r py-2 2xl:py-3 px-12 md:px-16  w-full sm:w-fit font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md "
                 />
               </Link>
-              <div className="bg-gradient-to-r p-[1px] w-full sm:w-fit font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md ">
-                <button className=" w-full h-full bg-black p-2 2xl:py-3 px-7 uppercase text-white rounded-md flex flex-row items-center justify-center gap-2">
-                  Performance Report
-                </button>
-              </div>
+              <Link
+                href={`/performance-summary/${product!.id}`}
+                className=" flex-grow sm:flex-grow-0"
+              >
+                <div className="bg-gradient-to-r p-[1px] w-full sm:w-fit font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md ">
+                  <button className=" w-full h-full bg-black p-2 2xl:py-3 sm:px-7 uppercase text-white rounded-md flex flex-row items-center justify-center gap-2">
+                    Performance Report
+                  </button>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
