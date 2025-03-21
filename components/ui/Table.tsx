@@ -18,7 +18,7 @@ interface TableProps {
 
 const ROWS_PER_PAGE = 8;
 
-export default function Table({ columns, data }: TableProps) {
+export default function Table({ columns, data }: any) {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(data.length / ROWS_PER_PAGE);
 
@@ -28,13 +28,23 @@ export default function Table({ columns, data }: TableProps) {
     currentPage * ROWS_PER_PAGE
   );
 
+  function generateInvoiceId(
+    userId: string,
+    productId: string,
+    id: string
+  ): string {
+    const Id = id.slice(-6); // Use last 6 characters of user ID
+    const shortUserId = userId.slice(-6); // Use last 6 characters of user ID
+    return `INV-${shortUserId}-${productId.toUpperCase()}-${Id}`;
+  }
+
   return (
     <div className="bg-[#131F1B] mt-4 min-w-full rounded-lg overflow-x-auto p-4">
       <table className="w-full border-collapse text-sm text-center">
         {/* Table Header */}
         <thead>
           <tr className="border-b border-[#FFFFFF33]">
-            {columns.map((col, index) => (
+            {columns.map((col: any, index: number) => (
               <th key={index} className="py-4 px-4">
                 {col}
               </th>
@@ -44,11 +54,15 @@ export default function Table({ columns, data }: TableProps) {
 
         {/* Table Body */}
         <tbody>
-          {paginatedData.map((row, rowIndex) => (
+          {paginatedData.map((row: any, rowIndex: number) => (
             <tr key={rowIndex} className="border-b border-[#FFFFFF33]">
-              <td className="py-4 px-4">{row.date}</td>
-              <td className="py-4 px-4">{row.invoiceNumber}</td>
-              <td className="py-4 px-4">{row.amount}</td>
+              <td className="py-4 px-4">
+                {row.startDate.toString().split("T")[0]}
+              </td>
+              <td className="py-4 px-4">
+                {generateInvoiceId(row.userId, row.productId, row._id)}
+              </td>
+              <td className="py-4 px-4">€{row.price}</td>
               <td className="py-4 px-4 bg-gradient-to-r from-customgreen to-customblue bg-clip-text text-transparent">
                 {row.productName}
               </td>

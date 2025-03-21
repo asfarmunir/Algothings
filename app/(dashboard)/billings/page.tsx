@@ -7,13 +7,100 @@ import Button from "@/components/ui/Button";
 import Image from "next/image";
 import InputField from "@/components/ui/InputField";
 import useBillingDetails from "@/hooks/useBillingDetails";
-
+import { useCart } from "@/lib/CartContext";
+import { IoMdRemoveCircleOutline } from "react-icons/io";
+import { TiShoppingCart } from "react-icons/ti";
+import { useRouter } from "next//navigation";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { useSession } from "next-auth/react";
 export default function BillingDetails() {
+  const router = useRouter();
+  const { data: session } = useSession();
+  const [loading, setLoading] = useState(false);
+  const {
+    cart,
+    setCart,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    subscription,
+    setSubscription,
+    updatePlatform,
+    platform,
+  } = useCart();
+
+  useEffect(() => {
+    if (!subscription) {
+      router.push("/subscription");
+    }
+    if (!cart.length) {
+      router.push("/subscription");
+    }
+  }, []);
   const { formData, isSubmitting, error, handleInputChange, handleSubmit } =
     useBillingDetails();
+  console.log("🚀 ~ BillingDetails ~ formData:", formData);
 
   const handleSelectCountry = (value: string) => {
     handleInputChange("country", value);
+  };
+
+  const checkout = async () => {
+    if (!platform) {
+      toast.error("Please select a platform");
+      return;
+    }
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.country ||
+      !formData.state ||
+      !formData.city ||
+      !formData.zip ||
+      !formData.address
+    ) {
+      toast.error("Please fill all the fields");
+      return;
+    }
+
+    setLoading(true);
+    const res = await fetch("/api/stripe-checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        cart: cart.map((product) => ({
+          id: product.id,
+          name: product.name,
+          priceId: product.priceId,
+          price: subscription?.price,
+        })),
+        metadata: {
+          type: subscription?.type,
+          //@ts-ignore
+          userId: session!.user!.id,
+          platform,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          country: formData.country,
+          state: formData.state,
+          city: formData.city,
+          zip: formData.zip,
+          address: formData.address,
+        },
+      }),
+    });
+    setLoading(false);
+    const data = await res.json();
+    console.log("🚀 ~ checkout ~ data:", data);
+    // if (data.url) window.location.href = data.url;
+    if (data.url) {
+      window.open(data.url, "_blank"); // ✅ Open in a new tab
+    }
   };
 
   return (
@@ -196,82 +283,122 @@ export default function BillingDetails() {
                   </form>
                 </div>
               </div>
-              <div className="w-full lg:w-1/3">
+              <div className=" w-full lg:w-[30%] max-w-xl">
                 <h1 className="text-3xl lg:text-2xl font-semibold">Cart</h1>
                 <div className="py-1">
-                  <p className="text-sm py-2">Choose Trading Platform</p>
-                  <div className=" w-80">
-                    {/* <Dropdown
-                      options={["Select 1", "Select 2", "Select 3"]}
-                      onSelect={handleSelectCountry}
-                      placeholder="Select Platform"
-                      className="bg-[#03100C] py-2  text-sm w-full"
-                      textclassName=""
-                      dropdownClass=" w-60 lg:w-44"
-                    /> */}
-                  </div>
-                  <div className="text-end mt-1">
-                    <Link href={""} className="text-sm hover:underline">
-                      Remove All
-                    </Link>
-                  </div>
-
-                  <div className="flex flex-col gap-4 mt-2">
-                    {Array.from({ length: 1 }).map((_, item) => (
-                      <div
-                        key={item}
-                        className="bg-[#03100C]  py-2 px-4 rounded-lg flex flex-row gap-3"
+                  {/* <Dropdown
+                    
+                    options={["MultiCharts", "TradeStation ", "MetaTrader "]}
+                    onSelect={
+                      //@ts-ignore
+                      (platform: string) => updatePlatform(platform)
+                    }
+                    placeholder="Select Platform"
+                    className="bg-[#03100C] py-2  text-sm w-full"
+                    textclassName=""
+                    dropdownClass=" w-60 lg:w-44"
+                  /> */}
+                  {cart.length ? (
+                    <div className="text-end my-2">
+                      <button
+                        onClick={clearCart}
+                        className="text-xs 2xl:text-sm hover:underline"
                       >
-                        <Image
-                          src="/images/logo1.svg"
-                          width={35}
-                          height={20}
-                          alt="Logo"
-                        />
-                        <div className="w-full flex flex-col gap-4">
-                          <div className="flex flex-row justify-between items-center  gap-12">
-                            <p className="truncate text-sm lg:text-xs">
-                              Asuras Dragonair Bot #169
-                            </p>
-                            <p className="text-sm lg:text-xs"> €148</p>
-                          </div>
-                          <div className="w-full flex flex-row  gap-36 items-center justify-between">
-                            <p className="text-customgray text-nowrap text-sm lg:text-[10px]">
-                              Profit Target
-                            </p>
-                            <div>
-                              <Dropdown
-                                options={["1", "2", "3"]}
-                                onSelect={handleSelectCountry}
-                                placeholder="1"
-                                className="bg-[#D9D9D91A] text-xs w-[50px] border border-black text-center"
-                              />
+                        Remove All
+                      </button>
+                    </div>
+                  ) : null}
+                  {cart.length ? (
+                    <div className="flex flex-col gap-4">
+                      {/* Item 1 */}
+                      {cart.map((item, index) => (
+                        <div
+                          key={index}
+                          className="bg-[#03100C] py-2 px-4 lg:px-2 rounded-lg flex flex-row gap-3"
+                        >
+                          <Image
+                            src="/images/logo1.svg"
+                            width={35}
+                            height={20}
+                            alt="Logo"
+                          />
+                          <div className="w-full flex flex-col gap-2">
+                            <div className="flex flex-row justify-between  ">
+                              <p className="truncate capitalize text-sm 2xl:text-base">
+                                {item.name}
+                              </p>
+                              <p className="text-sm 2xl:text-base font-semibold">
+                                €{subscription?.price}
+                              </p>
+                            </div>
+                            <div className="w-full flex flex-row justify-between gap-16 items-center">
+                              <p className="text-customgray text-nowrap text-xs 2xl:text-[14px]">
+                                Profit Target
+                              </p>
+                              <div>
+                                {/* <Dropdown
+                                            options={["0", "1", "2", "3"]}
+                                            onSelect={handleSelect}
+                                            placeholder="1"
+                                            className="bg-[#D9D9D91A] text-sm lg:text-xs w-[50px] border border-black text-center"
+                                          /> */}
+                                <button onClick={() => removeFromCart(item.id)}>
+                                  <IoMdRemoveCircleOutline className="text-xl text-customgreen" />
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
 
-                    <div className="flex flex-col gap-2 text-sm">
-                      <div className="flex flex-row justify-between gap-5">
-                        <p className="text-customlightgray">Subtotal</p>
-                        <p> €200</p>
+                      {/* details */}
+                      <div className="flex flex-col gap-2 text-sm">
+                        <div className="flex flex-row justify-between gap-5">
+                          <p className="text-customlightgray">Subtotal</p>
+                          <p>
+                            €
+                            {cart.reduce(
+                              (acc, item) => acc + subscription!.price,
+                              0
+                            )}
+                          </p>
+                        </div>
+                        <div className="flex flex-row justify-between gap-5">
+                          <p className="text-customlightgray">Tax</p>
+                          <p>€0.00</p>
+                        </div>
+                        <div className="flex flex-row justify-between gap-5">
+                          <p className="text-customlightgray">Total</p>
+                          <p className="font-semibold">
+                            €
+                            {cart.reduce(
+                              (acc, item) => acc + subscription!.price,
+                              0
+                            )}
+                          </p>
+                        </div>
                       </div>
-                      <div className="flex flex-row justify-between gap-5">
-                        <p className="text-customlightgray">Tax</p>
-                        <p> €0.00</p>
-                      </div>
-                      <div className="flex flex-row justify-between gap-5">
-                        <p className="text-customlightgray">Total</p>
-                        <p className="font-semibold"> €208</p>
-                      </div>
+
+                      <Button
+                        label={loading ? "Processing..." : "Checkout"}
+                        disabled={loading}
+                        onClick={checkout}
+                        className="bg-gradient-to-r disabled:opacity-40  from-customgreen to-customblue py-2 2xl:py-3 text-sm  2xl:text-base text-black font-semibold rounded-md w-full"
+                      />
                     </div>
-
-                    <Button
-                      label="Next"
-                      className="bg-gradient-to-r  from-customgreen to-customblue py-3 text-sm text-white rounded-md w-full"
-                    />
-                  </div>
+                  ) : (
+                    <div className="flex items-center justify-center gap-4 flex-col bg-customgreen/10 rounded-lg p-7 my-4">
+                      <p className="pt-4">
+                        <TiShoppingCart className="text-5xl  text-customgreen" />
+                      </p>
+                      <p className="text-sm 2xl:text-base font-semibold text-customgreen">
+                        Your cart is empty
+                      </p>
+                      <p className="text-xs 2xl:text-sm text-customlight pb-6">
+                        Add your favourite strategies to the cart
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

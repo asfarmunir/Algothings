@@ -22,11 +22,13 @@ export default function Algorithm() {
 
   const {
     cart,
+    setCart,
     addToCart,
     removeFromCart,
     clearCart,
     subscription,
     setSubscription,
+    updatePlatform,
   } = useCart();
   const router = useRouter();
 
@@ -34,7 +36,8 @@ export default function Algorithm() {
     if (!subscription) {
       router.push("/subscription");
     }
-  }, [subscription]);
+    if (subscription) clearCart();
+  }, []);
 
   return (
     <>
@@ -78,11 +81,10 @@ export default function Algorithm() {
                           />
                           <div className="text-start">
                             <h1 className="text-[16px] text-start  tracking-wide capitalize font-semibold">
-                              Portfolio Strategy
+                              TAF Genesis
                             </h1>
                             <p className="text-customgray text-[12px]">
-                              This portfolio integrates all 10 strategies,
-                              delivering a range
+                              The Ultimate Strategy Trading Portfolio
                             </p>
                           </div>
                         </div>
@@ -118,8 +120,12 @@ export default function Algorithm() {
                               )}
                               onClick={() =>
                                 addToCart({
-                                  id: "portfolio",
-                                  name: "portfolio strategy",
+                                  id: "taf-genesis",
+                                  name: "TAF Genesis",
+                                  priceId:
+                                    subscription?.type === "monthly"
+                                      ? "price_1QuXBfC5ofyYVWUT1FOYcOmp"
+                                      : "price_1R4pVgC5ofyYVWUTB0Vggbip",
                                 })
                               }
                               label="Add to Cart"
@@ -267,7 +273,7 @@ export default function Algorithm() {
                   options={["MultiCharts", "TradeStation ", "MetaTrader "]}
                   onSelect={
                     //@ts-ignore
-                    (platform: string) => console.log(platform)
+                    (platform: string) => updatePlatform(platform)
                   }
                   placeholder="Select Platform"
                   className="bg-[#03100C] py-2  text-sm w-full"
@@ -332,19 +338,23 @@ export default function Algorithm() {
                         <div className="bg-black rounded-xl p-1 flex w-full">
                           <button
                             disabled={subscription?.type === "monthly"}
-                            onClick={() =>
+                            onClick={() => {
                               setSubscription(
                                 //@ts-ignore
                                 (subscription: Subscription) => ({
                                   ...subscription,
                                   type: "monthly",
-                                  price: Math.ceil(
-                                    subscription.price +
-                                      subscription.price * 0.1
-                                  ),
+                                  price: 698,
                                 })
-                              )
-                            }
+                              );
+                              //@ts-ignore
+                              setCart((prevCart) =>
+                                prevCart.map((item: any) => ({
+                                  ...item,
+                                  priceId: "price_1QuXBfC5ofyYVWUT1FOYcOmp", // Monthly Plan ID
+                                }))
+                              );
+                            }}
                             className={`${
                               subscription?.type === "monthly"
                                 ? "bg-gradient-to-r from-customgreen to-customblue text-black"
@@ -355,16 +365,23 @@ export default function Algorithm() {
                           </button>
                           <button
                             disabled={subscription?.type === "annual"}
-                            onClick={() =>
+                            onClick={() => {
                               setSubscription(
                                 //@ts-ignore
                                 (subscription: Subscription) => ({
                                   ...subscription,
                                   type: "annual",
-                                  price: Math.ceil(subscription.price * 0.9),
+                                  price: 629,
                                 })
-                              )
-                            }
+                              );
+                              //@ts-ignore
+                              setCart((prevCart) =>
+                                prevCart.map((item: any) => ({
+                                  ...item,
+                                  priceId: "price_1R4pVgC5ofyVWUTB0Vggbip", // Annual Plan ID
+                                }))
+                              );
+                            }}
                             className={`${
                               subscription?.type === "annual"
                                 ? "bg-gradient-to-r from-customgreen to-customblue text-black"

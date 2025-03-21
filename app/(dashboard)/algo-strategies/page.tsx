@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { products } from "@/lib/products";
 import { Subscription, useCart } from "@/lib/CartContext";
 import { TiShoppingCart } from "react-icons/ti";
+import toast from "react-hot-toast";
 
 export default function Algorithm() {
   const {
@@ -22,6 +23,9 @@ export default function Algorithm() {
     clearCart,
     subscription,
     setSubscription,
+    updatePlatform,
+    setCart,
+    platform,
   } = useCart();
   const router = useRouter();
 
@@ -29,7 +33,8 @@ export default function Algorithm() {
     if (!subscription) {
       router.push("/subscription");
     }
-  }, [subscription]);
+    if (subscription) clearCart();
+  }, []);
 
   return (
     <>
@@ -97,12 +102,24 @@ export default function Algorithm() {
                               disabled={cart.some(
                                 (item) => item.id === product.id
                               )}
-                              onClick={() =>
+                              onClick={() => {
                                 addToCart({
                                   id: product.id,
                                   name: product.title,
-                                })
-                              }
+                                  priceId:
+                                    subscription?.type === "monthly"
+                                      ? product.price_id_monthly
+                                      : product.price_id_annually,
+                                });
+                                setSubscription(
+                                  //@ts-ignore
+                                  (subscription: Subscription) => ({
+                                    ...subscription,
+                                    price:
+                                      subscription.type === "monthly" ? 98 : 89,
+                                  })
+                                );
+                              }}
                               className="bg-gradient-to-r disabled:opacity-40 disabled:cursor-not-allowed py-2 px-3 w-full text-center font-semibold text-nowrap uppercase text-[10px] 2xl:text-xs from-customgreen to-customblue text-black rounded-md "
                             >
                               Add to cart
@@ -129,10 +146,10 @@ export default function Algorithm() {
                   <p className="text-sm py-2">Choose Trading Platform</p>
                   <div className=" w-80">
                     <Dropdown
-                      options={["MultiCharts", "TradeStation ", "MetaTrader "]}
+                      options={["MultiCharts", "TradeStation", "MetaTrader"]}
                       onSelect={
                         //@ts-ignore
-                        (platform: string) => console.log(platform)
+                        (platform: string) => updatePlatform(platform)
                       }
                       placeholder="Select Platform"
                       className="bg-[#03100C] py-2  text-sm w-full"
@@ -198,19 +215,25 @@ export default function Algorithm() {
                           <div className="bg-black rounded-xl p-1 flex">
                             <button
                               disabled={subscription?.type === "monthly"}
-                              onClick={() =>
+                              onClick={() => {
                                 setSubscription(
                                   //@ts-ignore
                                   (subscription: Subscription) => ({
                                     ...subscription,
                                     type: "monthly",
-                                    price: Math.ceil(
-                                      subscription.price +
-                                        subscription.price * 0.1
-                                    ),
+                                    price: 98,
                                   })
-                                )
-                              }
+                                );
+                                //@ts-ignore
+                                setCart((prevCart) =>
+                                  prevCart.map((item: any) => ({
+                                    ...item,
+                                    priceId: products.find(
+                                      (product) => product.id === item.id
+                                    )?.price_id_monthly,
+                                  }))
+                                );
+                              }}
                               className={`${
                                 subscription?.type === "monthly"
                                   ? "bg-gradient-to-r from-customgreen to-customblue text-black"
@@ -221,16 +244,26 @@ export default function Algorithm() {
                             </button>
                             <button
                               disabled={subscription?.type === "annual"}
-                              onClick={() =>
+                              onClick={() => {
                                 setSubscription(
                                   //@ts-ignore
                                   (subscription: Subscription) => ({
                                     ...subscription,
                                     type: "annual",
-                                    price: Math.ceil(subscription.price * 0.9),
+                                    price: 89,
                                   })
-                                )
-                              }
+                                );
+
+                                //@ts-ignore
+                                setCart((prevCart) =>
+                                  prevCart.map((item: any) => ({
+                                    ...item,
+                                    priceId: products.find(
+                                      (product) => product.id === item.id
+                                    )?.price_id_annually,
+                                  }))
+                                );
+                              }}
                               className={`${
                                 subscription?.type === "annual"
                                   ? "bg-gradient-to-r from-customgreen to-customblue text-black"
@@ -271,7 +304,18 @@ export default function Algorithm() {
                           <div className="">
                             <Button
                               label="Switch Plan"
-                              onClick={() => router.push("/portfolio")}
+                              onClick={() => {
+                                setSubscription(
+                                  //@ts-ignore
+                                  (subscription: Subscription) => ({
+                                    ...subscription,
+                                    type: "monthly",
+                                    price: 698,
+                                  })
+                                );
+                                clearCart();
+                                router.push("/portfolio");
+                              }}
                               className="bg-gradient-to-b  p-2 rounded-lg text-black text-xs lexend from-customgreen to-customblue"
                             />
                           </div>
@@ -326,7 +370,13 @@ export default function Algorithm() {
 
                       <Button
                         label="Checkout"
-                        onClick={() => router.push("/billings")}
+                        onClick={() => {
+                          if (!platform) {
+                            toast.error("Please select a platform");
+                            return;
+                          }
+                          router.push("/billings");
+                        }}
                         className="bg-gradient-to-r  from-customgreen to-customblue py-2 2xl:py-3 text-sm  2xl:text-base text-black font-semibold rounded-md w-full"
                       />
                     </div>

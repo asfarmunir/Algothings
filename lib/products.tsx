@@ -35,6 +35,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. <a href='[LINK TO FULL DISCLAIMER]' class='text-customgreen underline'>Risk Disclaimer</a>.",
+    price_id_monthly: "price_1R4rmISHr6F8DFBRjPmtIuU0",
+    price_id_annually: "price_1R4rmrSHr6F8DFBROZ4fSmg2",
   },
   {
     id: "momentum-snap",
@@ -74,7 +76,10 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
+    price_id_monthly: "price_1R4rksSHr6F8DFBRs2VMfCaz",
+    price_id_annually: "price_1R4rksSHr6F8DFBRGifRlkU6",
   },
+
   {
     id: "volume-edge",
     title: "Volume Edge",
@@ -113,6 +118,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
+    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
+    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
   },
   {
     id: "break-master",
@@ -151,6 +158,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
+    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
+    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
   },
   {
     id: "bear-blitz",
@@ -189,6 +198,8 @@ export const products = [
 
     disclaimer:
       ": Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only. Review full risk disclosure on our site.",
+    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
+    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
   },
   {
     id: "dual-flow-nasdaq",
@@ -227,6 +238,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
+    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
+    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
   },
   {
     id: "precision-path-nasdaq",
@@ -265,6 +278,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
+    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
+    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
   },
   {
     id: "trend-path",
@@ -303,6 +318,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only. Review full risk disclosure on our site. <a href='[LINK TO FULL DISCLAIMER]'>Risk Disclaimer</a>.",
+    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
+    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
   },
   {
     id: "reversal-edge",
@@ -341,6 +358,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only. Review full risk disclosure on our site.",
+    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
+    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
   },
   {
     id: "gold-rush",
@@ -379,6 +398,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
+    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
+    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
   },
 
   // {

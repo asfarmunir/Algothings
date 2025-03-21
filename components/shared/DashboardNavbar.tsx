@@ -17,7 +17,6 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 const DashboardNavbar = () => {
   const { data: session } = useSession();
-  console.log("🚀 ~ DashboardNavbar ~ session:", session);
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const router = useRouter();
   const handleSidebarToggle = () => {

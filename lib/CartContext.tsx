@@ -10,15 +10,18 @@ export interface Subscription {
 interface Product {
   id: string;
   name: string;
-  // price: number;
+  priceId: string; // The Stripe price ID
 }
 
 interface CartContextType {
   subscription: Subscription | null;
   cart: Product[];
+  setCart: (cart: Product[]) => void;
+  platform: string | null; // ✅ Independent platform field
   setSubscription: (subscription: Subscription) => void;
   addToCart: (product: Product) => void;
   removeFromCart: (productId: string) => void;
+  updatePlatform: (platform: string) => void; // ✅ Function to update platform
   clearCart: () => void;
 }
 
@@ -26,8 +29,12 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [subscription, setSubscription] = useState<Subscription | null>(null);
-  console.log("🚀 ~ CartProvider ~ subscription:", subscription);
   const [cart, setCart] = useState<Product[]>([]);
+  const [platform, setPlatform] = useState<string | null>(null); // ✅ Independent platform state
+
+  console.log("🚀 ~ CartProvider ~ subscription:", subscription);
+  console.log("🚀 ~ CartProvider ~ cart:", cart);
+  console.log("🚀 ~ CartProvider ~ platform:", platform);
 
   const addToCart = (product: Product) => {
     setCart((prevCart) => [...prevCart, product]);
@@ -37,8 +44,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
 
+  const updatePlatform = (platform: string) => {
+    setPlatform(platform);
+  };
+
   const clearCart = () => {
     setCart([]);
+    setPlatform(null); // ✅ Resets platform when clearing the cart
   };
 
   return (
@@ -46,9 +58,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       value={{
         subscription,
         cart,
+        setCart,
+        platform,
         setSubscription,
         addToCart,
         removeFromCart,
+        updatePlatform,
         clearCart,
       }}
     >
