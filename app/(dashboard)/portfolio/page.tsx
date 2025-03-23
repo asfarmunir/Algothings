@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 import { useCart } from "@/lib/CartContext";
 import { TiShoppingCart } from "react-icons/ti";
-
+import toast from "react-hot-toast";
 export default function Algorithm() {
   const [activeButton, setActiveButton] = useState("Monthly");
   const handleSelect = (plan: string) => {
@@ -29,6 +29,7 @@ export default function Algorithm() {
     subscription,
     setSubscription,
     updatePlatform,
+    platform,
   } = useCart();
   const router = useRouter();
 
@@ -441,9 +442,20 @@ export default function Algorithm() {
                       </div>
                     </div>
 
-                    <Button
+                    {/* <Button
                       label="Checkout"
                       onClick={() => router.push("/billings")}
+                      className="bg-gradient-to-r  from-customgreen to-customblue py-2 2xl:py-3 text-sm  2xl:text-base text-black font-semibold rounded-md w-full"
+                    /> */}
+                    <Button
+                      label="Checkout"
+                      onClick={() => {
+                        if (!platform) {
+                          toast.error("Please select a platform");
+                          return;
+                        }
+                        router.push("/billings");
+                      }}
                       className="bg-gradient-to-r  from-customgreen to-customblue py-2 2xl:py-3 text-sm  2xl:text-base text-black font-semibold rounded-md w-full"
                     />
                   </div>

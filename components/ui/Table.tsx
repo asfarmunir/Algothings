@@ -92,17 +92,26 @@ export default function Table({ columns, data }: any) {
               </td>
             </tr>
           ))}
+          {!paginatedData.length && (
+            <tr>
+              <td colSpan={columns.length} className="py-8 px-4">
+                No data available
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
 
       {/* Pagination Component */}
-      <div className="mt-4 flex justify-end">
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-        />
-      </div>
+      {paginatedData.length ? (
+        <div className="mt-4 flex justify-end">
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

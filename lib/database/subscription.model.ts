@@ -21,6 +21,8 @@ export interface SubscriptionProps {
     address: string;
   };
   status: string;
+  subscriptionId: string;
+  subscribedItemId: string;
 }
 
 
@@ -49,6 +51,8 @@ const SubscriptionSchema = new Schema(
     type: { type: String, required: true },
     userInfo: { type: userInfoSchema, required: true }, // Add userInfo as a sub-schema
     status: { type: String, default: "active" },
+    subscriptionId: { type: String, trim: true },
+    subscribedItemId: { type: String, trim: true },
   },
   { timestamps: true }
 );

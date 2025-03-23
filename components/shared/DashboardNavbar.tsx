@@ -15,6 +15,7 @@ import { signOut } from "next-auth/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { BsThreeDotsVertical } from "react-icons/bs";
 const DashboardNavbar = () => {
   const { data: session } = useSession();
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -54,7 +55,7 @@ const DashboardNavbar = () => {
       </div>
 
       {/* Navbar */}
-      <div className="bg-transparent shadow-md py-4 px-3 flex flex-row justify-between items-center border border-[#FFFFFF1A]">
+      <div className="bg-transparent shadow-md py-3 px-3 flex flex-row justify-between items-center border border-[#FFFFFF1A]">
         <div>
           <button
             className="text-white text-2xl md:hidden"
@@ -73,9 +74,9 @@ const DashboardNavbar = () => {
               alt="profile"
             /> */}
             <div>
-              {/* <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-2 px-4">
-                  Ali Hassan
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center  p-2 bg-customgreen/20 rounded-full">
+                  <BsThreeDotsVertical className="text-lg 2xl:text-xl" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className=" border-none bg-green-800 mt-4 mr-4">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -86,10 +87,10 @@ const DashboardNavbar = () => {
                     Logout
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-              </DropdownMenu> */}
+              </DropdownMenu>
               <p className=" capitalize font-semibold pr-3">
                 {/* @ts-ignore */}
-                {session?.user?.firstName} {session?.user?.lastName}
+                {/* {session?.user?.firstName} {session?.user?.lastName} */}
               </p>
             </div>
           </div>

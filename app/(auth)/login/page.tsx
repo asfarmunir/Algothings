@@ -21,7 +21,7 @@ import Link from "next/link";
 import { DashboardLogin } from "@/components/ui/DashboardLogin";
 import useLoginForm from "@/hooks/useLoginForm";
 import { BeatLoader } from "react-spinners";
-
+import { useSession } from "next-auth/react";
 export default function Login() {
   const {
     showPassword,
@@ -35,7 +35,8 @@ export default function Login() {
     error,
     success,
   } = useLoginForm();
-
+  const session = useSession();
+  console.log("🚀 ~ Login ~ session:", session);
   return (
     <main className="px-4 md:px-10 py-5 h-screen gradient-corners flex items-center justify-center flex-row gap-8 2xl:gap-0 ">
       {/* Left Section */}

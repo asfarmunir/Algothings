@@ -38,7 +38,7 @@ export async function POST(req: Request) {
         products: productMetadata, // Store all product info as a single key
       },
       mode: "subscription",
-      success_url: `${YOUR_DOMAIN}/?success=true&session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${YOUR_DOMAIN}/dashboard?success=true&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${YOUR_DOMAIN}/?canceled=true`,
     });
 

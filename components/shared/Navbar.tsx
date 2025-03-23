@@ -9,11 +9,27 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { FaAngleRight } from "react-icons/fa6";
+import { signOut, useSession } from "next-auth/react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import toast from "react-hot-toast";
+import { GoArrowUpRight } from "react-icons/go";
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
   const router = useRouter();
+  const session = useSession();
+  console.log("🚀 ~ Navbar ~ session:", session);
+
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -60,6 +76,16 @@ export default function Navbar() {
       href: "/contact-us",
     },
   ];
+
+  const signOutUser = async () => {
+    await signOut({
+      redirect: false,
+      callbackUrl: "/login",
+    });
+    toast.success("Signed out successfully");
+    router.refresh();
+    router.replace("/login");
+  };
 
   return (
     <>
@@ -148,20 +174,28 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className="hidden  md:flex flex-row gap-3">
-          <button
-            className=" border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  "
-            onClick={() => router.push("/login")}
-          >
-            Login
-            <FaAngleRight />
-          </button>
-          <Button
-            label="Get Started"
-            onClick={() => router.push("/register")}
-            className="shadow-green-inner uppercase text-xs 2xl:text-sm rounded-full border-0 py-0 px-6  text-white hover:bg-green-600/20 active:bg-green-700/10 focus:ring-2 focus:ring-green-500/50 transition-all duration-200 ease-in-out"
-          />
-        </div>
+        {session.status === "authenticated" ? (
+          <Link href={"/dashboard"}>
+            <p className="flex items-center gap-1 tracking-wide hover:text-customgreen transition-colors rounded-full">
+              Dashboard <GoArrowUpRight className="text-lg 2xl:text-xl" />
+            </p>
+          </Link>
+        ) : (
+          <div className="hidden  md:flex flex-row gap-3">
+            <button
+              className=" border-0 uppercase text-xs 2xl:text-sm cursor-pointer hover:text-green-500 px-4 inline-flex items-center gap-1.5   transition-all  "
+              onClick={() => router.push("/login")}
+            >
+              Login
+              <FaAngleRight />
+            </button>
+            <Button
+              label="Get Started"
+              onClick={() => router.push("/register")}
+              className="shadow-green-inner uppercase text-xs 2xl:text-sm rounded-full border-0 py-0 px-6  text-white hover:bg-green-600/20 active:bg-green-700/10 focus:ring-2 focus:ring-green-500/50 transition-all duration-200 ease-in-out"
+            />
+          </div>
+        )}
 
         {/* Burger Menu for md and smaller screens */}
         <div className=" md:hidden flex items-center bg-black">
@@ -215,18 +249,26 @@ export default function Navbar() {
               </nav>
             ))}
 
-            <div className="flex flex-col gap-3 py-4 ">
-              <Button
-                label="Login"
-                className=" border-0 bg-customcard rounded-full hover:cursor-pointer"
-                onClick={() => router.push("/login")}
-              />
-              <Button
-                label="Get Started"
-                onClick={() => router.push("/register")}
-                className="shadow-green-inner rounded-full border-0 py-2 px-6"
-              />
-            </div>
+            {session.status === "authenticated" ? (
+              <Link href={"/dashboard"}>
+                <p className="flex items-center gap-1 tracking-wide hover:text-customgreen transition-colors rounded-full">
+                  Dashboard <GoArrowUpRight className="text-lg 2xl:text-xl" />
+                </p>
+              </Link>
+            ) : (
+              <div className="flex flex-col gap-3 py-4 ">
+                <Button
+                  label="Login"
+                  className=" border-0 bg-customcard rounded-full hover:cursor-pointer"
+                  onClick={() => router.push("/login")}
+                />
+                <Button
+                  label="Get Started"
+                  onClick={() => router.push("/register")}
+                  className="shadow-green-inner rounded-full border-0 py-2 px-6"
+                />
+              </div>
+            )}
           </div>
         )}
       </motion.div>

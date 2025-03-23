@@ -35,6 +35,7 @@ import toast from "react-hot-toast";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { SubscriptionProps } from "@/lib/database/subscription.model";
+import Button from "../ui/Button";
 const tableTitle = [
   "Date",
   "Invoice Number",
@@ -60,8 +61,10 @@ const Profile = ({
     passwordData,
     setPasswordData,
   } = useProfileUpdate();
+  const [subscriptions, setSubscriptions] = useState(userSubscriptions);
   const [activebtn, setActivebtn] = useState("personal");
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setProfile((prev) => ({ ...prev, [name]: value }));
@@ -124,6 +127,44 @@ const Profile = ({
 
   const handleDropdownSelect = (value: string) => {
     console.log("Selected Account Type:", value);
+  };
+
+  const handleUnsubscribe = async (
+    subscriptionId: string,
+    subscribedItemId: string
+  ) => {
+    console.log("🚀 ~ subscribedItemId:", subscribedItemId);
+    console.log("🚀 ~ subscriptionId:", subscriptionId);
+    if (!subscriptionId || !subscribedItemId) return;
+
+    try {
+      setIsLoading(true);
+      const response = await fetch("/api/unsubscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ subscriptionId, subscribedItemId }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(data.message);
+        setIsLoading(false);
+        setIsModalOpen(false);
+        setSubscriptions(
+          subscriptions.filter(
+            (sub) => sub.subscribedItemId !== subscribedItemId
+          )
+        );
+      } else {
+        toast.error(data.error);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.error("❌ Unsubscribe failed:", error);
+    }
   };
 
   return (
@@ -519,55 +560,125 @@ const Profile = ({
 
               {activebtn === "billing" && (
                 <div className="overflow-x-auto">
-                  <Table columns={tableTitle} data={userSubscriptions} />
+                  <Table columns={tableTitle} data={subscriptions} />
                 </div>
               )}
 
               {activebtn === "subscriptions" && (
-                <div className="grid grid-cols-1  md:grid-cols-2 gap-4 mt-4 p-2 2xl:p-4">
-                  {Array.from({ length: 1 }).map((_, index) => (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-r from-[#45F1751A] to-[#00C3CE1A] p-[20px] rounded-[20px]"
-                    >
-                      <div className="flex flex-row items-center justify-between gap-1">
-                        <div className="flex flex-row items-center gap-3">
-                          <Image
-                            src="/images/logo1.svg"
-                            width={30}
-                            height={20}
-                            className="
+                <>
+                  {!subscriptions.length && (
+                    <div className="flex py-10 2xl:py-16 items-center flex-col justify-center">
+                      <Image
+                        src="/logo.svg"
+                        alt="logo"
+                        width={100}
+                        height={100}
+                        className="
+                                      w-[80px] h-[80px]
+                                      2xl:w-[100px] 2xl:h-[100px]
+                                      "
+                      />
+                      <h1 className="text-xl">No Active Subscriptions</h1>
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1  md:grid-cols-2 gap-4 mt-4 p-2 2xl:p-4">
+                    {subscriptions.map((sub, index) => (
+                      <div
+                        key={index}
+                        className="bg-gradient-to-r from-[#45F1751A] to-[#00C3CE1A] p-[20px] rounded-[20px]"
+                      >
+                        <div className="flex flex-row items-center justify-between gap-1">
+                          <div className="flex flex-row items-center gap-3">
+                            <Image
+                              src="/images/logo1.svg"
+                              width={30}
+                              height={20}
+                              className="
                                                2xl:w-[40px] 2xl:h-[40px]
                                               "
-                            alt="Logo"
-                          />
+                              alt="Logo"
+                            />
 
-                          <h1 className="text-sm md:text-sm uppercase font-semibold">
-                            Trend Hunter
-                          </h1>
-                          <h3 className="bg-gradient-to-r from-[#45F175] to-[#00C3CE]  text-black px-6 py-1 rounded-full">
-                            Active
-                          </h3>
+                            <h1 className="text-sm md:text-sm uppercase font-semibold">
+                              {sub.productName}
+                            </h1>
+                            <h3 className="bg-gradient-to-r capitalize from-[#45F175] to-[#00C3CE]  text-black px-6 py-1 rounded-full">
+                              {sub.status}
+                            </h3>
+                          </div>
+
+                          <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="bg-red-700/40  bg-clip-border p-[1px] text-red-500 px-6 py-1 rounded-full inline-flex items-center gap-2 "
+                          >
+                            <TbCancel />
+                            Unsubscribe
+                          </button>
+                          {isModalOpen && (
+                            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+                              <div className="bg-green-950 px-8 py-10 rounded-lg max-w-xl w-full">
+                                <div className="flex justify-center gap-4 flex-col items-center mb-6">
+                                  <Image
+                                    src="/logo.svg"
+                                    width={70}
+                                    alt="hehe"
+                                    height={70}
+                                  />
+                                  <h2 className="text-xl font-bold">
+                                    Are You Sure You Want to Unsubscribe?
+                                  </h2>
+                                  <p>
+                                    You will lose access to all the benefits of
+                                    this subscription.
+                                  </p>
+                                </div>
+                                <div className="flex justify-between items-center gap-4">
+                                  <button
+                                    disabled={isLoading}
+                                    onClick={() => setIsModalOpen(false)}
+                                    className="bg-[#FFFFFF33] disabled:opacity-40 font-semibold rounded-full w-full py-3 px-5"
+                                  >
+                                    No
+                                  </button>
+                                  <button
+                                    disabled={isLoading}
+                                    onClick={() =>
+                                      handleUnsubscribe(
+                                        sub.subscriptionId,
+                                        sub.subscribedItemId
+                                      )
+                                    }
+                                    className="bg-customgreen disabled:opacity-40 text-black font-semibold rounded-full w-full py-3 px-5"
+                                  >
+                                    Unsubscribe
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          )}
                         </div>
-                        <button className="bg-red-700/40  bg-clip-border p-[1px] text-red-500 px-6 py-1 rounded-full inline-flex items-center gap-2 ">
-                          <TbCancel />
-                          Unsubscribe
-                        </button>
+
+                        <div className="flex flex-row gap-3 mt-8">
+                          <div className="w-full bg-[#FFFFFF1A] py-3 rounded-full flex gap-1 justify-center flex-col xl:flex-row text-center text-sm">
+                            <p className="text-[#FFFFFF80] pr-1">Start Date:</p>{" "}
+                            <p className="text-[#FFFFFF] pr-1">
+                              {sub.startDate.toString().split("T")[0]}
+                            </p>
+                          </div>
+                          <div className="w-full bg-[#FFFFFF1A] py-3 rounded-full flex gap-1 justify-center flex-col xl:flex-row text-center text-sm">
+                            <p className="text-[#FFFFFF80] pr-1">End Date:</p>{" "}
+                            <p className="text-[#FFFFFF] pr-1">
+                              {sub.endDate.toString().split("T")[0]}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex flex-row gap-3 mt-8">
-                        <p className="w-full bg-[#FFFFFF1A] py-3 text-center rounded-full text-sm">
-                          <span className="text-[#FFFFFF80]">Start Date:</span>{" "}
-                          00/00/0000
-                        </p>
-                        <p className="w-full bg-[#FFFFFF1A] py-3 rounded-full text-center text-sm">
-                          <span className="text-[#FFFFFF80]">End Date:</span>{" "}
-                          00/00/0000
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                </>
               )}
+
               {activebtn === "billingDetails" && (
                 <div className="">
                   <h3 className="font-gilroy font-medium text-xl 2xl:text-2xl pt-6">

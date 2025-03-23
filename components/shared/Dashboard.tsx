@@ -132,6 +132,22 @@ export default function Dashboard({
                   <button>History</button>
                 </div> */}
 
+                {!userSubscriptions.length && (
+                  <div className="flex py-10 2xl:py-16 items-center flex-col justify-center">
+                    <Image
+                      src="/logo.svg"
+                      alt="logo"
+                      width={100}
+                      height={100}
+                      className="
+                      w-[80px] h-[80px]
+                      2xl:w-[100px] 2xl:h-[100px]
+                      "
+                    />
+                    <h1 className="text-xl">No Active Subscriptions</h1>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1  md:grid-cols-2 gap-4 mt-4 p-2 2xl:p-4">
                   {userSubscriptions.map((subscription, index) => (
                     <div

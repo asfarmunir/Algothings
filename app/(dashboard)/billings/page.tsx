@@ -96,11 +96,10 @@ export default function BillingDetails() {
     });
     setLoading(false);
     const data = await res.json();
-    console.log("🚀 ~ checkout ~ data:", data);
-    // if (data.url) window.location.href = data.url;
-    if (data.url) {
-      window.open(data.url, "_blank"); // ✅ Open in a new tab
-    }
+    if (data.url) window.location.href = data.url;
+    // if (data.url) {
+    //   window.open(data.url, "_blank"); // ✅ Open in a new tab
+    // }
   };
 
   return (
@@ -301,7 +300,10 @@ export default function BillingDetails() {
                   {cart.length ? (
                     <div className="text-end my-2">
                       <button
-                        onClick={clearCart}
+                        onClick={() => {
+                          clearCart();
+                          router.push("/subscription");
+                        }}
                         className="text-xs 2xl:text-sm hover:underline"
                       >
                         Remove All
