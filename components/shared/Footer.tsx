@@ -286,7 +286,7 @@ export const Footer = () => {
           </div>
           <div className="  hidden pb-6 2xl:pb-8 border-b-2 border-customgreen/40 sm:flex items-center mx-8 sm:mx-16 2xl:mx-28 justify-between">
             <p className="text-sm 2xl:text-base">
-              <span className="font-thin">Copyright</span> © THe ALGOS FIELD
+              <span className="font-thin">Copyright</span> © THE ALGOS FIELD
             </p>
             <div className="flex  flex-row gap-2 items-center justify-start ">
               <FaInstagram className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 cursor-pointer rounded-full" />

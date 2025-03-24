@@ -118,8 +118,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
-    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
-    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
+    price_id_monthly: "price_1QuWijC5ofyYVWUTQv3XICJi",
+    price_id_annually: "price_1R5vWDC5ofyYVWUTHLv3POmE",
   },
   {
     id: "break-master",
@@ -158,8 +158,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
-    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
-    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
+    price_id_monthly: "price_1QuWjfC5ofyYVWUTuyJNXSz6",
+    price_id_annually: "price_1R5vY4C5ofyYVWUT0q7Lbfuk",
   },
   {
     id: "bear-blitz",
@@ -198,49 +198,10 @@ export const products = [
 
     disclaimer:
       ": Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only. Review full risk disclosure on our site.",
-    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
-    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
+    price_id_monthly: "price_1QuXAtC5ofyYVWUTTISXDIaM",
+    price_id_annually: "price_1R6AMRC5ofyYVWUT9JYpCa8I",
   },
-  {
-    id: "dual-flow-nasdaq",
-    title: "Dual Flow",
-    subtitle: "A Dynamic Strategy for Bullish & Bearish Markets",
-    description:
-      "<div class='space-y-3 text-white'>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Asset Class</h3>" +
-      "<p class='text-gray-300'>E-Mini Nasdaq 100 Futures (NQ) or E-Micro Nasdaq 100 Futures (MNQ)</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Trading Style</h3>" +
-      "<p class='text-gray-300'>Adaptive Long & Short Trading</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Analysis Method</h3>" +
-      "<p class='text-gray-300'>Momentum-Based Market Reversals</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Chart Bar Time</h3>" +
-      "<p class='text-gray-300'>5 min.</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Commission & Slippage Included</h3>" +
-      "<p class='text-gray-300'>$2 per contract for MNQ and $7.50 per contract for NQ.</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Why Choose Dual Flow?</h3>" +
-      "<p class='text-gray-300'><strong>Dual Flow</strong> is perfect for traders who want the flexibility to trade in both market directions. By tracking momentum shifts on 5-minute charts, it executes high-probability trades regardless of market trend.</p>" +
-      "<ul class='list-disc pl-5 space-y-1 text-gray-300'>" +
-      "<li>✔ Trades both long and short setups with precision.</li>" +
-      "<li>✔ Designed for traders who want flexibility in volatile markets.</li>" +
-      "<li>✔ Eliminates directional bias and adapts to market shifts in real time.</li>" +
-      "</ul>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Who Should Use Dual Flow?</h3>" +
-      "<p class='text-gray-300'>Traders who want a strategy that works in both bullish and bearish conditions.</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Minimum Budget</h3>" +
-      "<p class='text-gray-300'>$3,500 (if using one E-Micro MNQ contract) or $28,500 (if using one E-Mini NQ contract). These are suggested minimum amounts to effectively trade the strategy.</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Platforms</h3>" +
-      "<p class='text-gray-300'>MetaTrader 5 (coming soon), MultiCharts & TradeStation.</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Data Requirements</h3>" +
-      "<p class='text-gray-300'>Live data feed should be used. Minimum 5 trading days should be loaded on a 5-min time frame for live trading.</p>" +
-      "<h3 class='text-xl font-semibold text-customgreen'>Ready to Trade in Any Market Condition?</h3>" +
-      "<p class='text-lg font-bold text-start text-white'> Adapt to Market Conditions – Start Trading with Dual Flow!</p>" +
-      "</div>",
 
-    disclaimer:
-      "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
-    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
-    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
-  },
   {
     id: "precision-path-nasdaq",
     title: "Precision Path",
@@ -278,8 +239,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
-    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
-    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
+    price_id_monthly: "price_1QuWkFC5ofyYVWUTM9au9Y6H",
+    price_id_annually: "price_1R5vZyC5ofyYVWUTnEJKw33z",
   },
   {
     id: "trend-path",
@@ -318,8 +279,48 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only. Review full risk disclosure on our site. <a href='[LINK TO FULL DISCLAIMER]'>Risk Disclaimer</a>.",
-    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
-    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
+    price_id_monthly: "price_1QuXB9C5ofyYVWUTtRBcaAJN",
+    price_id_annually: "price_1R6AJ0C5ofyYVWUTFTM3NA20",
+  },
+  {
+    id: "dual-flow-nasdaq",
+    title: "Dual Flow",
+    subtitle: "A Dynamic Strategy for Bullish & Bearish Markets",
+    description:
+      "<div class='space-y-3 text-white'>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Asset Class</h3>" +
+      "<p class='text-gray-300'>E-Mini Nasdaq 100 Futures (NQ) or E-Micro Nasdaq 100 Futures (MNQ)</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Trading Style</h3>" +
+      "<p class='text-gray-300'>Adaptive Long & Short Trading</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Analysis Method</h3>" +
+      "<p class='text-gray-300'>Momentum-Based Market Reversals</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Chart Bar Time</h3>" +
+      "<p class='text-gray-300'>5 min.</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Commission & Slippage Included</h3>" +
+      "<p class='text-gray-300'>$2 per contract for MNQ and $7.50 per contract for NQ.</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Why Choose Dual Flow?</h3>" +
+      "<p class='text-gray-300'><strong>Dual Flow</strong> is perfect for traders who want the flexibility to trade in both market directions. By tracking momentum shifts on 5-minute charts, it executes high-probability trades regardless of market trend.</p>" +
+      "<ul class='list-disc pl-5 space-y-1 text-gray-300'>" +
+      "<li>✔ Trades both long and short setups with precision.</li>" +
+      "<li>✔ Designed for traders who want flexibility in volatile markets.</li>" +
+      "<li>✔ Eliminates directional bias and adapts to market shifts in real time.</li>" +
+      "</ul>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Who Should Use Dual Flow?</h3>" +
+      "<p class='text-gray-300'>Traders who want a strategy that works in both bullish and bearish conditions.</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Minimum Budget</h3>" +
+      "<p class='text-gray-300'>$3,500 (if using one E-Micro MNQ contract) or $28,500 (if using one E-Mini NQ contract). These are suggested minimum amounts to effectively trade the strategy.</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Platforms</h3>" +
+      "<p class='text-gray-300'>MetaTrader 5 (coming soon), MultiCharts & TradeStation.</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Data Requirements</h3>" +
+      "<p class='text-gray-300'>Live data feed should be used. Minimum 5 trading days should be loaded on a 5-min time frame for live trading.</p>" +
+      "<h3 class='text-xl font-semibold text-customgreen'>Ready to Trade in Any Market Condition?</h3>" +
+      "<p class='text-lg font-bold text-start text-white'> Adapt to Market Conditions – Start Trading with Dual Flow!</p>" +
+      "</div>",
+
+    disclaimer:
+      "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
+    price_id_monthly: "price_1QuWr4C5ofyYVWUTk8OmTg1w",
+    price_id_annually: "price_1R5vZAC5ofyYVWUTn3w4iTLg",
   },
   {
     id: "reversal-edge",
@@ -358,8 +359,8 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only. Review full risk disclosure on our site.",
-    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
-    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
+    price_id_monthly: "price_1QuWzpC5ofyYVWUTIqZOiAVD",
+    price_id_annually: "price_1R6AUyC5ofyYVWUTNxFRYcxm",
   },
   {
     id: "gold-rush",
@@ -398,48 +399,9 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
-    price_id_monthly: "price_1QuXBfC5ofyYVWUT1FOYcOmp",
-    price_id_annually: "price_1R4pVgC5ofyYVWUTB0Vggbip",
+    price_id_monthly: "price_1QuXBIC5ofyYVWUTNEFm1YYV",
+    price_id_annually: "price_1R6AFuC5ofyYVWUTq4A3xDov",
   },
-
-  // {
-  //   id: "surge-seeker",
-  //   title: "Surge Seeker",
-  //   subtitle: "Ride The Gold Rush",
-  //   description:
-  //     "<div class='space-y-3 text-white'>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Asset Class</h3>" +
-  //     "<p class='text-gray-300'>Micro Gold Futures (MGC)</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Trading Style</h3>" +
-  //     "<p class='text-gray-300'>Adaptive Momentum Long & Short Strategy</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Analysis Method</h3>" +
-  //     "<p class='text-gray-300'>Momentum</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Chart Bar Time</h3>" +
-  //     "<p class='text-gray-300'>5 min.</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Commission & Slippage Included</h3>" +
-  //     "<p class='text-gray-300'>$3 per contract for MGC.</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Why Choose Surge Seeker?</h3>" +
-  //     "<p class='text-gray-300'><strong>Surge Seeker</strong> is a momentum-based gold trading strategy ideal for traders who thrive on market movement and seek to capitalize on strong price trends.</p>" +
-  //     "<ul class='list-disc pl-5 space-y-1 text-gray-300'>" +
-  //     "<li>✔ Trades both long and short setups with precision.</li>" +
-  //     "<li>✔ Designed for traders and commodity enthusiasts who want flexibility in volatile markets.</li>" +
-  //     "<li>✔ Works in both bull and bear markets.</li>" +
-  //     "</ul>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Who Should Use Surge Seeker?</h3>" +
-  //     "<p class='text-gray-300'>Traders who thrive on market movements and seek to capitalize on strong price trends.</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Minimum Budget</h3>" +
-  //     "<p class='text-gray-300'>$2,500. This is the suggested minimum amount to effectively trade the strategy.</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Platforms</h3>" +
-  //     "<p class='text-gray-300'>MetaTrader 5 (coming soon), MultiCharts & TradeStation.</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Data Requirements</h3>" +
-  //     "<p class='text-gray-300'>Live data feed should be used. Minimum 5 trading days should be loaded on a 5-min time frame for live trading.</p>" +
-  //     "<h3 class='text-xl font-semibold text-customgreen'>Harness Gold’s Momentum!</h3>" +
-  //     "<p class='text-lg font-bold text-start text-white'> If you want to harness gold’s momentum, then this strategy is for you!</p>" +
-  //     "</div>",
-
-  //   disclaimer:
-  //     "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
-  // },
 ];
 
 export default products;

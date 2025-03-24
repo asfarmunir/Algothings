@@ -1,18 +1,60 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import Checkbox from "@/components/ui/Checkbox";
 import { DashboardLogin } from "@/components/ui/DashboardLogin";
 import InputField from "@/components/ui/InputField";
-import useEmailVerification from "@/hooks/useEmailVerification";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import toast from "react-hot-toast";
 
-export default function EmailVerification() {
+interface props {
+  params: {
+    id: string;
+  };
+  searchParams: {
+    token: string;
+  };
+}
+export default function EmailVerification({
+  params: { id },
+  searchParams: { token },
+}: props) {
+  const router = useRouter();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const handleSubmit = (e: any) => {
+  const [loading, setLoading] = useState(false);
+  const [validationError, setValidationError] = useState("");
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
+
+    if (password !== confirmPassword) {
+      setValidationError("Passwords do not match");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await axios.patch(
+        `/api/auth/reset-password/${id}?token=${token}`,
+        {
+          password: password,
+          confirmPassword: confirmPassword,
+          token,
+        }
+      );
+
+      if (response.status === 200) {
+        toast.success("Password reset successfully");
+        router.push("/login");
+      }
+    } catch (error) {
+      toast.error("An error occurred during the password reset");
+    }
+    setLoading(false);
   };
 
   return (
@@ -68,7 +110,9 @@ export default function EmailVerification() {
                       labelClass="text-white 2xl:text-lg"
                       inputClass="bg-[#FFFFFF14] px-4  w-full inner-glow2 placeholder:text-[#FFFFFF99] w-full py-[14px] text-[16px]"
                     />
-
+                    {validationError && (
+                      <p className="text-red-500 text-sm">{validationError}</p>
+                    )}
                     <Button
                       className="bg-gradient-to-r mt-4 font-semibold from-customgreen to-customblue text-black rounded-md my-2 py-[12px] text-[14px] w-full"
                       label="Update Password"

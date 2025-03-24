@@ -36,9 +36,12 @@ export default function Dashboard({
                     <GrAnnounce className="text-customgreen" />
                     Limited-Time Offer: 1 Month Free! Register by April 30th and
                     get 1 month of free access.
-                    <span className=" hidden sm:block underline border-b border-customblue font-bold ">
+                    <Link
+                      href={"/all-announcement"}
+                      className=" hidden sm:block underline border-b border-customblue font-bold "
+                    >
                       Learn more
-                    </span>
+                    </Link>
                   </p>
                   <RxCross2 className="text-customblue" />
                 </div>

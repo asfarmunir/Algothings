@@ -25,10 +25,10 @@ export const quick_links = [
     label: "Shop",
     href: "/products",
   },
-  {
-    label: "Pricing",
-    href: "/",
-  },
+  // {
+  //   label: "Pricing",
+  //   href: "/",
+  // },
   {
     label: "Blog",
     href: "/blog",

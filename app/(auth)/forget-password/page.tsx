@@ -5,14 +5,35 @@ import Checkbox from "@/components/ui/Checkbox";
 import { DashboardLogin } from "@/components/ui/DashboardLogin";
 import InputField from "@/components/ui/InputField";
 import useEmailVerification from "@/hooks/useEmailVerification";
+import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function EmailVerification() {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        // "https://app.vantagepicks.com/api/auth/reset-password",
+        "/api/reset-password",
+        {
+          email,
+        }
+      );
+      if (response.status === 200) {
+        toast.success("Reset link has been sent to your email!", {
+          icon: "📧",
+        });
+      }
+    } catch (error) {
+      toast.error("Error: User not found or issue sending email.");
+    }
+    setLoading(false);
   };
 
   return (
@@ -56,12 +77,13 @@ export default function EmailVerification() {
                     />
 
                     <Button
-                      className="bg-gradient-to-r mt-4 from-customgreen to-customblue text-black rounded-md my-2 py-[12px] text-[14px] w-full"
-                      label="Send Email"
+                      disabled={loading}
+                      className="bg-gradient-to-r disabled:opacity-40 mt-4 from-customgreen to-customblue text-black rounded-md my-2 py-[12px] text-[14px] w-full"
+                      label={loading ? "Sending Email..." : "Submit"}
                       type="submit"
                     />
                     <p className="uppercase text-white  text-[12px] py-4">
-                      You will receive an OTP on your registered email
+                      You will receive reset link on your registered email
                     </p>
                   </form>
                 </div>
