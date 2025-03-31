@@ -22,6 +22,7 @@ import { DashboardLogin } from "@/components/ui/DashboardLogin";
 import useLoginForm from "@/hooks/useLoginForm";
 import { BeatLoader } from "react-spinners";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 export default function Login() {
   const {
     showPassword,
@@ -35,8 +36,13 @@ export default function Login() {
     error,
     success,
   } = useLoginForm();
+  const router = useRouter();
   const session = useSession();
-  console.log("🚀 ~ Login ~ session:", session);
+
+  if (session.status === "authenticated") {
+    router.push("/dashboard");
+  }
+
   return (
     <main className="px-4 md:px-10 py-5 h-screen gradient-corners flex items-center justify-center flex-row gap-8 2xl:gap-0 ">
       {/* Left Section */}
@@ -111,7 +117,7 @@ export default function Login() {
               label={loading ? <BeatLoader color="#000" size={6} /> : "Log In"}
             />
 
-            <div className="flex items-center justify-between gap-2">
+            {/* <div className="flex items-center justify-between gap-2">
               <hr className="w-full h-px bg-[#FFFFFF33] border-0 " />
               <p>Or</p>
               <hr className="w-full h-px bg-[#FFFFFF33] border-0 " />
@@ -130,15 +136,10 @@ export default function Login() {
               >
                 <FaFacebook className="text-2xl text-[#45F175]" />
               </button>
-              {/* <button
-                type="button"
-                className="bg-[#FFFFFF1A] flex items-center justify-center rounded-md w-[40px] h-[40px]"
-              >
-                <FaXTwitter className="text-xl " />
-              </button> */}
-            </div>
 
-            <p className="text-center text-[14px] text-gray-400 ">
+            </div> */}
+
+            <p className="text-center text-[14px] pb-8 text-gray-400 ">
               Don't have an account?{" "}
               <a href="/register" className="text-[#01C0F9] underline">
                 Sign Up

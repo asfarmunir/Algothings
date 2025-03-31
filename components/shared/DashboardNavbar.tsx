@@ -16,6 +16,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { IoMenu } from "react-icons/io5";
 const DashboardNavbar = () => {
   const { data: session } = useSession();
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -75,8 +76,8 @@ const DashboardNavbar = () => {
             /> */}
             <div>
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center  p-2 bg-customgreen/20 rounded-full">
-                  <BsThreeDotsVertical className="text-lg 2xl:text-xl" />
+                <DropdownMenuTrigger className="flex items-center hover:bg-customgreen/60 transition-colors   p-2 bg-customgreen/20 rounded-full">
+                  <IoMenu className="text-lg 2xl:text-xl" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className=" border-none bg-green-800 mt-4 mr-4">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>

@@ -100,6 +100,7 @@ const Sidebar = ({
     const handleClickOutside = (event: any) => {
       if (
         sidebarRef.current && // Ensure the ref is defined
+        //@ts-ignore
         !sidebarRef.current.contains(event.target) // Click is outside sidebar
       ) {
         if (onClose) onClose(); // Call the onClose prop
@@ -193,7 +194,9 @@ const Sidebar = ({
         </ul>
       </nav>
       <Link
-        href={"/"}
+        href={"https://discord.gg/TJnaMHpw"}
+        target="_blank"
+        rel="noopener noreferrer"
         className=" absolute bottom-5 text-sm 2xl:text-base mt-auto bg-gradient-to-r w-[95%] gap-4 from-[#45F175]/50 to-[#00C3CE]/50 inline-flex items-center justify-center  text-white text-center  rounded-lg  py-3 2xl:py-4"
       >
         <Image

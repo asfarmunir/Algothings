@@ -5,7 +5,7 @@ import { DashboardLogin } from "@/components/ui/DashboardLogin";
 import InputField from "@/components/ui/InputField";
 import Image from "next/image";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -17,11 +17,13 @@ interface props {
     token: string;
   };
 }
-export default function EmailVerification({
-  params: { id },
-  searchParams: { token },
-}: props) {
+export default function EmailVerification() {
   const router = useRouter();
+  const params = useParams(); // ✅ Get params correctly
+  const searchParams = useSearchParams(); // ✅ Get query params correctly
+  const id = params?.id as string; // ✅ Extract ID safely
+  const token = searchParams.get("token") as string; // ✅ Extract token safely
+
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,6 +32,7 @@ export default function EmailVerification({
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
+    setValidationError("");
 
     if (password !== confirmPassword) {
       setValidationError("Passwords do not match");
@@ -39,10 +42,11 @@ export default function EmailVerification({
 
     try {
       const response = await axios.patch(
-        `/api/auth/reset-password/${id}?token=${token}`,
+        `/api/reset-password/${id}?token=${token}`,
         {
           password: password,
           confirmPassword: confirmPassword,
+          id,
           token,
         }
       );
@@ -52,6 +56,7 @@ export default function EmailVerification({
         router.push("/login");
       }
     } catch (error) {
+      console.log("Error resetting password:", error);
       toast.error("An error occurred during the password reset");
     }
     setLoading(false);
@@ -111,12 +116,15 @@ export default function EmailVerification({
                       inputClass="bg-[#FFFFFF14] px-4  w-full inner-glow2 placeholder:text-[#FFFFFF99] w-full py-[14px] text-[16px]"
                     />
                     {validationError && (
-                      <p className="text-red-500 text-sm">{validationError}</p>
+                      <p className="text-red-500 text-sm text-start mt-2">
+                        {validationError}
+                      </p>
                     )}
                     <Button
-                      className="bg-gradient-to-r mt-4 font-semibold from-customgreen to-customblue text-black rounded-md my-2 py-[12px] text-[14px] w-full"
+                      className="bg-gradient-to-r disabled:opacity-40 mt-4 font-semibold from-customgreen to-customblue text-black rounded-md my-2 py-[12px] text-[14px] w-full"
                       label="Update Password"
                       type="submit"
+                      disabled={loading}
                     />
                     <p className="uppercase text-white  text-[12px] py-3">
                       You will be redirected to login page!

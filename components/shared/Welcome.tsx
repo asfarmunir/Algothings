@@ -87,10 +87,19 @@ export const Welcome = () => {
                   />
                 </button>
               </div>
-              <Button
-                label="Join our Discord"
-                className="bg-gradient-to-r  text-[14px] sm:text-base py-3.5 px-5 font-semibold from-customgreen to-customblue rounded-[6px] text-black  sm:w-auto"
-              />
+              <div className="inline-flex text-[14px]  sm:text-base flex-col sm:flex-row items-center p-[1px] bg-gradient-to-r from-customgreen to-customblue bg-clip-border rounded-lg">
+                <button
+                  className="inline-flex z-50 "
+                  onClick={() => {
+                    router.push("https://discord.gg/TJnaMHpw");
+                  }}
+                >
+                  <p className="bg-gradient-to-r  text-[14px] sm:text-base py-3.5 px-5 font-semibold from-customgreen to-customblue rounded-[6px] text-black  sm:w-auto">
+                    {" "}
+                    Join our Discord
+                  </p>
+                </button>
+              </div>
             </div>
           </motion.div>
 
@@ -237,6 +246,7 @@ export const Welcome = () => {
                     </ul>
 
                     <p className="text-sm py-2">
+                      {/* @ts-ignore */}
                       {stepContent[activeStep - 1].endDescription}
                     </p>
 
@@ -293,6 +303,7 @@ export const Welcome = () => {
                           ))}
                         </ul>
 
+                        {/* @ts-ignore */}
                         <p className="text-sm py-2">{step.endDescription}</p>
 
                         <div className="my-4 flex items-center justify-center gap-3 ">

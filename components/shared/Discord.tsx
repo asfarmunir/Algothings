@@ -69,7 +69,7 @@ export function DiscordCommunity() {
                   className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
                 />
                 <button
-                  onClick={() => router.push("/")}
+                  onClick={() => router.push("https://discord.gg/TJnaMHpw")}
                   className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
                 >
                   <BsDiscord className="text-lg" />

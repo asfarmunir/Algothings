@@ -174,9 +174,7 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                             className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
                           />
                           <button
-                            onClick={() =>
-                              router.push("/products?tab=PORTFOLIO")
-                            }
+                            onClick={() => router.push("/products/taf-details")}
                             className="flex flex-row gap-2 items-center uppercase text-nowrap p-0 text-sm"
                           >
                             <GoArrowUpRight className="text-lg" />

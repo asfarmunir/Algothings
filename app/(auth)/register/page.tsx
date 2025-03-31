@@ -214,7 +214,7 @@ export default function Register() {
                 }
               />
 
-              <div className="flex items-center justify-between gap-2">
+              {/* <div className="flex items-center justify-between gap-2">
                 <hr className="w-full h-px bg-[#FFFFFF33] border-0 " />
                 <p>Or</p>
                 <hr className="w-full h-px bg-[#FFFFFF33] border-0 " />
@@ -233,14 +233,14 @@ export default function Register() {
                 >
                   <FaFacebook className="text-2xl text-customgreen" />
                 </button>
-                {/* <button
+                <button
                   type="button"
                   className="bg-[#FFFFFF1A] flex items-center justify-center rounded-md w-[50px] h-[50px]"
                 >
                   <FaXTwitter className="text-2xl " />
-                </button> */}
-              </div>
-              <p className="text-center text-[14px] text-white">
+                </button>
+              </div> */}
+              <p className="text-center text-[14px] pb-8 text-white">
                 Have an account?{" "}
                 <a href="/login" className="text-[#00FF7F]">
                   Log in

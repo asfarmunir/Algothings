@@ -43,10 +43,20 @@ export default function useRegisterForm() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setError(false);
+        setSuccess(false);
+        setLoading(false);
+
         if (!isChecked) {
             toast.error('Please agree to the terms os service');
             return;
         }
+
+        if( !formData.firstName || !formData.lastName || !formData.username || !formData.email || !formData.mobile || !formData.password || !formData.confirmPassword ){
+            toast.error('Please fill all required fields');
+            return;
+        }
+
         if(
             formData.password !== formData.confirmPassword
         ){

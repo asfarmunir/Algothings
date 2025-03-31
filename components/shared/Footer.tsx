@@ -289,9 +289,15 @@ export const Footer = () => {
               <span className="font-thin">Copyright</span> © THE ALGOS FIELD
             </p>
             <div className="flex  flex-row gap-2 items-center justify-start ">
-              <FaInstagram className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 cursor-pointer rounded-full" />
-              <FaDiscord className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
-              <FaFacebook className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
+              <Link href={"https://www.instagram.com/thealgosfield"}>
+                <FaInstagram className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 cursor-pointer rounded-full" />
+              </Link>
+              <Link href={"https://www.facebook.com/thealgosfield"}>
+                <FaDiscord className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
+              </Link>
+              <Link href={"https://discord.gg/TJnaMHpw"}>
+                <FaFacebook className="icon-inner p-2 w-8 h-8 2xl:w-10 2xl:h-10 2xl:p-2.5 rounded-full cursor-pointer" />
+              </Link>
             </div>
           </div>
           <div className="py-8 px-2 grid grid-cols-1 sm:grid-cols-2 gap-5 2xl:gap-10 sm:mx-16 2xl:mx-28 mx-auto ">

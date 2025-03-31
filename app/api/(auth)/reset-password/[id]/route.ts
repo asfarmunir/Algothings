@@ -2,15 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import * as bcryptjs from 'bcryptjs';
 import User from '@/lib/database/user.modal';
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
 
-export  async function PATCH(req: NextRequest, { params: { id } }: Props) {
-
-  const { password, confirmPassword } = await req.json();
+export async function PATCH(req: NextRequest) {
+  const { password, confirmPassword,id } = await req.json();
 
   if (!password || !confirmPassword) {
     return NextResponse.json({ message: 'Please provide both passwords' }, { status: 400 });
@@ -28,9 +22,7 @@ export  async function PATCH(req: NextRequest, { params: { id } }: Props) {
       return NextResponse.json({ message: 'Token is missing' }, { status: 400 });
     }
 
-    const user = await User.findOne({
-      where: { id: String(id) },
-    });
+    const user = await User.findById(id);
 
     if (!user) {
       return NextResponse.json({ message: 'User not found' }, { status: 404 });

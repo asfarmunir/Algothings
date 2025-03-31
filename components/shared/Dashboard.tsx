@@ -75,6 +75,9 @@ export default function Dashboard({
                     </p>
                     <div className="flex flex-row gap-4">
                       <Button
+                        onClick={() =>
+                          router.push("https://discord.gg/TJnaMHpw")
+                        }
                         label="Join our Discord"
                         className="bg-gradient-to-r from-customgreen to-customblue text-black rounded-lg"
                       />
@@ -83,6 +86,7 @@ export default function Dashboard({
                         <div className="inline-flex flex-row items-center bg-black rounded-lg gap-1 pr-3 py-1">
                           <Button
                             label="Choose Plan"
+                            onClick={() => router.push("/subscription")}
                             className="bg-gradient-to-b px-0 from-customgreen to-customblue bg-clip-text text-transparent py-1"
                           />
                           <Image
