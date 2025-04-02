@@ -28,8 +28,6 @@ export async function POST(req:NextRequest, res:NextResponse ){
         },
       }
     );
-
-    console.log('Contact added successfully:', res.data);
     
         return NextResponse.json({status: 200 , message: "Contact added successfully"});
   } catch (error) {

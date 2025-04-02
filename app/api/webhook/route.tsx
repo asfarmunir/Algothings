@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import Subscription from "@/lib/database/subscription.model";
+import { subscriptionConfirmation, subscriptionReciept } from "@/lib/mailgun";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET as string;
@@ -109,7 +110,20 @@ export async function POST(req: NextRequest) {
           });
 
           await newSubscription.save();
-          console.log("✅ Subscription saved:", newSubscription);
+
+          await subscriptionConfirmation(
+            session.metadata.email,
+            product!.productName,
+            session.metadata.firstName
+          );
+          await subscriptionReciept(
+            session.metadata.email,
+            product!.productName,
+            session.metadata.firstName,
+            product!.productPrice,
+            new Date().toLocaleDateString("en-US"),
+            subscriptionId
+          );
         }
       } catch (err) {
         console.error("❌ Error saving subscription:", err);

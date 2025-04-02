@@ -2,9 +2,7 @@ import { NextResponse,NextRequest } from "next/server";
 import * as bcryptjs from "bcryptjs";
 import User from "@/lib/database/user.modal";
 import { connectToDatabase } from "@/lib/database";
-// import { createNewStreamUser } from "@/database/actions/user.action";
-// import { sendEmail, sendGreetingEmail } from "@/lib/sendEmail";
-
+import { registerationSuccess } from "@/lib/mailgun";
 
 export async function POST(req:NextRequest, res:NextResponse ){
     try {
@@ -36,7 +34,7 @@ export async function POST(req:NextRequest, res:NextResponse ){
             password: hashedPassword,
         });
         await newUser.save();
-
+         await registerationSuccess(email, firstName);
         return NextResponse.json({status: 200 , message: "User created successfully"});
 
 
