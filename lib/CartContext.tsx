@@ -32,10 +32,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<Product[]>([]);
   const [platform, setPlatform] = useState<string | null>(null); // ✅ Independent platform state
 
-  console.log("🚀 ~ CartProvider ~ subscription:", subscription);
-  console.log("🚀 ~ CartProvider ~ cart:", cart);
-  console.log("🚀 ~ CartProvider ~ platform:", platform);
-
   const addToCart = (product: Product) => {
     setCart((prevCart) => [...prevCart, product]);
   };

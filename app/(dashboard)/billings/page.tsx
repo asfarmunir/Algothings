@@ -40,7 +40,6 @@ export default function BillingDetails() {
   }, []);
   const { formData, isSubmitting, error, handleInputChange, handleSubmit } =
     useBillingDetails();
-  console.log("🚀 ~ BillingDetails ~ formData:", formData);
 
   const handleSelectCountry = (value: string) => {
     handleInputChange("country", value);
