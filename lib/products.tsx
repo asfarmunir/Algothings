@@ -35,8 +35,10 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. <a href='[LINK TO FULL DISCLAIMER]' class='text-customgreen underline'>Risk Disclaimer</a>.",
-    price_id_monthly: "price_1R4rmISHr6F8DFBRjPmtIuU0",
-    price_id_annually: "price_1R4rmrSHr6F8DFBROZ4fSmg2",
+    // price_id_monthly: "price_1R4rmISHr6F8DFBRjPmtIuU0",
+    price_id_monthly: "price_1QuWTiC5ofyYVWUTW1G8HG17",
+    // price_id_annually: "price_1R4rmrSHr6F8DFBROZ4fSmg2",
+    price_id_annually: "price_1R6ARhC5ofyYVWUT6sv4AXVU",
   },
   {
     id: "momentum-snap",
@@ -76,8 +78,10 @@ export const products = [
 
     disclaimer:
       "Trading involves significant risk. Past performance does not guarantee future results. Use risk capital only.",
-    price_id_monthly: "price_1R4rksSHr6F8DFBRs2VMfCaz",
-    price_id_annually: "price_1R4rksSHr6F8DFBRGifRlkU6",
+    // price_id_monthly: "price_1R4rksSHr6F8DFBRs2VMfCaz",
+    price_id_monthly: "price_1QuWiBC5ofyYVWUT8c4Xlg2m",
+    // price_id_annually: "price_1R4rksSHr6F8DFBRGifRlkU6",
+    price_id_annually: "price_1R6ATGC5ofyYVWUTqJGbU0xV",
   },
 
   {
