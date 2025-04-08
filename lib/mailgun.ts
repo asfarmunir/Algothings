@@ -142,7 +142,6 @@ export async function registerationSuccess(  userEmail: string, firstName: strin
         first_name: firstName.charAt(0).toUpperCase() + firstName.slice(1),
       }),
     });
-    console.log(data); // logs response data
   } catch (error) {
     console.log(error); // logs any error
   }
@@ -160,7 +159,6 @@ export async function passwordChanged(userEmail: string, firstName: string) {
         First_Name: firstName.charAt(0).toUpperCase() + firstName.slice(1),
       }),
     });
-    console.log(data); // logs response data
   } catch (error) {
     console.log(error); // logs any error
   }
@@ -178,7 +176,6 @@ export async function ProfileUpdated(userEmail: string, firstName: string,change
         desc: changesDescription,
       }),
     });
-    console.log(data); // logs response data
   } catch (error) {
     console.log(error); // logs any error
   }
@@ -197,7 +194,6 @@ export async function subscriptionConfirmation(userEmail: string, planName: stri
         dash_link : process.env.APP_URL + "/dashboard",
       }),
     });
-    console.log(data); // logs response data
   } catch (error) {
     console.log(error); // logs any error
   }
@@ -218,7 +214,6 @@ export async function subscriptionReciept(userEmail: string, planName: string, f
         invoice_id: invoice_id,
       }),
     });
-    console.log(data); // logs response data
   } catch (error) {
     console.log(error); // logs any error
   }
@@ -237,8 +232,100 @@ export async function subscriptionCancelled(userEmail: string, planName: string,
         end_date: end_date.toString().slice(0, 10),
       }),
     });
-    console.log(data); // logs response data
   } catch (error) {
     console.log(error); // logs any error
+  }
+}
+
+
+
+ export async function sendLicenseKeyEmail(
+  email: string,
+  name: string,
+  licenses: Array<{ productName: string; licenseKey: string }>,
+  dash_link: string = `${process.env.APP_URL}/dashboard`
+) {
+  try {
+    const subject = `Your License Keys for The Algos Field`;
+    
+    // Format the plain text version
+    const text = `Congratulations, ${name},
+
+Welcome aboard — your subscription is now active!
+
+You can now enable your selected algorithm(s):
+
+${licenses.map(license => `• ${license.productName}: ${license.licenseKey}`).join('\n')}
+
+To get started, log in to your dashboard:
+${dash_link}
+
+Need help? Contact us at support@thealgosfield.com or visit our Discord community.
+
+The Algos Field
+Trading on Robopilot`;
+
+    // Create the HTML version with styled table
+    const html = `
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+  <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+    Congratulations, <strong>${name}</strong>,
+  </p>
+  
+  <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+    Welcome aboard — your subscription is now active!
+  </p>
+  
+  <p style="font-size: 16px; line-height: 1.6; margin-bottom: 10px;">
+    Here are your license keys:
+  </p>
+  
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #e0e0e0;">
+    <thead>
+      <tr style="background-color: #f5f7fa;">
+        <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; font-weight: 600;">Product</th>
+        <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; font-weight: 600;">License Key</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${licenses.map(license => `
+        <tr>
+          <td style="padding: 12px 15px; border-bottom: 1px solid #e0e0e0;">${license.productName}</td>
+          <td style="padding: 12px 15px; border-bottom: 1px solid #e0e0e0; font-family: 'Courier New', monospace; color: #0066cc; font-weight: 500;">${license.licenseKey}</td>
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>
+  
+  <p style="font-size: 16px; line-height: 1.6; margin: 25px 0 15px;">
+    <a href="${dash_link}" style="background-color: #0066cc; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block;">Go to Dashboard</a>
+  </p>
+  
+  <p style="font-size: 14px; line-height: 1.6; color: #666;">
+    Need help? Contact us at <a href="mailto:support@thealgosfield.com" style="color: #0066cc;">support@thealgosfield.com</a> 
+    or visit our Discord community.
+  </p>
+  
+  <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+    <p style="margin: 5px 0; font-weight: 600;">The Algos Field</p>
+    <p style="margin: 5px 0; font-style: italic; color: #666;">Trading on Robopilot</p>
+  </div>
+</div>`;
+
+    // Send email via Mailgun
+    const data = await mg.messages.create(process.env.MAILGUN_DOMAIN as string, {
+      from: `The Algos Field <no-reply@${process.env.MAILGUN_DOMAIN}>`,
+      to: email,
+      subject,
+      html,
+      text,
+    });
+
+    console.log(`✅ License key email sent to ${email}`, data);
+    return { success: true, messageId: data.id };
+    
+  } catch (error) {
+    console.error(`❌ Failed to send license key email to ${email}:`, error);
+    throw new Error(`Failed to send license key email: ${error instanceof Error ? error.message : String(error)}`);
   }
 }

@@ -14,15 +14,15 @@ interface BillingDetailsForm {
 
 const useBillingDetails = () => {
   const [formData, setFormData] = useState<BillingDetailsForm>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    country: "",
-    state: "",
-    city: "",
-    zip: "",
-    address: "",
+    firstName: "John",
+    lastName: "Doe",
+    email: "asfarma2815@gmail.com",
+    phone: "123-456-7890",
+    country: "USA",
+    state: "California",
+    city: "Los Angeles",
+    zip: "90001",
+    address: "123 Main St",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);

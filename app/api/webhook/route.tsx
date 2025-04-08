@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import Subscription from "@/lib/database/subscription.model";
-import { subscriptionConfirmation, subscriptionReciept } from "@/lib/mailgun";
+import {
+  sendLicenseKeyEmail,
+  subscriptionConfirmation,
+  subscriptionReciept,
+} from "@/lib/mailgun";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET as string;
@@ -27,6 +31,7 @@ export async function POST(req: NextRequest) {
 
   switch (event.type) {
     case "checkout.session.completed":
+      console.log("✅ Checkout session completed:", event.data.object);
       const session = event.data.object;
 
       if (!session.metadata || !session.metadata.products) {
@@ -138,8 +143,79 @@ export async function POST(req: NextRequest) {
     case "customer.subscription.updated":
       const updatedSubscription = event.data.object;
       console.log("🔄 Subscription updated:", updatedSubscription);
-      break;
 
+      if (updatedSubscription.metadata?.license_keys) {
+        try {
+          const licenseKeys = JSON.parse(
+            updatedSubscription.metadata.license_keys
+          );
+
+          const subscriptions = await Subscription.find({
+            subscriptionId: updatedSubscription.id,
+          });
+
+          if (subscriptions.length > 0) {
+            const firstSubscription = subscriptions[0];
+            const userEmail = firstSubscription.userInfo.email;
+            const userName = firstSubscription.userInfo.firstName;
+            const dashLink = `${process.env.APP_URL}/dashboard`;
+
+            const licenseInfo = Object.entries(licenseKeys).map(
+              ([product, keys]) => ({
+                productName: product,
+                licenseKey: Array.isArray(keys) ? keys[0] : keys,
+              })
+            );
+
+            console.log("License keys extracted:", licenseInfo);
+            const productsWithNames = licenseInfo.map((license) => {
+              const sub = subscriptions.find((s) =>
+                s.productId
+                  .toLowerCase()
+                  .includes(license.productName.toLowerCase())
+              );
+
+              if (!sub) {
+                console.warn(
+                  "No matching product found for:",
+                  license.productName
+                );
+              }
+
+              return {
+                ...license,
+                productName: sub?.productName || license.productName,
+              };
+            });
+
+            console.log("Products with names:", productsWithNames);
+            if (productsWithNames.length > 0) {
+              try {
+                await sendLicenseKeyEmail(
+                  userEmail,
+                  userName,
+                  productsWithNames,
+                  dashLink
+                );
+                console.log(
+                  `✅ License key email successfully sent to ${userEmail}`
+                );
+              } catch (emailError) {
+                console.error("Failed to send license email:", emailError);
+              }
+            } else {
+              console.warn("No valid license keys to send");
+            }
+          } else {
+            console.log("No subscriptions found for:", updatedSubscription.id);
+          }
+        } catch (err) {
+          console.error("Error processing license keys:", err);
+        }
+      } else {
+        console.log("No license keys found in subscription metadata");
+      }
+      break;
     case "customer.subscription.deleted":
       const deletedSubscription = event.data.object;
       console.log("🗑️ Subscription canceled:", deletedSubscription);
