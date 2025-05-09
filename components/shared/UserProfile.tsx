@@ -57,7 +57,6 @@ const Profile = ({
     setProfile,
     updateProfile,
     loading,
-    error,
     passwordData,
     setPasswordData,
   } = useProfileUpdate();
@@ -73,21 +72,6 @@ const Profile = ({
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setPasswordData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleDropdownChange = (value: string) => {
-    setProfile((prev) => ({ ...prev, accountType: value }));
-  };
-
-  const handleCountryChange = (code: string) => {
-    console.log("🚀 ~ handleCountryChange ~ code:", code);
-    setProfile((prev) => ({ ...prev, country: code }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    //@ts-ignore
-    setProfile((prev) => ({ ...prev, avatar: file }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -121,13 +105,6 @@ const Profile = ({
   };
 
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
-
-  const showTooltip = () => setIsTooltipVisible(true);
-  const hideTooltip = () => setIsTooltipVisible(false);
-
-  const handleDropdownSelect = (value: string) => {
-    console.log("Selected Account Type:", value);
-  };
 
   const handleUnsubscribe = async (
     subscriptionId: string,
@@ -199,13 +176,15 @@ const Profile = ({
             </h1>
             <div className="flex flex-row justify-between pb-4">
               <div className="space-y-1 mt-4">
-                <h3 className=" 2xl:text-lg font-gilroy flex items-center gap-4">
-                  <FaUser className="text-lg text-customgreen" />
-                  Ali Riaz
+                <h3 className=" 2xl:text-lg capitalize font-gilroy flex items-center gap-4">
+                  <FaUser className="text-lg  text-customgreen" />
+                  {profile.firstName
+                    ? `${profile.firstName} ${profile.lastName}`
+                    : "John Doe"}
                 </h3>
                 <h3 className=" 2xl:text-lg font-gilroy flex items-center gap-4">
                   <MdEmail className="text-lg text-customgreen" />
-                  xzy@gmail.com
+                  {profile.email ? profile.email : ""}
                 </h3>
               </div>
 

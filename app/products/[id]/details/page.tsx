@@ -7,12 +7,14 @@ import { DiscordCommunity } from "@/components/shared/Discord";
 import { Footer } from "@/components/shared/Footer";
 import { products } from "@/lib/products";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 export default function AllProduct({
   params: { id },
 }: {
   params: { id: string };
 }) {
   console.log("🚀 ~ id:", id);
+  const { status } = useSession();
 
   const product = products.find((product) => product.id === id);
 
@@ -95,7 +97,13 @@ export default function AllProduct({
                 />
               </Link>
               <Link
-                href={`/performance-summary/${product!.id}`}
+                href={`
+                  ${
+                    status === "authenticated"
+                      ? `/performance-summary/${product!.id}`
+                      : "/register"
+                  }
+                  `}
                 className=" flex-grow sm:flex-grow-0"
               >
                 <div className="bg-gradient-to-r p-[1px] w-full sm:w-fit font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md ">

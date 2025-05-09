@@ -258,7 +258,7 @@ export default function BlogDetails() {
               volatile markets.
             </p>
 
-            <a href="/performance" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               See how data-driven automation is transforming trading
               performance.
             </a>
@@ -300,7 +300,7 @@ export default function BlogDetails() {
               </li>
             </ul>
 
-            <a href="/strategies" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Diversify your trading with a professionally designed strategy
               portfolio.
             </a>
@@ -327,10 +327,7 @@ export default function BlogDetails() {
               </li>
             </ul>
 
-            <a
-              href="/risk-management"
-              className="text-customgreen font-semibold"
-            >
+            <a href="/register" className="text-customgreen font-semibold">
               Trade with confidence knowing that every strategy is designed with
               built-in risk management.
             </a>
@@ -359,7 +356,7 @@ export default function BlogDetails() {
               </li>
             </ol>
 
-            <a href="/setup" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Get started in minutes with a strategy designed for simplicity and
               efficiency.
             </a>
@@ -424,7 +421,7 @@ export default function BlogDetails() {
               volatile markets.
             </p>
 
-            <a href="/performance" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               See how data-driven automation is transforming trading
               performance.
             </a>
@@ -466,7 +463,7 @@ export default function BlogDetails() {
               </li>
             </ul>
 
-            <a href="/strategies" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Diversify your trading with a professionally designed strategy
               portfolio.
             </a>
@@ -493,10 +490,7 @@ export default function BlogDetails() {
               </li>
             </ul>
 
-            <a
-              href="/risk-management"
-              className="text-customgreen font-semibold"
-            >
+            <a href="/register" className="text-customgreen font-semibold">
               Trade with confidence knowing that every strategy is designed with
               built-in risk management.
             </a>
@@ -525,7 +519,7 @@ export default function BlogDetails() {
               </li>
             </ol>
 
-            <a href="/setup" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Get started in minutes with a strategy designed for simplicity and
               efficiency.
             </a>
@@ -539,7 +533,7 @@ export default function BlogDetails() {
               transparency that The Algos Field does.
             </p>
 
-            <a href="/compare" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Upgrade your trading experience with an algorithmic system built
               for reliability and precision.
             </a>
@@ -566,7 +560,7 @@ export default function BlogDetails() {
               </li>
             </ul>
 
-            <a href="/automation" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Take control of your trading and start leveraging automation for
               better results.
             </a>
@@ -582,7 +576,7 @@ export default function BlogDetails() {
               complexity.
             </p>
 
-            <a href="/join" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Start your journey toward smarter, more efficient trading today.
             </a>
             <h2 className="text-3xl font-bold mb-6">
@@ -645,7 +639,7 @@ export default function BlogDetails() {
               volatile markets.
             </p>
 
-            <a href="/performance" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               See how data-driven automation is transforming trading
               performance.
             </a>
@@ -687,7 +681,7 @@ export default function BlogDetails() {
               </li>
             </ul>
 
-            <a href="/strategies" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Diversify your trading with a professionally designed strategy
               portfolio.
             </a>
@@ -714,10 +708,7 @@ export default function BlogDetails() {
               </li>
             </ul>
 
-            <a
-              href="/risk-management"
-              className="text-customgreen font-semibold"
-            >
+            <a href="/register" className="text-customgreen font-semibold">
               Trade with confidence knowing that every strategy is designed with
               built-in risk management.
             </a>
@@ -746,7 +737,7 @@ export default function BlogDetails() {
               </li>
             </ol>
 
-            <a href="/setup" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Get started in minutes with a strategy designed for simplicity and
               efficiency.
             </a>
@@ -823,7 +814,7 @@ export default function BlogDetails() {
                 </tr>
               </tbody>
             </table>
-            <a href="/compare" className="text-customgreen  font-semibold">
+            <a href="/register" className="text-customgreen  font-semibold">
               Upgrade your trading experience with an algorithmic system built
               for reliability and precision.
             </a>
@@ -850,7 +841,7 @@ export default function BlogDetails() {
               </li>
             </ul>
 
-            <a href="/automation" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Take control of your trading and start leveraging automation for
               better results.
             </a>
@@ -866,7 +857,7 @@ export default function BlogDetails() {
               complexity.
             </p>
 
-            <a href="/join" className="text-customgreen font-semibold">
+            <a href="/register" className="text-customgreen font-semibold">
               Start your journey toward smarter, more efficient trading today.
             </a>
           </div>

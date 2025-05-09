@@ -167,7 +167,7 @@ export default function AllAnnouncement() {
                 so don’t miss out on risk-free access to fully automated
                 trading!
               </p>
-              <Link href={"/subscription"}>
+              <Link href={"/getting-started"}>
                 <Button
                   label="Get Started!!!"
                   className="lexend bg-gradient-to-r from-customgreen py-2  px-6 to-customblue text-black rounded-md mt-4"

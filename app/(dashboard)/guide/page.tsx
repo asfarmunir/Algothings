@@ -20,12 +20,11 @@ export default function Guide() {
           <div className="flex-grow px-6 gradient-corners-main py-6 overflow-y-auto scrollbar-thin scrollbar-track-customcard scrollbar-thumb-customgreen">
             <h1 className="text-xl font-bold uppercase">GUIDE</h1>
             <div className="px-3 md:px-6 space-y-5">
-              <div className="h-72 bg-[#D9D9D91A] mt-5 rounded-xl">
+              <div className="h-72 bg-[#D9D9D91A] mt-5 flex items-center justify-center rounded-xl">
                 <Image
-                  src="/"
-                  width={0}
-                  height={0}
-                  layout="responsive"
+                  src="/images/logo.svg"
+                  width={300}
+                  height={300}
                   alt="image"
                   className=" "
                 />

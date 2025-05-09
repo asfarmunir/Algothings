@@ -28,7 +28,7 @@ const Sidebar = ({
       img: "home",
     },
     {
-      href: "/subscription",
+      href: "/getting-started",
       icon: <RxDashboard />,
       label: "Subscription",
       img: "card",

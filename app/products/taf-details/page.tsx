@@ -7,6 +7,7 @@ import { DiscordCommunity } from "@/components/shared/Discord";
 import { Footer } from "@/components/shared/Footer";
 import { products } from "@/lib/products";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const product = {
   id: "1",
@@ -46,6 +47,7 @@ const product = {
 };
 
 export default function AllProduct() {
+  const { status } = useSession();
   return (
     <div className="flex flex-col w-full pb-12 sm:pb-6 h-full">
       {/* Dashboard Navbar: Static and non-scrollable */}
@@ -125,7 +127,13 @@ export default function AllProduct() {
                 />
               </Link>
               <Link
-                href={`/performance-summary/${product!.id}`}
+                href={`
+                  ${
+                    status === "authenticated"
+                      ? `/performance-summary`
+                      : "/register"
+                  }
+                  `}
                 className=" flex-grow sm:flex-grow-0"
               >
                 <div className="bg-gradient-to-r p-[1px] w-full sm:w-fit font-semibold text-nowrap uppercase text-xs from-customgreen to-customblue text-black rounded-md ">

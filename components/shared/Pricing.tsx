@@ -38,7 +38,7 @@ export default function Pricing() {
             </p>
           </div>
 
-          {pathname === "/subscription" && (
+          {pathname === "/getting-started" && (
             <div className="hidden xl:flex items-start justify-center w-full py-12 gap-1 ">
               <div className="flex flex-col items-center ">
                 <div className="w-12 2xl:w-16 h-12 2xl:h-16  mb-4 rounded-full bg-gradient-to-l flex items-center justify-center from-[#00C88C] to-[#0C7C33]">
@@ -189,7 +189,7 @@ export default function Pricing() {
 
                 <Button
                   onClick={
-                    pathname === "/subscription"
+                    pathname === "/getting-started"
                       ? () => {
                           setSubscription({
                             category: "individual",
@@ -362,7 +362,7 @@ export default function Pricing() {
                 <Button
                   label="Choose Plan"
                   onClick={
-                    pathname === "/subscription"
+                    pathname === "/getting-started"
                       ? () => {
                           setSubscription({
                             category: "portfolio",
@@ -405,7 +405,7 @@ export default function Pricing() {
             </div>
           </div>
 
-          {pathname === "/subscription" && (
+          {pathname === "/getting-started" && (
             <div className="hidden md:flex items-center justify-center w-full gap-7 pt-8 pb-4">
               <h1 className="text-lg font-bold text-white">We accept</h1>
               <Image src="/visa.svg" width={40} height={40} alt="line" />

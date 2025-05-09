@@ -25,4 +25,4 @@ const sessionToken =
   return NextResponse.redirect(new URL('/login', req.url));
 }
 
-export const config = { matcher: ["/dashboard","/profile-update","/subscription","/billings","/algo-strategies","/portfolio"] }
+export const config = { matcher: ["/dashboard","/profile-update","/getting-started","/billings","/algo-strategies","/portfolio"] }

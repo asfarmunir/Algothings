@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useSession } from "next-auth/react";
 
 interface BillingDetailsForm {
   firstName: string;
@@ -13,20 +14,39 @@ interface BillingDetailsForm {
 }
 
 const useBillingDetails = () => {
+  const { data: session, status } = useSession();
   const [formData, setFormData] = useState<BillingDetailsForm>({
-    firstName: "John",
-    lastName: "Doe",
-    email: "asfarma2815@gmail.com",
-    phone: "123-456-7890",
-    country: "USA",
-    state: "California",
-    city: "Los Angeles",
-    zip: "90001",
-    address: "123 Main St",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    country: "",
+    state: "",
+    city: "",
+    zip: "",
+    address: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const isInitialized = useRef(false);
+
+  // Initialize formData with session data when session is available
+  useEffect(() => {
+    if (status === "authenticated" && session?.user && !isInitialized.current) {
+      setFormData({
+        firstName: session.user.firstName || "",
+        lastName: session.user.lastName || "",
+        email: session.user.email || "",
+        phone: session.user.mobile || "",
+        country: session.user.country || "",
+        state: "",
+        city: "",
+        zip: "",
+        address: "",
+      });
+      isInitialized.current = true;
+    }
+  }, [session, status]);
 
   const handleInputChange = (field: keyof BillingDetailsForm, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -37,7 +57,7 @@ const useBillingDetails = () => {
     setError(null);
 
     try {
-        console.log(formData);
+      console.log("Submitting formData:", formData);
       const response = await fetch("/api/billing-details", {
         method: "POST",
         headers: {

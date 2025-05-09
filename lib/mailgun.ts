@@ -130,7 +130,6 @@ export async function sendSupportConfirmation(userEmail: string) {
 
 
 export async function registerationSuccess(  userEmail: string, firstName: string) {
- console.log("🚀 ~ registerationSuccess ~ firstName:", firstName)
  
   try {
     const data = await mg.messages.create("mg.thealgosfield.com", {

@@ -32,10 +32,10 @@ export default function BillingDetails() {
 
   useEffect(() => {
     if (!subscription) {
-      router.push("/subscription");
+      router.push("/getting-started");
     }
     if (!cart.length) {
-      router.push("/subscription");
+      router.push("/getting-started");
     }
   }, []);
   const { formData, isSubmitting, error, handleInputChange, handleSubmit } =
@@ -264,44 +264,18 @@ export default function BillingDetails() {
                       charge your card for future payments in accordance with
                       their terms.
                     </p>
-
-                    {/* <div className="flex flex-row gap-3">
-                      <Button
-                        label="BACK"
-                        className="bg-[#03100C] rounded-lg back-btn py-[10px] text-sm"
-                      />
-
-                      <Button
-                        label={isSubmitting ? "Submitting..." : "NEXT"}
-                        onClick={handleSubmit}
-                        disabled={isSubmitting}
-                        className="bg-[#45F1753D] w-full border border-[#45F175] py-[10px] rounded-md text-sm text-[#45F175]"
-                      />
-                    </div> */}
                   </form>
                 </div>
               </div>
               <div className=" w-full lg:w-[30%] max-w-xl">
                 <h1 className="text-3xl lg:text-2xl font-semibold">Cart</h1>
                 <div className="py-1">
-                  {/* <Dropdown
-                    
-                    options={["MultiCharts", "TradeStation ", "MetaTrader "]}
-                    onSelect={
-                      //@ts-ignore
-                      (platform: string) => updatePlatform(platform)
-                    }
-                    placeholder="Select Platform"
-                    className="bg-[#03100C] py-2  text-sm w-full"
-                    textclassName=""
-                    dropdownClass=" w-60 lg:w-44"
-                  /> */}
                   {cart.length ? (
                     <div className="text-end my-2">
                       <button
                         onClick={() => {
                           clearCart();
-                          router.push("/subscription");
+                          router.push("/getting-started");
                         }}
                         className="text-xs 2xl:text-sm hover:underline"
                       >
@@ -362,6 +336,7 @@ export default function BillingDetails() {
                               (acc, item) => acc + subscription!.price,
                               0
                             )}
+                            /mo
                           </p>
                         </div>
                         <div className="flex flex-row justify-between gap-5">
@@ -375,9 +350,15 @@ export default function BillingDetails() {
                             {cart.reduce(
                               (acc, item) => acc + subscription!.price,
                               0
-                            )}
+                            ) * (subscription?.type === "annual" ? 12 : 1)}
+                            {subscription?.type === "annual" ? "/year" : "/mo"}
                           </p>
                         </div>
+                        {subscription?.type === "annual" && (
+                          <p className="text-customgreen">
+                            Billed annually – 10% discount applied
+                          </p>
+                        )}
                       </div>
 
                       <Button

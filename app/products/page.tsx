@@ -12,13 +12,14 @@ import { DiscordCommunity } from "@/components/shared/Discord";
 import { Footer } from "@/components/shared/Footer";
 import { useRouter } from "next/navigation";
 import { products } from "@/lib/products";
+import { useSession } from "next-auth/react";
 
 export default function AllProduct({ searchParams }: { searchParams: any }) {
   const unwrappedSearchParams = React.use(searchParams);
   //@ts-ignore
   const tab = unwrappedSearchParams.tab || "INDIVIDUALS";
   const [activeButton, setActiveButton] = useState(tab || "INDIVIDUALS");
-
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   return (
@@ -170,7 +171,13 @@ export default function AllProduct({ searchParams }: { searchParams: any }) {
                         <div className="w-full flex flex-row gap-4 items-center">
                           <Button
                             label="Get Started"
-                            onClick={() => router.push("/register")}
+                            onClick={() => {
+                              if (status === "unauthenticated") {
+                                router.push("/register");
+                              } else {
+                                router.push("/getting-started");
+                              }
+                            }}
                             className="bg-gradient-to-r text-nowrap font-semibold py-[8px] px-[20px] md:px-[30px]  uppercase text-sm from-customgreen to-customblue text-black rounded-lg"
                           />
                           <button

@@ -35,7 +35,7 @@ export default function Algorithm() {
 
   useEffect(() => {
     if (!subscription) {
-      router.push("/subscription");
+      router.push("/getting-started");
     }
     if (subscription) clearCart();
   }, []);
@@ -405,6 +405,7 @@ export default function Algorithm() {
                             (acc, item) => acc + subscription!.price,
                             0
                           )}
+                          /mo
                         </p>
                       </div>
                       <div className="flex flex-row justify-between gap-5">
@@ -418,9 +419,15 @@ export default function Algorithm() {
                           {cart.reduce(
                             (acc, item) => acc + subscription!.price,
                             0
-                          )}
+                          ) * (subscription?.type === "annual" ? 12 : 1)}
+                          {subscription?.type === "annual" ? "/year" : "/mo"}
                         </p>
                       </div>
+                      {subscription?.type === "annual" && (
+                        <p className="text-customgreen">
+                          Billed annually – 10% discount applied
+                        </p>
+                      )}
                     </div>
 
                     <div className="flex justify-center items-center w-full border-b border-customgray pb-5">
